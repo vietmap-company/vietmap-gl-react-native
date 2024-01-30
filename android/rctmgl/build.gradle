@@ -33,27 +33,37 @@ dependencies {
     implementation("com.facebook.react:react-android")
 
     // MapLibre SDK
-    implementation "org.maplibre.gl:android-sdk:9.6.0"
-    implementation "org.maplibre.gl:android-sdk-turf:5.9.0"
+//    implementation "org.maplibre.gl:android-sdk:9.6.0"
+//    implementation "org.maplibre.gl:android-sdk-turf:5.9.0"
 
+    implementation 'com.github.vietmap-company:maps-sdk-android:2.2.2'
+
+    implementation 'com.github.vietmap-company:vietmap-services-turf-android:1.0.2'
     // Dependencies
     implementation "com.android.support:support-vector-drawable:${safeExtGet('supportLibVersion', '28.0.0')}"
     implementation "com.android.support:support-annotations:${safeExtGet('supportLibVersion', '28.0.0')}"
     implementation "com.android.support:appcompat-v7:${safeExtGet('supportLibVersion', '28.0.0')}"
     implementation "com.squareup.okhttp3:okhttp:${safeExtGet('okhttpVersion', '4.9.0')}"
     implementation "com.squareup.okhttp3:okhttp-urlconnection:${safeExtGet('okhttpVersion', '4.9.0')}"
-
-
+    implementation("com.github.vietmap-company:maps-sdk-plugin-annotation-android:1.0.0")
+    implementation('com.github.vietmap-company:vietmap-services-plugin-markerview:1.0.3')
+    implementation('com.github.vietmap-company:maps-sdk-plugin-localization-android:1.0.0')
+    implementation('com.github.vietmap-company:maps-sdk-plugin-localization-android:2.0.0')
+    implementation 'com.github.vietmap-company:vietmap-services-geojson-android:1.0.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
     // MapLibre plugins
-    implementation ("org.maplibre.gl:android-plugin-localization-v9:1.0.0")
-    implementation ("org.maplibre.gl:android-plugin-annotation-v9:1.0.0")
-    implementation ("org.maplibre.gl:android-plugin-markerview-v9:1.0.0")
+//    implementation ("org.maplibre.gl:android-plugin-localization-v9:1.0.0")
+//    implementation ("org.maplibre.gl:android-plugin-annotation-v9:1.0.0")
+//    implementation ("org.maplibre.gl:android-plugin-markerview-v9:1.0.0")
 }
 
 allprojects {
     repositories {
         maven {
-            url = "https://dl.bintray.com/maplibre/maplibre-gl-native"
+//            url = "https://dl.bintray.com/maplibre/maplibre-gl-native"
+
+            url = "https://jitpack.io"
         }
     }
 }

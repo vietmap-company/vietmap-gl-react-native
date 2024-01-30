@@ -5,13 +5,13 @@ import android.content.Context;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.common.logging.FLog;
-import com.mapbox.mapboxsdk.location.LocationComponentConstants;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
-import com.mapbox.mapboxsdk.maps.Style;
-import com.mapbox.mapboxsdk.style.expressions.Expression;
-import com.mapbox.mapboxsdk.style.layers.Layer;
-import com.mapbox.mapboxsdk.style.layers.Property;
-import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
+import vn.vietmap.vietmapsdk.location.LocationComponentConstants;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.Style;
+import vn.vietmap.vietmapsdk.style.expressions.Expression;
+import vn.vietmap.vietmapsdk.style.layers.Layer;
+import vn.vietmap.vietmapsdk.style.layers.Property;
+import vn.vietmap.vietmapsdk.style.layers.PropertyFactory;
 import com.mapbox.rctmgl.components.AbstractMapFeature;
 import com.mapbox.rctmgl.components.mapview.RCTMGLMapView;
 import com.mapbox.rctmgl.utils.ExpressionParser;
@@ -39,7 +39,7 @@ public abstract class RCTLayer<T extends Layer> extends AbstractMapFeature {
     protected ReadableMap mReactStyle;
     protected Expression mFilter;
 
-    protected MapboxMap mMap;
+    protected VietMapGL mMap;
     protected T mLayer;
 
     protected Context mContext;
@@ -244,7 +244,7 @@ public abstract class RCTLayer<T extends Layer> extends AbstractMapFeature {
 
     @Override
     public void addToMap(RCTMGLMapView mapView) {
-        mMap = mapView.getMapboxMap();
+        mMap = mapView.getVietMapGL();
         mMapView = mapView;
 
         if (getStyle() == null) return;

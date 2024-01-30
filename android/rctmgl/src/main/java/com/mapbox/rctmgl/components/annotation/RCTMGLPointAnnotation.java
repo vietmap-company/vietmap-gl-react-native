@@ -7,12 +7,12 @@ import android.view.View;
 import androidx.annotation.NonNull;
 
 import com.mapbox.geojson.Point;
-import com.mapbox.mapboxsdk.geometry.LatLng;
-import com.mapbox.mapboxsdk.maps.Style;
-import com.mapbox.mapboxsdk.plugins.annotation.Symbol;
-import com.mapbox.mapboxsdk.plugins.annotation.SymbolManager;
-import com.mapbox.mapboxsdk.plugins.annotation.SymbolOptions;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.maps.Style;
+import vn.vietmap.vietmapsdk.plugins.annotation.Symbol;
+import vn.vietmap.vietmapsdk.plugins.annotation.SymbolManager;
+import vn.vietmap.vietmapsdk.plugins.annotation.SymbolOptions;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
 import com.mapbox.rctmgl.components.AbstractMapFeature;
 import com.mapbox.rctmgl.components.mapview.RCTMGLMapView;
 import com.mapbox.rctmgl.events.PointAnnotationClickEvent;
@@ -25,7 +25,7 @@ public class RCTMGLPointAnnotation extends AbstractMapFeature implements View.On
     private Context mContext;
     private RCTMGLPointAnnotationManager mManager;
     private Symbol mAnnotation;
-    private MapboxMap mMap;
+    private VietMapGL mMap;
     private RCTMGLMapView mMapView;
 
     private boolean mHasChildren;
@@ -93,7 +93,7 @@ public class RCTMGLPointAnnotation extends AbstractMapFeature implements View.On
     @Override
     public void addToMap(RCTMGLMapView mapView) {
         mMapView = mapView;
-        mMap = mapView.getMapboxMap();
+        mMap = mapView.getVietMapGL();
         makeMarker();
 
         if (mChildView != null) {

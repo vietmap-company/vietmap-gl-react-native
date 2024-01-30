@@ -3,20 +3,20 @@
 
 package com.mapbox.rctmgl.components.styles;
 
-import com.mapbox.mapboxsdk.style.layers.BackgroundLayer;
-import com.mapbox.mapboxsdk.style.layers.CircleLayer;
-import com.mapbox.mapboxsdk.style.layers.FillExtrusionLayer;
-import com.mapbox.mapboxsdk.style.layers.FillLayer;
-import com.mapbox.mapboxsdk.style.layers.LineLayer;
-import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
-import com.mapbox.mapboxsdk.style.layers.PropertyValue;
-import com.mapbox.mapboxsdk.style.layers.RasterLayer;
-import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
-import com.mapbox.mapboxsdk.style.layers.HeatmapLayer;
-import com.mapbox.mapboxsdk.style.layers.HillshadeLayer;
-import com.mapbox.mapboxsdk.style.layers.TransitionOptions;
-import com.mapbox.mapboxsdk.style.light.Light;
-import com.mapbox.mapboxsdk.style.light.Position;
+import vn.vietmap.vietmapsdk.style.layers.BackgroundLayer;
+import vn.vietmap.vietmapsdk.style.layers.CircleLayer;
+import vn.vietmap.vietmapsdk.style.layers.FillExtrusionLayer;
+import vn.vietmap.vietmapsdk.style.layers.FillLayer;
+import vn.vietmap.vietmapsdk.style.layers.LineLayer;
+import vn.vietmap.vietmapsdk.style.layers.PropertyFactory;
+import vn.vietmap.vietmapsdk.style.layers.PropertyValue;
+import vn.vietmap.vietmapsdk.style.layers.RasterLayer;
+import vn.vietmap.vietmapsdk.style.layers.SymbolLayer;
+import vn.vietmap.vietmapsdk.style.layers.HeatmapLayer;
+import vn.vietmap.vietmapsdk.style.layers.HillshadeLayer;
+import vn.vietmap.vietmapsdk.style.layers.TransitionOptions;
+import vn.vietmap.vietmapsdk.style.light.Light;
+import vn.vietmap.vietmapsdk.style.light.Position;
 import com.mapbox.rctmgl.utils.DownloadMapImageTask;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.mapbox.rctmgl.utils;
 
-import com.mapbox.mapboxsdk.style.expressions.Expression;
+import vn.vietmap.vietmapsdk.style.expressions.Expression;
 
 public class ClusterPropertyEntry {
     public Expression operator;

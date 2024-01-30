@@ -7,12 +7,12 @@ import android.util.DisplayMetrics;
 import com.facebook.react.bridge.ReadableMap;
 import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.Point;
-import com.mapbox.mapboxsdk.camera.CameraPosition;
-import com.mapbox.mapboxsdk.camera.CameraUpdate;
-import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
-import com.mapbox.mapboxsdk.geometry.LatLng;
-import com.mapbox.mapboxsdk.geometry.LatLngBounds;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
+import vn.vietmap.vietmapsdk.camera.CameraPosition;
+import vn.vietmap.vietmapsdk.camera.CameraUpdate;
+import vn.vietmap.vietmapsdk.camera.CameraUpdateFactory;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.geometry.LatLngBounds;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
 import com.mapbox.rctmgl.components.camera.constants.CameraMode;
 import com.mapbox.rctmgl.utils.GeoJSONUtils;
 
@@ -36,7 +36,7 @@ public class CameraStop {
 
     private int mMode = CameraMode.EASE;
     private int mDuration = 2000;
-    private MapboxMap.CancelableCallback mCallback;
+    private VietMapGL.CancelableCallback mCallback;
 
     public CameraStop() {
     }
@@ -61,7 +61,7 @@ public class CameraStop {
         mDuration = duration;
     }
 
-    public void setCallback(MapboxMap.CancelableCallback callback) {
+    public void setCallback(VietMapGL.CancelableCallback callback) {
         mCallback = callback;
     }
 
@@ -81,7 +81,7 @@ public class CameraStop {
     }
 
     public CameraUpdateItem toCameraUpdate(RCTMGLMapView mapView) {
-        MapboxMap map = mapView.getMapboxMap();
+        VietMapGL map = mapView.getVietMapGL();
         CameraPosition currentCamera = map.getCameraPosition();
         CameraPosition.Builder builder = new CameraPosition.Builder(currentCamera);
 
@@ -144,7 +144,7 @@ public class CameraStop {
         return new CameraUpdateItem(map, CameraUpdateFactory.newCameraPosition(builder.build()), mDuration, mCallback, mMode);
     }
 
-    public static CameraStop fromReadableMap(Context context, @NonNull ReadableMap readableMap, MapboxMap.CancelableCallback callback) {
+    public static CameraStop fromReadableMap(Context context, @NonNull ReadableMap readableMap, VietMapGL.CancelableCallback callback) {
         CameraStop stop = new CameraStop();
 
         if (readableMap.hasKey("pitch")) {

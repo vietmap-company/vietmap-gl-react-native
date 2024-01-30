@@ -1,6 +1,6 @@
 package com.mapbox.rctmgl.components.camera;
 
-import com.mapbox.mapboxsdk.maps.MapboxMap;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
 import com.mapbox.rctmgl.components.mapview.RCTMGLMapView;
 
 import java.util.ArrayList;

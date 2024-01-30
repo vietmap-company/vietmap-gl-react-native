@@ -2,8 +2,8 @@ package com.mapbox.rctmgl.components.annotation;
 
 import androidx.annotation.NonNull;
 
-import com.mapbox.mapboxsdk.maps.MapView;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
+import vn.vietmap.vietmapsdk.maps.MapView;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ public class MarkerViewManager extends com.mapbox.mapboxsdk.plugins.markerview.M
     private MapView mapView;
     private java.lang.reflect.Method markerUpdate;
 
-    public MarkerViewManager(MapView mapView, MapboxMap mapboxMap) {
+    public MarkerViewManager(MapView mapView, VietMapGL mapboxMap) {
         super(mapView, mapboxMap);
         this.mapView = mapView;
         // this.mapboxMap = mapboxMap;

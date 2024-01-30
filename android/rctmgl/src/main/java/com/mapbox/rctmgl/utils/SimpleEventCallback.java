@@ -1,6 +1,6 @@
 package com.mapbox.rctmgl.utils;
 
-import com.mapbox.mapboxsdk.maps.MapboxMap;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
 
 import com.mapbox.rctmgl.components.AbstractEventEmitter;
 import com.mapbox.rctmgl.events.IEvent;
@@ -9,7 +9,7 @@ import com.mapbox.rctmgl.events.IEvent;
  * Created by nickitaliano on 8/31/17.
  */
 
-public class SimpleEventCallback implements MapboxMap.CancelableCallback {
+public class SimpleEventCallback implements VietMapGL.CancelableCallback {
     private AbstractEventEmitter mEventEmitter;
     private IEvent mEvent;
 

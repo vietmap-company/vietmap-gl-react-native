@@ -4,7 +4,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import com.mapbox.mapboxsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
 
 /**
  * Subclass of MarkerView so we MarkerViewManager can implement remove/restoreViews

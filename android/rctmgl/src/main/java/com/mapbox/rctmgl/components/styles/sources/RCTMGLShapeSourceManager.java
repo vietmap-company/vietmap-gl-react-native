@@ -1,5 +1,6 @@
 package com.mapbox.rctmgl.components.styles.sources;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -18,7 +19,7 @@ import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.mapbox.mapboxsdk.style.expressions.Expression;
+import vn.vietmap.vietmapsdk.style.expressions.Expression;
 import com.mapbox.rctmgl.components.AbstractEventEmitter;
 import com.mapbox.rctmgl.components.annotation.RCTMGLCallout;
 import com.mapbox.rctmgl.components.mapview.RCTMGLMapView;
@@ -86,6 +87,7 @@ public class RCTMGLShapeSourceManager extends AbstractEventEmitter<RCTMGLShapeSo
         source.setID(id);
     }
 
+    @SuppressLint("LongLogTag")
     @ReactProp(name = "url")
     public void setURL(RCTMGLShapeSource source, String urlStr) {
         try {

@@ -3,21 +3,21 @@ package com.mapbox.rctmgl.components.camera;
 import android.content.Context;
 import android.location.Location;
 
-import com.mapbox.mapboxsdk.camera.CameraPosition;
-import com.mapbox.mapboxsdk.camera.CameraUpdate;
-import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
-import com.mapbox.mapboxsdk.geometry.LatLng;
-import com.mapbox.mapboxsdk.geometry.LatLngBounds;
-import com.mapbox.mapboxsdk.geometry.VisibleRegion;
-import com.mapbox.mapboxsdk.location.OnCameraTrackingChangedListener;
-import com.mapbox.mapboxsdk.location.modes.CameraMode;
-import com.mapbox.mapboxsdk.location.modes.RenderMode;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
-import com.mapbox.mapboxsdk.maps.Style;
-import com.mapbox.mapboxsdk.location.LocationComponent;
-import com.mapbox.mapboxsdk.location.LocationComponentOptions;
-import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions;
-// import com.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerPlugin;
+import vn.vietmap.vietmapsdk.camera.CameraPosition;
+import vn.vietmap.vietmapsdk.camera.CameraUpdate;
+import vn.vietmap.vietmapsdk.camera.CameraUpdateFactory;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.geometry.LatLngBounds;
+import vn.vietmap.vietmapsdk.geometry.VisibleRegion;
+import vn.vietmap.vietmapsdk.location.OnCameraTrackingChangedListener;
+import vn.vietmap.vietmapsdk.location.modes.CameraMode;
+import vn.vietmap.vietmapsdk.location.modes.RenderMode;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.Style;
+import vn.vietmap.vietmapsdk.location.LocationComponent;
+import vn.vietmap.vietmapsdk.location.LocationComponentOptions;
+import vn.vietmap.vietmapsdk.location.LocationComponentActivationOptions;
+// import vn.vietmap.vietmapsdk.plugins.locationlayer.LocationLayerPlugin;
 import com.mapbox.rctmgl.components.AbstractMapFeature;
 import com.mapbox.rctmgl.components.location.LocationComponentManager;
 import com.mapbox.rctmgl.components.mapview.RCTMGLMapView;
@@ -40,7 +40,7 @@ import com.facebook.react.bridge.WritableNativeMap;
 
 import com.mapbox.geojson.Point;
 
-import com.mapbox.mapboxsdk.location.permissions.PermissionsManager;
+import vn.vietmap.vietmapsdk.location.permissions.PermissionsManager;
 
 import androidx.annotation.NonNull;
 
@@ -87,7 +87,7 @@ public class RCTMGLCamera extends AbstractMapFeature {
     private LocationManager.OnUserLocationChange mLocationChangeListener = new LocationManager.OnUserLocationChange() {
         @Override
         public void onLocationChange(Location nextLocation) {
-        if (getMapboxMap() == null || mLocationComponentManager == null || !mLocationComponentManager.hasLocationComponent() || (!mFollowUserLocation)) {
+        if (getVietMapGL() == null || mLocationComponentManager == null || !mLocationComponentManager.hasLocationComponent() || (!mFollowUserLocation)) {
             return;
         }
 
@@ -96,7 +96,7 @@ public class RCTMGLCamera extends AbstractMapFeature {
         }
     };
 
-    private MapboxMap.CancelableCallback mCameraCallback = new MapboxMap.CancelableCallback() {
+    private VietMapGL.CancelableCallback mCameraCallback = new VietMapGL.CancelableCallback() {
         @Override
         public void onCancel() {
             if (!hasSentFirstRegion) {
@@ -170,14 +170,14 @@ public class RCTMGLCamera extends AbstractMapFeature {
     }
 
     private void updateMaxBounds() {
-        MapboxMap map = getMapboxMap();
+        VietMapGL map = getVietMapGL();
         if (map != null && mMaxBounds != null) {
             map.setLatLngBoundsForCameraTarget(mMaxBounds);
         }
     }
 
     private void updateMaxMinZoomLevel() {
-        MapboxMap map = getMapboxMap();
+        VietMapGL map = getVietMapGL();
         if (map != null) {
             if (mMinZoomLevel >= 0.0) {
                 map.setMinZoomPreference(mMinZoomLevel);
@@ -281,7 +281,7 @@ public class RCTMGLCamera extends AbstractMapFeature {
 
         double zoom = mZoomLevel;
         if (zoom < 0) {
-            double camerZoom = mMapView.getMapboxMap().getCameraPosition().zoom;
+            double camerZoom = mMapView.getVietMapGL().getCameraPosition().zoom;
             if (camerZoom < minimumZoomLevelForUserTracking) {
                 zoom = defaultZoomLevelForUserTracking;
             } else {
@@ -289,7 +289,7 @@ public class RCTMGLCamera extends AbstractMapFeature {
             }
         }
         CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(getUserLocationUpdateCameraPosition(zoom));
-        MapboxMap.CancelableCallback cameraCallback = new MapboxMap.CancelableCallback() {
+        VietMapGL.CancelableCallback cameraCallback = new VietMapGL.CancelableCallback() {
             @Override
             public void onCancel() {
                 mUserTrackingState = UserTrackingState.CHANGED;
@@ -314,7 +314,7 @@ public class RCTMGLCamera extends AbstractMapFeature {
         CameraPosition cameraPosition = mMapView.getCameraPosition();
         CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(getUserLocationUpdateCameraPosition(cameraPosition.zoom));
 
-        MapboxMap.CancelableCallback callback = new MapboxMap.CancelableCallback() {
+        VietMapGL.CancelableCallback callback = new VietMapGL.CancelableCallback() {
             @Override
             public void onCancel() {
                 mUserTrackingState = UserTrackingState.CHANGED;
@@ -342,7 +342,7 @@ public class RCTMGLCamera extends AbstractMapFeature {
             mLocationManager.enable();
         }
 
-        mMapView.getMapboxMap().getStyle(new Style.OnStyleLoaded() {
+        mMapView.getVietMapGL().getStyle(new Style.OnStyleLoaded() {
             @Override
             public void onStyleLoaded(@NonNull Style style) {
                 enableLocationComponent(style);
@@ -473,8 +473,8 @@ public class RCTMGLCamera extends AbstractMapFeature {
 
         }
 
-        if (getMapboxMap() != null) {
-            updateLocationLayer(getMapboxMap().getStyle());
+        if (getVietMapGL() != null) {
+            updateLocationLayer(getVietMapGL().getStyle());
         }
     }
 
@@ -497,11 +497,11 @@ public class RCTMGLCamera extends AbstractMapFeature {
         }
     }
 
-    MapboxMap getMapboxMap() {
+    VietMapGL getVietMapGL() {
         if (mMapView == null) {
             return null;
         }
-        return mMapView.getMapboxMap();
+        return mMapView.getVietMapGL();
     }
 
     /**

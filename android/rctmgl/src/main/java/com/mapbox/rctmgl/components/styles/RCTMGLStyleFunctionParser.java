@@ -10,8 +10,8 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
 import com.facebook.react.bridge.ReadableNativeArray;
 import com.facebook.react.bridge.ReadableType;
-import com.mapbox.mapboxsdk.style.expressions.Expression.Stop;
-import com.mapbox.mapboxsdk.style.layers.PropertyValue;
+import vn.vietmap.vietmapsdk.style.expressions.Expression.Stop;
+import vn.vietmap.vietmapsdk.style.layers.PropertyValue;
 
 import java.text.NumberFormat;
 import java.text.ParseException;

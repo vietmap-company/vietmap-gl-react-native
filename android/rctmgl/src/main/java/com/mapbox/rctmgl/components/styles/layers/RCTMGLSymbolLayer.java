@@ -2,8 +2,8 @@ package com.mapbox.rctmgl.components.styles.layers;
 
 import android.content.Context;
 
-import com.mapbox.mapboxsdk.style.expressions.Expression;
-import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
+import vn.vietmap.vietmapsdk.style.expressions.Expression;
+import vn.vietmap.vietmapsdk.style.layers.SymbolLayer;
 import com.mapbox.rctmgl.components.mapview.RCTMGLMapView;
 import com.mapbox.rctmgl.components.styles.RCTMGLStyle;
 import com.mapbox.rctmgl.components.styles.RCTMGLStyleFactory;

@@ -7,7 +7,7 @@ import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
 import com.mapbox.geojson.Feature;
-import com.mapbox.mapboxsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
 import com.mapbox.rctmgl.components.styles.sources.RCTSource;
 import com.mapbox.rctmgl.events.constants.EventKeys;
 import com.mapbox.rctmgl.events.constants.EventTypes;

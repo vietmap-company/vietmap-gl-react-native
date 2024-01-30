@@ -12,12 +12,12 @@ import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
-import com.mapbox.mapboxsdk.maps.Style;
-import com.mapbox.mapboxsdk.style.expressions.Expression;
-import com.mapbox.mapboxsdk.style.sources.GeoJsonOptions;
-import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
-import com.mapbox.mapboxsdk.utils.BitmapUtils;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.Style;
+import vn.vietmap.vietmapsdk.style.expressions.Expression;
+import vn.vietmap.vietmapsdk.style.sources.GeoJsonOptions;
+import vn.vietmap.vietmapsdk.style.sources.GeoJsonSource;
+import vn.vietmap.vietmapsdk.utils.BitmapUtils;
 import com.mapbox.rctmgl.R;
 import com.mapbox.rctmgl.components.mapview.RCTMGLMapView;
 import com.mapbox.rctmgl.events.AndroidCallbackEvent;
@@ -64,10 +64,10 @@ public class RCTMGLShapeSource extends RCTSource<GeoJsonSource> {
     @Override
     public void addToMap(final RCTMGLMapView mapView) {
         // Wait for style before adding the source to the map
-        mapView.getMapboxMap().getStyle(new Style.OnStyleLoaded() {
+        mapView.getVietMapGL().getStyle(new Style.OnStyleLoaded() {
             @Override
             public void onStyleLoaded(@NonNull Style style) {
-                MapboxMap map = mapView.getMapboxMap();
+                VietMapGL map = mapView.getVietMapGL();
                 RCTMGLShapeSource.super.addToMap(mapView);
             }
         });

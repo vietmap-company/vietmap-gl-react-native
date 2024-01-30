@@ -8,9 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 
-import com.mapbox.mapboxsdk.maps.MapboxMap;
-import com.mapbox.mapboxsdk.maps.Style;
-import com.mapbox.mapboxsdk.utils.BitmapUtils;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.Style;
+import vn.vietmap.vietmapsdk.utils.BitmapUtils;
 import com.mapbox.rctmgl.R;
 import com.mapbox.rctmgl.components.AbstractMapFeature;
 import com.mapbox.rctmgl.components.mapview.RCTMGLMapView;
@@ -35,7 +35,7 @@ public class RCTMGLImages extends AbstractMapFeature {
     private Map<String, BitmapDrawable> mNativeImages;
     private RCTMGLImagesManager mManager;
     private boolean mSendMissingImageEvents = false;
-    private MapboxMap mMap;
+    private VietMapGL mMap;
 
     protected String mID;
 
@@ -132,7 +132,7 @@ public class RCTMGLImages extends AbstractMapFeature {
         return Collections.singletonList((Map.Entry<K,V>)new AbstractMap.SimpleEntry<K, V>(k, v));
     }
 
-    public boolean addMissingImageToStyle(@NonNull String id, @NonNull MapboxMap map) {
+    public boolean addMissingImageToStyle(@NonNull String id, @NonNull VietMapGL map) {
         if (mNativeImages != null) {
             BitmapDrawable drawable = mNativeImages.get(id);
             if (drawable != null) {
@@ -151,25 +151,25 @@ public class RCTMGLImages extends AbstractMapFeature {
         return false;
     }
 
-    public void addImagesToStyle(Map<String, ImageEntry> images, @NonNull MapboxMap map) {
+    public void addImagesToStyle(Map<String, ImageEntry> images, @NonNull VietMapGL map) {
         if (images != null) {
             addRemoteImages(new ArrayList<>(images.entrySet()), map);
         }
     }
 
-    public void addNativeImagesToStyle(Map<String, BitmapDrawable> images, @NonNull MapboxMap map) {
+    public void addNativeImagesToStyle(Map<String, BitmapDrawable> images, @NonNull VietMapGL map) {
         if (images != null) {
             addNativeImages(new ArrayList<>(images.entrySet()), map);
         }
     }
 
-    public void sendImageMissingEvent(@NonNull String id, @NonNull MapboxMap map) {
+    public void sendImageMissingEvent(@NonNull String id, @NonNull VietMapGL map) {
         if (mSendMissingImageEvents) {
             mManager.handleEvent(ImageMissingEvent.makeImageMissingEvent(this, id));
         }
     }
 
-    private boolean hasImage(String imageId, @NonNull MapboxMap map) {
+    private boolean hasImage(String imageId, @NonNull VietMapGL map) {
         Style style = map.getStyle();
         return style != null && style.getImage(imageId) != null;
     }
@@ -182,7 +182,7 @@ public class RCTMGLImages extends AbstractMapFeature {
         mapView.getStyle(new Style.OnStyleLoaded() {
             @Override
             public void onStyleLoaded(@NonNull Style style) {
-                MapboxMap map = mapView.getMapboxMap();
+                VietMapGL map = mapView.getVietMapGL();
                 mMap = map;
                 addNativeImagesToStyle(mNativeImages, map);
                 addImagesToStyle(mImages, map);
@@ -191,7 +191,7 @@ public class RCTMGLImages extends AbstractMapFeature {
         });
     }
 
-    private void addNativeImages(@Nullable List<Map.Entry<String, BitmapDrawable>> imageEntries, @NonNull MapboxMap map) {
+    private void addNativeImages(@Nullable List<Map.Entry<String, BitmapDrawable>> imageEntries, @NonNull VietMapGL map) {
         Style style = map.getStyle();
         if (style == null || imageEntries == null) return;
 
@@ -203,7 +203,7 @@ public class RCTMGLImages extends AbstractMapFeature {
         }
     }
 
-    private void addRemoteImages(@Nullable List<Map.Entry<String, ImageEntry>> imageEntries, @NonNull MapboxMap map) {
+    private void addRemoteImages(@Nullable List<Map.Entry<String, ImageEntry>> imageEntries, @NonNull VietMapGL map) {
         Style style = map.getStyle();
         if (style == null || imageEntries == null) return;
 

@@ -3,14 +3,14 @@ package com.mapbox.rctmgl.components.location;
 import android.annotation.SuppressLint;
 import android.content.Context;
 
-import com.mapbox.mapboxsdk.location.LocationComponent;
-import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions;
-import com.mapbox.mapboxsdk.location.LocationComponentOptions;
-import com.mapbox.mapboxsdk.location.OnCameraTrackingChangedListener;
-import com.mapbox.mapboxsdk.location.modes.CameraMode;
-import com.mapbox.mapboxsdk.location.modes.RenderMode;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
-import com.mapbox.mapboxsdk.maps.Style;
+import vn.vietmap.vietmapsdk.location.LocationComponent;
+import vn.vietmap.vietmapsdk.location.LocationComponentActivationOptions;
+import vn.vietmap.vietmapsdk.location.LocationComponentOptions;
+import vn.vietmap.vietmapsdk.location.OnCameraTrackingChangedListener;
+import vn.vietmap.vietmapsdk.location.modes.CameraMode;
+import vn.vietmap.vietmapsdk.location.modes.RenderMode;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.Style;
 import com.mapbox.rctmgl.R;
 import com.mapbox.rctmgl.components.mapview.RCTMGLMapView;
 import com.mapbox.rctmgl.location.LocationManager;
@@ -24,7 +24,7 @@ import androidx.annotation.NonNull;
  */
 public class LocationComponentManager {
     private RCTMGLMapView mMapView = null;
-    private MapboxMap mMap = null;
+    private VietMapGL mMap = null;
 
     private LocationManager mLocationManager = null;
     private LocationComponent mLocationComponent = null;
@@ -34,7 +34,7 @@ public class LocationComponentManager {
 
     public LocationComponentManager(RCTMGLMapView rctmglMapView, Context context) {
         mMapView = rctmglMapView;
-        mMap = mMapView.getMapboxMap();
+        mMap = mMapView.getVietMapGL();
         mContext = context;
 
         mLocationManager = LocationManager.getInstance(context);

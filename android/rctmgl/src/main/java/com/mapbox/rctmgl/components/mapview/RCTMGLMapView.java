@@ -8,7 +8,6 @@ import android.graphics.RectF;
 import android.location.Location;
 import android.os.Handler;
 import androidx.annotation.NonNull;
-import androidx.annotation.UiThread;
 
 import android.util.DisplayMetrics;
 import android.util.Pair;
@@ -17,7 +16,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import com.mapbox.mapboxsdk.log.Logger;
+import vn.vietmap.vietmapsdk.log.Logger;
 
 import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.ReactContext;
@@ -27,33 +26,32 @@ import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeArray;
 import com.facebook.react.bridge.WritableNativeMap;
-import com.mapbox.android.gestures.MoveGestureDetector;
+import vn.vietmap.android.gestures.MoveGestureDetector;
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
-import com.mapbox.mapboxsdk.camera.CameraPosition;
-import com.mapbox.mapboxsdk.camera.CameraUpdate;
-import com.mapbox.mapboxsdk.geometry.LatLng;
-import com.mapbox.mapboxsdk.geometry.VisibleRegion;
-import com.mapbox.mapboxsdk.maps.AttributionDialogManager;
-import com.mapbox.mapboxsdk.maps.MapView;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
-import com.mapbox.mapboxsdk.maps.MapboxMapOptions;
-import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
-import com.mapbox.mapboxsdk.maps.Style;
-import com.mapbox.mapboxsdk.maps.UiSettings;
-import com.mapbox.mapboxsdk.plugins.localization.LocalizationPlugin;
-import com.mapbox.mapboxsdk.plugins.annotation.OnSymbolClickListener;
-import com.mapbox.mapboxsdk.plugins.annotation.OnSymbolDragListener;
-import com.mapbox.mapboxsdk.plugins.annotation.Symbol;
-import com.mapbox.mapboxsdk.plugins.annotation.SymbolManager;
-import com.mapbox.mapboxsdk.style.expressions.Expression;
-import com.mapbox.mapboxsdk.style.layers.Layer;
-import com.mapbox.mapboxsdk.style.layers.Property;
+import vn.vietmap.vietmapsdk.camera.CameraPosition;
+import vn.vietmap.vietmapsdk.camera.CameraUpdate;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.geometry.VisibleRegion;
+import vn.vietmap.vietmapsdk.maps.AttributionDialogManager;
+import vn.vietmap.vietmapsdk.maps.MapView;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.VietMapGLOptions;
+import vn.vietmap.vietmapsdk.maps.OnMapReadyCallback;
+import vn.vietmap.vietmapsdk.maps.Style;
+import vn.vietmap.vietmapsdk.maps.UiSettings;
+import vn.vietmap.vietmapsdk.plugins.localization.LocalizationPlugin;
+import vn.vietmap.vietmapsdk.plugins.annotation.OnSymbolClickListener;
+import vn.vietmap.vietmapsdk.plugins.annotation.OnSymbolDragListener;
+import vn.vietmap.vietmapsdk.plugins.annotation.Symbol;
+import vn.vietmap.vietmapsdk.plugins.annotation.SymbolManager;
+import vn.vietmap.vietmapsdk.style.expressions.Expression;
+import vn.vietmap.vietmapsdk.style.layers.Layer;
+import vn.vietmap.vietmapsdk.style.layers.Property;
 import com.mapbox.rctmgl.R;
 import com.mapbox.rctmgl.components.AbstractMapFeature;
 import com.mapbox.rctmgl.components.annotation.RCTMGLPointAnnotation;
 import com.mapbox.rctmgl.components.annotation.RCTMGLMarkerView;
-import com.mapbox.rctmgl.components.annotation.MarkerView;
 import com.mapbox.rctmgl.components.annotation.MarkerViewManager;
 import com.mapbox.rctmgl.components.camera.RCTMGLCamera;
 import com.mapbox.rctmgl.components.images.RCTMGLImages;
@@ -84,7 +82,7 @@ import org.json.*;
 
 import javax.annotation.Nullable;
 
-import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.visibility;
+import static vn.vietmap.vietmapsdk.style.layers.PropertyFactory.visibility;
 import static com.mapbox.rctmgl.modules.RCTMGLOfflineModule.DEFAULT_STYLE_URL;
 
 /**
@@ -92,8 +90,8 @@ import static com.mapbox.rctmgl.modules.RCTMGLOfflineModule.DEFAULT_STYLE_URL;
  */
 
 @SuppressWarnings({ "MissingPermission" })
-public class RCTMGLMapView extends MapView implements OnMapReadyCallback, MapboxMap.OnMapClickListener,
-        MapboxMap.OnMapLongClickListener, MapView.OnCameraIsChangingListener, MapView.OnCameraDidChangeListener,
+public class RCTMGLMapView extends MapView implements OnMapReadyCallback, VietMapGL.OnMapClickListener,
+        VietMapGL.OnMapLongClickListener, MapView.OnCameraIsChangingListener, MapView.OnCameraDidChangeListener,
         MapView.OnDidFailLoadingMapListener, MapView.OnDidFinishLoadingMapListener,
         MapView.OnWillStartRenderingFrameListener, MapView.OnDidFinishRenderingFrameListener,
         MapView.OnWillStartRenderingMapListener, MapView.OnDidFinishRenderingMapListener,
@@ -117,7 +115,7 @@ public class RCTMGLMapView extends MapView implements OnMapReadyCallback, Mapbox
     private CameraChangeTracker mCameraChangeTracker = new CameraChangeTracker();
     private List<Pair<Integer, ReadableArray>> mPreRenderMethods = new ArrayList<>();
 
-    private MapboxMap mMap;
+    private VietMapGL mMap;
 
     private LocalizationPlugin mLocalizationPlugin;
 
@@ -156,7 +154,7 @@ public class RCTMGLMapView extends MapView implements OnMapReadyCallback, Mapbox
 
     private @Nullable Integer mTintColor = null;
 
-    public RCTMGLMapView(Context context, RCTMGLMapViewManager manager, MapboxMapOptions options) {
+    public RCTMGLMapView(Context context, RCTMGLMapViewManager manager, VietMapGLOptions options) {
         super(context, options);
 
         mContext = context;
@@ -338,11 +336,11 @@ public class RCTMGLMapView extends MapView implements OnMapReadyCallback, Mapbox
         return mMap.getCameraPosition();
     }
 
-    public void animateCamera(CameraUpdate cameraUpdate, MapboxMap.CancelableCallback callback) {
+    public void animateCamera(CameraUpdate cameraUpdate, VietMapGL.CancelableCallback callback) {
         mMap.animateCamera(cameraUpdate, callback);
     }
 
-    public void moveCamera(CameraUpdate cameraUpdate, MapboxMap.CancelableCallback callback) {
+    public void moveCamera(CameraUpdate cameraUpdate, VietMapGL.CancelableCallback callback) {
         mMap.moveCamera(cameraUpdate, callback);
     }
 
@@ -350,7 +348,7 @@ public class RCTMGLMapView extends MapView implements OnMapReadyCallback, Mapbox
         mMap.moveCamera(cameraUpdate);
     }
 
-    public void easeCamera(CameraUpdate cameraUpdate, int duration, boolean easingInterpolator, MapboxMap.CancelableCallback callback) {
+    public void easeCamera(CameraUpdate cameraUpdate, int duration, boolean easingInterpolator, VietMapGL.CancelableCallback callback) {
         mMap.easeCamera(cameraUpdate, duration, easingInterpolator, callback);
     }
 
@@ -386,7 +384,7 @@ public class RCTMGLMapView extends MapView implements OnMapReadyCallback, Mapbox
         return null;
     }
 
-    public MapboxMap getMapboxMap() {
+    public VietMapGL getVietMapGL() {
         return mMap;
     }
 
@@ -437,7 +435,7 @@ public class RCTMGLMapView extends MapView implements OnMapReadyCallback, Mapbox
 
 
     @Override
-    public void onMapReady(final MapboxMap mapboxMap) {
+    public void onMapReady(final VietMapGL mapboxMap) {
         mMap = mapboxMap;
 
         if (isJSONValid(mStyleURL)) {
@@ -463,14 +461,14 @@ public class RCTMGLMapView extends MapView implements OnMapReadyCallback, Mapbox
         updateInsets();
         updateUISettings();
 
-        mMap.addOnCameraIdleListener(new MapboxMap.OnCameraIdleListener() {
+        mMap.addOnCameraIdleListener(new VietMapGL.OnCameraIdleListener() {
             @Override
             public void onCameraIdle() {
                 sendRegionDidChangeEvent();
             }
         });
 
-        mMap.addOnCameraMoveStartedListener(new MapboxMap.OnCameraMoveStartedListener() {
+        mMap.addOnCameraMoveStartedListener(new VietMapGL.OnCameraMoveStartedListener() {
             @Override
             public void onCameraMoveStarted(int reason) {
                 mCameraChangeTracker.setReason(reason);
@@ -478,7 +476,7 @@ public class RCTMGLMapView extends MapView implements OnMapReadyCallback, Mapbox
             }
         });
 
-        mMap.addOnCameraMoveListener(new MapboxMap.OnCameraMoveListener() {
+        mMap.addOnCameraMoveListener(new VietMapGL.OnCameraMoveListener() {
             @Override
             public void onCameraMove() {
                 if (markerViewManager != null) {
@@ -487,7 +485,7 @@ public class RCTMGLMapView extends MapView implements OnMapReadyCallback, Mapbox
             }
         });
 
-        mMap.addOnMoveListener(new MapboxMap.OnMoveListener() {
+        mMap.addOnMoveListener(new VietMapGL.OnMoveListener() {
             @Override
             public void onMoveBegin(MoveGestureDetector detector) {
                 mCameraChangeTracker.setReason(CameraChangeTracker.USER_GESTURE);
@@ -848,7 +846,7 @@ public class RCTMGLMapView extends MapView implements OnMapReadyCallback, Mapbox
         if (position == null) {
             // reset from explicit to default
             if (mLogoGravity != null) {
-                MapboxMapOptions defaultOptions = MapboxMapOptions.createFromAttributes(mContext);
+                VietMapGLOptions defaultOptions = VietMapGLOptions.createFromAttributes(mContext);
                 mLogoGravity = defaultOptions.getLogoGravity();
                 mLogoMargins = Arrays.copyOf(defaultOptions.getLogoMargins(), 4);
                 updateUISettings();
@@ -903,7 +901,7 @@ public class RCTMGLMapView extends MapView implements OnMapReadyCallback, Mapbox
         if (position == null) {
             // reset from explicit to default
             if (mAttributionGravity != null) {
-                MapboxMapOptions defaultOptions = MapboxMapOptions.createFromAttributes(mContext);
+                VietMapGLOptions defaultOptions = VietMapGLOptions.createFromAttributes(mContext);
                 mAttributionGravity = defaultOptions.getAttributionGravity();
                 mAttributionMargin = Arrays.copyOf(defaultOptions.getAttributionMargins(), 4);
                 updateUISettings();
@@ -1016,7 +1014,7 @@ public class RCTMGLMapView extends MapView implements OnMapReadyCallback, Mapbox
             throw new Error("takeSnap should only be called after the map has rendered");
         }
 
-        mMap.snapshot(new MapboxMap.SnapshotReadyCallback() {
+        mMap.snapshot(new VietMapGL.SnapshotReadyCallback() {
             @Override
             public void onSnapshotReady(Bitmap snapshot) {
                 WritableMap payload = new WritableNativeMap();
@@ -1496,7 +1494,7 @@ public class RCTMGLMapView extends MapView implements OnMapReadyCallback, Mapbox
         return mOffscreenAnnotationViewContainer;
     }
 
-    public MarkerViewManager getMarkerViewManager(MapboxMap map) {
+    public MarkerViewManager getMarkerViewManager(VietMapGL map) {
         if (markerViewManager == null) {
             if (map == null) {
                 throw new Error("makerViewManager should be called one the map has loaded");
@@ -1522,6 +1520,6 @@ public class RCTMGLMapView extends MapView implements OnMapReadyCallback, Mapbox
         mTintColor = tintColor;
         updateUISettings();
         if (mLocationComponentManager == null) return;
-        mLocationComponentManager.update(getMapboxMap().getStyle());
+        mLocationComponentManager.update(getVietMapGL().getStyle());
     }
 }

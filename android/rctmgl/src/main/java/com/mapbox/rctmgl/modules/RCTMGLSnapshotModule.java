@@ -19,10 +19,10 @@ import com.facebook.react.module.annotations.ReactModule;
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.Point;
-import com.mapbox.mapboxsdk.camera.CameraPosition;
-import com.mapbox.mapboxsdk.snapshotter.MapSnapshot;
-import com.mapbox.mapboxsdk.snapshotter.MapSnapshotter;
-import com.mapbox.mapboxsdk.storage.FileSource;
+import vn.vietmap.vietmapsdk.camera.CameraPosition;
+import vn.vietmap.vietmapsdk.snapshotter.MapSnapshot;
+import vn.vietmap.vietmapsdk.snapshotter.MapSnapshotter;
+import vn.vietmap.vietmapsdk.storage.FileSource;
 import com.mapbox.rctmgl.utils.BitmapUtils;
 import com.mapbox.rctmgl.utils.GeoJSONUtils;
 

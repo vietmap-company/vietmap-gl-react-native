@@ -2,9 +2,9 @@ package com.mapbox.rctmgl.utils;
 
 import android.graphics.PointF;
 
-import com.mapbox.mapboxsdk.geometry.LatLng;
-import com.mapbox.mapboxsdk.geometry.LatLngBounds;
-import com.mapbox.mapboxsdk.geometry.VisibleRegion;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.geometry.LatLngBounds;
+import vn.vietmap.vietmapsdk.geometry.VisibleRegion;
 
 /**
  * Created by nickitaliano on 1/5/18.

@@ -4,8 +4,8 @@ package com.mapbox.rctmgl.location;
 import com.mapbox.mapboxsdk.plugins.locationlayer.modes.RenderMode;
 */
 
-import com.mapbox.mapboxsdk.location.modes.CameraMode;
-import com.mapbox.mapboxsdk.location.modes.RenderMode;
+import vn.vietmap.vietmapsdk.location.modes.CameraMode;
+import vn.vietmap.vietmapsdk.location.modes.RenderMode;
 
 /**
  * Created by nickitaliano on 12/13/17.

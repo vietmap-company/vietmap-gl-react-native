@@ -11,9 +11,9 @@ import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.LayoutShadowNode;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.mapbox.mapboxsdk.geometry.LatLngBounds;
-import com.mapbox.mapboxsdk.log.Logger;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
+import vn.vietmap.vietmapsdk.geometry.LatLngBounds;
+import vn.vietmap.vietmapsdk.log.Logger;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
 import com.mapbox.rctmgl.components.AbstractEventEmitter;
 import com.mapbox.rctmgl.events.constants.EventKeys;
 import com.mapbox.rctmgl.utils.ConvertUtils;
@@ -67,7 +67,7 @@ public class RCTMGLMapViewManager extends AbstractEventEmitter<RCTMGLMapView> {
     protected void onAfterUpdateTransaction(RCTMGLMapView mapView) {
         super.onAfterUpdateTransaction(mapView);
 
-        if (mapView.getMapboxMap() == null) {
+        if (mapView.getVietMapGL() == null) {
             mViews.put(mapView.getId(), mapView);
             mapView.init();
         }
@@ -247,8 +247,8 @@ public class RCTMGLMapViewManager extends AbstractEventEmitter<RCTMGLMapView> {
     @Override
     public void receiveCommand(RCTMGLMapView mapView, int commandID, @Nullable ReadableArray args) {
         // allows method calls to work with componentDidMount
-        MapboxMap mapboxMap = mapView.getMapboxMap();
-        if (mapboxMap == null) {
+        VietMapGL vietMapGL = mapView.getVietMapGL();
+        if (vietMapGL == null) {
             mapView.enqueuePreRenderMapMethod(commandID, args);
             return;
         }

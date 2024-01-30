@@ -30,7 +30,7 @@ public class LocationEvent implements IEvent {
     @Override
     public int getID() {
         if (mapView != null) {
-            return mapView.getId();
+            return mapView.offscreenAnnotationViewContainer().getId();
         }
         return -1;
     }

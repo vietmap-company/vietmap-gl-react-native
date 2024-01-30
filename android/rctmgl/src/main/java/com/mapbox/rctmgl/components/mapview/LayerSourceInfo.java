@@ -1,14 +1,14 @@
 package com.mapbox.rctmgl.components.mapview;
 
-import com.mapbox.mapboxsdk.style.layers.CircleLayer;
-import com.mapbox.mapboxsdk.style.layers.FillExtrusionLayer;
-import com.mapbox.mapboxsdk.style.layers.FillLayer;
-import com.mapbox.mapboxsdk.style.layers.HeatmapLayer;
-import com.mapbox.mapboxsdk.style.layers.HillshadeLayer;
-import com.mapbox.mapboxsdk.style.layers.Layer;
-import com.mapbox.mapboxsdk.style.layers.LineLayer;
-import com.mapbox.mapboxsdk.style.layers.RasterLayer;
-import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
+import vn.vietmap.vietmapsdk.style.layers.CircleLayer;
+import vn.vietmap.vietmapsdk.style.layers.FillExtrusionLayer;
+import vn.vietmap.vietmapsdk.style.layers.FillLayer;
+import vn.vietmap.vietmapsdk.style.layers.HeatmapLayer;
+import vn.vietmap.vietmapsdk.style.layers.HillshadeLayer;
+import vn.vietmap.vietmapsdk.style.layers.Layer;
+import vn.vietmap.vietmapsdk.style.layers.LineLayer;
+import vn.vietmap.vietmapsdk.style.layers.RasterLayer;
+import vn.vietmap.vietmapsdk.style.layers.SymbolLayer;
 
 import javax.annotation.Nullable;
 

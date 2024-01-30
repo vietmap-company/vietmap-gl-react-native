@@ -14,10 +14,10 @@ import com.mapbox.geojson.LineString;
 import com.mapbox.geojson.MultiPoint;
 import com.mapbox.geojson.Point;
 import com.mapbox.geojson.Polygon;
-import com.mapbox.mapboxsdk.geometry.LatLng;
-import com.mapbox.mapboxsdk.geometry.LatLngBounds;
-import com.mapbox.mapboxsdk.geometry.LatLngQuad;
-import com.mapbox.mapboxsdk.style.light.Position;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.geometry.LatLngBounds;
+import vn.vietmap.vietmapsdk.geometry.LatLngQuad;
+import vn.vietmap.vietmapsdk.style.light.Position;
 import com.mapbox.turf.TurfMeasurement;
 
 import java.util.ArrayList;

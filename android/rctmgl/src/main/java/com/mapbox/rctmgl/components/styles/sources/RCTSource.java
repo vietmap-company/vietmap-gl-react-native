@@ -9,11 +9,11 @@ import android.view.View;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.common.MapBuilder;
 import com.mapbox.geojson.Feature;
-import com.mapbox.mapboxsdk.geometry.LatLng;
-import com.mapbox.mapboxsdk.log.Logger;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
-import com.mapbox.mapboxsdk.maps.Style;
-import com.mapbox.mapboxsdk.style.sources.Source;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.log.Logger;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.Style;
+import vn.vietmap.vietmapsdk.style.sources.Source;
 import com.mapbox.rctmgl.components.AbstractMapFeature;
 import com.mapbox.rctmgl.components.mapview.RCTMGLMapView;
 import com.mapbox.rctmgl.components.styles.layers.RCTLayer;
@@ -35,7 +35,7 @@ public abstract class RCTSource<T extends Source> extends AbstractMapFeature {
     public static final double DEFAULT_HITBOX_HEIGHT = 44.0;
 
     protected RCTMGLMapView mMapView;
-    protected MapboxMap mMap;
+    protected VietMapGL mMap;
 
     protected String mID;
     protected T mSource;
@@ -118,7 +118,7 @@ public abstract class RCTSource<T extends Source> extends AbstractMapFeature {
     @Override
     public void addToMap(RCTMGLMapView mapView) {
         mMapView = mapView;
-        mMap = mapView.getMapboxMap();
+        mMap = mapView.getVietMapGL();
         mMap.getStyle(new Style.OnStyleLoaded() {
             public void onStyleLoaded(@NonNull Style style) {
                 T existingSource = style.getSourceAs(mID);

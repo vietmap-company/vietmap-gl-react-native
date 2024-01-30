@@ -5,18 +5,19 @@ import android.location.Location;
 import android.os.Looper;
 import android.util.Log;
 
-import com.mapbox.mapboxsdk.location.engine.LocationEngine;
-import com.mapbox.mapboxsdk.location.engine.LocationEngineCallback;
+import vn.vietmap.vietmapsdk.location.engine.LocationEngine;
+import vn.vietmap.vietmapsdk.location.engine.LocationEngineCallback;
 
 /*
 import com.mapbox.android.core.location.LocationEngineListener;
 import com.mapbox.android.core.location.LocationEnginePriority;
 */
 
-import com.mapbox.mapboxsdk.location.engine.LocationEngineProvider;
-import com.mapbox.mapboxsdk.location.engine.LocationEngineRequest;
-import com.mapbox.mapboxsdk.location.engine.LocationEngineResult;
-import com.mapbox.mapboxsdk.location.permissions.PermissionsManager;
+//import vn.vietmap.vietmapsdk.location.engine.LocationEngineProvider;
+import vn.vietmap.vietmapsdk.location.engine.LocationEngineDefault;
+import vn.vietmap.vietmapsdk.location.engine.LocationEngineRequest;
+import vn.vietmap.vietmapsdk.location.engine.LocationEngineResult;
+import vn.vietmap.vietmapsdk.location.permissions.PermissionsManager;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -62,8 +63,11 @@ public class LocationManager implements LocationEngineCallback<LocationEngineRes
         this.buildEngineRequest();
 
     }
+
     private void buildEngineRequest() {
-        locationEngine = LocationEngineProvider.getBestLocationEngine(this.context.getApplicationContext());
+//        locationEngine = LocationEngineProvider.getBestLocationEngine(this.context.getApplicationContext());
+        LocationEngineDefault locationEngineDefault = LocationEngineDefault.INSTANCE;
+        locationEngine = locationEngineDefault.getDefaultLocationEngine(context);
         locationEngineRequest = new LocationEngineRequest.Builder(DEFAULT_INTERVAL_MILLIS)
                 .setFastestInterval(DEFAULT_FASTEST_INTERVAL_MILLIS)
                 .setPriority(LocationEngineRequest.PRIORITY_HIGH_ACCURACY)
@@ -82,9 +86,11 @@ public class LocationManager implements LocationEngineCallback<LocationEngineRes
             listeners.remove(listener);
         }
     }
+
     public void setMinDisplacement(float minDisplacement) {
         mMinDisplacement = minDisplacement;
     }
+
     public void enable() {
         if (!PermissionsManager.areLocationPermissionsGranted(context)) {
             return;
@@ -138,8 +144,7 @@ public class LocationManager implements LocationEngineCallback<LocationEngineRes
 
         try {
             locationEngine.getLastLocation(callback);
-        }
-        catch(Exception exception) {
+        } catch (Exception exception) {
             Log.w(LOG_TAG, exception);
             callback.onFailure(exception);
         }
