@@ -1,5 +1,5 @@
 #import <QuartzCore/QuartzCore.h>
-@import Mapbox;
+@import VietMap;
 
 @protocol MGLUserLocationHeadingIndicator <NSObject>
 

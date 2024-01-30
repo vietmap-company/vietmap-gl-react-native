@@ -6,7 +6,7 @@
 //  Copyright © 2017 Mapbox Inc. All rights reserved.
 //
 
-@import Mapbox;
+@import VietMap;
 #import "RCTMGLCamera.h"
 
 @interface CameraStop : NSObject

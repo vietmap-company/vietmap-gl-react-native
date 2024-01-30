@@ -11,7 +11,7 @@
 #import <React/RCTConvert.h>
 #import <React/RCTImageLoader.h>
 
-@import Mapbox;
+@import VietMap;
 
 @interface RCTMGLUtils: NSObject
 

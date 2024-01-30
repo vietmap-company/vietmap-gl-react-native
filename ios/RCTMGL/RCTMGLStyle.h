@@ -5,7 +5,7 @@
 #import "RCTMGLStyleValue.h"
 #import <React/RCTBridge.h>
 
-@import Mapbox;
+@import VietMap;
 
 @interface RCTMGLStyle : NSObject
 

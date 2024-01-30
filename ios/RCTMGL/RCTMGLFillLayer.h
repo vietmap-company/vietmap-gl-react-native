@@ -7,7 +7,7 @@
 //
 
 #import "RCTMGLVectorLayer.h"
-@import Mapbox;
+@import VietMap;
 
 @interface RCTMGLFillLayer : RCTMGLVectorLayer
 

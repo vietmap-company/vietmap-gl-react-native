@@ -12,7 +12,7 @@
 #import "RCTMGLPointAnnotation.h"
 #import "RCTMGLLight.h"
 
-@import Mapbox;
+@import VietMap;
 
 @class CameraUpdateQueue;
 @class RCTMGLImages;

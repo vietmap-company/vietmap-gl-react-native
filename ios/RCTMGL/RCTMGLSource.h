@@ -9,7 +9,7 @@
 #import <React/RCTComponent.h>
 #import "RCTMGLLayer.h"
 #import <UIKit/UIKit.h>
-@import Mapbox;
+@import VietMap;
 
 @interface RCTMGLSource : UIView
 

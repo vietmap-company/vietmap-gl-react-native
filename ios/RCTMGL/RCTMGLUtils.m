@@ -9,7 +9,7 @@
 #import "RCTMGLUtils.h"
 #import "RCTMGLImageQueue.h"
 
-@import Mapbox;
+@import VietMap;
 
 @implementation RCTMGLUtils
 

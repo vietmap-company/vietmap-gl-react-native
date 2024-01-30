@@ -265,7 +265,8 @@ static double const M2PI = M_PI * 2;
 - (void)setReactAttributionEnabled:(BOOL)reactAttributionEnabled
 {
     _reactAttributionEnabled = reactAttributionEnabled;
-    self.attributionButton.hidden = !_reactAttributionEnabled;
+//    self.attributionButton.hidden = !_reactAttributionEnabled;
+    
     
 }
 

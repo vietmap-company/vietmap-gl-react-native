@@ -11,7 +11,7 @@
 #import <React/RCTView.h>
 #import "RCTMGLCallout.h"
 
-@import Mapbox;
+@import VietMap;
 
 @interface RCTMGLPointAnnotation : MGLAnnotationView<MGLAnnotation>
 

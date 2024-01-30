@@ -4,7 +4,7 @@
 //
 
 #import "RCTMGLUserLocation.h"
-#import <Mapbox/MGLUserLocationAnnotationView.h>
+#import <VietMap/MGLUserLocationAnnotationView.h>
 
 @interface HiddenUserLocationAnnotationView : MGLUserLocationAnnotationView
 

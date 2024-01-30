@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@import Mapbox;
+@import VietMap;
 
 extern const CGFloat MGLUserLocationAnnotationDotSize;
 extern const CGFloat MGLUserLocationAnnotationHaloSize;

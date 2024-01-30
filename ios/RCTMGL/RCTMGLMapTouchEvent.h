@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "RCTMGLEvent.h"
 #import "RCTMGLPointAnnotation.h"
-@import Mapbox;
+@import VietMap;
 
 @interface RCTMGLMapTouchEvent : RCTMGLEvent
 

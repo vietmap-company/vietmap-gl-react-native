@@ -7,7 +7,7 @@
 //
 
 #import "RCTMGLImageSource.h"
-@import Mapbox;
+@import VietMap;
 
 @implementation RCTMGLImageSource
 

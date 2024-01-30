@@ -1,6 +1,6 @@
 #import "RCTMGLLogging.h"
 
-@import Mapbox;
+@import VietMap;
 
 @interface RCTMGLLogging()
 @property (nonatomic) BOOL hasListeners;

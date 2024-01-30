@@ -7,7 +7,7 @@
 //
 
 #import "RCTMGLTileSource.h"
-@import Mapbox;
+@import VietMap;
 
 @interface RCTMGLVectorSource : RCTMGLTileSource
 

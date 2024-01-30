@@ -7,7 +7,7 @@
 //
 
 #import "RCTMGLLayer.h"
-@import Mapbox;
+@import VietMap;
 
 @interface RCTMGLBackgroundLayer : RCTMGLLayer
 

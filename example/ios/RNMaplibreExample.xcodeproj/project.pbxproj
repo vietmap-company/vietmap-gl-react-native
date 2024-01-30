@@ -12,7 +12,6 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		51C0260825301F99008C5283 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C0260725301F99008C5283 /* LaunchScreen.storyboard */; };
 		AD8CDE4F410D2E699BE7E99D /* libPods-RNMaplibreExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A98F897FA1ECD18EB0F1C4DC /* libPods-RNMaplibreExample.a */; };
-		E9DD059E29705D4C0010A116 /* Mapbox in Frameworks */ = {isa = PBXBuildFile; productRef = 80AC8CF095DA4835C83255C8 /* Mapbox */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9DD059E29705D4C0010A116 /* Mapbox in Frameworks */,
 				AD8CDE4F410D2E699BE7E99D /* libPods-RNMaplibreExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,7 +204,6 @@
 			);
 			name = RNMaplibreExample;
 			packageProductDependencies = (
-				80AC8CF095DA4835C83255C8 /* Mapbox */,
 			);
 			productName = RNMaplibreExample;
 			productReference = 13B07F961A680F5B00A75B9A /* RNMaplibreExample.app */;
@@ -358,12 +355,14 @@
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Flipper-DoubleConversion/double-conversion.framework/double-conversion",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Flipper-Glog/glog.framework/glog",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VietMap/VietMap.framework/VietMap",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/double-conversion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VietMap.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -620,14 +619,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		80AC8CF095DA4835C83255C8 /* Mapbox */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DB11E3B9346BB8DFEB4101D5 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */;
-			productName = Mapbox;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }

@@ -8,7 +8,7 @@
 
 #import <React/RCTView.h>
 
-@import Mapbox;
+@import VietMap;
 
 @interface RCTMGLCallout : RCTView<MGLCalloutView>
 

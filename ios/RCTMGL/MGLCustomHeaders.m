@@ -6,8 +6,8 @@
 #import <objc/runtime.h>
 
 #import "MGLCustomHeaders.h"
-#import <Mapbox/Mapbox.h>
-#import <Mapbox/MGLNetworkConfiguration.h>
+#import <VietMap/VietMap.h>
+#import <VietMap/MGLNetworkConfiguration.h>
 
 @implementation NSMutableURLRequest (CustomHeaders)
 

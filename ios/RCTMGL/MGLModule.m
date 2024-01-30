@@ -12,7 +12,7 @@
 #import "CameraMode.h"
 #import "RCTMGLSource.h"
 #import "MGLCustomHeaders.h"
-@import Mapbox;
+@import VietMap;
 
 @implementation MGLModule
 

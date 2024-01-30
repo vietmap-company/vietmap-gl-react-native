@@ -7,7 +7,7 @@
 //
 
 #import "FilterParser.h"
-#import <Mapbox/Mapbox.h>
+#import <VietMap/VietMap.h>
 
 @implementation FilterParser
 

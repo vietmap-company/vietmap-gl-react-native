@@ -58,7 +58,7 @@ import {UserTrackingMode} from './components/Camera';
 
 // types:
 export enum StyleURL {
-  Default = 'https://demotiles.maplibre.org/style.json',
+  Default = 'https://maps.vietmap.vn/api/maps/light/styles.json?apikey=6411732992b3c4def7a117893215b9163a15e69065c0874d',
 }
 
 /** @deprecated UserTrackingModes is deprecated use UserTrackingMode */

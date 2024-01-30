@@ -9,7 +9,7 @@
 #import "MGLSnapshotModule.h"
 #import "RCTMGLUtils.h"
 #import "RNMBImageUtils.h"
-@import Mapbox;
+@import VietMap;
 
 @implementation MGLSnapshotModule
 

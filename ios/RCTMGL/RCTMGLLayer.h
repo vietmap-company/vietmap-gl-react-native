@@ -12,7 +12,7 @@
 
 @class RCTMGLMapView;
 
-@import Mapbox;
+@import VietMap;
 
 @interface RCTMGLLayer<T> : UIView
 

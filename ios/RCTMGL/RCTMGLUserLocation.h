@@ -4,7 +4,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#import <Mapbox/MGLUserLocationAnnotationView.h>
+#import <VietMap/MGLUserLocationAnnotationView.h>
 
 @interface RCTMGLUserLocation : NSObject
 
