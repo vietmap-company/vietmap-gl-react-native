@@ -2215,7 +2215,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.2.14":
+"@types/react@npm:*":
   version: 18.2.14
   resolution: "@types/react@npm:18.2.14"
   dependencies:
@@ -2223,6 +2223,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: a6a5e8cc78f486b9020d1ad009aa6c56943c68c7c6376e0f8399e9cbcd950b7b8f5d73f00200f5379f5e58d31d57d8aed24357f301d8e86108cd438ce6c8b3dd
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.2.49":
+  version: 18.2.49
+  resolution: "@types/react@npm:18.2.49"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: cc0b0e3bd6a72099dce2f89550f7b4a8f768c3a700db7bb87c3fbc622e2a2ccdcb9fe86dab4ca53e2d68057d6d6c57cd24b8fa17f8a73eedb938c5b81d512911
   languageName: node
   linkType: hard
 
@@ -2293,7 +2304,7 @@ __metadata:
     "@turf/length": ^6.5.0
     "@turf/nearest-point-on-line": 6.5.0
     "@types/geojson": 7946.0.11
-    "@types/react": ^18.2.14
+    "@types/react": ^18.2.49
     "@types/react-native": ^0.72.2
     babel-plugin-module-resolver: ^4.1.0
     debounce: ^1.2.0
