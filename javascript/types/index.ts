@@ -1,6 +1,6 @@
 import {SyntheticEvent} from 'react';
 
-export type MaplibreGLEvent<
+export type VietmapGLEvent<
   T extends string,
   P = GeoJSON.Feature,
   V = Element,

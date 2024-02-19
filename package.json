@@ -19,7 +19,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vietmap-company/vietmap-gl-react-native"
+    "url": "https://github.com/vietmap-company/vietmap-gl-react-native.git"
   },
   "scripts": {
     "fetch:style:spec": "./scripts/download-style-spec.sh",
@@ -126,5 +126,13 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "yarn lint"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@3.6.1",
+  "bugs": {
+    "url": "https://github.com/vietmap-company/vietmap-gl-react-native/issues"
+  },
+  "homepage": "https://github.com/vietmap-company/vietmap-gl-react-native#readme",
+  "directories": {
+    "doc": "docs",
+    "example": "example"
+  }
 }

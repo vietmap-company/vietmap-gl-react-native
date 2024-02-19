@@ -12,9 +12,9 @@ import {
 } from 'react-native';
 
 const VietmapGL = NativeModules.MGLModule;
-const MapLibreGLOfflineManager = NativeModules.MGLOfflineModule;
+const VietmapGLOfflineManager = NativeModules.MGLOfflineModule;
 export const OfflineModuleEventEmitter = new NativeEventEmitter(
-  MapLibreGLOfflineManager,
+  VietmapGLOfflineManager,
 );
 
 export type OfflineProgressStatus = {
@@ -112,7 +112,7 @@ class OfflineManager {
 
     this.subscribe(packOptions.name, progressListener, errorListener);
     const nativeOfflinePack =
-      await MapLibreGLOfflineManager.createPack(packOptions);
+      await VietmapGLOfflineManager.createPack(packOptions);
     this._offlinePacks[packOptions.name] = new OfflinePack(nativeOfflinePack);
   }
 
@@ -136,7 +136,7 @@ class OfflineManager {
 
     const offlinePack = this._offlinePacks[name];
     if (offlinePack) {
-      await MapLibreGLOfflineManager.invalidatePack(name);
+      await VietmapGLOfflineManager.invalidatePack(name);
     }
   }
 
@@ -158,7 +158,7 @@ class OfflineManager {
 
     const offlinePack = this._offlinePacks[name];
     if (offlinePack) {
-      await MapLibreGLOfflineManager.deletePack(name);
+      await VietmapGLOfflineManager.deletePack(name);
       delete this._offlinePacks[name];
     }
   }
@@ -176,7 +176,7 @@ class OfflineManager {
    */
   async invalidateAmbientCache(): Promise<void> {
     await this._initialize();
-    await MapLibreGLOfflineManager.invalidateAmbientCache();
+    await VietmapGLOfflineManager.invalidateAmbientCache();
   }
 
   /**
@@ -190,7 +190,7 @@ class OfflineManager {
    */
   async clearAmbientCache(): Promise<void> {
     await this._initialize();
-    await MapLibreGLOfflineManager.clearAmbientCache();
+    await VietmapGLOfflineManager.clearAmbientCache();
   }
 
   /**
@@ -205,7 +205,7 @@ class OfflineManager {
    */
   async setMaximumAmbientCacheSize(size: number): Promise<void> {
     await this._initialize();
-    await MapLibreGLOfflineManager.setMaximumAmbientCacheSize(size);
+    await VietmapGLOfflineManager.setMaximumAmbientCacheSize(size);
   }
 
   /**
@@ -218,7 +218,7 @@ class OfflineManager {
    */
   async resetDatabase(): Promise<void> {
     await this._initialize();
-    await MapLibreGLOfflineManager.resetDatabase();
+    await VietmapGLOfflineManager.resetDatabase();
   }
 
   /**
@@ -261,7 +261,7 @@ class OfflineManager {
    */
   async mergeOfflineRegions(path: string): Promise<void> {
     await this._initialize();
-    return MapLibreGLOfflineManager.mergeOfflineRegions(path);
+    return VietmapGLOfflineManager.mergeOfflineRegions(path);
   }
 
   /**
@@ -275,7 +275,7 @@ class OfflineManager {
    * @return {void}
    */
   setTileCountLimit(limit: number): void {
-    MapLibreGLOfflineManager.setTileCountLimit(limit);
+    VietmapGLOfflineManager.setTileCountLimit(limit);
   }
 
   /**
@@ -289,7 +289,7 @@ class OfflineManager {
    * @return {void}
    */
   setProgressEventThrottle(throttleValue: number): void {
-    MapLibreGLOfflineManager.setProgressEventThrottle(throttleValue);
+    VietmapGLOfflineManager.setProgressEventThrottle(throttleValue);
   }
 
   /**
@@ -338,7 +338,7 @@ class OfflineManager {
     if (isAndroid() && this._offlinePacks[packName]) {
       try {
         // manually set a listener, since listeners are only set on create flow
-        await MapLibreGLOfflineManager.setPackObserver(packName);
+        await VietmapGLOfflineManager.setPackObserver(packName);
       } catch (e) {
         console.log('Unable to set pack observer', e);
       }
@@ -379,7 +379,7 @@ class OfflineManager {
       return true;
     }
 
-    const nativeOfflinePacks = await MapLibreGLOfflineManager.getPacks();
+    const nativeOfflinePacks = await VietmapGLOfflineManager.getPacks();
 
     for (const nativeOfflinePack of nativeOfflinePacks) {
       const offlinePack = new OfflinePack(nativeOfflinePack);

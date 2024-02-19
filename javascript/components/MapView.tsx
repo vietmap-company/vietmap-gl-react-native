@@ -279,7 +279,7 @@ export interface MapViewState {
 }
 
 /**
- * MapView backed by MapLibre GL Native
+ * MapView backed by Vietmap GL Native
  */
 class MapView extends NativeBridgeComponent(
   React.Component<MapViewProps, MapViewState>,

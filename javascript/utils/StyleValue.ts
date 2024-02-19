@@ -28,7 +28,7 @@ export function transformStyle(
     if (styleType === 'color' && typeof rawStyle === 'string') {
       const color = processColor(rawStyle);
       if (color === null || color === undefined || typeof color === 'symbol') {
-        console.error(`RNMaplibre: Invalid color value: ${rawStyle} using red`);
+        console.error(`RNVietmap: Invalid color value: ${rawStyle} using red`);
         rawStyle = 'ff0000';
       } else {
         rawStyle = color;

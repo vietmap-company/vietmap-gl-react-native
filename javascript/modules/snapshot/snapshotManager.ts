@@ -2,7 +2,7 @@ import SnapshotOptions, {SnapshotInputOptions} from './SnapshotOptions';
 
 import {NativeModules} from 'react-native';
 
-const MapLibreGLSnapshotManger = NativeModules.MGLSnapshotModule;
+const VietmapGLSnapshotManger = NativeModules.MGLSnapshotModule;
 
 /**
  * The snapshotManager generates static raster images of the map.
@@ -53,7 +53,7 @@ class SnapshotManager {
   async takeSnap(options: SnapshotInputOptions = {}): Promise<string> {
     const snapshotOptions = new SnapshotOptions(options);
 
-    const uri = await MapLibreGLSnapshotManger.takeSnap(snapshotOptions);
+    const uri = await VietmapGLSnapshotManger.takeSnap(snapshotOptions);
     return uri;
   }
 }

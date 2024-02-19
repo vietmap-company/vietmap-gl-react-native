@@ -1,6 +1,6 @@
 import {toJSONString, existenceChange} from '../utils';
 import * as geoUtils from '../utils/geoUtils';
-import {MaplibreGLEvent} from '../types';
+import {VietmapGLEvent} from '../types';
 
 import {
   NativeMethods,
@@ -21,7 +21,7 @@ export enum UserTrackingMode {
 }
 
 export type UserTrackingModeChangeCallback = (
-  event: MaplibreGLEvent<
+  event: VietmapGLEvent<
     'usertrackingmodechange',
     {
       followUserLocation: boolean;

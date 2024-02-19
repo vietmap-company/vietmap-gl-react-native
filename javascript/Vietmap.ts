@@ -58,7 +58,7 @@ import {UserTrackingMode} from './components/Camera';
 
 // types:
 export enum StyleURL {
-  Default = 'https://maps.vietmap.vn/api/maps/light/styles.json?apikey=1dc93048adb6292feb26ee444d2630c2e6e3596061a34d4c',
+  Default = 'https://maps.vietmap.vn/api/maps/light/styles.json?apikey=YOUR_API_KEY_HERE',
 }
 
 /** @deprecated UserTrackingModes is deprecated use UserTrackingMode */
