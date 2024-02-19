@@ -203,8 +203,6 @@
 			dependencies = (
 			);
 			name = RNMaplibreExample;
-			packageProductDependencies = (
-			);
 			productName = RNMaplibreExample;
 			productReference = 13B07F961A680F5B00A75B9A /* RNMaplibreExample.app */;
 			productType = "com.apple.product-type.application";

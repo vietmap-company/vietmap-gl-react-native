@@ -61,12 +61,12 @@ def $RNMBGL.post_install(installer)
 end
 
 Pod::Spec.new do |s|
-  s.name		= "maplibre-react-native"
-  s.summary		= "React Native Component for Maplibre Native"
+  s.name		= "vietmap-react-native"
+  s.summary		= "React Native Component for Vietmap GL Native"
   s.version		= package['version']
-  s.authors		= { "Ian Wagner" => "ian.wagner@stadiamaps.com" }  # TODO: MapLibre email?
-  s.homepage    	= "https://github.com/maplibre/maplibre-react-native"
-  s.source      	= { :git => "https://github.com/maplibre/maplibre-react-native.git" }
+  s.authors		= { "Vietmap" => "maps-api.support@vietmap.vn" }  # TODO: MapLibre email?
+  s.homepage    	= "https://maps.vietmap.vn"
+  s.source      	= { :git => "https://github.com/vietmap-company/vietmap-gl-react-native.git" }
   s.license     	= "MIT"
   s.platform    	= :ios, "8.0"
 
