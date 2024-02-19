@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 import {StyleSheet, Text, View, LogBox, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
 });
 
-MapLibreGL.setAccessToken(null);
+VietmapGL.setAccessToken(null);
 Icon.loadFont();
 
 class App extends React.Component {
@@ -36,7 +36,7 @@ class App extends React.Component {
 
   async componentDidMount() {
     if (IS_ANDROID) {
-      const isGranted = await MapLibreGL.requestAndroidLocationPermissions();
+      const isGranted = await VietmapGL.requestAndroidLocationPermissions();
       this.setState({
         isAndroidPermissionGranted: isGranted,
         isFetchingAndroidPermission: false,

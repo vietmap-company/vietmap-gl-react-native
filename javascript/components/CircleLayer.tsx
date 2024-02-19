@@ -1,4 +1,4 @@
-import {CircleLayerStyleProps} from '../utils/MaplibreStyles';
+import {CircleLayerStyleProps} from '../utils/VietmapStyles';
 import BaseProps from '../types/BaseProps';
 
 import AbstractLayer, {BaseLayerProps, NativeBaseProps} from './AbstractLayer';
@@ -6,7 +6,7 @@ import AbstractLayer, {BaseLayerProps, NativeBaseProps} from './AbstractLayer';
 import React, {ReactElement} from 'react';
 import {NativeModules, requireNativeComponent} from 'react-native';
 
-const MapLibreGL = NativeModules.MGLModule;
+const VietmapGL = NativeModules.MGLModule;
 
 export const NATIVE_MODULE_NAME = 'RCTMGLCircleLayer';
 
@@ -26,7 +26,7 @@ interface NativeProps
  */
 class CircleLayer extends AbstractLayer<CircleLayerProps, NativeProps> {
   static defaultProps = {
-    sourceID: MapLibreGL.StyleSource.DefaultSourceID,
+    sourceID: VietmapGL.StyleSource.DefaultSourceID,
   };
 
   render(): ReactElement {

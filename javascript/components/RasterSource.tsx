@@ -6,7 +6,7 @@ import AbstractSource from './AbstractSource';
 import {NativeModules, requireNativeComponent} from 'react-native';
 import React, {ReactElement} from 'react';
 
-const MapLibreGL = NativeModules.MGLModule;
+const VietmapGL = NativeModules.MGLModule;
 
 export const NATIVE_MODULE_NAME = 'RCTMGLRasterSource';
 
@@ -67,7 +67,7 @@ type NativeProps = RasterSourceProps;
  */
 class RasterSource extends AbstractSource<RasterSourceProps, NativeProps> {
   static defaultProps = {
-    id: MapLibreGL.StyleSource.DefaultSourceID,
+    id: VietmapGL.StyleSource.DefaultSourceID,
   };
 
   constructor(props: RasterSourceProps) {

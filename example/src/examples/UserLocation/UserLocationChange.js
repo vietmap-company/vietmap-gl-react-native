@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text} from 'react-native';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import Page from '../common/Page';
@@ -55,17 +55,17 @@ class UserLocationChange extends React.Component {
   render() {
     return (
       <Page>
-        <MapLibreGL.MapView style={sheet.matchParent}>
-          <MapLibreGL.UserLocation
+        <VietmapGL.MapView style={sheet.matchParent}>
+          <VietmapGL.UserLocation
             visible={true}
             onUpdate={this.onUserLocationUpdate}
           />
-          <MapLibreGL.Camera
+          <VietmapGL.Camera
             zoomLevel={16}
             followUserMode={'normal'}
             followUserLocation
           />
-        </MapLibreGL.MapView>
+        </VietmapGL.MapView>
         {this.renderLocationInfo()}
       </Page>
     );

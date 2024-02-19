@@ -1,5 +1,5 @@
 import locationManager, {Location} from '../modules/location/locationManager';
-import {CircleLayerStyleProps} from '../utils/MaplibreStyles';
+import {CircleLayerStyleProps} from '../utils/VietmapStyles';
 
 import Annotation from './annotations/Annotation';
 import CircleLayer from './CircleLayer';

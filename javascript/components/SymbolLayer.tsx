@@ -1,4 +1,4 @@
-import {type SymbolLayerStyleProps} from '../utils/MaplibreStyles';
+import {type SymbolLayerStyleProps} from '../utils/VietmapStyles';
 import BaseProps from '../types/BaseProps';
 
 import AbstractLayer, {BaseLayerProps, NativeBaseProps} from './AbstractLayer';
@@ -6,7 +6,7 @@ import AbstractLayer, {BaseLayerProps, NativeBaseProps} from './AbstractLayer';
 import React, {ReactElement} from 'react';
 import {View, NativeModules, requireNativeComponent} from 'react-native';
 
-const MapLibreGL = NativeModules.MGLModule;
+const VietmapGL = NativeModules.MGLModule;
 
 export const NATIVE_MODULE_NAME = 'RCTMGLSymbolLayer';
 
@@ -32,7 +32,7 @@ interface NativeProps extends Omit<SymbolLayerProps, 'style'>, NativeBaseProps {
  */
 class SymbolLayer extends AbstractLayer<SymbolLayerProps, NativeBaseProps> {
   static defaultProps = {
-    sourceID: MapLibreGL.StyleSource.DefaultSourceID,
+    sourceID: VietmapGL.StyleSource.DefaultSourceID,
   };
 
   _shouldSnapshot(): boolean {

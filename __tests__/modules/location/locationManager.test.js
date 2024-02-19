@@ -4,7 +4,7 @@ import LocationManager, {
 
 import {NativeModules} from 'react-native';
 
-const MapLibreGL = NativeModules.MGLModule;
+const VietmapGL = NativeModules.MGLModule;
 const MapLibreGLLocationManager = NativeModules.MGLLocationModule;
 
 const location = {
@@ -69,7 +69,7 @@ describe('LocationManager', () => {
 
     describe('#addListener', () => {
       const myListener = jest.fn();
-      MapLibreGL.LocationCallbackName = {Update: 'MapboxUserLocationUpdate'};
+      VietmapGL.LocationCallbackName = {Update: 'MapboxUserLocationUpdate'};
 
       afterEach(() => {
         locationManager._listeners = [];
@@ -156,7 +156,7 @@ describe('LocationManager', () => {
       });
 
       test('starts native location manager and adds event emitter listener', () => {
-        MapLibreGL.LocationCallbackName = {Update: 'MapboxUserLocationUpdate'};
+        VietmapGL.LocationCallbackName = {Update: 'MapboxUserLocationUpdate'};
 
         expect(locationManager._isListening).toStrictEqual(false);
 
@@ -164,7 +164,7 @@ describe('LocationManager', () => {
 
         expect(MapLibreGLLocationManager.start).toHaveBeenCalledTimes(1);
         expect(LocationModuleEventEmitter.addListener).toHaveBeenCalledWith(
-          MapLibreGL.LocationCallbackName.Update,
+          VietmapGL.LocationCallbackName.Update,
           locationManager.onUpdate,
         );
 
@@ -198,7 +198,7 @@ describe('LocationManager', () => {
 
         // native location manager has no #stop exposed in tests?
         MapLibreGLLocationManager.stop = jest.fn();
-        MapLibreGL.LocationCallbackName = {Update: 'MapboxUserLocationUpdate'};
+        VietmapGL.LocationCallbackName = {Update: 'MapboxUserLocationUpdate'};
 
         expect(locationManager._isListening).toStrictEqual(true);
 
@@ -216,7 +216,7 @@ describe('LocationManager', () => {
 
         // native location manager has no #stop exposed in tests?
         MapLibreGLLocationManager.stop = jest.fn();
-        MapLibreGL.LocationCallbackName = {Update: 'MapboxUserLocationUpdate'};
+        VietmapGL.LocationCallbackName = {Update: 'MapboxUserLocationUpdate'};
 
         expect(locationManager._isListening).toStrictEqual(false);
 

@@ -1,6 +1,6 @@
 import {toJSONString, existenceChange} from '../utils';
 import * as geoUtils from '../utils/geoUtils';
-import {MaplibreGLEvent} from '../types';
+import {VietmapGLEvent} from '../types';
 
 import {
   NativeMethods,
@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import React, {Component, MutableRefObject, ReactElement} from 'react';
 
-const MapLibreGL = NativeModules.MGLModule;
+const VietmapGL = NativeModules.MGLModule;
 
 export const NATIVE_MODULE_NAME = 'RCTMGLCamera';
 
@@ -21,7 +21,7 @@ export enum UserTrackingMode {
 }
 
 export type UserTrackingModeChangeCallback = (
-  event: MaplibreGLEvent<
+  event: VietmapGLEvent<
     'usertrackingmodechange',
     {
       followUserLocation: boolean;
@@ -152,7 +152,7 @@ interface CameraProps extends Omit<ViewProps, 'style'>, CameraStop {
   followUserLocation?: boolean;
 
   /**
-   * The mode used to track the user location on the map. One of; "normal", "compass", "course". Each mode string is also available as a member on the `MapLibreGL.UserTrackingModes` object. `Follow` (normal), `FollowWithHeading` (compass), `FollowWithCourse` (course). NOTE: `followUserLocation` must be set to `true` for any of the modes to take effect. [Example](../example/src/examples/Camera/SetUserTrackingModes.js)
+   * The mode used to track the user location on the map. One of; "normal", "compass", "course". Each mode string is also available as a member on the `VietmapGL.UserTrackingModes` object. `Follow` (normal), `FollowWithHeading` (compass), `FollowWithCourse` (course). NOTE: `followUserLocation` must be set to `true` for any of the modes to take effect. [Example](../example/src/examples/Camera/SetUserTrackingModes.js)
    */
   followUserMode?: UserTrackingMode;
 
@@ -630,13 +630,13 @@ class Camera extends React.Component<CameraProps> {
   _getNativeCameraMode(config: CameraStop): NativeAnimationMode {
     switch (config.animationMode) {
       case 'flyTo':
-        return MapLibreGL.CameraModes.Flight;
+        return VietmapGL.CameraModes.Flight;
       case 'moveTo':
-        return MapLibreGL.CameraModes.None;
+        return VietmapGL.CameraModes.None;
       case 'linearTo':
-        return MapLibreGL.CameraModes.Linear;
+        return VietmapGL.CameraModes.Linear;
       default:
-        return MapLibreGL.CameraModes.Ease;
+        return VietmapGL.CameraModes.Ease;
     }
   }
 

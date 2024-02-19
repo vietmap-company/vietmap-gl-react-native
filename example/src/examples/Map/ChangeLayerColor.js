@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text} from 'react-native';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import Page from '../common/Page';
 import Bubble from '../common/Bubble';
@@ -28,18 +28,18 @@ class ChangeLayerColor extends React.Component {
     const {backgroundColor} = this.state;
     return (
       <Page>
-        <MapLibreGL.MapView
+        <VietmapGL.MapView
           ref={c => (this._map = c)}
           onPress={this.onPress}
           style={styles.mapView}>
-          <MapLibreGL.Camera defaultSettings={defaultCamera} />
+          <VietmapGL.Camera defaultSettings={defaultCamera} />
           {!!backgroundColor && (
-            <MapLibreGL.BackgroundLayer
+            <VietmapGL.BackgroundLayer
               id="background"
               style={{backgroundColor}}
             />
           )}
-        </MapLibreGL.MapView>
+        </VietmapGL.MapView>
         <Bubble onPress={this.onPress}>
           <Text>Paint Water</Text>
         </Bubble>

@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import TabBarPage from '../common/TabBarPage';
@@ -42,12 +42,12 @@ class SetUserLocationVerticalAlignment extends React.Component {
         {...this.props}
         options={this._alignmentOptions}
         onOptionPress={this.onAlignmentChange}>
-        <MapLibreGL.MapView
+        <VietmapGL.MapView
           contentInset={this.state.currentAlignmentMode}
           style={sheet.matchParent}>
-          <MapLibreGL.Camera followUserLocation />
-          <MapLibreGL.UserLocation />
-        </MapLibreGL.MapView>
+          <VietmapGL.Camera followUserLocation />
+          <VietmapGL.UserLocation />
+        </VietmapGL.MapView>
       </TabBarPage>
     );
   }

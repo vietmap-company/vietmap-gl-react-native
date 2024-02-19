@@ -1,9 +1,9 @@
-import MapLibreGL from '../../../javascript';
+import VietmapGL from '../../../javascript';
 
 describe('snapshotManager', () => {
   it('should resolve uri', async () => {
     const options = {centerCoordinate: [1, 2]};
-    const uri = await MapLibreGL.snapshotManager.takeSnap(options);
+    const uri = await VietmapGL.snapshotManager.takeSnap(options);
     expect(uri).toEqual('file://test.png');
   });
 });

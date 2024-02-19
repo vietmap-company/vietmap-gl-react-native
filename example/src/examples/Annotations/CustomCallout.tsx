@@ -1,5 +1,5 @@
 import React, {FC, useState} from 'react';
-import MapLibreGL, {SymbolLayerStyle} from '@maplibre/maplibre-react-native';
+import VietmapGL, {SymbolLayerStyle} from '@maplibre/maplibre-react-native';
 import {Feature} from '@turf/helpers/dist/js';
 import {View, Text, ViewStyle, StyleProp, TextStyle} from 'react-native';
 import {ReactElement} from 'react';
@@ -63,25 +63,25 @@ const CustomCallout = (props: CustomCalloutProps): ReactElement => {
 
   return (
     <Page {...props}>
-      <MapLibreGL.MapView style={sheet.matchParent}>
-        <MapLibreGL.Camera defaultSettings={defaultCamera} />
-        <MapLibreGL.ShapeSource
+      <VietmapGL.MapView style={sheet.matchParent}>
+        <VietmapGL.Camera defaultSettings={defaultCamera} />
+        <VietmapGL.ShapeSource
           id="mapPinsSource"
           shape={featureCollection}
           onPress={onPinPress}>
-          <MapLibreGL.SymbolLayer
+          <VietmapGL.SymbolLayer
             id="mapPinsLayer"
             style={styles.mapPinLayer}
           />
-        </MapLibreGL.ShapeSource>
+        </VietmapGL.ShapeSource>
         {selectedFeature && (
-          <MapLibreGL.MarkerView
+          <VietmapGL.MarkerView
             id="selectedFeatureMarkerView"
             coordinate={selectedFeature.geometry.coordinates}>
             <CustomCalloutView message={selectedFeature?.properties?.message} />
-          </MapLibreGL.MarkerView>
+          </VietmapGL.MarkerView>
         )}
-      </MapLibreGL.MapView>
+      </VietmapGL.MapView>
     </Page>
   );
 };

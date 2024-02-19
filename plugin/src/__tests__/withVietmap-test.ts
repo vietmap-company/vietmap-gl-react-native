@@ -1,4 +1,4 @@
-import {applyCocoaPodsModifications} from '../withMapLibre';
+import {applyCocoaPodsModifications} from '../withVietmap';
 
 import * as fixtures from './fixtures/cocoapodFiles';
 

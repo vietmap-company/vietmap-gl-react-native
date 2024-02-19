@@ -1,5 +1,7 @@
 name: On Push
-on: [push, pull_request]
+# on: [push, pull_request]
+on: [release]
+
 
 jobs:
   lint_test_generate:

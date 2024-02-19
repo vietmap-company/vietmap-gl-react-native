@@ -23,7 +23,7 @@ export function getStyleType(styleProp: keyof typeof styleExtras): string {
     return styleMap[styleProp];
   }
 
-  throw new Error(`${styleProp} is not a valid MapLibre layer style`);
+  throw new Error(`${styleProp} is not a valid Vietmap layer style`);
 }
 
 const styleMap = {

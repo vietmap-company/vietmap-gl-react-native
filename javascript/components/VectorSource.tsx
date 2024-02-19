@@ -1,4 +1,4 @@
-import {FilterExpression} from '../utils/MaplibreStyles';
+import {FilterExpression} from '../utils/VietmapStyles';
 import {cloneReactChildrenWithProps, isFunction, isAndroid} from '../utils';
 import {getFilter} from '../utils/filterUtils';
 import {copyPropertiesAsDeprecated} from '../utils/deprecation';
@@ -17,7 +17,7 @@ import {
 } from 'react-native';
 import {featureCollection} from '@turf/helpers';
 
-const MapLibreGL = NativeModules.MGLModule;
+const VietmapGL = NativeModules.MGLModule;
 
 export const NATIVE_MODULE_NAME = 'RCTMGLVectorSource';
 
@@ -94,7 +94,7 @@ class VectorSource extends NativeBridgeComponent(
   NATIVE_MODULE_NAME,
 ) {
   static defaultProps = {
-    id: MapLibreGL.StyleSource.DefaultSourceID,
+    id: VietmapGL.StyleSource.DefaultSourceID,
   };
 
   constructor(props: VectorSourceProps) {

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import gridPattern from '../../assets/grid_pattern.png';
@@ -21,29 +21,29 @@ function GeoJSONSource() {
   const [mapRef, setMapRef] = useState(null);
   return (
     <Page>
-      <MapLibreGL.MapView
+      <VietmapGL.MapView
         ref={setMapRef}
         style={sheet.matchParent}
-        styleURL={MapLibreGL.StyleURL.Default}>
-        <MapLibreGL.Camera
+        styleURL={VietmapGL.StyleURL.Default}>
+        <VietmapGL.Camera
           zoomLevel={2}
           centerCoordinate={[-35.15165038, 40.6235728]}
         />
 
-        <MapLibreGL.VectorSource>
-          <MapLibreGL.BackgroundLayer
+        <VietmapGL.VectorSource>
+          <VietmapGL.BackgroundLayer
             id="background"
             style={layerStyles.background}
           />
-        </MapLibreGL.VectorSource>
+        </VietmapGL.VectorSource>
 
-        <MapLibreGL.ShapeSource id="smileyFaceSource" shape={smileyFaceGeoJSON}>
-          <MapLibreGL.FillLayer
+        <VietmapGL.ShapeSource id="smileyFaceSource" shape={smileyFaceGeoJSON}>
+          <VietmapGL.FillLayer
             id="smileyFaceFill"
             style={layerStyles.smileyFace}
           />
-        </MapLibreGL.ShapeSource>
-      </MapLibreGL.MapView>
+        </VietmapGL.ShapeSource>
+      </VietmapGL.MapView>
     </Page>
   );
 }

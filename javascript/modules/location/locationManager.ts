@@ -4,11 +4,11 @@ import {
   EmitterSubscription,
 } from 'react-native';
 
-const MapLibreGL = NativeModules.MGLModule;
-const MapLibreGLLocationManager = NativeModules.MGLLocationModule;
+const VietmapGL = NativeModules.MGLModule;
+const VietmapGLLocationManager = NativeModules.MGLLocationModule;
 
 export const LocationModuleEventEmitter = new NativeEventEmitter(
-  MapLibreGLLocationManager,
+  VietmapGLLocationManager,
 );
 
 /**
@@ -87,7 +87,7 @@ class LocationManager {
       // instead of throwing an exception
       try {
         lastKnownLocation =
-          await MapLibreGLLocationManager.getLastKnownLocation();
+          await VietmapGLLocationManager.getLastKnownLocation();
       } catch (error) {
         console.log('locationManager Error: ', error);
       }
@@ -127,10 +127,10 @@ class LocationManager {
 
   start(displacement = 0): void {
     if (!this._isListening) {
-      MapLibreGLLocationManager.start(displacement);
+      VietmapGLLocationManager.start(displacement);
 
       this.subscription = LocationModuleEventEmitter.addListener(
-        MapLibreGL.LocationCallbackName.Update,
+        VietmapGL.LocationCallbackName.Update,
         this.onUpdate,
       );
 
@@ -139,7 +139,7 @@ class LocationManager {
   }
 
   stop(): void {
-    MapLibreGLLocationManager.stop();
+    VietmapGLLocationManager.stop();
 
     if (this._isListening) {
       this.subscription?.remove();
@@ -149,7 +149,7 @@ class LocationManager {
   }
 
   setMinDisplacement(minDisplacement: number): void {
-    MapLibreGLLocationManager.setMinDisplacement(minDisplacement);
+    VietmapGLLocationManager.setMinDisplacement(minDisplacement);
   }
 
   onUpdate(location: Location): void {

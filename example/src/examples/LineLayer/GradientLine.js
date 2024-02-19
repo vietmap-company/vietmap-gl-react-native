@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import Page from '../common/Page';
@@ -34,12 +34,12 @@ class GradientLine extends React.Component {
   render() {
     return (
       <Page>
-        <MapLibreGL.MapView style={sheet.matchParent}>
-          <MapLibreGL.Camera
+        <VietmapGL.MapView style={sheet.matchParent}>
+          <VietmapGL.Camera
             centerCoordinate={[-77.035, 38.875]}
             zoomLevel={12}
           />
-          <MapLibreGL.ShapeSource
+          <VietmapGL.ShapeSource
             id="source1"
             lineMetrics={true}
             shape={{
@@ -67,9 +67,9 @@ class GradientLine extends React.Component {
                 ],
               },
             }}>
-            <MapLibreGL.LineLayer id="layer1" style={styles.lineLayer} />
-          </MapLibreGL.ShapeSource>
-        </MapLibreGL.MapView>
+            <VietmapGL.LineLayer id="layer1" style={styles.lineLayer} />
+          </VietmapGL.ShapeSource>
+        </VietmapGL.MapView>
       </Page>
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 import PropTypes from 'prop-types';
 
 import sheet from '../../styles/sheet';
@@ -51,26 +51,26 @@ class ShowMarkerView extends React.Component {
   render() {
     return (
       <Page>
-        <MapLibreGL.MapView
+        <VietmapGL.MapView
           ref={c => (this._map = c)}
           onPress={this.onPress}
           onDidFinishLoadingMap={this.onDidFinishLoadingMap}
           style={sheet.matchParent}>
-          <MapLibreGL.Camera
+          <VietmapGL.Camera
             zoomLevel={16}
             centerCoordinate={this.state.coordinates[0]}
           />
 
-          <MapLibreGL.PointAnnotation
+          <VietmapGL.PointAnnotation
             coordinate={this.state.coordinates[1]}
             id="pt-ann">
             <AnnotationContent title={'this is a point annotation'} />
-          </MapLibreGL.PointAnnotation>
+          </VietmapGL.PointAnnotation>
 
-          <MapLibreGL.MarkerView coordinate={this.state.coordinates[0]}>
+          <VietmapGL.MarkerView coordinate={this.state.coordinates[0]}>
             <AnnotationContent title={'this is a marker view'} />
-          </MapLibreGL.MarkerView>
-        </MapLibreGL.MapView>
+          </VietmapGL.MarkerView>
+        </VietmapGL.MapView>
 
         <Bubble>
           <Text>Click to add a point annotation</Text>

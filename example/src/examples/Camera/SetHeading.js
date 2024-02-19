@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import TabBarPage from '../common/TabBarPage';
@@ -25,7 +25,7 @@ class SetHeading extends React.Component {
   }
 
   componentDidMount() {
-    MapLibreGL.locationManager.start();
+    VietmapGL.locationManager.start();
   }
 
   componentDidUpdate() {
@@ -35,7 +35,7 @@ class SetHeading extends React.Component {
   }
 
   componentWillUnmount() {
-    MapLibreGL.locationManager.stop();
+    VietmapGL.locationManager.stop();
   }
 
   onHeadingChange(index, heading) {
@@ -48,12 +48,12 @@ class SetHeading extends React.Component {
         {...this.props}
         options={this._bearingOptions}
         onOptionPress={this.onHeadingChange}>
-        <MapLibreGL.MapView
+        <VietmapGL.MapView
           ref={ref => (this.map = ref)}
           style={sheet.matchParent}>
-          <MapLibreGL.Camera {...this.state} />
-          <MapLibreGL.UserLocation />
-        </MapLibreGL.MapView>
+          <VietmapGL.Camera {...this.state} />
+          <VietmapGL.UserLocation />
+        </VietmapGL.MapView>
       </TabBarPage>
     );
   }

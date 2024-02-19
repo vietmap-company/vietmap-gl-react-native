@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import exampleIcon from '../../assets/example.png';
@@ -84,12 +84,12 @@ class ShapeSourceIcon extends React.Component {
 
     return (
       <Page>
-        <MapLibreGL.MapView style={sheet.matchParent}>
-          <MapLibreGL.Camera
+        <VietmapGL.MapView style={sheet.matchParent}>
+          <VietmapGL.Camera
             zoomLevel={17}
             centerCoordinate={[-117.20611157485, 52.180961084261]}
           />
-          <MapLibreGL.Images
+          <VietmapGL.Images
             nativeAssetImages={['pin']}
             images={images}
             onImageMissing={imageKey =>
@@ -98,12 +98,12 @@ class ShapeSourceIcon extends React.Component {
               })
             }
           />
-          <MapLibreGL.ShapeSource
+          <VietmapGL.ShapeSource
             id="exampleShapeSource"
             shape={featureCollection}>
-            <MapLibreGL.SymbolLayer id="exampleIconName" style={styles.icon} />
-          </MapLibreGL.ShapeSource>
-        </MapLibreGL.MapView>
+            <VietmapGL.SymbolLayer id="exampleIconName" style={styles.icon} />
+          </VietmapGL.ShapeSource>
+        </VietmapGL.MapView>
       </Page>
     );
   }

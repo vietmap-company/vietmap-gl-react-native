@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, StyleSheet} from 'react-native';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import StyleJsonExample from '../../assets/style-json-example.json';
 import StyleJsonExample2 from '../../assets/style-json-example2.json';
@@ -33,16 +33,16 @@ class StyleJson extends React.Component {
   render() {
     return (
       <Page>
-        <MapLibreGL.MapView
-          styleURL={MapLibreGL.StyleURL.Default}
+        <VietmapGL.MapView
+          styleURL={VietmapGL.StyleURL.Default}
           style={styles.map}>
-          <MapLibreGL.Camera defaultSettings={defaultCamera} />
-          <MapLibreGL.Style
+          <VietmapGL.Camera defaultSettings={defaultCamera} />
+          <VietmapGL.Style
             json={
               this.state.showAltStyle ? StyleJsonExample2 : StyleJsonExample
             }
           />
-        </MapLibreGL.MapView>
+        </VietmapGL.MapView>
         <Bubble onPress={this.onPress}>
           <Text>{this.state.showAltStyle ? 'Style 2' : 'Style 1'}</Text>
         </Bubble>

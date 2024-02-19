@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 import bboxPolygon from '@turf/bbox-polygon';
 
 import sheet from '../../styles/sheet';
@@ -20,18 +20,18 @@ const polygon = bboxPolygon([sw[0], sw[1], ne[0], ne[1]]);
 
 const RestrictMapBounds = props => (
   <Page {...props}>
-    <MapLibreGL.MapView
+    <VietmapGL.MapView
       style={sheet.matchParent}
-      styleURL={MapLibreGL.StyleURL.Default}>
-      <MapLibreGL.Camera
+      styleURL={VietmapGL.StyleURL.Default}>
+      <VietmapGL.Camera
         maxBounds={bounds}
         zoomLevel={7}
         centerCoordinate={[-4.744276, 50.361239]}
       />
-      <MapLibreGL.ShapeSource id="bounds" shape={polygon}>
-        <MapLibreGL.FillLayer id="boundsFill" style={boundsStyle} />
-      </MapLibreGL.ShapeSource>
-    </MapLibreGL.MapView>
+      <VietmapGL.ShapeSource id="bounds" shape={polygon}>
+        <VietmapGL.FillLayer id="boundsFill" style={boundsStyle} />
+      </VietmapGL.ShapeSource>
+    </VietmapGL.MapView>
   </Page>
 );
 

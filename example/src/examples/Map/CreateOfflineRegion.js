@@ -7,7 +7,7 @@ import {
   Dimensions,
   StyleSheet,
 } from 'react-native';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 import geoViewport from '@mapbox/geo-viewport';
 
 import sheet from '../../styles/sheet';
@@ -57,8 +57,8 @@ class CreateOfflineRegion extends React.Component {
 
   componentWillUnmount() {
     // avoid setState warnings if we back out before we finishing downloading
-    MapLibreGL.offlineManager.deletePack(this.state.name);
-    MapLibreGL.offlineManager.unsubscribe('test');
+    VietmapGL.offlineManager.deletePack(this.state.name);
+    VietmapGL.offlineManager.unsubscribe('test');
   }
 
   async onDidFinishLoadingStyle() {
@@ -72,7 +72,7 @@ class CreateOfflineRegion extends React.Component {
 
     const options = {
       name: this.state.name,
-      styleURL: MapLibreGL.StyleURL.Default,
+      styleURL: VietmapGL.StyleURL.Default,
       bounds: [
         [bounds[0], bounds[1]],
         [bounds[2], bounds[3]],
@@ -82,7 +82,7 @@ class CreateOfflineRegion extends React.Component {
     };
 
     // start download
-    MapLibreGL.offlineManager.createPack(options, this.onDownloadProgress);
+    VietmapGL.offlineManager.createPack(options, this.onDownloadProgress);
   }
 
   onDownloadProgress(offlineRegion, offlineRegionStatus) {
@@ -121,9 +121,9 @@ class CreateOfflineRegion extends React.Component {
 
   _getRegionDownloadState(downloadState) {
     switch (downloadState) {
-      case MapLibreGL.OfflinePackDownloadState.Active:
+      case VietmapGL.OfflinePackDownloadState.Active:
         return 'Active';
-      case MapLibreGL.OfflinePackDownloadState.Complete:
+      case VietmapGL.OfflinePackDownloadState.Complete:
         return 'Complete';
       default:
         return 'Inactive';
@@ -135,13 +135,13 @@ class CreateOfflineRegion extends React.Component {
 
     return (
       <Page>
-        <MapLibreGL.MapView
+        <VietmapGL.MapView
           ref={c => (this._map = c)}
           onPress={this.onPress}
           onDidFinishLoadingMap={this.onDidFinishLoadingStyle}
           style={sheet.matchParent}>
-          <MapLibreGL.Camera zoomLevel={10} centerCoordinate={CENTER_COORD} />
-        </MapLibreGL.MapView>
+          <VietmapGL.Camera zoomLevel={10} centerCoordinate={CENTER_COORD} />
+        </VietmapGL.MapView>
 
         {offlineRegionStatus !== null ? (
           <Bubble>

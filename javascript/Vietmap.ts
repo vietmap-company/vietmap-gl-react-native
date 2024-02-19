@@ -52,13 +52,13 @@ export type {
   HillshadeLayerStyleProps as HillshadeLayerStyle,
   BackgroundLayerStyleProps as BackgroundLayerStyle,
   LightLayerStyleProps as LightLayerStyle,
-} from './utils/MaplibreStyles';
+} from './utils/VietmapStyles';
 
 import {UserTrackingMode} from './components/Camera';
 
 // types:
 export enum StyleURL {
-  Default = 'https://maps.vietmap.vn/api/maps/light/styles.json?apikey=6411732992b3c4def7a117893215b9163a15e69065c0874d',
+  Default = 'https://maps.vietmap.vn/api/maps/light/styles.json?apikey=YOUR_API_KEY_HERE',
 }
 
 /** @deprecated UserTrackingModes is deprecated use UserTrackingMode */

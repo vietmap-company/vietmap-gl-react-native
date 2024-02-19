@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 import {StyleSheet, Text, View} from 'react-native';
 
 import sheet from '../../styles/sheet';
@@ -73,10 +73,10 @@ const styles = StyleSheet.create({
 const PointAnnotationAnchors = props => {
   return (
     <Page {...props}>
-      <MapLibreGL.MapView style={sheet.matchParent}>
-        <MapLibreGL.Camera defaultSettings={defaultCamera} />
+      <VietmapGL.MapView style={sheet.matchParent}>
+        <VietmapGL.Camera defaultSettings={defaultCamera} />
         {corners.map((p, i) => (
-          <MapLibreGL.PointAnnotation
+          <VietmapGL.PointAnnotation
             key={`square-${i}`}
             id={`square-${i}`}
             coordinate={p.coordinate}
@@ -86,7 +86,7 @@ const PointAnnotationAnchors = props => {
                 x={p.anchor.x.toPrecision(2)}, y={p.anchor.y.toPrecision(2)}
               </Text>
             </View>
-          </MapLibreGL.PointAnnotation>
+          </VietmapGL.PointAnnotation>
         ))}
         {sides.map((p, i) => {
           let {x, y} = p.anchor;
@@ -97,7 +97,7 @@ const PointAnnotationAnchors = props => {
             y = 0;
           }
           return (
-            <MapLibreGL.PointAnnotation
+            <VietmapGL.PointAnnotation
               key={`triangle-${i}`}
               id={`triangle-${i}`}
               coordinate={p.coordinate}
@@ -121,10 +121,10 @@ const PointAnnotationAnchors = props => {
                   x={p.anchor.x.toPrecision(2)}, y={p.anchor.y.toPrecision(2)}
                 </Text>
               </View>
-            </MapLibreGL.PointAnnotation>
+            </VietmapGL.PointAnnotation>
           );
         })}
-      </MapLibreGL.MapView>
+      </VietmapGL.MapView>
     </Page>
   );
 };

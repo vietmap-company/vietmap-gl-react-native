@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 import {Text} from 'react-native';
 
 import Bubble from '../common/Bubble';
@@ -76,23 +76,23 @@ class ImageOverlay extends React.Component {
       : 'Dynamic coordinates';
     return (
       <Page>
-        <MapLibreGL.MapView
+        <VietmapGL.MapView
           ref={ref => (this.map = ref)}
           style={sheet.matchParent}
-          styleURL={MapLibreGL.StyleURL.Default}>
-          <MapLibreGL.Camera zoomLevel={4} centerCoordinate={[-79, 40]} />
+          styleURL={VietmapGL.StyleURL.Default}>
+          <VietmapGL.Camera zoomLevel={4} centerCoordinate={[-79, 40]} />
 
-          <MapLibreGL.Animated.ImageSource
+          <VietmapGL.Animated.ImageSource
             key="d"
             id="radarSource"
             coordinates={this.state.coords}
             url={frames[this.state.radarFrameIndex]}>
-            <MapLibreGL.RasterLayer
+            <VietmapGL.RasterLayer
               id="radarLayer"
               style={styles.rasterLayer}
             />
-          </MapLibreGL.Animated.ImageSource>
-        </MapLibreGL.MapView>
+          </VietmapGL.Animated.ImageSource>
+        </VietmapGL.MapView>
         <Bubble
           onPress={() => {
             this.setState({dynamic: !this.state.dynamic});

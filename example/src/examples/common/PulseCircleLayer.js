@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Animated} from 'react-native';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 const styles = {
   innerCircle: {
@@ -122,25 +122,25 @@ class PulseCircleLayer extends React.Component {
     ];
 
     return (
-      <MapLibreGL.Animated.ShapeSource
+      <VietmapGL.Animated.ShapeSource
         id="pulseCircleSource"
         shape={this.props.shape}>
-        <MapLibreGL.Animated.CircleLayer
+        <VietmapGL.Animated.CircleLayer
           id="pulseOuterCircle"
           style={outerCircleStyle}
           aboveLayerID={this.props.aboveLayerID}
         />
-        <MapLibreGL.Animated.CircleLayer
+        <VietmapGL.Animated.CircleLayer
           id="pulseInnerCircleCnt"
           style={innerCircleStyle}
           aboveLayerID="pulseOuterCircle"
         />
-        <MapLibreGL.Animated.CircleLayer
+        <VietmapGL.Animated.CircleLayer
           id="pulseInnerCircle"
           style={innerCirclePulseStyle}
           aboveLayerID="pulseInnerCircleCnt"
         />
-      </MapLibreGL.Animated.ShapeSource>
+      </VietmapGL.Animated.ShapeSource>
     );
   }
 }

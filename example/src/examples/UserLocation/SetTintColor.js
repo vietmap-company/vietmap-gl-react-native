@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import TabBarPage from '../common/TabBarPage';
@@ -20,20 +20,20 @@ class SetTintColor extends React.Component {
         {...this.props}
         options={OPTIONS}
         onOptionPress={this.onTintColorChange}>
-        <MapLibreGL.MapView
+        <VietmapGL.MapView
           style={sheet.matchParent}
           tintColor={this.state.tintColor}>
-          <MapLibreGL.Camera
+          <VietmapGL.Camera
             followZoomLevel={16}
             followUserMode="compass"
             followUserLocation
           />
 
-          <MapLibreGL.UserLocation
+          <VietmapGL.UserLocation
             renderMode="native"
             androidRenderMode="compass"
           />
-        </MapLibreGL.MapView>
+        </VietmapGL.MapView>
       </TabBarPage>
     );
   }

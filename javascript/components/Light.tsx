@@ -1,4 +1,4 @@
-import {LightLayerStyleProps} from '../utils/MaplibreStyles';
+import {LightLayerStyleProps} from '../utils/VietmapStyles';
 import BaseProps from '../types/BaseProps';
 import {StyleValue, transformStyle} from '../utils/StyleValue';
 

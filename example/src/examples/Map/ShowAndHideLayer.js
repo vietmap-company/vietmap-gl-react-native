@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text} from 'react-native';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import Page from '../common/Page';
 import Bubble from '../common/Bubble';
@@ -29,13 +29,13 @@ class ShowAndHideLayer extends React.Component {
     const visibility = this.state.show ? 'visible' : 'none';
     return (
       <Page>
-        <MapLibreGL.MapView
+        <VietmapGL.MapView
           ref={c => (this._map = c)}
           onPress={this.onPress}
           style={styles.mapView}>
-          <MapLibreGL.Camera defaultSettings={defaultCamera} />
-          <MapLibreGL.FillLayer id="countries-label" style={{visibility}} />
-        </MapLibreGL.MapView>
+          <VietmapGL.Camera defaultSettings={defaultCamera} />
+          <VietmapGL.FillLayer id="countries-label" style={{visibility}} />
+        </VietmapGL.MapView>
         <Bubble onPress={this.onPress}>
           <Text>
             {this.state.show ? 'Hide Country Labels' : 'Show Country Labels'}

@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 import {Button, View} from 'react-native';
 import {ButtonGroup} from 'react-native-elements';
 import PropTypes from 'prop-types';
@@ -123,19 +123,19 @@ class SetUserLocationRenderMode extends React.Component {
           settings={this.state}
           onUpdateSettings={settings => this.setState(settings)}
         />
-        <MapLibreGL.MapView style={sheet.matchParent} tintColor={'red'}>
-          <MapLibreGL.Camera
+        <VietmapGL.MapView style={sheet.matchParent} tintColor={'red'}>
+          <VietmapGL.Camera
             followUserLocation={followUserLocation}
             followUserMode={followUserMode}
           />
           {this.state.renderMode !== 'hidden' && (
-            <MapLibreGL.UserLocation
+            <VietmapGL.UserLocation
               renderMode={this.state.renderMode}
               showsUserHeadingIndicator={showsUserHeadingIndicator}
               androidRenderMode={androidRenderMode}
             />
           )}
-        </MapLibreGL.MapView>
+        </VietmapGL.MapView>
       </TabBarPage>
     );
   }

@@ -1,11 +1,11 @@
 {
-  "name": "@maplibre/maplibre-react-native",
-  "description": "A MapLibre GL Native plugin for creating maps in React Native",
-  "version": "9.1.0",
+  "name": "@vietmap/vietmap-gl-react-native",
+  "description": "A Vietmap GL Native plugin for creating maps in React Native",
+  "version": "0.0.1",
   "publishConfig": {
     "access": "public"
   },
-  "author": "MapLibre",
+  "author": "VietMap",
   "main": "./javascript/index.ts",
   "keywords": [
     "maps",
@@ -13,12 +13,13 @@
     "android",
     "maplibre",
     "react-native",
-    "mapbox"
+    "mapbox",
+    "vietmap"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maplibre/maplibre-react-native"
+    "url": "https://github.com/vietmap-company/vietmap-gl-react-native.git"
   },
   "scripts": {
     "fetch:style:spec": "./scripts/download-style-spec.sh",
@@ -125,5 +126,13 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "yarn lint"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@3.6.1",
+  "bugs": {
+    "url": "https://github.com/vietmap-company/vietmap-gl-react-native/issues"
+  },
+  "homepage": "https://github.com/vietmap-company/vietmap-gl-react-native#readme",
+  "directories": {
+    "doc": "docs",
+    "example": "example"
+  }
 }

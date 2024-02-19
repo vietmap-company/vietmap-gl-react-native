@@ -1,6 +1,6 @@
 import React, {FC, useEffect} from 'react';
 import {Alert} from 'react-native';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import Page from '../common/Page';
@@ -10,10 +10,10 @@ const style = JSON.stringify(require('../../assets/map-styleURL-style.json'));
 
 const ShowMap: FC<any> = props => {
   useEffect(() => {
-    MapLibreGL.locationManager.start();
+    VietmapGL.locationManager.start();
 
     return (): void => {
-      MapLibreGL.locationManager.stop();
+      VietmapGL.locationManager.stop();
     };
   }, []);
 
@@ -23,10 +23,10 @@ const ShowMap: FC<any> = props => {
 
   return (
     <Page {...props}>
-      <MapLibreGL.MapView styleURL={style} style={sheet.matchParent}>
-        <MapLibreGL.Camera followZoomLevel={3} followUserLocation />
-        <MapLibreGL.UserLocation onPress={onUserMarkerPress} />
-      </MapLibreGL.MapView>
+      <VietmapGL.MapView styleURL={style} style={sheet.matchParent}>
+        <VietmapGL.Camera followZoomLevel={3} followUserLocation />
+        <VietmapGL.UserLocation onPress={onUserMarkerPress} />
+      </VietmapGL.MapView>
     </Page>
   );
 };

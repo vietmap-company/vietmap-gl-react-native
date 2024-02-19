@@ -1,4 +1,4 @@
-export * from './Maplibre';
-import * as Maplibre from './Maplibre';
+export * from './Vietmap';
+import * as Vietmap from './Vietmap';
 
-export default Maplibre;
+export default Vietmap;

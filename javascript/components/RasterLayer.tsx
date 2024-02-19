@@ -1,4 +1,4 @@
-import {RasterLayerStyleProps} from '../utils/MaplibreStyles';
+import {RasterLayerStyleProps} from '../utils/VietmapStyles';
 import BaseProps from '../types/BaseProps';
 
 import AbstractLayer, {BaseLayerProps, NativeBaseProps} from './AbstractLayer';
@@ -6,7 +6,7 @@ import AbstractLayer, {BaseLayerProps, NativeBaseProps} from './AbstractLayer';
 import React, {ReactElement} from 'react';
 import {NativeModules, requireNativeComponent} from 'react-native';
 
-const MapLibreGL = NativeModules.MGLModule;
+const VietmapGL = NativeModules.MGLModule;
 
 export const NATIVE_MODULE_NAME = 'RCTMGLRasterLayer';
 
@@ -23,7 +23,7 @@ interface NativeProps
 
 class RasterLayer extends AbstractLayer<RasterLayerProps, NativeProps> {
   static defaultProps = {
-    sourceID: MapLibreGL.StyleSource.DefaultSourceID,
+    sourceID: VietmapGL.StyleSource.DefaultSourceID,
   };
 
   render(): ReactElement {

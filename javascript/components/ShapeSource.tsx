@@ -1,4 +1,4 @@
-import {ExpressionField, FilterExpression} from '../utils/MaplibreStyles';
+import {ExpressionField, FilterExpression} from '../utils/VietmapStyles';
 import {getFilter} from '../utils/filterUtils';
 import {
   toJSONString,
@@ -22,7 +22,7 @@ import {
 } from 'react-native';
 import {Feature, FeatureCollection} from '@turf/helpers';
 
-const MapLibreGL = NativeModules.MGLModule;
+const VietmapGL = NativeModules.MGLModule;
 
 export const NATIVE_MODULE_NAME = 'RCTMGLShapeSource';
 
@@ -140,7 +140,7 @@ class ShapeSource extends NativeBridgeComponent(
   static NATIVE_ASSETS_KEY = 'assets';
 
   static defaultProps = {
-    id: MapLibreGL.StyleSource.DefaultSourceID,
+    id: VietmapGL.StyleSource.DefaultSourceID,
   };
 
   constructor(props: ShapeSourceProps) {

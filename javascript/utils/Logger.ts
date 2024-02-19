@@ -105,7 +105,7 @@ class Logger {
   effectiveLevel({level, message, tag}: Log): LogLevel {
     if (level === 'warning') {
       if (
-        tag === 'Mbgl-HttpRequest' &&
+        tag === 'Vmgl-HttpRequest' &&
         message.startsWith('Request failed due to a permanent error: Canceled')
       ) {
         // this seems to happening too much to show a warning every time
@@ -120,11 +120,11 @@ class Logger {
       const {message} = log;
       const level = this.effectiveLevel(log);
       if (level === 'error') {
-        console.error('Mapbox error', message, log);
+        console.error('Vietmap error', message, log);
       } else if (level === 'warning') {
-        console.warn('Mapbox warning', message, log);
+        console.warn('Vietmap warning', message, log);
       } else {
-        console.log(`Mapbox [${level}]`, message, log);
+        console.log(`Vietmap [${level}]`, message, log);
       }
     }
   }
