@@ -1,4 +1,4 @@
-import {FilterExpression} from '../utils/MaplibreStyles';
+import {FilterExpression} from '../utils/VietmapStyles';
 import {Location} from '../modules/location/locationManager';
 import {isFunction, isAndroid} from '../utils';
 import {getFilter} from '../utils/filterUtils';
@@ -20,8 +20,8 @@ import {
 } from 'react-native';
 import {debounce} from 'debounce';
 
-const MapLibreGL = NativeModules.MGLModule;
-if (MapLibreGL == null) {
+const VietmapGL = NativeModules.MGLModule;
+if (VietmapGL == null) {
   console.error(
     'Native part of Mapbox React Native libraries were not registered properly, double check our native installation guides.',
   );
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   matchParent: {flex: 1},
 });
 
-const defaultStyleURL = MapLibreGL.StyleURL.Street;
+const defaultStyleURL = VietmapGL.StyleURL.Street;
 
 export interface RegionPayload {
   zoomLevel: number;
@@ -61,7 +61,7 @@ interface MapViewProps extends BaseProps {
    */
   style?: ViewProps['style'];
   /**
-   * Style URL for map - notice, if non is set it _will_ default to `MapLibreGL.StyleURL.Default`
+   * Style URL for map - notice, if non is set it _will_ default to `VietmapGL.StyleURL.Default`
    */
   styleURL?: string;
   /**
@@ -353,46 +353,46 @@ class MapView extends NativeBridgeComponent(
       const events = [];
 
       if (props.onRegionWillChange) {
-        events.push(MapLibreGL.EventTypes.RegionWillChange);
+        events.push(VietmapGL.EventTypes.RegionWillChange);
       }
       if (props.onRegionIsChanging) {
-        events.push(MapLibreGL.EventTypes.RegionIsChanging);
+        events.push(VietmapGL.EventTypes.RegionIsChanging);
       }
       if (props.onRegionDidChange) {
-        events.push(MapLibreGL.EventTypes.RegionDidChange);
+        events.push(VietmapGL.EventTypes.RegionDidChange);
       }
       if (props.onUserLocationUpdate) {
-        events.push(MapLibreGL.EventTypes.UserLocationUpdated);
+        events.push(VietmapGL.EventTypes.UserLocationUpdated);
       }
       if (props.onWillStartLoadingMap) {
-        events.push(MapLibreGL.EventTypes.WillStartLoadingMap);
+        events.push(VietmapGL.EventTypes.WillStartLoadingMap);
       }
       if (props.onDidFinishLoadingMap) {
-        events.push(MapLibreGL.EventTypes.DidFinishLoadingMap);
+        events.push(VietmapGL.EventTypes.DidFinishLoadingMap);
       }
       if (props.onDidFailLoadingMap) {
-        events.push(MapLibreGL.EventTypes.DidFailLoadingMap);
+        events.push(VietmapGL.EventTypes.DidFailLoadingMap);
       }
       if (props.onWillStartRenderingFrame) {
-        events.push(MapLibreGL.EventTypes.WillStartRenderingFrame);
+        events.push(VietmapGL.EventTypes.WillStartRenderingFrame);
       }
       if (props.onDidFinishRenderingFrame) {
-        events.push(MapLibreGL.EventTypes.DidFinishRenderingFrame);
+        events.push(VietmapGL.EventTypes.DidFinishRenderingFrame);
       }
       if (props.onDidFinishRenderingFrameFully) {
-        events.push(MapLibreGL.EventTypes.DidFinishRenderingFrameFully);
+        events.push(VietmapGL.EventTypes.DidFinishRenderingFrameFully);
       }
       if (props.onWillStartRenderingMap) {
-        events.push(MapLibreGL.EventTypes.WillStartRenderingMap);
+        events.push(VietmapGL.EventTypes.WillStartRenderingMap);
       }
       if (props.onDidFinishRenderingMap) {
-        events.push(MapLibreGL.EventTypes.DidFinishRenderingMap);
+        events.push(VietmapGL.EventTypes.DidFinishRenderingMap);
       }
       if (props.onDidFinishRenderingMapFully) {
-        events.push(MapLibreGL.EventTypes.DidFinishRenderingMapFully);
+        events.push(VietmapGL.EventTypes.DidFinishRenderingMapFully);
       }
       if (props.onDidFinishLoadingStyle) {
-        events.push(MapLibreGL.EventTypes.DidFinishLoadingStyle);
+        events.push(VietmapGL.EventTypes.DidFinishLoadingStyle);
       }
 
       this._runNativeCommand(
@@ -652,54 +652,54 @@ class MapView extends NativeBridgeComponent(
     let propName: CallableProps | undefined;
 
     switch (type) {
-      case MapLibreGL.EventTypes.RegionWillChange:
+      case VietmapGL.EventTypes.RegionWillChange:
         if (regionWillChangeDebounceTime && regionWillChangeDebounceTime > 0) {
           this._onDebouncedRegionWillChange(payload);
         } else {
           propName = 'onRegionWillChange';
         }
         break;
-      case MapLibreGL.EventTypes.RegionIsChanging:
+      case VietmapGL.EventTypes.RegionIsChanging:
         propName = 'onRegionIsChanging';
         break;
-      case MapLibreGL.EventTypes.RegionDidChange:
+      case VietmapGL.EventTypes.RegionDidChange:
         if (regionDidChangeDebounceTime && regionDidChangeDebounceTime > 0) {
           this._onDebouncedRegionDidChange(payload);
         } else {
           propName = 'onRegionDidChange';
         }
         break;
-      case MapLibreGL.EventTypes.UserLocationUpdated:
+      case VietmapGL.EventTypes.UserLocationUpdated:
         propName = 'onUserLocationUpdate';
         break;
-      case MapLibreGL.EventTypes.WillStartLoadingMap:
+      case VietmapGL.EventTypes.WillStartLoadingMap:
         propName = 'onWillStartLoadingMap';
         break;
-      case MapLibreGL.EventTypes.DidFinishLoadingMap:
+      case VietmapGL.EventTypes.DidFinishLoadingMap:
         propName = 'onDidFinishLoadingMap';
         break;
-      case MapLibreGL.EventTypes.DidFailLoadingMap:
+      case VietmapGL.EventTypes.DidFailLoadingMap:
         propName = 'onDidFailLoadingMap';
         break;
-      case MapLibreGL.EventTypes.WillStartRenderingFrame:
+      case VietmapGL.EventTypes.WillStartRenderingFrame:
         propName = 'onWillStartRenderingFrame';
         break;
-      case MapLibreGL.EventTypes.DidFinishRenderingFrame:
+      case VietmapGL.EventTypes.DidFinishRenderingFrame:
         propName = 'onDidFinishRenderingFrame';
         break;
-      case MapLibreGL.EventTypes.DidFinishRenderingFrameFully:
+      case VietmapGL.EventTypes.DidFinishRenderingFrameFully:
         propName = 'onDidFinishRenderingFrameFully';
         break;
-      case MapLibreGL.EventTypes.WillStartRenderingMap:
+      case VietmapGL.EventTypes.WillStartRenderingMap:
         propName = 'onWillStartRenderingMap';
         break;
-      case MapLibreGL.EventTypes.DidFinishRenderingMap:
+      case VietmapGL.EventTypes.DidFinishRenderingMap:
         propName = 'onDidFinishRenderingMap';
         break;
-      case MapLibreGL.EventTypes.DidFinishRenderingMapFully:
+      case VietmapGL.EventTypes.DidFinishRenderingMapFully:
         propName = 'onDidFinishRenderingMapFully';
         break;
-      case MapLibreGL.EventTypes.DidFinishLoadingStyle:
+      case VietmapGL.EventTypes.DidFinishLoadingStyle:
         propName = 'onDidFinishLoadingStyle';
         break;
       default:

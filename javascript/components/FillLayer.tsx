@@ -1,4 +1,4 @@
-import {FillLayerStyleProps} from '../utils/MaplibreStyles';
+import {FillLayerStyleProps} from '../utils/VietmapStyles';
 import BaseProps from '../types/BaseProps';
 
 import AbstractLayer, {BaseLayerProps, NativeBaseProps} from './AbstractLayer';
@@ -6,7 +6,7 @@ import AbstractLayer, {BaseLayerProps, NativeBaseProps} from './AbstractLayer';
 import React, {ReactElement} from 'react';
 import {NativeModules, requireNativeComponent} from 'react-native';
 
-const MapLibreGL = NativeModules.MGLModule;
+const VietmapGL = NativeModules.MGLModule;
 
 export const NATIVE_MODULE_NAME = 'RCTMGLFillLayer';
 
@@ -24,7 +24,7 @@ interface NativeProps extends Omit<FillLayerProps, 'style'>, NativeBaseProps {}
  */
 class FillLayer extends AbstractLayer<FillLayerProps, NativeProps> {
   static defaultProps = {
-    sourceID: MapLibreGL.StyleSource.DefaultSourceID,
+    sourceID: VietmapGL.StyleSource.DefaultSourceID,
   };
 
   render(): ReactElement {

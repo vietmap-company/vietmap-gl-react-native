@@ -2,7 +2,7 @@ import BridgeValue, {
   type RawValueType,
   type StyleValueJSON,
 } from './BridgeValue';
-import {AllLayerStyleProps} from './MaplibreStyles';
+import {AllLayerStyleProps} from './VietmapStyles';
 import {getStyleType} from './styleMap';
 
 import {Image, processColor} from 'react-native';

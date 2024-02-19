@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import TabBarPage from '../common/TabBarPage';
@@ -11,11 +11,11 @@ class SetDisplacement extends React.Component {
   state = {minDisplacement: DISPLACEMENT[0]};
 
   componentDidMount() {
-    MapLibreGL.locationManager.start();
+    VietmapGL.locationManager.start();
   }
 
   componentWillUnmount() {
-    MapLibreGL.locationManager.stop();
+    VietmapGL.locationManager.stop();
   }
 
   onDisplacementChange = index => {
@@ -28,17 +28,17 @@ class SetDisplacement extends React.Component {
         {...this.props}
         options={OPTIONS}
         onOptionPress={this.onDisplacementChange}>
-        <MapLibreGL.MapView style={sheet.matchParent}>
-          <MapLibreGL.Camera
+        <VietmapGL.MapView style={sheet.matchParent}>
+          <VietmapGL.Camera
             followZoomLevel={16}
             followUserMode="compass"
             followUserLocation
           />
 
-          <MapLibreGL.UserLocation
+          <VietmapGL.UserLocation
             minDisplacement={this.state.minDisplacement}
           />
-        </MapLibreGL.MapView>
+        </VietmapGL.MapView>
       </TabBarPage>
     );
   }

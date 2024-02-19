@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 import {Slider} from 'react-native-elements';
 
 import sheet from '../../styles/sheet';
@@ -46,29 +46,29 @@ class IndoorBuilding extends React.Component {
   render() {
     return (
       <Page>
-        <MapLibreGL.MapView
+        <VietmapGL.MapView
           ref={ref => (this.map = ref)}
           style={sheet.matchParent}>
-          <MapLibreGL.Camera
+          <VietmapGL.Camera
             zoomLevel={16}
             pitch={40}
             heading={20}
             centerCoordinate={[-87.61694, 41.86625]}
           />
 
-          <MapLibreGL.Light
+          <VietmapGL.Light
             style={{position: [5, 90, this.state.sliderValue]}}
           />
 
-          <MapLibreGL.ShapeSource
+          <VietmapGL.ShapeSource
             id="indoorBuildingSource"
             shape={indoorMapGeoJSON}>
-            <MapLibreGL.FillExtrusionLayer
+            <VietmapGL.FillExtrusionLayer
               id="building3d"
               style={layerStyles.building}
             />
-          </MapLibreGL.ShapeSource>
-        </MapLibreGL.MapView>
+          </VietmapGL.ShapeSource>
+        </VietmapGL.MapView>
 
         <View style={styles.slider}>
           <Slider

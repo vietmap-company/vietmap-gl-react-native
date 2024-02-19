@@ -3,7 +3,7 @@ import {makePoint, makeFeatureCollection} from '../../utils/geoUtils';
 
 import {NativeModules} from 'react-native';
 
-const MapLibreGL = NativeModules.MGLModule;
+const VietmapGL = NativeModules.MGLModule;
 
 export interface SnapshotInputOptions {
   centerCoordinate?: GeoJSON.Position;
@@ -50,7 +50,7 @@ export class SnapshotOptions {
       );
     }
 
-    this.styleURL = options.styleURL || MapLibreGL.StyleURL.Default;
+    this.styleURL = options.styleURL || VietmapGL.StyleURL.Default;
     this.heading = options.heading || 0.0;
     this.pitch = options.pitch || 0.0;
     this.zoomLevel = options.zoomLevel || 16.0;

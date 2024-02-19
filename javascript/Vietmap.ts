@@ -52,7 +52,7 @@ export type {
   HillshadeLayerStyleProps as HillshadeLayerStyle,
   BackgroundLayerStyleProps as BackgroundLayerStyle,
   LightLayerStyleProps as LightLayerStyle,
-} from './utils/MaplibreStyles';
+} from './utils/VietmapStyles';
 
 import {UserTrackingMode} from './components/Camera';
 

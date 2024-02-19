@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 import {
   View,
   Image,
@@ -38,14 +38,14 @@ class TakeSnapshot extends React.Component {
   async takeSnapshot() {
     const {width, height} = Dimensions.get('window');
 
-    const uri = await MapLibreGL.snapshotManager.takeSnap({
+    const uri = await VietmapGL.snapshotManager.takeSnap({
       centerCoordinate: [-74.12641, 40.797968],
       width,
       height,
       zoomLevel: 3,
       pitch: 30,
       heading: 20,
-      styleURL: MapLibreGL.StyleURL.Default,
+      styleURL: VietmapGL.StyleURL.Default,
       writeToDisk: true,
     });
 

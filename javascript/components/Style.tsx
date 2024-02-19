@@ -1,4 +1,4 @@
-import {ExpressionField, FilterExpression} from '../utils/MaplibreStyles';
+import {ExpressionField, FilterExpression} from '../utils/VietmapStyles';
 
 import CircleLayer from './CircleLayer';
 import RasterLayer from './RasterLayer';
@@ -271,7 +271,7 @@ function asSourceComponent(
       return getShapeSource(id, source);
   }
 
-  console.warn(`Maplibre source type '${source.type}' is not supported`);
+  console.warn(`Vietmap source type '${source.type}' is not supported`);
 
   return null;
 }

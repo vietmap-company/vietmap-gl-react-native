@@ -2274,9 +2274,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"RNMaplibreExample@workspace:.":
+"RNVietmapExample@workspace:.":
   version: 0.0.0-use.local
-  resolution: "RNMaplibreExample@workspace:."
+  resolution: "RNVietmapExample@workspace:."
   dependencies:
     "@babel/core": ^7.20.5
     "@babel/preset-typescript": 7.22.5

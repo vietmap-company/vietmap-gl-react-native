@@ -1,7 +1,7 @@
 /* eslint react/prop-types:0  */
 import {StyleValue, transformStyle} from '../utils/StyleValue';
 import {getFilter} from '../utils/filterUtils';
-import {AllLayerStyleProps, FilterExpression} from '../utils/MaplibreStyles';
+import {AllLayerStyleProps, FilterExpression} from '../utils/VietmapStyles';
 import BaseProps from '../types/BaseProps';
 
 import React from 'react';

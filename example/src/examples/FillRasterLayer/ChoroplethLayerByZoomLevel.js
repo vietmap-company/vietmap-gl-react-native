@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import Page from '../common/Page';
@@ -65,19 +65,19 @@ const styles = {
 function ChoroplethLayerByZoomLevel() {
   return (
     <Page>
-      <MapLibreGL.MapView
-        styleURL={MapLibreGL.StyleURL.Default}
+      <VietmapGL.MapView
+        styleURL={VietmapGL.StyleURL.Default}
         style={sheet.matchParent}>
-        <MapLibreGL.Camera
+        <VietmapGL.Camera
           centerCoordinate={[-98, 38.88]}
           zoomLevel={3}
           minZoomLevel={3}
         />
 
-        <MapLibreGL.VectorSource
+        <VietmapGL.VectorSource
           id="population"
           url={'mapbox://mapbox.660ui7x6'}>
-          <MapLibreGL.FillLayer
+          <VietmapGL.FillLayer
             id="state-population"
             sourceLayerID="state_county_population_2014_cen"
             maxZoomLevel={4}
@@ -85,15 +85,15 @@ function ChoroplethLayerByZoomLevel() {
             style={styles.statePopulation}
           />
 
-          <MapLibreGL.FillLayer
+          <VietmapGL.FillLayer
             id="county-population"
             sourceLayerID="state_county_population_2014_cen"
             minZoomLevel={4}
             filter={['==', 'isCounty', true]}
             style={styles.countyPopulation}
           />
-        </MapLibreGL.VectorSource>
-      </MapLibreGL.MapView>
+        </VietmapGL.VectorSource>
+      </VietmapGL.MapView>
     </Page>
   );
 }

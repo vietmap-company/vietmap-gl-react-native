@@ -19,7 +19,7 @@ function readIosVersion() {
   const podspecPath = path.join(
     __dirname,
     '..',
-    'maplibre-react-native.podspec',
+    'vietmap-react-native.podspec',
   );
   const lines = fs.readFileSync(podspecPath, 'utf8').split('\n');
   const maplibreLineRegex = /^\s+version:\s*"(\d+\.\d+\.\d+)"$/;

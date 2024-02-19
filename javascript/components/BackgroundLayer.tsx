@@ -1,4 +1,4 @@
-import {BackgroundLayerStyleProps} from '../utils/MaplibreStyles';
+import {BackgroundLayerStyleProps} from '../utils/VietmapStyles';
 import BaseProps from '../types/BaseProps';
 
 import AbstractLayer, {BaseLayerProps, NativeBaseProps} from './AbstractLayer';
@@ -6,7 +6,7 @@ import AbstractLayer, {BaseLayerProps, NativeBaseProps} from './AbstractLayer';
 import React, {ReactNode} from 'react';
 import {NativeModules, requireNativeComponent} from 'react-native';
 
-const MapLibreGL = NativeModules.MGLModule;
+const VietmapGL = NativeModules.MGLModule;
 
 export const NATIVE_MODULE_NAME = 'RCTMGLBackgroundLayer';
 
@@ -23,7 +23,7 @@ interface NativeProps
 
 class BackgroundLayer extends AbstractLayer<BackgroundLayerProps, NativeProps> {
   static defaultProps = {
-    sourceID: MapLibreGL.StyleSource.DefaultSourceID,
+    sourceID: VietmapGL.StyleSource.DefaultSourceID,
   };
 
   render(): ReactNode {

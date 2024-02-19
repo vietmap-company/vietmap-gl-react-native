@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import {SF_OFFICE_COORDINATE} from '../../utils';
@@ -8,16 +8,16 @@ import Page from '../common/Page';
 function Heatmap() {
   return (
     <Page>
-      <MapLibreGL.MapView style={sheet.matchParent}>
-        <MapLibreGL.Camera
+      <VietmapGL.MapView style={sheet.matchParent}>
+        <VietmapGL.Camera
           zoomLevel={10}
           centerCoordinate={SF_OFFICE_COORDINATE}
         />
 
-        <MapLibreGL.ShapeSource
+        <VietmapGL.ShapeSource
           id="earthquakes"
           url="https://www.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson">
-          <MapLibreGL.HeatmapLayer
+          <VietmapGL.HeatmapLayer
             id="earthquakes"
             sourceID="earthquakes"
             style={{
@@ -40,8 +40,8 @@ function Heatmap() {
               ],
             }}
           />
-        </MapLibreGL.ShapeSource>
-      </MapLibreGL.MapView>
+        </VietmapGL.ShapeSource>
+      </VietmapGL.MapView>
     </Page>
   );
 }

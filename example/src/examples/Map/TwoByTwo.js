@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import smileyFaceGeoJSON from '../../assets/smiley_face.json';
@@ -21,17 +21,17 @@ const layerStyles = {
 class TwoByTwo extends React.Component {
   renderMap(styleURL, layerStyle) {
     return (
-      <MapLibreGL.MapView
+      <VietmapGL.MapView
         zoomLevel={2}
         centerCoordinate={[-35.15165038, 40.6235728]}
         onSetCameraComplete={this.onUpdateZoomLevel}
         ref={ref => (this.map = ref)}
         style={sheet.matchParent}
         styleURL={styleURL}>
-        <MapLibreGL.ShapeSource id="smileyFaceSource" shape={smileyFaceGeoJSON}>
-          <MapLibreGL.FillLayer id="smileyFaceFill" style={layerStyle} />
-        </MapLibreGL.ShapeSource>
-      </MapLibreGL.MapView>
+        <VietmapGL.ShapeSource id="smileyFaceSource" shape={smileyFaceGeoJSON}>
+          <VietmapGL.FillLayer id="smileyFaceFill" style={layerStyle} />
+        </VietmapGL.ShapeSource>
+      </VietmapGL.MapView>
     );
   }
 
@@ -39,11 +39,11 @@ class TwoByTwo extends React.Component {
     return (
       <Page>
         {this.renderMap(
-          MapLibreGL.StyleURL.Default,
+          VietmapGL.StyleURL.Default,
           layerStyles.smileyFaceDark,
         )}
         {this.renderMap(
-          MapLibreGL.StyleURL.Default,
+          VietmapGL.StyleURL.Default,
           layerStyles.smileyFaceLight,
         )}
       </Page>

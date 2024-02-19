@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlatList} from 'react-native';
 import {Overlay, ListItem, FAB, Icon} from 'react-native-elements';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 import moment from 'moment';
 
 import earthQuakesJSON from '../../assets/earthquakes.json';
@@ -124,16 +124,16 @@ class EarthQuakes extends React.Component {
           )}
         </Overlay>
         <Page {...this.props}>
-          <MapLibreGL.MapView
+          <VietmapGL.MapView
             style={sheet.matchParent}
-            styleURL={MapLibreGL.StyleURL.Default}>
-            <MapLibreGL.Camera
+            styleURL={VietmapGL.StyleURL.Default}>
+            <VietmapGL.Camera
               zoomLevel={6}
               pitch={45}
               centerCoordinate={SF_OFFICE_COORDINATE}
             />
 
-            <MapLibreGL.ShapeSource
+            <VietmapGL.ShapeSource
               id="earthquakes"
               onPress={async shape => {
                 const cluster = shape.features[0];
@@ -172,25 +172,25 @@ class EarthQuakes extends React.Component {
                 ],
               }}
               shape={earthQuakesJSON}>
-              <MapLibreGL.SymbolLayer
+              <VietmapGL.SymbolLayer
                 id="pointCount"
                 style={layerStyles.clusterCount}
               />
 
-              <MapLibreGL.CircleLayer
+              <VietmapGL.CircleLayer
                 id="clusteredPoints"
                 belowLayerID="pointCount"
                 filter={['has', 'point_count']}
                 style={layerStyles.clusteredPoints}
               />
 
-              <MapLibreGL.CircleLayer
+              <VietmapGL.CircleLayer
                 id="singlePoint"
                 filter={['!', ['has', 'point_count']]}
                 style={layerStyles.singlePoint}
               />
-            </MapLibreGL.ShapeSource>
-          </MapLibreGL.MapView>
+            </VietmapGL.ShapeSource>
+          </VietmapGL.MapView>
         </Page>
       </>
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 import {View, StyleSheet} from 'react-native';
 import {Button} from 'react-native-elements';
 import {lineString as makeLineString} from '@turf/helpers';
@@ -40,7 +40,7 @@ const layerStyles = {
   },
   route: {
     lineColor: 'white',
-    lineCap: MapLibreGL.LineJoin.Round,
+    lineCap: VietmapGL.LineJoin.Round,
     lineWidth: 3,
     lineOpacity: 0.84,
   },
@@ -102,13 +102,13 @@ class DriveTheLine extends React.Component {
     }
 
     return (
-      <MapLibreGL.ShapeSource id="routeSource" shape={this.state.route}>
-        <MapLibreGL.LineLayer
+      <VietmapGL.ShapeSource id="routeSource" shape={this.state.route}>
+        <VietmapGL.LineLayer
           id="routeFill"
           style={layerStyles.route}
           belowLayerID="originInnerCircle"
         />
-      </MapLibreGL.ShapeSource>
+      </VietmapGL.ShapeSource>
     );
   }
 
@@ -141,13 +141,13 @@ class DriveTheLine extends React.Component {
 
     const lineString = makeLineString(coords);
     return (
-      <MapLibreGL.Animated.ShapeSource id="progressSource" shape={lineString}>
-        <MapLibreGL.Animated.LineLayer
+      <VietmapGL.Animated.ShapeSource id="progressSource" shape={lineString}>
+        <VietmapGL.Animated.LineLayer
           id="progressFill"
           style={layerStyles.progress}
           aboveLayerID="routeFill"
         />
-      </MapLibreGL.Animated.ShapeSource>
+      </VietmapGL.Animated.ShapeSource>
     );
   }
 
@@ -161,9 +161,9 @@ class DriveTheLine extends React.Component {
     const style = [layerStyles.origin, {circleColor: backgroundColor}];
 
     return (
-      <MapLibreGL.ShapeSource id="origin" shape={point(SF_OFFICE_COORDINATE)}>
-        <MapLibreGL.Animated.CircleLayer id="originInnerCircle" style={style} />
-      </MapLibreGL.ShapeSource>
+      <VietmapGL.ShapeSource id="origin" shape={point(SF_OFFICE_COORDINATE)}>
+        <VietmapGL.Animated.CircleLayer id="originInnerCircle" style={style} />
+      </VietmapGL.ShapeSource>
     );
   }
 
@@ -187,11 +187,11 @@ class DriveTheLine extends React.Component {
   render() {
     return (
       <Page>
-        <MapLibreGL.MapView
+        <VietmapGL.MapView
           ref={c => (this._map = c)}
           style={sheet.matchParent}
-          styleURL={MapLibreGL.StyleURL.Default}>
-          <MapLibreGL.Camera
+          styleURL={VietmapGL.StyleURL.Default}>
+          <VietmapGL.Camera
             zoomLevel={11}
             centerCoordinate={[-122.452652, 37.762963]}
           />
@@ -202,15 +202,15 @@ class DriveTheLine extends React.Component {
           {this.renderCurrentPoint()}
           {this.renderProgressLine()}
 
-          <MapLibreGL.ShapeSource
+          <VietmapGL.ShapeSource
             id="destination"
             shape={point(SF_ZOO_COORDINATE)}>
-            <MapLibreGL.CircleLayer
+            <VietmapGL.CircleLayer
               id="destinationInnerCircle"
               style={layerStyles.destination}
             />
-          </MapLibreGL.ShapeSource>
-        </MapLibreGL.MapView>
+          </VietmapGL.ShapeSource>
+        </VietmapGL.MapView>
 
         {this.renderActions()}
       </Page>

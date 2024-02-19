@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import Page from '../common/Page';
@@ -35,25 +35,25 @@ const styles = {
 function DataDrivenCircleColors() {
   return (
     <Page>
-      <MapLibreGL.MapView
-        styleURL={MapLibreGL.StyleURL.Default}
+      <VietmapGL.MapView
+        styleURL={VietmapGL.StyleURL.Default}
         style={sheet.matchParent}>
-        <MapLibreGL.Camera
+        <VietmapGL.Camera
           zoomLevel={10}
           pitch={45}
           centerCoordinate={[-122.400021, 37.789085]}
         />
 
-        <MapLibreGL.VectorSource
+        <VietmapGL.VectorSource
           id="population"
           url={'mapbox://examples.8fgz4egr'}>
-          <MapLibreGL.CircleLayer
+          <VietmapGL.CircleLayer
             id="sf2010CircleFill"
             sourceLayerID="sf2010"
             style={styles.circles}
           />
-        </MapLibreGL.VectorSource>
-      </MapLibreGL.MapView>
+        </VietmapGL.VectorSource>
+      </VietmapGL.MapView>
     </Page>
   );
 }

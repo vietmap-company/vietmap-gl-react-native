@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import {SF_OFFICE_COORDINATE} from '../../utils';
@@ -37,15 +37,15 @@ class YoYo extends React.Component {
   render() {
     return (
       <Page>
-        <MapLibreGL.MapView
+        <VietmapGL.MapView
           ref={ref => (this.map = ref)}
           style={sheet.matchParent}
-          styleURL={MapLibreGL.StyleURL.Default}>
-          <MapLibreGL.Camera
+          styleURL={VietmapGL.StyleURL.Default}>
+          <VietmapGL.Camera
             zoomLevel={this.state.zoomLevel}
             centerCoordinate={SF_OFFICE_COORDINATE}
           />
-        </MapLibreGL.MapView>
+        </VietmapGL.MapView>
       </Page>
     );
   }

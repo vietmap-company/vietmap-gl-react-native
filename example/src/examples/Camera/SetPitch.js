@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import TabBarPage from '../common/TabBarPage';
@@ -24,11 +24,11 @@ class SetPitch extends React.Component {
   }
 
   componentDidMount() {
-    MapLibreGL.locationManager.start();
+    VietmapGL.locationManager.start();
   }
 
   componentWillUnmount() {
-    MapLibreGL.locationManager.stop();
+    VietmapGL.locationManager.stop();
   }
 
   onUpdatePitch(index, pitch) {
@@ -41,10 +41,10 @@ class SetPitch extends React.Component {
         {...this.props}
         options={this._pitchOptions}
         onOptionPress={this.onUpdatePitch}>
-        <MapLibreGL.MapView style={sheet.matchParent}>
-          <MapLibreGL.Camera {...this.state} followUserLocation />
-          <MapLibreGL.UserLocation />
-        </MapLibreGL.MapView>
+        <VietmapGL.MapView style={sheet.matchParent}>
+          <VietmapGL.Camera {...this.state} followUserLocation />
+          <VietmapGL.UserLocation />
+        </VietmapGL.MapView>
       </TabBarPage>
     );
   }

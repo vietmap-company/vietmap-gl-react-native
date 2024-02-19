@@ -1,5 +1,5 @@
 import React from 'react';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 import {Text} from 'react-native';
 
 import sheet from '../../styles/sheet';
@@ -41,13 +41,13 @@ class CustomVectorSource extends React.PureComponent {
     const {featuresCount} = this.state;
     return (
       <Page>
-        <MapLibreGL.MapView style={sheet.matchParent}>
-          <MapLibreGL.Camera
+        <VietmapGL.MapView style={sheet.matchParent}>
+          <VietmapGL.Camera
             zoomLevel={2}
             centerCoordinate={[-101.051593, 41.370337]}
           />
 
-          <MapLibreGL.VectorSource
+          <VietmapGL.VectorSource
             id="customSourceExample"
             url={VECTOR_SOURCE_URL}
             ref={source => {
@@ -56,13 +56,13 @@ class CustomVectorSource extends React.PureComponent {
             onPress={e => {
               console.log(`VectorSource onPress: ${e.features}`, e.features);
             }}>
-            <MapLibreGL.FillLayer
+            <VietmapGL.FillLayer
               id="customSourceFill"
               sourceLayerID="react-native-example"
               style={styles.boxFill}
             />
-          </MapLibreGL.VectorSource>
-        </MapLibreGL.MapView>
+          </VietmapGL.VectorSource>
+        </VietmapGL.MapView>
         <Bubble onPress={this.queryFeatures}>
           <Text>Query features:</Text>
           {featuresCount && <Text>Count: {featuresCount}</Text>}

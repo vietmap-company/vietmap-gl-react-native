@@ -1,9 +1,9 @@
-import MapLibreGL from '../javascript';
+import VietmapGL from '../javascript';
 
-// Assert that all required Maplibre modules are accessible and exported
+// Assert that all required Vietmap modules are accessible and exported
 describe('Public Interface', () => {
   it('should contain all expected components and utils', () => {
-    const actualKeys = Object.keys(MapLibreGL);
+    const actualKeys = Object.keys(VietmapGL);
     const expectedKeys = [
       // components
       'MapView',

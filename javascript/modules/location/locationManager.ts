@@ -4,7 +4,7 @@ import {
   EmitterSubscription,
 } from 'react-native';
 
-const MapLibreGL = NativeModules.MGLModule;
+const VietmapGL = NativeModules.MGLModule;
 const MapLibreGLLocationManager = NativeModules.MGLLocationModule;
 
 export const LocationModuleEventEmitter = new NativeEventEmitter(
@@ -130,7 +130,7 @@ class LocationManager {
       MapLibreGLLocationManager.start(displacement);
 
       this.subscription = LocationModuleEventEmitter.addListener(
-        MapLibreGL.LocationCallbackName.Update,
+        VietmapGL.LocationCallbackName.Update,
         this.onUpdate,
       );
 

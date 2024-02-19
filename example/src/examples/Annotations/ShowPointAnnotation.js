@@ -1,6 +1,6 @@
 import React from 'react';
 import {Animated, View, Text, StyleSheet, Image} from 'react-native';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@maplibre/maplibre-react-native';
 import PropTypes from 'prop-types';
 
 import sheet from '../../styles/sheet';
@@ -29,7 +29,7 @@ class AnnotationWithRemoteImage extends React.Component {
   render() {
     const {id, coordinate, title} = this.props;
     return (
-      <MapLibreGL.PointAnnotation
+      <VietmapGL.PointAnnotation
         id={id}
         coordinate={coordinate}
         title={title}
@@ -51,8 +51,8 @@ class AnnotationWithRemoteImage extends React.Component {
             onLoad={() => this.annotationRef.refresh()}
           />
         </View>
-        <MapLibreGL.Callout title="This is a sample" />
-      </MapLibreGL.PointAnnotation>
+        <VietmapGL.Callout title="This is a sample" />
+      </VietmapGL.PointAnnotation>
     );
   }
 }
@@ -140,14 +140,14 @@ class ShowPointAnnotation extends React.Component {
         );
       } else {
         items.push(
-          <MapLibreGL.PointAnnotation
+          <VietmapGL.PointAnnotation
             key={id}
             id={id}
             coordinate={coordinate}
             title={title}>
             <View style={styles.annotationContainer} />
-            <MapLibreGL.Callout title="This is a sample with image" />
-          </MapLibreGL.PointAnnotation>,
+            <VietmapGL.Callout title="This is a sample with image" />
+          </VietmapGL.PointAnnotation>,
         );
       }
     }
@@ -158,18 +158,18 @@ class ShowPointAnnotation extends React.Component {
   render() {
     return (
       <Page>
-        <MapLibreGL.MapView
+        <VietmapGL.MapView
           ref={c => (this._map = c)}
           onPress={this.onPress}
           onDidFinishLoadingMap={this.onDidFinishLoadingMap}
           style={sheet.matchParent}>
-          <MapLibreGL.Camera
+          <VietmapGL.Camera
             zoomLevel={16}
             centerCoordinate={this.state.coordinates[0]}
           />
 
           {this.renderAnnotations()}
-        </MapLibreGL.MapView>
+        </VietmapGL.MapView>
 
         <Bubble>
           <Text>Click to add a point annotation</Text>
