@@ -38,10 +38,7 @@ class TwoByTwo extends React.Component {
   render() {
     return (
       <Page>
-        {this.renderMap(
-          VietmapGL.StyleURL.Default,
-          layerStyles.smileyFaceDark,
-        )}
+        {this.renderMap(VietmapGL.StyleURL.Default, layerStyles.smileyFaceDark)}
         {this.renderMap(
           VietmapGL.StyleURL.Default,
           layerStyles.smileyFaceLight,

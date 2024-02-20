@@ -1,10 +1,10 @@
+import {NativeModules, requireNativeComponent} from 'react-native';
+import React, {ReactElement} from 'react';
+
 import {cloneReactChildrenWithProps} from '../utils';
 import BaseProps from '../types/BaseProps';
 
 import AbstractSource from './AbstractSource';
-
-import {NativeModules, requireNativeComponent} from 'react-native';
-import React, {ReactElement} from 'react';
 
 const VietmapGL = NativeModules.MGLModule;
 

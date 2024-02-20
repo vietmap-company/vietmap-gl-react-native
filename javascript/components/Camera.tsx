@@ -1,7 +1,3 @@
-import {toJSONString, existenceChange} from '../utils';
-import * as geoUtils from '../utils/geoUtils';
-import {VietmapGLEvent} from '../types';
-
 import {
   NativeMethods,
   NativeModules,
@@ -9,6 +5,10 @@ import {
   ViewProps,
 } from 'react-native';
 import React, {Component, MutableRefObject, ReactElement} from 'react';
+
+import {toJSONString, existenceChange} from '../utils';
+import * as geoUtils from '../utils/geoUtils';
+import {VietmapGLEvent} from '../types';
 
 const VietmapGL = NativeModules.MGLModule;
 

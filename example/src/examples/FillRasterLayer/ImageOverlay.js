@@ -87,10 +87,7 @@ class ImageOverlay extends React.Component {
             id="radarSource"
             coordinates={this.state.coords}
             url={frames[this.state.radarFrameIndex]}>
-            <VietmapGL.RasterLayer
-              id="radarLayer"
-              style={styles.rasterLayer}
-            />
+            <VietmapGL.RasterLayer id="radarLayer" style={styles.rasterLayer} />
           </VietmapGL.Animated.ImageSource>
         </VietmapGL.MapView>
         <Bubble

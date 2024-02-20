@@ -120,3 +120,4 @@ coverage
 
 # Config plugin
 /plugin/build
+/javascript/vietmap_api_key.ts

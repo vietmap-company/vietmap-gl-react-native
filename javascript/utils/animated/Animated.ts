@@ -1,4 +1,6 @@
-﻿import ShapeSource from '../../components/ShapeSource';
+﻿import {Animated as RNAnimated} from 'react-native';
+
+import ShapeSource from '../../components/ShapeSource';
 import ImageSource from '../../components/ImageSource';
 import FillLayer from '../../components/FillLayer';
 import FillExtrusionLayer from '../../components/FillExtrusionLayer';
@@ -12,8 +14,6 @@ import AnimatedShape from './AnimatedShape';
 import AnimatedCoordinatesArray from './AnimatedCoordinatesArray';
 import AnimatedExtractCoordinateFromArray from './AnimatedExtractCoordinateFromArray';
 import AnimatedRouteCoordinatesArray from './AnimatedRouteCoordinatesArray';
-
-import {Animated as RNAnimated} from 'react-native';
 
 const Animated = {
   // sources

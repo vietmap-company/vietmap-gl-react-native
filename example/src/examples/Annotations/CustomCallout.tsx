@@ -69,10 +69,7 @@ const CustomCallout = (props: CustomCalloutProps): ReactElement => {
           id="mapPinsSource"
           shape={featureCollection}
           onPress={onPinPress}>
-          <VietmapGL.SymbolLayer
-            id="mapPinsLayer"
-            style={styles.mapPinLayer}
-          />
+          <VietmapGL.SymbolLayer id="mapPinsLayer" style={styles.mapPinLayer} />
         </VietmapGL.ShapeSource>
         {selectedFeature && (
           <VietmapGL.MarkerView

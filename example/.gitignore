@@ -70,3 +70,4 @@ yarn-error.log
 .metro-health-check*
 # testing
 /coverage
+/src/vietmap_api.ts

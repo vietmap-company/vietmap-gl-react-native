@@ -39,9 +39,7 @@ const ShowMap = (): ReactElement => {
 
   return (
     <TabBarPage scrollable options={_mapOptions} onOptionPress={onMapChange}>
-      <VietmapGL.MapView
-        styleURL={styleURL.styleURL}
-        style={sheet.matchParent}>
+      <VietmapGL.MapView styleURL={styleURL.styleURL} style={sheet.matchParent}>
         <VietmapGL.Camera followZoomLevel={6} followUserLocation />
 
         <VietmapGL.UserLocation onPress={onUserMarkerPress} />

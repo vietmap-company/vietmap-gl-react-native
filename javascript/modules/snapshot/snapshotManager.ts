@@ -1,6 +1,6 @@
-import SnapshotOptions, {SnapshotInputOptions} from './SnapshotOptions';
-
 import {NativeModules} from 'react-native';
+
+import SnapshotOptions, {SnapshotInputOptions} from './SnapshotOptions';
 
 const VietmapGLSnapshotManger = NativeModules.MGLSnapshotModule;
 
