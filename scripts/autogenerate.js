@@ -22,7 +22,7 @@ function readIosVersion() {
     'vietmap-react-native.podspec',
   );
   const lines = fs.readFileSync(podspecPath, 'utf8').split('\n');
-  const maplibreLineRegex = /^\s+version:\s*"(\d+\.\d+\.\d+)"$/;
+  const maplibreLineRegex = /^\s+s.dependency\s'VietMap',\s'(\d+\.\d+\.\d+)'$/;
   const maplibreLine = lines.filter(i => maplibreLineRegex.exec(i))[0];
   return `${maplibreLineRegex.exec(maplibreLine)[1]}.0`;
 }
@@ -36,7 +36,7 @@ function readAndroidVersion() {
     'build.gradle',
   );
   const lines = fs.readFileSync(buildGradlePath, 'utf8').split('\n');
-  const maplibreLineRegex = /^\s+implementation\s+"org.maplibre.gl:android-sdk:(\d+\.\d+\.\d+)"$/;
+  const maplibreLineRegex = /^\s+implementation\s+'com.github.vietmap-company:maps-sdk-android:(\d+\.\d+\.\d+)'$/;
   const maplibreLine = lines.filter(i => maplibreLineRegex.exec(i))[0];
   return maplibreLineRegex.exec(maplibreLine)[1];
 }
@@ -330,8 +330,8 @@ async function generate() {
       output: path.join(IOS_OUTPUT_PATH, 'index.d.ts'),
     },*/
     {
-      input: path.join(TMPL_PATH, 'MaplibreStyles.ts.ejs'),
-      output: path.join(JS_OUTPUT_PATH, 'MaplibreStyles.d.ts'), 
+      input: path.join(TMPL_PATH, 'VietmapStyles.ts.ejs'),
+      output: path.join(JS_OUTPUT_PATH, 'VietmapStyles.d.ts'), 
     },
     {
       input: path.join(TMPL_PATH, 'RCTMGLStyle.m.ejs'),

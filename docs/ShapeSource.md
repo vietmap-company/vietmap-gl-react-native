@@ -5,7 +5,7 @@
 ### props
 | Prop | Type | Default | Required | Description |
 | ---- | :--: | :-----: | :------: | :----------: |
-| id | `string` | `MapLibreGL.StyleSource.DefaultSourceID` | `false` | A string that uniquely identifies the source. |
+| id | `string` | `VietmapGL.StyleSource.DefaultSourceID` | `false` | A string that uniquely identifies the source. |
 | url | `string` | `none` | `false` | An HTTP(S) URL, absolute file URL, or local file URL relative to the current application’s resource bundle. |
 | shape | `\| GeoJSON.GeometryCollection
 \| GeoJSON.Feature

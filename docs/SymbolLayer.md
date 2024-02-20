@@ -7,7 +7,7 @@
 | ---- | :--: | :-----: | :------: | :----------: |
 | style | `SymbolLayerStyleProps` | `none` | `false` | Customizable style attributes |
 | children | `ReactElement \| ReactElement[]` | `none` | `false` | @deprecated passed children used to create an image with id of symbol in style and also set the iconImageName property accordingly.<br/>This is now deprecated, use Image component instead. |
-| sourceID | `FIX ME UNKNOWN TYPE` | `MapLibreGL.StyleSource.DefaultSourceID` | `false` | FIX ME NO DESCRIPTION |
+| sourceID | `FIX ME UNKNOWN TYPE` | `VietmapGL.StyleSource.DefaultSourceID` | `false` | FIX ME NO DESCRIPTION |
 
 
 ### styles
