@@ -1,37 +1,17 @@
----
+ 
 
-[![MapLibre Logo](https://maplibre.org/img/maplibre-logo-big.svg)](https://maplibre.org)
+[<img src="https://bizweb.dktcdn.net/100/415/690/themes/804206/assets/logo.png?1689561872933" height="40"/> </p>](https://bit.ly/vietmap-api)
 
 
-# MapLibre GL SDK for React Native
+# Vietmap GL SDK for React Native
 
 _A React Native library for building maps with   
-the [MapLibre GL Native SDK for iOS & Android](https://github.com/maplibre/maplibre-gl-native)_.
-
-This project originated as a fork of [rnmapbox](https://github.com/rnmapbox/maps), a community-maintained
-React Native Library for building maps with the Mapbox iOS and Android mobile SDKs. The original product
-supported both Mapbox and MapLibre for some time, but as the MapLibre and Mapbox SDKs have
-diverged, it has become necessary to separate the projects into specific wrappers by underlying renderer.
-
----
-
-[![npm version](https://badge.fury.io/js/%40maplibre%2Fmaplibre-react-native.svg)](https://badge.fury.io/js/%40maplibre%2Fmaplibre-react-native)  
-[![Android Build](https://github.com/maplibre/maplibre-react-native/actions/workflows/android-actions.yml/badge.svg)](https://github.com/maplibre/maplibre-react-native/actions/workflows/android-actions.yml)  
-[![iOS Build](https://github.com/maplibre/maplibre-react-native/actions/workflows/ios-actions.yml/badge.svg)](https://github.com/maplibre/maplibre-react-native/actions/workflows/ios-actions.yml)  
-
----
+the [Vietmap GL Native SDK for iOS & Android](https://bit.ly/vietmap-api)_.
+ 
+ 
 
 <br>
-
-<img src="./assets/indoor_building_map_android.png"
-     alt="Indoor Building Map Android"
-     height="300"
-      />
-<img src="./assets/indoor_building_map_ios.png"
-     alt="Indoor Building Map iOS"
-     height="300"
-      />
-
+ 
 ## Documentation
 
 [Getting Started (start here)](/docs/GettingStarted.md)

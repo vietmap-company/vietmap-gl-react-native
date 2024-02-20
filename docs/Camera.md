@@ -19,12 +19,12 @@
 | maxZoomLevel | `number` | `none` | `false` | The maximun zoom level of the map |
 | maxBounds | `CameraBounds` | `none` | `false` | Restrict map panning so that the center is within these bounds |
 | followUserLocation | `boolean` | `none` | `false` | Should the map orientation follow the user's. |
-| followUserMode | `UserTrackingMode` | `none` | `false` | The mode used to track the user location on the map. One of; "normal", "compass", "course". Each mode string is also available as a member on the `MapLibreGL.UserTrackingModes` object. `Follow` (normal), `FollowWithHeading` (compass), `FollowWithCourse` (course). NOTE: `followUserLocation` must be set to `true` for any of the modes to take effect. [Example](../example/src/examples/Camera/SetUserTrackingModes.js) |
+| followUserMode | `UserTrackingMode` | `none` | `false` | The mode used to track the user location on the map. One of; "normal", "compass", "course". Each mode string is also available as a member on the `VietmapGL.UserTrackingModes` object. `Follow` (normal), `FollowWithHeading` (compass), `FollowWithCourse` (course). NOTE: `followUserLocation` must be set to `true` for any of the modes to take effect. [Example](../example/src/examples/Camera/SetUserTrackingModes.js) |
 | followZoomLevel | `number` | `none` | `false` | The zoomLevel on map while followUserLocation is set to `true` |
 | followPitch | `number` | `none` | `false` | The pitch on map while followUserLocation is set to `true` |
 | followHeading | `number` | `none` | `false` | The heading on map while followUserLocation is set to `true` |
 | triggerKey | `string \| number` | `none` | `false` | Manually update the camera - helpful for when props did not update, however you still want the camera to move |
-| onUserTrackingModeChange | `func` | `none` | `false` | FIX ME NO DESCRIPTION<br/>*signature:*`(event:MaplibreGLEvent) => void` |
+| onUserTrackingModeChange | `func` | `none` | `false` | FIX ME NO DESCRIPTION<br/>*signature:*`(event:VietmapGLEvent) => void` |
 
 ### methods
 #### fitBounds(northEastCoordinates, southWestCoordinates[, padding][, animationDuration])

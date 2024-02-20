@@ -21,7 +21,7 @@ Creates and registers an offline pack that downloads the resources needed to use
 const progressListener = (offlineRegion, status) => console.log(offlineRegion, status);
 const errorListener = (offlineRegion, err) => console.log(offlineRegion, err);
 
-await MapLibreGL.offlineManager.createPack({
+await VietmapGL.offlineManager.createPack({
   name: 'offlinePack',
   styleURL: 'mapbox://...',
   minZoom: 14,
@@ -43,7 +43,7 @@ Invalidates the specified offline pack. This method checks that the tiles in the
 
 
 ```javascript
-await MapLibreGL.offlineManager.invalidatePack('packName')
+await VietmapGL.offlineManager.invalidatePack('packName')
 ```
 
 
@@ -59,7 +59,7 @@ Unregisters the given offline pack and allows resources that are no longer requi
 
 
 ```javascript
-await MapLibreGL.offlineManager.deletePack('packName')
+await VietmapGL.offlineManager.deletePack('packName')
 ```
 
 
@@ -75,7 +75,7 @@ Forces a revalidation of the tiles in the ambient cache and downloads a fresh ve
 
 
 ```javascript
-await MapLibreGL.offlineManager.invalidateAmbientCache();
+await VietmapGL.offlineManager.invalidateAmbientCache();
 ```
 
 
@@ -91,7 +91,7 @@ Erases resources from the ambient cache.<br/>This method clears the cache and de
 
 
 ```javascript
-await MapLibreGL.offlineManager.clearAmbientCache();
+await VietmapGL.offlineManager.clearAmbientCache();
 ```
 
 
@@ -107,7 +107,7 @@ Sets the maximum size of the ambient cache in bytes. Disables the ambient cache 
 
 
 ```javascript
-await MapLibreGL.offlineManager.setMaximumAmbientCacheSize(5000000);
+await VietmapGL.offlineManager.setMaximumAmbientCacheSize(5000000);
 ```
 
 
@@ -123,7 +123,7 @@ Deletes the existing database, which includes both the ambient cache and offline
 
 
 ```javascript
-await MapLibreGL.offlineManager.resetDatabase();
+await VietmapGL.offlineManager.resetDatabase();
 ```
 
 
@@ -139,7 +139,7 @@ Retrieves all the current offline packs that are stored in the database.
 
 
 ```javascript
-const offlinePacks = await MapLibreGL.offlineManager.getPacks();
+const offlinePacks = await VietmapGL.offlineManager.getPacks();
 ```
 
 
@@ -155,7 +155,7 @@ Retrieves an offline pack that is stored in the database by name.
 
 
 ```javascript
-const offlinePack = await MapLibreGL.offlineManager.getPack();
+const offlinePack = await VietmapGL.offlineManager.getPack();
 ```
 
 
@@ -171,7 +171,7 @@ Sideloads offline db
 
 
 ```javascript
-await MapLibreGL.offlineManager.mergeOfflineRegions(path);
+await VietmapGL.offlineManager.mergeOfflineRegions(path);
 ```
 
 
@@ -187,7 +187,7 @@ Sets the maximum number of tiles that may be downloaded and stored on the curren
 
 
 ```javascript
-MapLibreGL.offlineManager.setTileCountLimit(1000);
+VietmapGL.offlineManager.setTileCountLimit(1000);
 ```
 
 
@@ -203,7 +203,7 @@ Sets the period at which download status events will be sent over the React Nati
 
 
 ```javascript
-MapLibreGL.offlineManager.setProgressEventThrottle(500);
+VietmapGL.offlineManager.setProgressEventThrottle(500);
 ```
 
 
@@ -223,7 +223,7 @@ Subscribe to download status/error events for the requested offline pack.<br/>No
 ```javascript
 const progressListener = (offlinePack, status) => console.log(offlinePack, status)
 const errorListener = (offlinePack, err) => console.log(offlinePack, err)
-MapLibreGL.offlineManager.subscribe('packName', progressListener, errorListener)
+VietmapGL.offlineManager.subscribe('packName', progressListener, errorListener)
 ```
 
 
@@ -239,7 +239,7 @@ Unsubscribes any listeners associated with the offline pack.<br/>It's a good ide
 
 
 ```javascript
-MapLibreGL.offlineManager.unsubscribe('packName')
+VietmapGL.offlineManager.unsubscribe('packName')
 ```
 
 
