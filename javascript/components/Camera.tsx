@@ -97,7 +97,9 @@ export interface NativeCameraStop extends Required<CameraPadding> {
 }
 
 export interface CameraStop {
-  /** The location on which the map should center. */
+  /** The location on which the map should center. 
+   * Input with [lng, lat] format.
+  */
   centerCoordinate?: GeoJSON.Position;
   /** The corners of a box around which the map should bound. Contains padding props for backwards
    * compatibility; the root `padding` prop should be used instead. */

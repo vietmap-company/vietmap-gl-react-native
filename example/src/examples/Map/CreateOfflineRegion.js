@@ -10,6 +10,7 @@ import {
 import VietmapGL from '@maplibre/maplibre-react-native';
 import geoViewport from '@mapbox/geo-viewport';
 
+import vietmap_api from '../../vietmap_api';
 import sheet from '../../styles/sheet';
 import Page from '../common/Page';
 import Bubble from '../common/Bubble';
@@ -72,7 +73,7 @@ class CreateOfflineRegion extends React.Component {
 
     const options = {
       name: this.state.name,
-      styleURL: VietmapGL.StyleURL.Default,
+      styleURL: vietmap_api.get_style_url,
       bounds: [
         [bounds[0], bounds[1]],
         [bounds[2], bounds[3]],

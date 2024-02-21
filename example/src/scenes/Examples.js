@@ -47,6 +47,7 @@ import PointInMapView from '../examples/Map/PointInMapView';
 import ShowAndHideLayer from '../examples/Map/ShowAndHideLayer';
 import ShowClick from '../examples/Map/ShowClick';
 import ShowMap from '../examples/Map/ShowMap';
+import SimpleMap from '../examples/Map/SimpleMap';
 import ShowMapLocalStyle from '../examples/Map/ShowMapLocalStyle';
 import ShowRegionDidChange from '../examples/Map/ShowRegionDidChange';
 import SourceLayerVisibility from '../examples/Map/SourceLayerVisibility';
@@ -107,6 +108,7 @@ const Examples = new ExampleGroup(
     new ExampleItem('Bug Report Template', BugReportPage),
     new ExampleGroup('Map', [
       new ExampleItem('Show Map', ShowMap),
+      new ExampleItem('Simple Map', SimpleMap),
       new ExampleItem('Show Map With Local Style.JSON', ShowMapLocalStyle),
       new ExampleItem('Show Click', ShowClick),
       new ExampleItem('Show Region Did Change', ShowRegionDidChange),

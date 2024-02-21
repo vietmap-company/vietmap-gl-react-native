@@ -1,5 +1,6 @@
 import React from 'react';
 import VietmapGL from '@maplibre/maplibre-react-native';
+import vietmap_api from '../../vietmap_api';
 import {
   View,
   Image,
@@ -45,7 +46,7 @@ class TakeSnapshot extends React.Component {
       zoomLevel: 3,
       pitch: 30,
       heading: 20,
-      styleURL: VietmapGL.StyleURL.Default,
+      styleURL: vietmap_api.get_style_url,
       writeToDisk: true,
     });
 

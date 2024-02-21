@@ -8,6 +8,7 @@ import radar0 from '../../assets/radar.png';
 import radar1 from '../../assets/radar1.png';
 import radar2 from '../../assets/radar2.png';
 import Page from '../common/Page';
+import vietmap_api from '../../vietmap_api';
 
 const styles = {
   rasterLayer: {rasterOpacity: 0.6},
@@ -79,7 +80,7 @@ class ImageOverlay extends React.Component {
         <VietmapGL.MapView
           ref={ref => (this.map = ref)}
           style={sheet.matchParent}
-          styleURL={VietmapGL.StyleURL.Default}>
+          styleURL={vietmap_api.get_style_url}>
           <VietmapGL.Camera zoomLevel={4} centerCoordinate={[-79, 40]} />
 
           <VietmapGL.Animated.ImageSource

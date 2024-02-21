@@ -4,6 +4,7 @@ import VietmapGL from '@maplibre/maplibre-react-native';
 import sheet from '../../styles/sheet';
 import {SF_OFFICE_COORDINATE} from '../../utils';
 import Page from '../common/Page';
+import vietmap_api from '../../vietmap_api';
 
 class YoYo extends React.Component {
   timeout = null;
@@ -40,7 +41,7 @@ class YoYo extends React.Component {
         <VietmapGL.MapView
           ref={ref => (this.map = ref)}
           style={sheet.matchParent}
-          styleURL={VietmapGL.StyleURL.Default}>
+          styleURL={vietmap_api.get_style_url}>
           <VietmapGL.Camera
             zoomLevel={this.state.zoomLevel}
             centerCoordinate={SF_OFFICE_COORDINATE}

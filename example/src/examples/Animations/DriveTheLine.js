@@ -10,6 +10,7 @@ import sheet from '../../styles/sheet';
 import {SF_OFFICE_COORDINATE} from '../../utils';
 import Page from '../common/Page';
 import PulseCircleLayer from '../common/PulseCircleLayer';
+import vietmap_api from '../../vietmap_api';
 
 const SF_ZOO_COORDINATE = [-122.505412, 37.737463];
 
@@ -190,7 +191,7 @@ class DriveTheLine extends React.Component {
         <VietmapGL.MapView
           ref={c => (this._map = c)}
           style={sheet.matchParent}
-          styleURL={VietmapGL.StyleURL.Default}>
+          styleURL={vietmap_api.get_style_url}>
           <VietmapGL.Camera
             zoomLevel={11}
             centerCoordinate={[-122.452652, 37.762963]}

@@ -9,6 +9,7 @@ import sheet from '../../styles/sheet';
 import {SF_OFFICE_COORDINATE} from '../../utils';
 import Page from '../common/Page';
 
+import vietmap_api from '../../vietmap_api';
 const layerStyles = {
   singlePoint: {
     circleColor: 'green',
@@ -126,7 +127,7 @@ class EarthQuakes extends React.Component {
         <Page {...this.props}>
           <VietmapGL.MapView
             style={sheet.matchParent}
-            styleURL={VietmapGL.StyleURL.Default}>
+            styleURL={vietmap_api.get_style_url}>
             <VietmapGL.Camera
               zoomLevel={6}
               pitch={45}
