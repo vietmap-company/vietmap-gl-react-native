@@ -1,8 +1,3 @@
-import {toJSONString, isFunction} from '../utils';
-import {makePoint} from '../utils/geoUtils';
-
-import NativeBridgeComponent, {RNMLEvent} from './NativeBridgeComponent';
-
 import React, {Component, ReactElement, SyntheticEvent} from 'react';
 import {
   requireNativeComponent,
@@ -10,6 +5,11 @@ import {
   Platform,
   ViewProps,
 } from 'react-native';
+
+import {toJSONString, isFunction} from '../utils';
+import {makePoint} from '../utils/geoUtils';
+
+import NativeBridgeComponent, {RNMLEvent} from './NativeBridgeComponent';
 
 export const NATIVE_MODULE_NAME = 'RCTMGLPointAnnotation';
 

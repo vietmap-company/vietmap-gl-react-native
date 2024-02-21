@@ -5,6 +5,7 @@ import VietmapGL from '@maplibre/maplibre-react-native';
 import sheet from '../../styles/sheet';
 import {onSortOptions} from '../../utils';
 import TabBarPage from '../common/TabBarPage';
+import vietmap_api from '../../vietmap_api';
 
 const ShowMap = (): ReactElement => {
   const _mapOptions = Object.keys(VietmapGL.StyleURL)
@@ -16,7 +17,7 @@ const ShowMap = (): ReactElement => {
     })
     .sort(onSortOptions);
 
-  const [styleURL, setStyleURL] = useState({styleURL: _mapOptions[0].data});
+  const [styleURL, setStyleURL] = useState({styleURL: vietmap_api.get_style_url()});
 
   useEffect(() => {
     VietmapGL.locationManager.start();
@@ -28,9 +29,9 @@ const ShowMap = (): ReactElement => {
 
   const onMapChange = (
     index: number,
-    newStyleURL: VietmapGL.StyleURL,
+    newStyleURL: string,
   ): void => {
-    setStyleURL({styleURL: newStyleURL});
+    setStyleURL({styleURL:newStyleURL});
   };
 
   const onUserMarkerPress = (): void => {
@@ -39,9 +40,7 @@ const ShowMap = (): ReactElement => {
 
   return (
     <TabBarPage scrollable options={_mapOptions} onOptionPress={onMapChange}>
-      <VietmapGL.MapView
-        styleURL={styleURL.styleURL}
-        style={sheet.matchParent}>
+      <VietmapGL.MapView styleURL={styleURL.styleURL} style={sheet.matchParent}>
         <VietmapGL.Camera followZoomLevel={6} followUserLocation />
 
         <VietmapGL.UserLocation onPress={onUserMarkerPress} />
@@ -50,4 +49,4 @@ const ShowMap = (): ReactElement => {
   );
 };
 
-export default ShowMap;
+export default ShowMap

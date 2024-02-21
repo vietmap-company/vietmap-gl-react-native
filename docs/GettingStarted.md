@@ -57,9 +57,9 @@ Here is an example minimal App.js
 ```js
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import Vietmap from '@maplibre/maplibre-react-native';
 
-// Will be null for most users (only Mapbox authenticates this way).
+// Will be null for most users (only Vietmap authenticates this way).
 // Required on Android. See Android installation notes.
 MapLibreGL.setAccessToken(null);
 
@@ -80,10 +80,9 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.page}>
-        <MapLibreGL.MapView
+        <Vietmap.MapView
           style={styles.map}
-          logoEnabled={false}
-          styleURL="https://demotiles.maplibre.org/style.json"
+          styleURL="https://maps.vietmap.vn/api/maps/light/styles.json?apikey=YOUR_API_KEY_HERE"
         />
       </View>
     );

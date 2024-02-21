@@ -5,6 +5,7 @@ import sheet from '../../styles/sheet';
 import smileyFaceGeoJSON from '../../assets/smiley_face.json';
 import Page from '../common/Page';
 
+import vietmap_api from '../../vietmap_api';
 const layerStyles = {
   smileyFaceLight: {
     fillAntialias: true,
@@ -38,12 +39,9 @@ class TwoByTwo extends React.Component {
   render() {
     return (
       <Page>
+        {this.renderMap(vietmap_api.get_style_url, layerStyles.smileyFaceDark)}
         {this.renderMap(
-          VietmapGL.StyleURL.Default,
-          layerStyles.smileyFaceDark,
-        )}
-        {this.renderMap(
-          VietmapGL.StyleURL.Default,
+          vietmap_api.get_style_url,
           layerStyles.smileyFaceLight,
         )}
       </Page>

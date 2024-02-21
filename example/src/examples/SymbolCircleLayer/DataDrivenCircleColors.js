@@ -4,6 +4,7 @@ import VietmapGL from '@maplibre/maplibre-react-native';
 import sheet from '../../styles/sheet';
 import Page from '../common/Page';
 
+import vietmap_api from '../../vietmap_api';
 const styles = {
   circles: {
     circleRadius: [
@@ -36,7 +37,7 @@ function DataDrivenCircleColors() {
   return (
     <Page>
       <VietmapGL.MapView
-        styleURL={VietmapGL.StyleURL.Default}
+        styleURL={vietmap_api.get_style_url}
         style={sheet.matchParent}>
         <VietmapGL.Camera
           zoomLevel={10}

@@ -7,6 +7,7 @@ import StyleJsonExample2 from '../../assets/style-json-example2.json';
 import Page from '../common/Page';
 import Bubble from '../common/Bubble';
 
+import vietmap_api from '../../vietmap_api';
 const styles = StyleSheet.create({
   map: {
     flex: 1,
@@ -34,7 +35,7 @@ class StyleJson extends React.Component {
     return (
       <Page>
         <VietmapGL.MapView
-          styleURL={VietmapGL.StyleURL.Default}
+          styleURL={vietmap_api.get_style_url}
           style={styles.map}>
           <VietmapGL.Camera defaultSettings={defaultCamera} />
           <VietmapGL.Style

@@ -6,6 +6,7 @@ import VietmapGL from '@maplibre/maplibre-react-native';
 
 import sheet from '../../styles/sheet';
 import Page from '../common/Page';
+import vietmap_api from '../../vietmap_api';
 
 const buildPadding = ([top, right, bottom, left] = [0, 0, 0, 0]) => {
   return {
@@ -206,7 +207,7 @@ class Fit extends React.Component {
     return (
       <Page>
         <VietmapGL.MapView
-          styleURL={VietmapGL.StyleURL.Default}
+          styleURL={vietmap_api.get_style_url}
           style={sheet.matchParent}>
           <VietmapGL.Camera
             ref={ref => (this.camera = ref)}

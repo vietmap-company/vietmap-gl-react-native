@@ -1,3 +1,12 @@
+import React, {Component, ReactElement} from 'react';
+import {
+  NativeMethods,
+  NativeModules,
+  NativeSyntheticEvent,
+  requireNativeComponent,
+} from 'react-native';
+import {Feature, FeatureCollection} from '@turf/helpers';
+
 import {ExpressionField, FilterExpression} from '../utils/VietmapStyles';
 import {getFilter} from '../utils/filterUtils';
 import {
@@ -12,15 +21,6 @@ import BaseProps from '../types/BaseProps';
 
 import AbstractSource from './AbstractSource';
 import NativeBridgeComponent from './NativeBridgeComponent';
-
-import React, {Component, ReactElement} from 'react';
-import {
-  NativeMethods,
-  NativeModules,
-  NativeSyntheticEvent,
-  requireNativeComponent,
-} from 'react-native';
-import {Feature, FeatureCollection} from '@turf/helpers';
 
 const VietmapGL = NativeModules.MGLModule;
 

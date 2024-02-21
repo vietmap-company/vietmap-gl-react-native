@@ -1,9 +1,3 @@
-import {LightLayerStyleProps} from '../utils/VietmapStyles';
-import BaseProps from '../types/BaseProps';
-import {StyleValue, transformStyle} from '../utils/StyleValue';
-
-import AbstractLayer, {BaseLayerProps} from './AbstractLayer';
-
 import React, {
   Component,
   createRef,
@@ -11,6 +5,12 @@ import React, {
   ReactElement,
 } from 'react';
 import {NativeMethods, requireNativeComponent} from 'react-native';
+
+import {LightLayerStyleProps} from '../utils/VietmapStyles';
+import BaseProps from '../types/BaseProps';
+import {StyleValue, transformStyle} from '../utils/StyleValue';
+
+import AbstractLayer, {BaseLayerProps} from './AbstractLayer';
 
 export const NATIVE_MODULE_NAME = 'RCTMGLLight';
 

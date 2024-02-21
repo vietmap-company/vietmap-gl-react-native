@@ -1,7 +1,7 @@
-import BaseProps from '../types/BaseProps';
-
 import React from 'react';
 import {NativeMethods} from 'react-native';
+
+import BaseProps from '../types/BaseProps';
 
 class AbstractSource<
   PropsType extends BaseProps,

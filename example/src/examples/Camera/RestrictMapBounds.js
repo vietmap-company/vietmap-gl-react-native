@@ -4,6 +4,7 @@ import bboxPolygon from '@turf/bbox-polygon';
 
 import sheet from '../../styles/sheet';
 import Page from '../common/Page';
+import vietmap_api from '../../vietmap_api';
 
 const boundsStyle = {
   fillColor: 'rgba(255, 255, 255, 0.1)',
@@ -22,7 +23,7 @@ const RestrictMapBounds = props => (
   <Page {...props}>
     <VietmapGL.MapView
       style={sheet.matchParent}
-      styleURL={VietmapGL.StyleURL.Default}>
+      styleURL={vietmap_api.get_style_url}>
       <VietmapGL.Camera
         maxBounds={bounds}
         zoomLevel={7}

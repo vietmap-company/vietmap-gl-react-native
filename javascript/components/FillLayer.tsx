@@ -1,10 +1,10 @@
+import React, {ReactElement} from 'react';
+import {NativeModules, requireNativeComponent} from 'react-native';
+
 import {FillLayerStyleProps} from '../utils/VietmapStyles';
 import BaseProps from '../types/BaseProps';
 
 import AbstractLayer, {BaseLayerProps, NativeBaseProps} from './AbstractLayer';
-
-import React, {ReactElement} from 'react';
-import {NativeModules, requireNativeComponent} from 'react-native';
 
 const VietmapGL = NativeModules.MGLModule;
 

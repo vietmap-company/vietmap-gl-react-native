@@ -1,3 +1,5 @@
+import React, {ReactElement} from 'react';
+
 import locationManager, {Location} from '../modules/location/locationManager';
 import {CircleLayerStyleProps} from '../utils/VietmapStyles';
 
@@ -5,8 +7,6 @@ import Annotation from './annotations/Annotation';
 import CircleLayer from './CircleLayer';
 import HeadingIndicator from './HeadingIndicator';
 import NativeUserLocation from './NativeUserLocation';
-
-import React, {ReactElement} from 'react';
 
 const mapboxBlue = 'rgba(51, 181, 229, 100)';
 

@@ -1,11 +1,11 @@
+import React, {ReactElement} from 'react';
+import {Animated as RNAnimated, Easing} from 'react-native';
+
 import SymbolLayer from '../SymbolLayer';
 import Animated from '../../utils/animated/Animated';
 import AnimatedMapPoint from '../../utils/animated/AnimatedPoint';
 import OnPressEvent from '../../types/OnPressEvent';
 import {SymbolLayerStyleProps} from '../../utils/VietmapStyles';
-
-import React, {ReactElement} from 'react';
-import {Animated as RNAnimated, Easing} from 'react-native';
 
 interface AnnotationProps {
   id: string;

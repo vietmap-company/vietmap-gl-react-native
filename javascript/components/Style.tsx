@@ -1,3 +1,11 @@
+import React, {
+  useMemo,
+  useState,
+  useEffect,
+  ReactElement,
+  ComponentType,
+} from 'react';
+
 import {ExpressionField, FilterExpression} from '../utils/VietmapStyles';
 
 import CircleLayer from './CircleLayer';
@@ -13,14 +21,6 @@ import RasterSource from './RasterSource';
 import ImageSource from './ImageSource';
 import ShapeSource from './ShapeSource';
 import {BaseLayerProps} from './AbstractLayer';
-
-import React, {
-  useMemo,
-  useState,
-  useEffect,
-  ReactElement,
-  ComponentType,
-} from 'react';
 
 function toCamelCase(s: string): string {
   return s.replace(/([-_][a-z])/gi, $1 => {

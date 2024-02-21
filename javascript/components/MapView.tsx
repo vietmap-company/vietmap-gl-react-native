@@ -1,12 +1,3 @@
-import {FilterExpression} from '../utils/VietmapStyles';
-import {Location} from '../modules/location/locationManager';
-import {isFunction, isAndroid} from '../utils';
-import {getFilter} from '../utils/filterUtils';
-import Logger from '../utils/Logger';
-import BaseProps from '../types/BaseProps';
-
-import NativeBridgeComponent from './NativeBridgeComponent';
-
 import React, {Component, ReactElement, ReactNode} from 'react';
 import {
   View,
@@ -19,6 +10,15 @@ import {
   NativeSyntheticEvent,
 } from 'react-native';
 import {debounce} from 'debounce';
+
+import {FilterExpression} from '../utils/VietmapStyles';
+import {Location} from '../modules/location/locationManager';
+import {isFunction, isAndroid} from '../utils';
+import {getFilter} from '../utils/filterUtils';
+import Logger from '../utils/Logger';
+import BaseProps from '../types/BaseProps';
+
+import NativeBridgeComponent from './NativeBridgeComponent';
 
 const VietmapGL = NativeModules.MGLModule;
 if (VietmapGL == null) {

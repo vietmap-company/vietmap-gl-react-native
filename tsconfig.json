@@ -19,6 +19,6 @@
   },
   "include": [
     "javascript/**/*", "index.ts"
-  ],
+, "example/src/vietmap_api.ts"  ],
 }
 

@@ -1,3 +1,12 @@
+import React, {Component, ReactNode} from 'react';
+import {
+  NativeMethods,
+  NativeModules,
+  NativeSyntheticEvent,
+  requireNativeComponent,
+} from 'react-native';
+import {featureCollection} from '@turf/helpers';
+
 import {FilterExpression} from '../utils/VietmapStyles';
 import {cloneReactChildrenWithProps, isFunction, isAndroid} from '../utils';
 import {getFilter} from '../utils/filterUtils';
@@ -7,15 +16,6 @@ import OnPressEvent from '../types/OnPressEvent';
 
 import AbstractSource from './AbstractSource';
 import NativeBridgeComponent from './NativeBridgeComponent';
-
-import React, {Component, ReactNode} from 'react';
-import {
-  NativeMethods,
-  NativeModules,
-  NativeSyntheticEvent,
-  requireNativeComponent,
-} from 'react-native';
-import {featureCollection} from '@turf/helpers';
 
 const VietmapGL = NativeModules.MGLModule;
 
