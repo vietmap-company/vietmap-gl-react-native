@@ -1,4 +1,4 @@
-## MapLibreGL
+## Vietmap
 ###
 
 ### methods
@@ -7,22 +7,10 @@
 ##### arguments
 | Name | Type | Required | Description  |
 | ---- | :--: | :------: | :----------: |
-| `accessToken` | `String` | `Yes` | access token to pull Mapbox-hosted tiles; can be `null` for other tile hosts |
+| `accessToken` | `String` | `Yes` | Provide null value like this code: `Vietmap.setAccessToken(null)` |
 
 ##### Description
-sets the accessToken, which is required when you want to use mapbox tiles
-not required when using other tiles
-
-#### getAccessToken()
-
-##### arguments
-| Name | Type | Required | Description  |
-| ---- | :--: | :------: | :----------: |
-| `accessToken` | `String` | `Yes` | access token to pull Mapbox-hosted tiles; can be `null` if for other tile hosts |
-
-##### Description
-gets the accessToken
-
+sets the accessToken, which is not required when using Vietmap tiles
 
 #### addCustomHeader(headerName, headerValue)
 
