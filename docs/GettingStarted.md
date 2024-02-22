@@ -61,7 +61,7 @@ import Vietmap from '@maplibre/maplibre-react-native';
 
 // Will be null for most users (only Vietmap authenticates this way).
 // Required on Android. See Android installation notes.
-MapLibreGL.setAccessToken(null);
+Vietmap.setAccessToken(null);
 
 const styles = StyleSheet.create({
   page: {

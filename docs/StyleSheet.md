@@ -3,7 +3,7 @@
 
 ### Stylesheet is now a JS object, see [CHANGELOG.md](../CHANGELOG.md)  for more details
 
-See (MapLibre expression specs)[https://maplibre.org/maplibre-gl-js-docs/style-spec/expressions/] for reference on expressions.
+See (Vietmap expression specs)[https://maplibre.org/maplibre-gl-js-docs/style-spec/expressions/] for reference on expressions.
 
 ### Style functions
 
@@ -38,18 +38,18 @@ old:
 
 ```js
 // color would change based on zoom level keys.
-MapLibreGL.StyleSheet.camera({
+Vietmap.StyleSheet.camera({
   0: 'blue',
   10: 'green',
   20: 'yellow',
-}, MapLibreGL.InterpolationMode.Exponential);
+}, Vietmap.InterpolationMode.Exponential);
 
 // Example of use inside stylesheet
-MapLibreGL.StyleSheet.create({
-  fillColor: MapLibreGL.StyleSheet.camera({
+Vietmap.StyleSheet.create({
+  fillColor: Vietmap.StyleSheet.camera({
     15: 'blue',
     20: 'green',
-  }, MapLibreGL.InterpolationMode.Interval),
+  }, Vietmap.InterpolationMode.Interval),
 });
 ```
 
@@ -89,23 +89,23 @@ old:
 
 ```js
 // would color the layer based the property rating=[1, 5]
-MapLibreGL.StyleSheet.source([
+Vietmap.StyleSheet.source([
   [1, 'red'],
   [2, 'orange'],
   [3, 'yellow'],
   [4, 'yellowgreen'],
   [5, 'green'],
-], 'rating', MapLibreGL.InterpolationMode.Categorical);
+], 'rating', Vietmap.InterpolationMode.Categorical);
 
 // Example of use inside stylesheet
-MapLibreGL.StyleSheet.create({
-  circleColor: MapLibreGL.StyleSheet.source([
+Vietmap.StyleSheet.create({
+  circleColor: Vietmap.StyleSheet.source([
     [1, 'red'],
     [2, 'orange'],
     [3, 'yellow'],
     [4, 'yellowgreen'],
     [5, 'green'],
-  ], 'rating', MapLibreGL.InterpolationMode.Categorical),
+  ], 'rating', Vietmap.InterpolationMode.Categorical),
 });
 ```
 
@@ -158,20 +158,20 @@ old:
 ```js
 // would change based on the zoom level and rating value
 // {zoom_level}: [{value}, {style_value}]
-MapLibreGL.StyleSheet.composite({
+Vietmap.StyleSheet.composite({
   0: [0, 0],
   0: [5, 5],
   20: [0, 0],
   20: [5, 20],
-}, 'rating', MapLibreGL.InterpolationMode.Interval);
+}, 'rating', Vietmap.InterpolationMode.Interval);
 
-MapLibreGL.StyleSheet.create({
-  circleRadius: MapLibreGL.StyleSheet.composite({
+Vietmap.StyleSheet.create({
+  circleRadius: Vietmap.StyleSheet.composite({
     0: [0, 0],
     0: [5, 5],
     20: [0, 0],
     20: [5, 20],
-  }, 'rating', MapLibreGL.InterpolationMode.Interval),
+  }, 'rating', Vietmap.InterpolationMode.Interval),
 });
 ```
 
@@ -191,8 +191,8 @@ new:
 old:
 
 ```js
-MapLibreGL.StyleSheet.create({
-  fillExtrusionHeight: MapLibreGL.StyleSheet.identity('height'),
+Vietmap.StyleSheet.create({
+  fillExtrusionHeight: Vietmap.StyleSheet.identity('height'),
 });
 ```
 
@@ -213,8 +213,8 @@ const styles = {
 
 ...
 
-<MapLibreGL.FillLayer ... style={styles.buildings} />
-<MapLibreGL.FillLayer ... style={styles.street} />
+<Vietmap.FillLayer ... style={styles.buildings} />
+<Vietmap.FillLayer ... style={styles.street} />
 ```
 
 ```js
@@ -262,24 +262,24 @@ const layerStyles = {
 
 ...
 
-<MapLibreGL.SymbolLayer
+<Vietmap.SymbolLayer
   id='pointCount'
   style={layerStyles.clusterCount} />
 
-<MapLibreGL.CircleLayer
+<Vietmap.CircleLayer
   id='clusteredPoints'
   belowLayerID='pointCount'
   filter={['has', 'point_count']}
   style={layerStyles.clusteredPoints} />
 
-<MapLibreGL.CircleLayer
+<Vietmap.CircleLayer
   id='singlePoint'
   filter={['!has', 'point_count']}
   style={layerStyles.singlePoint} />
 ```
 
 ```javascript
-const layerStyles = MapLibreGL.StyleSheet.create({
+const layerStyles = Vietmap.StyleSheet.create({
     building: {
       fillExtrusionOpacity: 1,
       fillExtrusionHeight: ['get', 'height'],
@@ -307,10 +307,10 @@ const layerStyles = MapLibreGL.StyleSheet.create({
   0.50,
     lineJoin
 :
-  MapLibreGL.LineJoin.Round,
+  Vietmap.LineJoin.Round,
     lineCap
 :
-  MapLibreGL.LineCap.Round,
+  Vietmap.LineCap.Round,
     lineDasharray
 :
   [2, 2],
@@ -321,12 +321,12 @@ const layerStyles = MapLibreGL.StyleSheet.create({
 
 ...
 
-<MapLibreGL.FillExtrusionLayer
+<Vietmap.FillExtrusionLayer
   id='building3d'
   sourceLayerID='building'
   style={layerStyles.building}/>
 
-<MapLibreGL.LineLayer
+<Vietmap.LineLayer
   id='streetLineColor'
   sourceLayerID='road'
   minZoomLevel={14}
@@ -337,7 +337,7 @@ const layerStyles = MapLibreGL.StyleSheet.create({
 #### old:
 
 ```js
-const styles = MapLibreGL.StyleSheet.create({
+const styles = Vietmap.StyleSheet.create({
   buildings: {
     fillColor: 'blue',
   },
@@ -348,16 +348,16 @@ const styles = MapLibreGL.StyleSheet.create({
 
 ...
 
-<MapLibreGL.FillLayer ...
+<Vietmap.FillLayer ...
 style = { styles.buildings }
 />
-<MapLibreGL.FillLayer ...
+<Vietmap.FillLayer ...
 style = { styles.street }
 />
 ```
 
 ```js
-const layerStyles = MapLibreGL.StyleSheet.create({
+const layerStyles = Vietmap.StyleSheet.create({
   singlePoint: {
     circleColor: 'green',
     circleOpacity: 0.84,
@@ -367,20 +367,20 @@ const layerStyles = MapLibreGL.StyleSheet.create({
   },
 
   clusteredPoints: {
-    circleColor: MapLibreGL.StyleSheet.source([
+    circleColor: Vietmap.StyleSheet.source([
       [25, 'yellow'],
       [50, 'red'],
       [75, 'blue'],
       [100, 'orange'],
       [300, 'pink'],
       [750, 'white'],
-    ], 'point_count', MapLibreGL.InterpolationMode.Exponential),
+    ], 'point_count', Vietmap.InterpolationMode.Exponential),
 
-    circleRadius: MapLibreGL.StyleSheet.source([
+    circleRadius: Vietmap.StyleSheet.source([
       [0, 15],
       [100, 20],
       [750, 30],
-    ], 'point_count', MapLibreGL.InterpolationMode.Exponential),
+    ], 'point_count', Vietmap.InterpolationMode.Exponential),
 
     circleOpacity: 0.84,
     circleStrokeWidth: 2,
@@ -395,53 +395,53 @@ const layerStyles = MapLibreGL.StyleSheet.create({
 
 ...
 
-<MapLibreGL.SymbolLayer
+<Vietmap.SymbolLayer
   id='pointCount'
   style={layerStyles.clusterCount}/>
 
-<MapLibreGL.CircleLayer
+<Vietmap.CircleLayer
   id='clusteredPoints'
   belowLayerID='pointCount'
   filter={['has', 'point_count']}
   style={layerStyles.clusteredPoints}/>
 
-<MapLibreGL.CircleLayer
+<Vietmap.CircleLayer
   id='singlePoint'
   filter={['!has', 'point_count']}
   style={layerStyles.singlePoint}/>
 ```
 
 ```javascript
-const layerStyles = MapLibreGL.StyleSheet.create({
+const layerStyles = Vietmap.StyleSheet.create({
   building: {
     fillExtrusionOpacity: 1,
-    fillExtrusionHeight: MapLibreGL.StyleSheet.identity('height'),
-    fillExtrusionBase: MapLibreGL.StyleSheet.identity('min_height'),
-    fillExtrusionColor: MapLibreGL.StyleSheet.source([
+    fillExtrusionHeight: Vietmap.StyleSheet.identity('height'),
+    fillExtrusionBase: Vietmap.StyleSheet.identity('min_height'),
+    fillExtrusionColor: Vietmap.StyleSheet.source([
       [0, 'white'],
       [50, 'blue'],
       [100, 'red'],
-    ], 'height', MapLibreGL.InterpolationMode.Exponential),
+    ], 'height', Vietmap.InterpolationMode.Exponential),
     fillExtrusionColorTransition: { duration: 2000, delay: 0 },
   },
   streets: {
     lineColor: 'blue',
     lineWidth: 2,
     lineOpacity: 0.50,
-    lineJoin: MapLibreGL.LineJoin.Round,
-    lineCap: MapLibreGL.LineCap.Round,
+    lineJoin: Vietmap.LineJoin.Round,
+    lineCap: Vietmap.LineCap.Round,
     lineDasharray: [2, 2],
   },
 });
 
 ...
 
-<MapLibreGL.FillExtrusionLayer
+<Vietmap.FillExtrusionLayer
   id='building3d'
   sourceLayerID='building'
   style={layerStyles.building} />
 
-<MapLibreGL.LineLayer
+<Vietmap.LineLayer
   id='streetLineColor'
   sourceLayerID='road'
   minZoomLevel={14}
