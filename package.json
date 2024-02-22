@@ -1,7 +1,7 @@
 {
   "name": "@vietmap/vietmap-gl-react-native",
   "description": "A Vietmap GL Native plugin for creating maps in React Native",
-  "version": "0.0.1-pre",
+  "version": "0.0.3",
   "publishConfig": {
     "access": "public"
   },
@@ -11,10 +11,9 @@
     "maps",
     "ios",
     "android",
-    "maplibre",
     "react-native",
-    "mapbox",
-    "vietmap"
+    "vietmap",
+    "react-native map"
   ],
   "license": "MIT",
   "repository": {
