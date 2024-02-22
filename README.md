@@ -7,8 +7,20 @@
 
 _A React Native library for building maps with   
 the [Vietmap GL Native SDK for iOS & Android](https://bit.ly/vietmap-api)_.
- 
- https://www.jawg.io/docs/integration/react-native/add-marker/
+
+Contact [vietmap.vn](https://bit.ly/vietmap-api) to register a valid key.
+# Get started
+
+Install package:
+
+Using `npm`:
+```bash
+    npm i @vietmap/vietmap-gl-react-native
+```
+Using `yarn`:
+```bash
+    yarn add @vietmap/vietmap-gl-react-native
+```
 
 <br>
  
@@ -52,16 +64,9 @@ the [Vietmap GL Native SDK for iOS & Android](https://bit.ly/vietmap-api)_.
 
 ### Misc
 
-- [MapLibreGL](/docs/MapLibreGL.md)
+- [Vietmap](/docs/Vietmap.md)
 - [CustomHttpHeaders](/docs/CustomHttpHeaders.md)
 - [Logger](/docs/Logger.md)
-
-## Contributing / local development
-
-Read the [CONTRIBUTING.md](CONTRIBUTING.md) guide in order to get familiar with how we do things around here and
-set up your local dev environment.
-
-## Community
-
-Join the #maplibre-native Slack channel at OSMUS: get an invite at https://slack.openstreetmap.us/
-https://www.jawg.io/docs/integration/react-native/
+ 
+ 
+<!-- https://www.jawg.io/docs/integration/react-native/ -->
