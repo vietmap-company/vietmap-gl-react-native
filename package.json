@@ -33,7 +33,9 @@
     "build:plugin": "tsc --build plugin",
     "lint:plugin": "eslint plugin/src/*",
     "postinstall": "husky install",
-    "postpack": "pinst --enable"
+    "postpack": "pinst --enable",
+    "ios":" cd example && yarn ios",
+    "android": "cd example && yarn android"
   },
   "peerDependenciesMeta": {
     "@expo/config-plugins": {

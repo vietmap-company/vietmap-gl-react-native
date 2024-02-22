@@ -17,11 +17,11 @@ class SetUserTrackingModes extends React.Component {
   constructor(props) {
     super(props);
 
-    this._trackingOptions = Object.keys(VietmapGL.UserTrackingModes)
+    this._trackingOptions = Object.keys(VietmapGL.UserTrackingMode)
       .map(key => {
         return {
           label: key,
-          data: VietmapGL.UserTrackingModes[key],
+          data: VietmapGL.UserTrackingMode[key],
         };
       })
       .concat([
@@ -69,11 +69,11 @@ class SetUserTrackingModes extends React.Component {
 
   get userTrackingModeText() {
     switch (this.state.currentTrackingMode) {
-      case VietmapGL.UserTrackingModes.Follow:
+      case VietmapGL.UserTrackingMode.Follow:
         return 'Follow';
-      case VietmapGL.UserTrackingModes.FollowWithCourse:
+      case VietmapGL.UserTrackingMode.FollowWithCourse:
         return 'FollowWithCourse';
-      case VietmapGL.UserTrackingModes.FollowWithHeading:
+      case VietmapGL.UserTrackingMode.FollowWithHeading:
         return 'FollowWithHeading';
       default:
         return 'None';

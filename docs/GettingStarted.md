@@ -7,7 +7,7 @@ This quickstart guide provides a zero-to-map intro, and from there you can check
 ## Prerequisites
 
 1. On Android we support API 23 and higher
-2. You will need a vector tile source (such as Stadia Maps or MapTiler) for production use; a demonstration URL is used in the below example.
+2. You will need a vector tile source from Vietmap for production use;
 
 ## Dependencies
 
@@ -32,13 +32,12 @@ either `yarn` or `npm` (pick one).
 
 ```shell
 # install with Yarn
-yarn add @maplibre/maplibre-react-native
-
+yarn add @vietmap/vietmap-gl-react-native
 ```
 
 ```shell
 # install with NPM
-npm install @maplibre/maplibre-react-native --save
+npm install @vietmap/vietmap-gl-react-native --save
 ```
 
 ### Review platform specific info
@@ -57,7 +56,7 @@ Here is an example minimal App.js
 ```js
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
-import Vietmap from '@maplibre/maplibre-react-native';
+import Vietmap from '@vietmap/vietmap-gl-react-native';
 
 // Will be null for most users (only Vietmap authenticates this way).
 // Required on Android. See Android installation notes.
