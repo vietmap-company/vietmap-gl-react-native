@@ -28,6 +28,9 @@ Using `yarn`:
 
 [Getting Started (start here)](/docs/GettingStarted.md)
 
+We've created a demo project for Vietmap React-Native GL library, which contains sample code for the main functions of the library [here](https://github.com/vietmap-company/vietmap-react-native-demo).
+
+
 ### Components
 
 - [MapView](/docs/MapView.md)

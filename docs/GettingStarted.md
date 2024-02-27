@@ -1,6 +1,6 @@
 # Getting Started
 
-Congratulations, you successfully installed maplibre-react-native! 🎉
+Congratulations, you successfully installed vietmap-gl-react-native! 🎉
 This quickstart guide provides a zero-to-map intro, and from there you can check out the
 [examples](/example) folder if you want to jump in the deep end.
 
