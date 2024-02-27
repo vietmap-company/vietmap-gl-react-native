@@ -1,4 +1,4 @@
-package com.rnmaplibreexample;
+package com.rnvietmapexample;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
@@ -13,7 +13,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "RNMaplibreExample";
+    return "RNVietmapExample";
   }
 
   @Override

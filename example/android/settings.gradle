@@ -1,4 +1,4 @@
-rootProject.name = 'RNMaplibreExample'
+rootProject.name = 'RNVietmapExample'
 
 include ':rctmgl'
 project(':rctmgl').projectDir = new File(rootProject.projectDir, '../../android/rctmgl')
