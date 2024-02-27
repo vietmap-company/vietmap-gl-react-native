@@ -34,7 +34,8 @@
     "lint:plugin": "eslint plugin/src/*",
     "postinstall": "husky install",
     "postpack": "pinst --enable",
-    "ios":" cd example && yarn ios",
+    "ios": " cd example && yarn ios",
+    "pod": " cd example && cd ios && pod install",
     "android": "cd example && yarn android"
   },
   "peerDependenciesMeta": {

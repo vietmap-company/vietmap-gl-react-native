@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:/Users/dev/Documents/sdk-project/maplibre-react-native/example/ios/RNVietmapExample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RNVietmapExample.xcodeproj">
+   </FileRef>
+</Workspace>
