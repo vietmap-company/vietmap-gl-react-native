@@ -25,6 +25,6 @@ As redundant as it might sound, please add the changes from the `CHANGELOG.md` i
 
 ## Monitor the repos issues for updates
 
-Once the release is out the door (on [npm](https://www.npmjs.com/package/@maplibre/maplibre-react-native)),
+Once the release is out the door (on [npm](https://www.npmjs.com/package/@vietmap/vietmap-gl-react-native)),
 make sure to monitor the [issues](https://github.com/maplibre/maplibre-react-native/issues) closely for
 problems the community might encounter.

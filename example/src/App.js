@@ -1,5 +1,5 @@
 import React from 'react';
-import VietmapGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@vietmap/vietmap-gl-react-native';
 import {StyleSheet, Text, View, LogBox, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 

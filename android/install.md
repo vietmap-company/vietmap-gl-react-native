@@ -25,7 +25,7 @@ Manually sets the connectivity state of the app, bypassing any checks to the
 and `null` for the normal `ConnectivityManager` behavior.
 
 ```js
-import MapLibreGL from "@maplibre/maplibre-react-native";
+import MapLibreGL from "@vietmap/vietmap-gl-react-native";
 
 MapLibreGL.setConnected(true);
 ```

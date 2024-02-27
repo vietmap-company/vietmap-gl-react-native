@@ -1,6 +1,6 @@
 import React, {FC, useEffect} from 'react';
 import {Alert} from 'react-native';
-import VietmapGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@vietmap/vietmap-gl-react-native';
 
 import sheet from '../../styles/sheet';
 import Page from '../common/Page';

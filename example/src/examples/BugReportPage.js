@@ -6,7 +6,7 @@ import {
   SymbolLayer,
   CircleLayer,
   Camera,
-} from '@maplibre/maplibre-react-native';
+} from '@vietmap/vietmap-gl-react-native';
 
 import Page from './common/Page';
 

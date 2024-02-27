@@ -1,6 +1,6 @@
 import React from 'react';
 import {Animated, View, Text, StyleSheet, Image} from 'react-native';
-import VietmapGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@vietmap/vietmap-gl-react-native';
 import PropTypes from 'prop-types';
 
 import sheet from '../../styles/sheet';

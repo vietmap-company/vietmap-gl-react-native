@@ -1,5 +1,5 @@
 import React from 'react';
-import VietmapGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@vietmap/vietmap-gl-react-native';
 import {Text} from 'react-native';
 
 import Bubble from '../common/Bubble';

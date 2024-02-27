@@ -14,10 +14,10 @@ import {
 } from '@expo/config-plugins/build/utils/generateCode';
 
 let pkg: {name: string; version?: string} = {
-  name: '@maplibre/maplibre-react-native',
+  name: '@vietmap/vietmap-gl-react-native',
 };
 try {
-  pkg = require('@maplibre/maplibre-react-native/package.json');
+  pkg = require('@vietmap/vietmap-gl-react-native/package.json');
 } catch {
   // empty catch block
 }
@@ -100,7 +100,7 @@ export function addMapLibreInstallerBlock(
   blockName: InstallerBlockName,
 ): string {
   return mergeContents({
-    tag: `@maplibre/maplibre-react-native-${blockName}_installer`,
+    tag: `@vietmap/vietmap-gl-react-native-${blockName}_installer`,
     src,
     newSrc: `    $RNMBGL.${blockName}_install(installer)`,
     anchor: new RegExp(`${blockName}_install do \\|installer\\|`),

@@ -39,7 +39,7 @@ def $RNMBGL.post_install(installer)
 #   project = installer.pods_project
 #   self._add_spm_to_target(
 #     project,
-#     project.targets.find { |t| t.name == "maplibre-react-native"},
+#     project.targets.find { |t| t.name == "vietmap-gl-react-native"},
 #     spm_spec[:url],
 #     spm_spec[:requirement],
 #     spm_spec[:product_name]

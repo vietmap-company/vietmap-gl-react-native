@@ -1,7 +1,7 @@
 # iOS Installation
 
 The following assumes, that you're using autolinking and installed
-`@maplibre/maplibre-react-native` via `npm` or `yarn`.
+`@vietmap/vietmap-gl-react-native` via `npm` or `yarn`.
 
 Add the following to your `ios/Podfile`:
 

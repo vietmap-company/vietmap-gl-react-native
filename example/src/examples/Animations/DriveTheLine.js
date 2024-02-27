@@ -1,5 +1,5 @@
 import React from 'react';
-import VietmapGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@vietmap/vietmap-gl-react-native';
 import {View, StyleSheet} from 'react-native';
 import {Button} from 'react-native-elements';
 import {lineString as makeLineString} from '@turf/helpers';
