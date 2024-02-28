@@ -46,3 +46,7 @@ coverage
 plugin/src
 plugin/jest.config.js
 plugin/tsconfig.json
+
+# Config plugin
+/plugin/build
+/javascript/vietmap_api_key.ts
