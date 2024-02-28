@@ -1,4 +1,4 @@
-import React, {Component, ReactElement, ReactNode} from 'react';
+import React, { Component, ReactElement, ReactNode } from 'react';
 import {
   View,
   StyleSheet,
@@ -9,12 +9,12 @@ import {
   LayoutChangeEvent,
   NativeSyntheticEvent,
 } from 'react-native';
-import {debounce} from 'debounce';
+import { debounce } from 'debounce';
 
-import {FilterExpression} from '../utils/VietmapStyles';
-import {Location} from '../modules/location/locationManager';
-import {isFunction, isAndroid} from '../utils';
-import {getFilter} from '../utils/filterUtils';
+import { FilterExpression } from '../utils/VietmapStyles';
+import { Location } from '../modules/location/locationManager';
+import { isFunction, isAndroid } from '../utils';
+import { getFilter } from '../utils/filterUtils';
 import Logger from '../utils/Logger';
 import BaseProps from '../types/BaseProps';
 
@@ -23,8 +23,8 @@ import NativeBridgeComponent from './NativeBridgeComponent';
 const VietmapGL = NativeModules.MGLModule;
 if (VietmapGL == null) {
   console.error(
-    'Native part of Mapbox React Native libraries were not registered properly, double check our native installation guides.',
-  );
+    'Native part of Vietmap GL React Native libraries were not registered properly, double check our native installation guides.'
+  )
 }
 
 export const NATIVE_MODULE_NAME = 'RCTMGLMapView';
@@ -32,10 +32,10 @@ export const NATIVE_MODULE_NAME = 'RCTMGLMapView';
 export const ANDROID_TEXTURE_NATIVE_MODULE_NAME = 'RCTMGLAndroidTextureMapView';
 
 const styles = StyleSheet.create({
-  matchParent: {flex: 1},
+  matchParent: { flex: 1 },
 });
 
-const defaultStyleURL = VietmapGL.StyleURL.Street;
+const defaultStyleURL = 'https://maps.vietmap.vn/api/maps/light/styles.json?apikey=YOUR_API_KEY_HERE';
 
 export interface RegionPayload {
   zoomLevel: number;
@@ -102,7 +102,7 @@ interface MapViewProps extends BaseProps {
   /**
    * Enable/Disable attribution on map.
    *
-   * This must be enabled for Mapbox-hosted tiles and styles. Please refer to the Mapbox Terms of Service.
+   * This must be enabled for Vietmap-hosted tiles and styles.
    * Other providers do not require this.
    */
   attributionEnabled?: boolean;
@@ -110,22 +110,22 @@ interface MapViewProps extends BaseProps {
    * Adds attribution offset, e.g. `{top: 8, left: 8}` will put attribution button in top-left corner of the map
    */
   attributionPosition?:
-    | {
-        top?: number;
-        left?: number;
-      }
-    | {
-        top?: number;
-        right?: number;
-      }
-    | {
-        bottom?: number;
-        left?: number;
-      }
-    | {
-        bottom?: number;
-        right?: number;
-      };
+  | {
+    top?: number;
+    left?: number;
+  }
+  | {
+    top?: number;
+    right?: number;
+  }
+  | {
+    bottom?: number;
+    left?: number;
+  }
+  | {
+    bottom?: number;
+    right?: number;
+  };
   /**
    * MapView's tintColor
    */
@@ -138,22 +138,22 @@ interface MapViewProps extends BaseProps {
    * Adds logo offset, e.g. `{top: 8, left: 8}` will put the logo in top-left corner of the map
    */
   logoPosition?:
-    | {
-        top?: number;
-        left?: number;
-      }
-    | {
-        top?: number;
-        right?: number;
-      }
-    | {
-        bottom?: number;
-        left?: number;
-      }
-    | {
-        bottom?: number;
-        right?: number;
-      };
+  | {
+    top?: number;
+    left?: number;
+  }
+  | {
+    top?: number;
+    right?: number;
+  }
+  | {
+    bottom?: number;
+    left?: number;
+  }
+  | {
+    bottom?: number;
+    right?: number;
+  };
   /**
    * Enable/Disable the compass from appearing on the map
    */
@@ -261,13 +261,13 @@ interface MapViewProps extends BaseProps {
 type Fn = (...args: any) => any;
 type CallableProps = {
   [Prop in keyof MapViewProps]-?: MapViewProps[Prop] extends Fn | undefined
-    ? Prop
-    : never;
+  ? Prop
+  : never;
 }[keyof MapViewProps];
 
 interface NativeProps extends Omit<MapViewProps, 'onPress' | 'onLongPress'> {
-  onPress(event: NativeSyntheticEvent<{payload: GeoJSON.Feature}>): void;
-  onLongPress(event: NativeSyntheticEvent<{payload: GeoJSON.Feature}>): void;
+  onPress(event: NativeSyntheticEvent<{ payload: GeoJSON.Feature }>): void;
+  onLongPress(event: NativeSyntheticEvent<{ payload: GeoJSON.Feature }>): void;
 }
 
 export interface MapViewState {
@@ -413,7 +413,7 @@ class MapView extends NativeBridgeComponent(
    * @return {Array}
    */
   async getPointInView(coordinate: GeoJSON.Position): Promise<GeoJSON.Point> {
-    const res: {pointInView: GeoJSON.Point} = await this._runNativeCommand(
+    const res: { pointInView: GeoJSON.Point } = await this._runNativeCommand(
       'getPointInView',
       this._nativeRef,
       [coordinate],
@@ -431,7 +431,7 @@ class MapView extends NativeBridgeComponent(
    * @return {Array}
    */
   async getCoordinateFromView(point: number[]): Promise<GeoJSON.Position> {
-    const res: {coordinateFromView: GeoJSON.Position} =
+    const res: { coordinateFromView: GeoJSON.Position } =
       await this._runNativeCommand('getCoordinateFromView', this._nativeRef, [
         point,
       ]);
@@ -447,7 +447,7 @@ class MapView extends NativeBridgeComponent(
    * @return {Array}
    */
   async getVisibleBounds(): Promise<Bounds> {
-    const res: {visibleBounds: Bounds} = await this._runNativeCommand(
+    const res: { visibleBounds: Bounds } = await this._runNativeCommand(
       'getVisibleBounds',
       this._nativeRef,
     );
@@ -474,7 +474,7 @@ class MapView extends NativeBridgeComponent(
       throw new Error('Must pass in valid coordinate[lng, lat]');
     }
 
-    const res: {data: string | GeoJSON.FeatureCollection} =
+    const res: { data: string | GeoJSON.FeatureCollection } =
       await this._runNativeCommand(
         'queryRenderedFeaturesAtPoint',
         this._nativeRef,
@@ -510,7 +510,7 @@ class MapView extends NativeBridgeComponent(
         'Must pass in a valid bounding box[top, right, bottom, left]',
       );
     }
-    const res: {data: string | GeoJSON.FeatureCollection} =
+    const res: { data: string | GeoJSON.FeatureCollection } =
       await this._runNativeCommand(
         'queryRenderedFeaturesInRect',
         this._nativeRef,
@@ -539,7 +539,7 @@ class MapView extends NativeBridgeComponent(
    * @return {String}
    */
   async takeSnap(writeToDisk = false): Promise<string> {
-    const res: {uri: string} = await this._runNativeCommand(
+    const res: { uri: string } = await this._runNativeCommand(
       'takeSnap',
       this._nativeRef,
       [writeToDisk],
@@ -557,7 +557,7 @@ class MapView extends NativeBridgeComponent(
    */
 
   async getZoom(): Promise<number> {
-    const res: {zoom: number} = await this._runNativeCommand(
+    const res: { zoom: number } = await this._runNativeCommand(
       'getZoom',
       this._nativeRef,
     );
@@ -573,7 +573,7 @@ class MapView extends NativeBridgeComponent(
    * @return {Array<Number>} Coordinates
    */
   async getCenter(): Promise<GeoJSON.Position> {
-    const res: {center: GeoJSON.Position} = await this._runNativeCommand(
+    const res: { center: GeoJSON.Position } = await this._runNativeCommand(
       'getCenter',
       this._nativeRef,
     );
@@ -610,13 +610,13 @@ class MapView extends NativeBridgeComponent(
     this._runNativeCommand('showAttribution', this._nativeRef);
   }
 
-  _onPress(e: NativeSyntheticEvent<{payload: GeoJSON.Feature}>): void {
+  _onPress(e: NativeSyntheticEvent<{ payload: GeoJSON.Feature }>): void {
     if (isFunction(this.props.onPress)) {
       this.props.onPress(e.nativeEvent.payload);
     }
   }
 
-  _onLongPress(e: NativeSyntheticEvent<{payload: GeoJSON.Feature}>): void {
+  _onLongPress(e: NativeSyntheticEvent<{ payload: GeoJSON.Feature }>): void {
     if (isFunction(this.props.onLongPress)) {
       this.props.onLongPress(e.nativeEvent.payload);
     }
@@ -628,7 +628,7 @@ class MapView extends NativeBridgeComponent(
     if (isFunction(this.props.onRegionWillChange)) {
       this.props.onRegionWillChange(payload);
     }
-    this.setState({isUserInteraction: payload.properties.isUserInteraction});
+    this.setState({ isUserInteraction: payload.properties.isUserInteraction });
   }
 
   _onRegionDidChange(
@@ -637,7 +637,7 @@ class MapView extends NativeBridgeComponent(
     if (isFunction(this.props.onRegionDidChange)) {
       this.props.onRegionDidChange(payload);
     }
-    this.setState({region: payload});
+    this.setState({ region: payload });
   }
 
   _onChange(
@@ -646,9 +646,9 @@ class MapView extends NativeBridgeComponent(
       payload?: GeoJSON.Feature | Location;
     }>,
   ): void {
-    const {regionWillChangeDebounceTime, regionDidChangeDebounceTime} =
+    const { regionWillChangeDebounceTime, regionDidChangeDebounceTime } =
       this.props;
-    const {type, payload} = e.nativeEvent;
+    const { type, payload } = e.nativeEvent;
     let propName: CallableProps | undefined;
 
     switch (type) {

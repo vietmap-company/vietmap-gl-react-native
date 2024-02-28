@@ -3,6 +3,7 @@ import {NativeModules} from 'react-native';
 interface IMGLModule {
   StyleURL: {
     Default: URL;
+    Street: URL;
   };
   OfflinePackDownloadState: {
     Inactive: string | number;

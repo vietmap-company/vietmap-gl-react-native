@@ -1,7 +1,7 @@
 {
   "name": "@vietmap/vietmap-gl-react-native",
   "description": "A Vietmap GL Native plugin for creating maps in React Native",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "publishConfig": {
     "access": "public"
   },
