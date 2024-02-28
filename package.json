@@ -3,7 +3,8 @@
   "description": "A Vietmap GL Native plugin for creating maps in React Native",
   "version": "0.0.5",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   },
   "author": "VietMap",
   "main": "./javascript/index.ts",

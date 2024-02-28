@@ -12,6 +12,8 @@ jobs:
         with:
           node-version: '20.6.0'
           registry-url: 'https://registry.npmjs.org'
+          scope: '@octocat'
+
       - run: yarn install
       - run: yarn npm publish
         env:
