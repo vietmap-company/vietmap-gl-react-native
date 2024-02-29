@@ -9,7 +9,7 @@ you have to have a line like this in your code before using the SDK.
 You can put this near the top of your `App.js` for convenience.
 
 ```javascript
-MapLibreGL.setAccessToken(null);
+Vietmap.setApiKey(null);
 ```
 
 ## Setting connection status

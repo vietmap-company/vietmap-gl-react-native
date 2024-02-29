@@ -1,4 +1,5 @@
 import {NativeModules} from 'react-native';
+import { getApiKey } from './javascript';
 
 function keyMirror(keys) {
   const obj = {};
@@ -71,8 +72,8 @@ NativeModules.MGLModule = {
   OfflineCallbackName: keyMirror(['Progress', 'Error']),
 
   // methods
-  setAccessToken: jest.fn(),
-  getAccessToken: () => Promise.resolve('test-token'),
+  setApiKey: jest.fn(),
+  getApiKey: () => Promise.resolve('test-token'),
   setConnected: jest.fn(),
 };
 

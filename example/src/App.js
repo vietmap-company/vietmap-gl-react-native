@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
 });
 
-VietmapGL.setAccessToken(null);
+VietmapGL.setApiKey(null);
 Icon.loadFont();
 
 class App extends React.Component {

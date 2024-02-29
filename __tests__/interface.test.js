@@ -73,8 +73,8 @@ describe('Public Interface', () => {
       'OfflineCallbackName',
 
       // methods
-      'setAccessToken',
-      'getAccessToken',
+      'setApiKey',
+      'getApiKey',
       'setConnected',
       'requestAndroidLocationPermissions',
 

@@ -2,15 +2,15 @@
 ###
 
 ### methods
-#### setAccessToken(accessToken)
+#### setApiKey(apiKey)
 
 ##### arguments
 | Name | Type | Required | Description  |
 | ---- | :--: | :------: | :----------: |
-| `accessToken` | `String` | `Yes` | Provide null value like this code: `Vietmap.setAccessToken(null)` |
+| `apiKey` | `String` | `Yes` | Provide null value like this code: `Vietmap.setApiKey(null)` |
 
 ##### Description
-sets the accessToken, which is not required when using Vietmap tiles
+sets the apiKey, which is not required when using Vietmap tiles
 
 #### addCustomHeader(headerName, headerValue)
 

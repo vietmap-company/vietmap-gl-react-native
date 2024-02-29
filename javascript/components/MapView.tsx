@@ -65,7 +65,7 @@ interface MapViewProps extends BaseProps {
    */
   styleURL?: string;
   /**
-   * StyleJSON for map - according to TileJSON specs: https://github.com/mapbox/tilejson-spec
+   * StyleJSON for map 
    */
   styleJSON?: string;
   /**

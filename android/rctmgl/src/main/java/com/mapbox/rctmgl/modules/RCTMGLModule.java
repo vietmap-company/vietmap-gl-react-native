@@ -276,7 +276,7 @@ public class RCTMGLModule extends ReactContextBaseJavaModule {
 
     // TODO: How to handle this? API has changed significantly
     @ReactMethod
-    public void setAccessToken(final String accessToken) {
+    public void setApiKey(final String accessToken) {
         mReactContext.runOnUiQueueThread(new Runnable() {
             @Override
             public void run() {
@@ -319,7 +319,7 @@ public class RCTMGLModule extends ReactContextBaseJavaModule {
 
     // TODO: How to handle this? Underlying API has changed significantly on Android
     @ReactMethod
-    public void getAccessToken(Promise promise) {
+    public void getApiKey(Promise promise) {
         String token = Vietmap.getApiKey();
         if(token == null) {
             promise.reject("missing_access_token", "No access token has been set");

@@ -237,7 +237,7 @@ RCT_EXPORT_MODULE();
     };
 }
 
-RCT_EXPORT_METHOD(setAccessToken:(NSString *)accessToken)
+RCT_EXPORT_METHOD(setApiKey:(NSString *)accessToken)
 {
     if (accessToken.length > 0) {
       [MGLSettings setApiKey:accessToken];
@@ -254,7 +254,7 @@ RCT_EXPORT_METHOD(removeCustomHeader:(NSString *)headerName)
     [MGLCustomHeaders.sharedInstance removeHeader:headerName];
 }
 
-RCT_EXPORT_METHOD(getAccessToken:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXPORT_METHOD(getApiKey:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
     NSString* accessToken = MGLSettings.apiKey;
 
