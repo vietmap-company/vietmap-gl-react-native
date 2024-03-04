@@ -1,10 +1,9 @@
 {
   "name": "@vietmap/vietmap-gl-react-native",
   "description": "A Vietmap GL Native plugin for creating maps in React Native",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "author": "VietMap",
   "main": "./javascript/index.ts",
@@ -14,7 +13,8 @@
     "android",
     "react-native",
     "vietmap",
-    "react-native map"
+    "react-native map",
+    "vietmap apis"
   ],
   "license": "MIT",
   "repository": {
@@ -36,6 +36,7 @@
     "postinstall": "husky install",
     "postpack": "pinst --enable",
     "ios": " cd example && yarn ios",
+    "ip": "cd example && react-native run-ios --device \"Dang Trong Thanh’s iPhone\"",
     "pod": " cd example && cd ios && pod install",
     "android": "cd example && yarn android"
   },

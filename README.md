@@ -28,9 +28,9 @@ Using `yarn`:
 
 [Getting Started (start here)](/docs/GettingStarted.md)
 
-We've created a demo project for Vietmap React-Native GL library, which contains sample code for the main functions of the library [here](https://github.com/vietmap-company/vietmap-react-native-demo).
+We've created a demo project for `Vietmap React-Native GL library`, which contains sample code for the main functions of the library [here](https://github.com/vietmap-company/vietmap-react-native-demo).
 
-
+If you're using the `Expo project`, follow the guide from [this project](https://github.com/vietmap-company/react-native-expo-demo).
 ### Components
 
 - [MapView](/docs/MapView.md)
@@ -71,5 +71,15 @@ We've created a demo project for Vietmap React-Native GL library, which contains
 - [CustomHttpHeaders](/docs/CustomHttpHeaders.md)
 - [Logger](/docs/Logger.md)
  
- 
-<!-- https://www.jawg.io/docs/integration/react-native/ -->
+  
+
+[<img src="https://bizweb.dktcdn.net/100/415/690/themes/804206/assets/logo.png?1689561872933" height="40"/> </p>](https://vietmap.vn/maps-api)
+Email us: [maps-api.support@vietmap.vn](mailto:maps-api.support@vietmap.vn)
+
+
+Contact for [support](https://vietmap.vn/lien-he)
+
+Vietmap API document [here](https://maps.vietmap.vn/docs/map-api/overview/)
+
+Have a bug to report? [Open an issue](https://github.com/vietmap-company//vietmap-gl-react-native/issues). If possible, include a full log and information that shows the issue.
+Have a feature request? [Open an issue](https://github.com/vietmap-company//vietmap-gl-react-native/issues). Tell us what the feature should do and why you want the feature.
