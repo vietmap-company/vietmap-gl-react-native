@@ -103,7 +103,7 @@ class ExampleGroup {
 }
 
 const Examples = new ExampleGroup(
-  'React Native Mapbox GL',
+  'React Native Vietmap GL',
   [
     new ExampleItem('Bug Report Template', BugReportPage),
     new ExampleGroup('Map', [

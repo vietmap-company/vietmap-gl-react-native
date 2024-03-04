@@ -58,8 +58,8 @@
     "apps": {
       "ios": {
         "type": "ios.app",
-        "build": "xcodebuild -quiet -workspace ios/RNMaplibreExample.xcworkspace -configuration Release -scheme RNMaplibreExample -sdk iphonesimulator -derivedDataPath ios/build -destination 'platform=iOS Simulator,name=iPhone SE (2nd generation)'",
-        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/RNMaplibreExample.app"
+        "build": "xcodebuild -quiet -workspace ios/RNVietmapExample.xcworkspace -configuration Release -scheme RNVietmapExample -sdk iphonesimulator -derivedDataPath ios/build -destination 'platform=iOS Simulator,name=iPhone SE (2nd generation)'",
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/RNVietmapExample.app"
       }
     },
     "devices": {

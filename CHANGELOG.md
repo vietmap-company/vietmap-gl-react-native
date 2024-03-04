@@ -234,7 +234,7 @@ end
 
 - Fix [android crashes](https://github.com/rnmapbox/maps/pull/963)
 - Fix [android padding addition](https://github.com/rnmapbox/maps/pull/973)
-- Fix [iOS interface for getAccessToken() on Android](https://github.com/rnmapbox/maps/pull/954)
+- Fix [iOS interface for getApiKey() on Android](https://github.com/rnmapbox/maps/pull/954)
 
 ## 8.1.0.rc2
 

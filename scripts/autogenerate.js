@@ -22,9 +22,9 @@ function readIosVersion() {
     'vietmap-react-native.podspec',
   );
   const lines = fs.readFileSync(podspecPath, 'utf8').split('\n');
-  const maplibreLineRegex = /^\s+s.dependency\s'VietMap',\s'(\d+\.\d+\.\d+)'$/;
-  const maplibreLine = lines.filter(i => maplibreLineRegex.exec(i))[0];
-  return `${maplibreLineRegex.exec(maplibreLine)[1]}.0`;
+  const vietmapLineRegex = /^\s+s.dependency\s'VietMap',\s'(\d+\.\d+\.\d+)'$/;
+  const vietmapLine = lines.filter(i => vietmapLineRegex.exec(i))[0];
+  return `${vietmapLineRegex.exec(vietmapLine)[1]}.0`;
 }
 
 function readAndroidVersion() {
@@ -36,9 +36,9 @@ function readAndroidVersion() {
     'build.gradle',
   );
   const lines = fs.readFileSync(buildGradlePath, 'utf8').split('\n');
-  const maplibreLineRegex = /^\s+implementation\s+'com.github.vietmap-company:maps-sdk-android:(\d+\.\d+\.\d+)'$/;
-  const maplibreLine = lines.filter(i => maplibreLineRegex.exec(i))[0];
-  return maplibreLineRegex.exec(maplibreLine)[1];
+  const vietmapLineRegex = /^\s+implementation\s+'com.github.vietmap-company:maps-sdk-android:(\d+\.\d+\.\d+)'$/;
+  const vietmapLine = lines.filter(i => vietmapLineRegex.exec(i))[0];
+  return vietmapLineRegex.exec(vietmapLine)[1];
 }
 
 if (!styleSpecJSON) {
@@ -60,7 +60,7 @@ const OUTPUT_EXAMPLE_PREFIX = [
   'example',
   'node_modules',
   '@maplibre',
-  'maplibre-react-native',
+  'vietmap-gl-react-native',
 ];
 const OUTPUT_PREFIX = outputToExample ? OUTPUT_EXAMPLE_PREFIX : ['..'];
 

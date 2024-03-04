@@ -1,5 +1,5 @@
 import React, {FC, useState} from 'react';
-import VietmapGL, {SymbolLayerStyle} from '@maplibre/maplibre-react-native';
+import VietmapGL, {SymbolLayerStyle} from '@vietmap/vietmap-gl-react-native';
 import {Feature} from '@turf/helpers/dist/js';
 import {View, Text, ViewStyle, StyleProp, TextStyle} from 'react-native';
 import {ReactElement} from 'react';

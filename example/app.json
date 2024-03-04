@@ -1,4 +1,11 @@
 {
-  "name": "RNMaplibreExample",
-  "displayName": "RNMapLibreExample"
+  "name": "RNVietmapExample",
+  "displayName": "RNVietmapExample",
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "e6fc189f-c73b-4999-af62-337fa0d90ae9"
+      }
+    }
+  }
 }

@@ -14,10 +14,10 @@ import {
 } from '@expo/config-plugins/build/utils/generateCode';
 
 let pkg: {name: string; version?: string} = {
-  name: '@maplibre/maplibre-react-native',
+  name: '@vietmap/vietmap-gl-react-native',
 };
 try {
-  pkg = require('@maplibre/maplibre-react-native/package.json');
+  pkg = require('@vietmap/vietmap-gl-react-native/package.json');
 } catch {
   // empty catch block
 }
@@ -28,7 +28,7 @@ type InstallerBlockName = 'pre' | 'post';
  * Dangerously adds the custom installer hooks to the Podfile.
  * In the future this should be removed in favor of some custom hooks provided by Expo autolinking.
  *
- * https://github.com/maplibre/maplibre-react-native/blob/main/ios/install.md
+ * https://github.com/vietmap-company/vietmap-gl-react-native/blob/main/ios/install.md
  * @param config
  * @returns
  */
@@ -56,9 +56,8 @@ const withCocoaPodsInstallerBlocks: ConfigPlugin = c => {
 export function applyCocoaPodsModifications(contents: string): string {
   // Ensure installer blocks exist
   // let src = addInstallerBlock(contents, 'pre');
-  let src = addInstallerBlock(contents, 'post');
-  // src = addMapLibreInstallerBlock(src, 'pre');
-  src = addMapLibreInstallerBlock(src, 'post');
+  let src = addInstallerBlock(contents, 'post'); 
+  src = addVietmapInstallerBlock(src, 'post');
   return src;
 }
 
@@ -95,12 +94,12 @@ export function addInstallerBlock(
   }).contents;
 }
 
-export function addMapLibreInstallerBlock(
+export function addVietmapInstallerBlock(
   src: string,
   blockName: InstallerBlockName,
 ): string {
   return mergeContents({
-    tag: `@maplibre/maplibre-react-native-${blockName}_installer`,
+    tag: `@vietmap/vietmap-gl-react-native-${blockName}_installer`,
     src,
     newSrc: `    $RNMBGL.${blockName}_install(installer)`,
     anchor: new RegExp(`${blockName}_install do \\|installer\\|`),
@@ -135,9 +134,9 @@ const withExcludedSimulatorArchitectures: ConfigPlugin = c => {
   });
 };
 
-const withMapLibre: ConfigPlugin = config => {
+const withVietmap: ConfigPlugin = config => {
   config = withExcludedSimulatorArchitectures(config);
   return withCocoaPodsInstallerBlocks(config);
 };
 
-export default createRunOncePlugin(withMapLibre, pkg.name, pkg.version);
+export default createRunOncePlugin(withVietmap, pkg.name, pkg.version);

@@ -3,6 +3,7 @@ import {NativeModules} from 'react-native';
 interface IMGLModule {
   StyleURL: {
     Default: URL;
+    Street: URL;
   };
   OfflinePackDownloadState: {
     Inactive: string | number;
@@ -19,8 +20,8 @@ interface IMGLModule {
     DefaultSourceID: string;
   };
 
-  setAccessToken(accessToken: string | null): Promise<string | null>;
-  getAccessToken(): Promise<string>;
+  setApiKey(apiKey: string | null): Promise<string | null>;
+  getApiKey(): Promise<string>;
   setConnected(connected: boolean): void;
 }
 
@@ -31,7 +32,7 @@ export const {
   OfflinePackDownloadState,
   LineJoin,
   StyleSource,
-  setAccessToken,
-  getAccessToken,
+  setApiKey,
+  getApiKey,
   setConnected,
 } = MGLModule;

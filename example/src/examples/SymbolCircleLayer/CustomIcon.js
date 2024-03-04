@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text} from 'react-native';
-import VietmapGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@vietmap/vietmap-gl-react-native';
 import {featureCollection, feature} from '@turf/helpers';
 
 import sheet from '../../styles/sheet';

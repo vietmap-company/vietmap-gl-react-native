@@ -60,7 +60,7 @@ import Vietmap from '@vietmap/vietmap-gl-react-native';
 
 // Will be null for most users (only Vietmap authenticates this way).
 // Required on Android. See Android installation notes.
-Vietmap.setAccessToken(null);
+Vietmap.setApiKey(null);
 
 const styles = StyleSheet.create({
   page: {

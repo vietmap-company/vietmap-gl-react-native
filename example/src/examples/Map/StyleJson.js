@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, StyleSheet} from 'react-native';
-import VietmapGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@vietmap/vietmap-gl-react-native';
 
 import StyleJsonExample from '../../assets/style-json-example.json';
 import StyleJsonExample2 from '../../assets/style-json-example2.json';

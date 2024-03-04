@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Animated} from 'react-native';
-import VietmapGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@vietmap/vietmap-gl-react-native';
 
 const styles = {
   innerCircle: {

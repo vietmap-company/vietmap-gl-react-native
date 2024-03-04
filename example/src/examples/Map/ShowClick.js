@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text} from 'react-native';
-import VietmapGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@vietmap/vietmap-gl-react-native';
 
 import sheet from '../../styles/sheet';
 import {DEFAULT_CENTER_COORDINATE} from '../../utils';

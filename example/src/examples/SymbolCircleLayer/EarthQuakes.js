@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlatList} from 'react-native';
 import {Overlay, ListItem, FAB, Icon} from 'react-native-elements';
-import VietmapGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@vietmap/vietmap-gl-react-native';
 import moment from 'moment';
 
 import earthQuakesJSON from '../../assets/earthquakes.json';

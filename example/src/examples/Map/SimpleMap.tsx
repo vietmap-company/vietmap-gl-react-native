@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useRef, useState } from "react";
 import vietmap_api from "../../vietmap_api";
-import VietmapGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@vietmap/vietmap-gl-react-native';
 import sheet from "../../styles/sheet";
 const SimpleMap = (): ReactElement => {
   const [styleUrl, setStyleURL] = useState({ styleUrl: vietmap_api.get_style_url() })

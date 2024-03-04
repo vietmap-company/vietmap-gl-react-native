@@ -10,9 +10,11 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
         with:
-          node-version: '18.3.0'
+          node-version: '20.6.0'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm i
-      - run: npm publish
+          scope: '@octocat'
+
+      - run: yarn install
+      - run: yarn npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,5 +1,5 @@
 import React from 'react';
-import VietmapGL, {MapView, Camera} from '@maplibre/maplibre-react-native';
+import VietmapGL, {MapView, Camera} from '@vietmap/vietmap-gl-react-native';
 import {
   Alert,
   StyleSheet,

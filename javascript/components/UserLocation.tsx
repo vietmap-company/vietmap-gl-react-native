@@ -217,7 +217,8 @@ class UserLocation extends React.Component<
 
     if (location && location.coords) {
       const {longitude, latitude} = location.coords;
-      heading = location.coords.heading;
+      heading = (location.coords.heading??0) + 90;
+      
       coordinates = [longitude, latitude];
     }
 

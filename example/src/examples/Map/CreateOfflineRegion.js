@@ -7,7 +7,7 @@ import {
   Dimensions,
   StyleSheet,
 } from 'react-native';
-import VietmapGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@vietmap/vietmap-gl-react-native';
 import geoViewport from '@mapbox/geo-viewport';
 
 import vietmap_api from '../../vietmap_api';

@@ -1,5 +1,5 @@
 import React from 'react';
-import VietmapGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@vietmap/vietmap-gl-react-native';
 import vietmap_api from '../../vietmap_api';
 import {
   View,

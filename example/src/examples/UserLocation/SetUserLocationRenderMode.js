@@ -1,11 +1,12 @@
 import React from 'react';
-import VietmapGL from '@maplibre/maplibre-react-native';
+import VietmapGL from '@vietmap/vietmap-gl-react-native';
 import {Button, View} from 'react-native';
 import {ButtonGroup} from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 import sheet from '../../styles/sheet';
 import TabBarPage from '../common/TabBarPage';
+import vietmap_api from '../../vietmap_api';
 
 function SettingsPane({settings, onUpdateSettings}) {
   const followModes = ['normal', 'compass', 'course'];
@@ -123,7 +124,7 @@ class SetUserLocationRenderMode extends React.Component {
           settings={this.state}
           onUpdateSettings={settings => this.setState(settings)}
         />
-        <VietmapGL.MapView style={sheet.matchParent} tintColor={'red'}>
+        <VietmapGL.MapView styleURL={vietmap_api.get_style_url()} style={sheet.matchParent} tintColor={'red'}>
           <VietmapGL.Camera
             followUserLocation={followUserLocation}
             followUserMode={followUserMode}
