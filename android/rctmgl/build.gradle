@@ -32,7 +32,7 @@ dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 
-    implementation 'com.github.vietmap-company:maps-sdk-android:2.2.2'
+    implementation 'com.github.vietmap-company:maps-sdk-android:2.6.0'
 
     implementation 'com.github.vietmap-company:vietmap-services-turf-android:1.0.2'
     // Dependencies

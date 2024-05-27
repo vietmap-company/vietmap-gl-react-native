@@ -25,7 +25,17 @@ Using `yarn`:
 <br>
  
 ## Documentation
+### Installation
+You must set your API key before using the library. This is required on Android and optional on iOS. You can set the API key in your app's entry file (e.g. `App.js`).
 
+
+This function must be called before using any other functions of the library.
+```tsx
+    import Vietmap from '@vietmap/vietmap-gl-react-native';
+    // Will be null for most users (only Vietmap authenticates this way).
+    // Required on Android. See Android installation notes.
+    Vietmap.setApiKey('YOUR_API_KEY_HERE');
+```
 [Getting Started (start here)](/docs/GettingStarted.md)
 
 We've created a demo project for `Vietmap React-Native GL library`, which contains sample code for the main functions of the library [here](https://github.com/vietmap-company/vietmap-react-native-demo).
