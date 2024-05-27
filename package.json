@@ -75,7 +75,7 @@
     "@react-native/metro-config": "^0.72.7",
     "@sinonjs/fake-timers": "^11.1.0",
     "@testing-library/react-native": "^8.0.0",
-    "@tsconfig/node14": "14.1.0",
+    "@tsconfig/node14": "14.1.2",
     "@types/debounce": "^1.2.1",
     "@types/jest": "^27.4.1",
     "@types/mapbox__geo-viewport": "^0.4.1",
