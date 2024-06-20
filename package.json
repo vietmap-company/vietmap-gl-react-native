@@ -1,7 +1,7 @@
 {
-  "name": "@vietmap/vietmap-gl-react-native",
+  "name": "@vietmap/vietmap-gl-react-native-070",
   "description": "A Vietmap GL Native plugin for creating maps in React Native",
-  "version": "0.0.7",
+  "version": "0.0.3",
   "publishConfig": {
     "access": "public"
   },
@@ -110,7 +110,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-docgen": "rnmapbox/react-docgen#rnmapbox-dist",
-    "react-native": "0.72.1",
+    "react-native": "0.70.10",
     "react-test-renderer": "^18.2.0",
     "standard": "*",
     "typescript": "^5.3.3"

@@ -15,11 +15,11 @@ Install package:
 
 Using `npm`:
 ```bash
-    npm i @vietmap/vietmap-gl-react-native
+    npm i @vietmap/vietmap-gl-react-native-070
 ```
 Using `yarn`:
 ```bash
-    yarn add @vietmap/vietmap-gl-react-native
+    yarn add @vietmap/vietmap-gl-react-native-070
 ```
 
 <br>
@@ -31,7 +31,7 @@ You must set your API key before using the library. This is required on Android 
 
 This function must be called before using any other functions of the library.
 ```tsx
-    import Vietmap from '@vietmap/vietmap-gl-react-native';
+    import Vietmap from '@vietmap/vietmap-gl-react-native-070';
     // Will be null for most users (only Vietmap authenticates this way).
     // Required on Android. See Android installation notes.
     Vietmap.setApiKey('YOUR_API_KEY_HERE');
