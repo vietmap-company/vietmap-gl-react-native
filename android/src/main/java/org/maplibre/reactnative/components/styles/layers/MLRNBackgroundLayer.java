@@ -2,7 +2,7 @@ package org.maplibre.reactnative.components.styles.layers;
 
 import android.content.Context;
 
-import org.maplibre.android.style.layers.BackgroundLayer;
+import vn.vietmap.vietmapsdk.style.layers.BackgroundLayer;
 import org.maplibre.reactnative.components.styles.MLRNStyle;
 import org.maplibre.reactnative.components.styles.MLRNStyleFactory;
 

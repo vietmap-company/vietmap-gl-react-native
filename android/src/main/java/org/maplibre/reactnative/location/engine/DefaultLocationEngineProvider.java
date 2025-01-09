@@ -3,8 +3,8 @@ package org.maplibre.reactnative.location.engine;
 import android.content.Context;
 import android.util.Log;
 
-import org.maplibre.android.location.engine.LocationEngine;
-import org.maplibre.android.location.engine.LocationEngineDefault;
+import vn.vietmap.vietmapsdk.location.engine.LocationEngine;
+import vn.vietmap.vietmapsdk.location.engine.LocationEngineDefault;
 
 public class DefaultLocationEngineProvider implements LocationEngineProvidable {
     private static final String LOG_TAG = "DefaultLocationEngineProvider";

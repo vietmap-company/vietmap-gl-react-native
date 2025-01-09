@@ -2,8 +2,8 @@ package org.maplibre.reactnative.components.styles.sources;
 
 import android.content.Context;
 
-import org.maplibre.android.style.sources.Source;
-import org.maplibre.android.style.sources.TileSet;
+import vn.vietmap.vietmapsdk.style.sources.Source;
+import vn.vietmap.vietmapsdk.style.sources.TileSet;
 
 import java.util.Collection;
 

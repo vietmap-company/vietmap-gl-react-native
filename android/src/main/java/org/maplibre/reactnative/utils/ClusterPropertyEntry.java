@@ -1,6 +1,6 @@
 package org.maplibre.reactnative.utils;
 
-import org.maplibre.android.style.expressions.Expression;
+import vn.vietmap.vietmapsdk.style.expressions.Expression;
 
 public class ClusterPropertyEntry {
     public Expression operator;

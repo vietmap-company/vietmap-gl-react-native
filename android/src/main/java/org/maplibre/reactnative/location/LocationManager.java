@@ -5,16 +5,17 @@ import android.location.Location;
 import android.os.Looper;
 import android.util.Log;
 
-import org.maplibre.android.location.engine.LocationEngine;
-import org.maplibre.android.location.engine.LocationEngineCallback;
-import org.maplibre.android.location.engine.LocationEngineRequest;
-import org.maplibre.android.location.engine.LocationEngineResult;
-import org.maplibre.android.location.permissions.PermissionsManager;
+import vn.vietmap.vietmapsdk.location.engine.LocationEngineCallback;
+import vn.vietmap.vietmapsdk.location.engine.LocationEngineRequest;
+import vn.vietmap.vietmapsdk.location.engine.LocationEngineResult;
+import vn.vietmap.vietmapsdk.location.permissions.PermissionsManager;
 import org.maplibre.reactnative.location.engine.LocationEngineProvider;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
+
+import vn.vietmap.vietmapsdk.location.engine.LocationEngine;
 
 @SuppressWarnings({"MissingPermission"})
 public class LocationManager implements LocationEngineCallback<LocationEngineResult> {

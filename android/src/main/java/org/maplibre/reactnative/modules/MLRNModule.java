@@ -9,8 +9,8 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.common.MapBuilder;
 import com.facebook.react.module.annotations.ReactModule;
-import org.maplibre.android.MapLibre;
-import org.maplibre.android.WellKnownTileServer;
+import vn.vietmap.vietmapsdk.Vietmap;
+import vn.vietmap.vietmapsdk.WellKnownTileServer;
 import org.maplibre.reactnative.components.camera.constants.CameraMode;
 import org.maplibre.reactnative.components.styles.sources.MLRNSource;
 import org.maplibre.reactnative.events.constants.EventTypes;
@@ -21,7 +21,7 @@ import org.maplibre.reactnative.location.UserTrackingMode;
 import okhttp3.Dispatcher;
 import okhttp3.OkHttpClient;
 
-import org.maplibre.android.module.http.HttpRequestUtil;
+import vn.vietmap.vietmapsdk.module.http.HttpRequestUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -132,10 +132,7 @@ public class MLRNModule extends ReactContextBaseJavaModule {
                 .build();
     }
 
-    /**
-     * @deprecated This will be removed in the next major version.
-     * @see https://github.com/maplibre/maplibre-react-native/issues/25#issuecomment-1382382044
-     */
+
     @Deprecated
     @ReactMethod
     public void setAccessToken(final String accessToken) {
@@ -143,9 +140,9 @@ public class MLRNModule extends ReactContextBaseJavaModule {
             @Override
             public void run() {
                 if (accessToken == null) {
-                    MapLibre.getInstance(getReactApplicationContext());
+                    Vietmap.getInstance(getReactApplicationContext());
                 } else {
-                    MapLibre.getInstance(getReactApplicationContext(), accessToken, WellKnownTileServer.Mapbox);
+                    Vietmap.getInstance(getReactApplicationContext(), accessToken, WellKnownTileServer.Mapbox);
                 }
             }
         });
@@ -179,14 +176,10 @@ public class MLRNModule extends ReactContextBaseJavaModule {
         });
     }
 
-    /**
-     * @deprecated This will be removed in the next major version.
-     * @see https://github.com/maplibre/maplibre-react-native/issues/25#issuecomment-1382382044
-     */
     @Deprecated
     @ReactMethod
     public void getAccessToken(Promise promise) {
-        String token = MapLibre.getApiKey();
+        String token = Vietmap.getApiKey();
         if(token == null) {
             promise.reject("missing_access_token", "No access token has been set");
         } else {
@@ -199,7 +192,7 @@ public class MLRNModule extends ReactContextBaseJavaModule {
         mReactContext.runOnUiQueueThread(new Runnable() {
             @Override
             public void run() {
-                MapLibre.setConnected(connected);
+                Vietmap.setConnected(connected);
             }
         });
     }
@@ -216,7 +209,7 @@ public class MLRNModule extends ReactContextBaseJavaModule {
         mReactContext.runOnUiQueueThread(new Runnable() {
             @Override
             public void run() {
-                MapLibre.getInstance(getReactApplicationContext());
+                Vietmap.getInstance(getReactApplicationContext());
             }
         });
     }

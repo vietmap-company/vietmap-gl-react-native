@@ -2,8 +2,8 @@ package org.maplibre.reactnative.components.styles.layers;
 
 import android.content.Context;
 
-import org.maplibre.android.style.expressions.Expression;
-import org.maplibre.android.style.layers.FillExtrusionLayer;
+import vn.vietmap.vietmapsdk.style.expressions.Expression;
+import vn.vietmap.vietmapsdk.style.layers.FillExtrusionLayer;
 import org.maplibre.reactnative.components.mapview.MLRNMapView;
 import org.maplibre.reactnative.components.styles.MLRNStyle;
 import org.maplibre.reactnative.components.styles.MLRNStyleFactory;

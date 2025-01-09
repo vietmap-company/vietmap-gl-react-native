@@ -3,14 +3,14 @@ package org.maplibre.reactnative.components.location;
 import android.annotation.SuppressLint;
 import android.content.Context;
 
-import org.maplibre.android.location.LocationComponent;
-import org.maplibre.android.location.LocationComponentActivationOptions;
-import org.maplibre.android.location.LocationComponentOptions;
-import org.maplibre.android.location.OnCameraTrackingChangedListener;
-import org.maplibre.android.location.modes.CameraMode;
-import org.maplibre.android.location.modes.RenderMode;
-import org.maplibre.android.maps.MapLibreMap;
-import org.maplibre.android.maps.Style;
+import vn.vietmap.vietmapsdk.location.LocationComponent;
+import vn.vietmap.vietmapsdk.location.LocationComponentActivationOptions;
+import vn.vietmap.vietmapsdk.location.LocationComponentOptions;
+import vn.vietmap.vietmapsdk.location.OnCameraTrackingChangedListener;
+import vn.vietmap.vietmapsdk.location.modes.CameraMode;
+import vn.vietmap.vietmapsdk.location.modes.RenderMode;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.Style;
 import org.maplibre.reactnative.R;
 import org.maplibre.reactnative.components.mapview.MLRNMapView;
 import org.maplibre.reactnative.location.LocationManager;
@@ -24,7 +24,7 @@ import androidx.annotation.NonNull;
  */
 public class LocationComponentManager {
     private MLRNMapView mMapView = null;
-    private MapLibreMap mMap = null;
+    private VietMapGL mMap = null;
 
     private LocationManager mLocationManager = null;
     private LocationComponent mLocationComponent = null;

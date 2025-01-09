@@ -2,9 +2,9 @@ package org.maplibre.reactnative.utils;
 
 import android.graphics.PointF;
 
-import org.maplibre.android.geometry.LatLng;
-import org.maplibre.android.geometry.LatLngBounds;
-import org.maplibre.android.geometry.VisibleRegion;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.geometry.LatLngBounds;
+import vn.vietmap.vietmapsdk.geometry.VisibleRegion;
 
 /**
  * Ported from https://github.com/mapbox/geo-viewport/blob/master/index.js

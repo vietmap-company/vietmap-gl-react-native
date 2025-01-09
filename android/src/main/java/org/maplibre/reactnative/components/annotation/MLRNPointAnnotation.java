@@ -6,13 +6,13 @@ import android.graphics.Bitmap;
 import android.view.View;
 import androidx.annotation.NonNull;
 
-import org.maplibre.geojson.Point;
-import org.maplibre.android.geometry.LatLng;
-import org.maplibre.android.maps.Style;
-import org.maplibre.android.plugins.annotation.Symbol;
-import org.maplibre.android.plugins.annotation.SymbolManager;
-import org.maplibre.android.plugins.annotation.SymbolOptions;
-import org.maplibre.android.maps.MapLibreMap;
+import com.mapbox.geojson.Point;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.maps.Style;
+import vn.vietmap.vietmapsdk.plugins.annotation.Symbol;
+import vn.vietmap.vietmapsdk.plugins.annotation.SymbolManager;
+import vn.vietmap.vietmapsdk.plugins.annotation.SymbolOptions;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
 
 import org.maplibre.reactnative.components.AbstractMapFeature;
 import org.maplibre.reactnative.components.mapview.MLRNMapView;
@@ -26,7 +26,7 @@ public class MLRNPointAnnotation extends AbstractMapFeature implements View.OnLa
     private Context mContext;
     private MLRNPointAnnotationManager mManager;
     private Symbol mAnnotation;
-    private MapLibreMap mMap;
+    private VietMapGL mMap;
     private MLRNMapView mMapView;
 
     private boolean mHasChildren;

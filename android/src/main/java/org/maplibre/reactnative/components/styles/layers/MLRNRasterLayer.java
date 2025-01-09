@@ -2,7 +2,7 @@ package org.maplibre.reactnative.components.styles.layers;
 
 import android.content.Context;
 
-import org.maplibre.android.style.layers.RasterLayer;
+import vn.vietmap.vietmapsdk.style.layers.RasterLayer;
 import org.maplibre.reactnative.components.styles.MLRNStyle;
 import org.maplibre.reactnative.components.styles.MLRNStyleFactory;
 

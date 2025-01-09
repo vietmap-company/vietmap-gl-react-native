@@ -1,7 +1,7 @@
 package org.maplibre.reactnative.components.mapview;
 
 import com.facebook.react.bridge.ReactApplicationContext;
-import org.maplibre.android.maps.MapLibreMapOptions;
+import vn.vietmap.vietmapsdk.maps.VietMapGLOptions;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
 
@@ -20,7 +20,7 @@ public class MLRNAndroidTextureMapViewManager extends MLRNMapViewManager {
 
     @Override
     protected MLRNAndroidTextureMapView createViewInstance(ThemedReactContext themedReactContext) {
-        MapLibreMapOptions options = new MapLibreMapOptions();
+        VietMapGLOptions options = new VietMapGLOptions();
         options.textureMode(true);
         return new MLRNAndroidTextureMapView(themedReactContext, this, options);
     }

@@ -1,14 +1,14 @@
 package org.maplibre.reactnative.components.mapview;
 
-import org.maplibre.android.style.layers.CircleLayer;
-import org.maplibre.android.style.layers.FillExtrusionLayer;
-import org.maplibre.android.style.layers.FillLayer;
-import org.maplibre.android.style.layers.HeatmapLayer;
-import org.maplibre.android.style.layers.HillshadeLayer;
-import org.maplibre.android.style.layers.Layer;
-import org.maplibre.android.style.layers.LineLayer;
-import org.maplibre.android.style.layers.RasterLayer;
-import org.maplibre.android.style.layers.SymbolLayer;
+import vn.vietmap.vietmapsdk.style.layers.CircleLayer;
+import vn.vietmap.vietmapsdk.style.layers.FillExtrusionLayer;
+import vn.vietmap.vietmapsdk.style.layers.FillLayer;
+import vn.vietmap.vietmapsdk.style.layers.HeatmapLayer;
+import vn.vietmap.vietmapsdk.style.layers.HillshadeLayer;
+import vn.vietmap.vietmapsdk.style.layers.Layer;
+import vn.vietmap.vietmapsdk.style.layers.LineLayer;
+import vn.vietmap.vietmapsdk.style.layers.RasterLayer;
+import vn.vietmap.vietmapsdk.style.layers.SymbolLayer;
 
 import javax.annotation.Nullable;
 

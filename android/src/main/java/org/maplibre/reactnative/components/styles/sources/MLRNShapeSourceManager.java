@@ -18,7 +18,7 @@ import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import org.maplibre.android.style.expressions.Expression;
+import vn.vietmap.vietmapsdk.style.expressions.Expression;
 import org.maplibre.reactnative.components.AbstractEventEmitter;
 import org.maplibre.reactnative.components.annotation.MLRNCallout;
 import org.maplibre.reactnative.components.mapview.MLRNMapView;

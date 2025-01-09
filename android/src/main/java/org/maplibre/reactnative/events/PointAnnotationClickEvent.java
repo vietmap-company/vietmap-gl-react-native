@@ -6,8 +6,8 @@ import android.view.View;
 
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
-import org.maplibre.android.plugins.markerview.MarkerView;
-import org.maplibre.android.geometry.LatLng;
+import com.mapbox.mapboxsdk.plugins.markerview.MarkerView;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
 import org.maplibre.reactnative.components.annotation.MLRNPointAnnotation;
 import org.maplibre.reactnative.events.constants.EventKeys;
 import org.maplibre.reactnative.events.constants.EventTypes;

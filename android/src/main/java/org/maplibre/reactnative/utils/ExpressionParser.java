@@ -4,8 +4,8 @@ import com.facebook.react.bridge.Dynamic;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.google.gson.JsonArray;
-import org.maplibre.android.style.expressions.Expression;
-import org.maplibre.android.style.expressions.Expression.Converter;
+import vn.vietmap.vietmapsdk.style.expressions.Expression;
+import vn.vietmap.vietmapsdk.style.expressions.Expression.Converter;
 
 import org.json.JSONArray;
 

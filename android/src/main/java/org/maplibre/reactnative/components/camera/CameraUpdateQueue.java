@@ -1,6 +1,6 @@
 package org.maplibre.reactnative.components.camera;
 
-import org.maplibre.android.maps.MapLibreMap;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
 import org.maplibre.reactnative.components.mapview.MLRNMapView;
 
 import java.util.ArrayList;

@@ -3,11 +3,11 @@ package org.maplibre.reactnative.components.styles.light;
 import android.content.Context;
 
 import com.facebook.react.bridge.ReadableMap;
-import org.maplibre.android.maps.MapLibreMap;
-import org.maplibre.android.maps.Style;
-import org.maplibre.android.style.layers.TransitionOptions;
-import org.maplibre.android.style.light.Light;
-import org.maplibre.android.style.light.Position;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.Style;
+import vn.vietmap.vietmapsdk.style.layers.TransitionOptions;
+import vn.vietmap.vietmapsdk.style.light.Light;
+import vn.vietmap.vietmapsdk.style.light.Position;
 import org.maplibre.reactnative.components.AbstractMapFeature;
 import org.maplibre.reactnative.components.mapview.MLRNMapView;
 import org.maplibre.reactnative.components.styles.MLRNStyle;
@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MLRNLight extends AbstractMapFeature {
-    private MapLibreMap mMap;
+    private VietMapGL mMap;
     private ReadableMap mReactStyle;
 
     public MLRNLight(Context context) {

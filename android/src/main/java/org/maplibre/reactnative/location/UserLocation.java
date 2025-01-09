@@ -2,7 +2,7 @@ package org.maplibre.reactnative.location;
 
 import android.location.Location;
 
-import org.maplibre.android.geometry.LatLng;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
 
 public class UserLocation {
     private Location currentLocation;

@@ -6,9 +6,9 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.maplibre.geojson.Point;
-import org.maplibre.android.maps.MapLibreMap;
-import org.maplibre.android.maps.OnMapReadyCallback;
+import com.mapbox.geojson.Point;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.OnMapReadyCallback;
 import org.maplibre.reactnative.components.AbstractMapFeature;
 import org.maplibre.reactnative.components.mapview.MLRNMapView;
 import org.maplibre.reactnative.utils.GeoJSONUtils;
@@ -65,7 +65,7 @@ public class MLRNMarkerView extends AbstractMapFeature implements MarkerView.OnP
         mMapView.getMapAsync(
             new OnMapReadyCallback() {
                 @Override
-                public void onMapReady(@NonNull MapLibreMap mapLibreMap) {
+                public void onMapReady(@NonNull VietMapGL mapLibreMap) {
                     mMarkerViewManager = mMapView.getMarkerViewManager(mapLibreMap);
 
                     if (mChildView != null) {

@@ -5,14 +5,14 @@ import androidx.annotation.NonNull;
 import android.util.DisplayMetrics;
 
 import com.facebook.react.bridge.ReadableMap;
-import org.maplibre.geojson.FeatureCollection;
-import org.maplibre.geojson.Point;
-import org.maplibre.android.camera.CameraPosition;
-import org.maplibre.android.camera.CameraUpdate;
-import org.maplibre.android.camera.CameraUpdateFactory;
-import org.maplibre.android.geometry.LatLng;
-import org.maplibre.android.geometry.LatLngBounds;
-import org.maplibre.android.maps.MapLibreMap;
+import com.mapbox.geojson.FeatureCollection;
+import com.mapbox.geojson.Point;
+import vn.vietmap.vietmapsdk.camera.CameraPosition;
+import vn.vietmap.vietmapsdk.camera.CameraUpdate;
+import vn.vietmap.vietmapsdk.camera.CameraUpdateFactory;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.geometry.LatLngBounds;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
 
 import org.maplibre.reactnative.components.camera.constants.CameraMode;
 import org.maplibre.reactnative.utils.GeoJSONUtils;
@@ -32,7 +32,7 @@ public class CameraStop {
 
     private int mMode = CameraMode.EASE;
     private int mDuration = 2000;
-    private MapLibreMap.CancelableCallback mCallback;
+    private VietMapGL.CancelableCallback mCallback;
 
     public CameraStop() {
     }
@@ -57,7 +57,7 @@ public class CameraStop {
         mDuration = duration;
     }
 
-    public void setCallback(MapLibreMap.CancelableCallback callback) {
+    public void setCallback(VietMapGL.CancelableCallback callback) {
         mCallback = callback;
     }
 
@@ -77,7 +77,7 @@ public class CameraStop {
     }
 
     public CameraUpdateItem toCameraUpdate(MLRNMapView mapView) {
-        MapLibreMap map = mapView.getMapboxMap();
+        VietMapGL map = mapView.getMapboxMap();
         CameraPosition currentCamera = map.getCameraPosition();
         CameraPosition.Builder builder = new CameraPosition.Builder(currentCamera);
 
@@ -140,7 +140,7 @@ public class CameraStop {
         return new CameraUpdateItem(map, CameraUpdateFactory.newCameraPosition(builder.build()), mDuration, mCallback, mMode);
     }
 
-    public static CameraStop fromReadableMap(Context context, @NonNull ReadableMap readableMap, MapLibreMap.CancelableCallback callback) {
+    public static CameraStop fromReadableMap(Context context, @NonNull ReadableMap readableMap, VietMapGL.CancelableCallback callback) {
         CameraStop stop = new CameraStop();
 
         if (readableMap.hasKey("pitch")) {

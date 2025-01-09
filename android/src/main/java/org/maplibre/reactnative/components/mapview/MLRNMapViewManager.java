@@ -11,7 +11,7 @@ import com.facebook.react.uimanager.LayoutShadowNode;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
 
-import org.maplibre.android.maps.MapLibreMap;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
 import org.maplibre.reactnative.components.AbstractEventEmitter;
 import org.maplibre.reactnative.events.constants.EventKeys;
 import org.maplibre.reactnative.utils.ConvertUtils;
@@ -236,7 +236,7 @@ public class MLRNMapViewManager extends AbstractEventEmitter<MLRNMapView> {
     @Override
     public void receiveCommand(MLRNMapView mapView, int commandID, @Nullable ReadableArray args) {
         // allows method calls to work with componentDidMount
-        MapLibreMap mapboxMap = mapView.getMapboxMap();
+        VietMapGL mapboxMap = mapView.getMapboxMap();
         if (mapboxMap == null) {
             mapView.enqueuePreRenderMapMethod(commandID, args);
             return;

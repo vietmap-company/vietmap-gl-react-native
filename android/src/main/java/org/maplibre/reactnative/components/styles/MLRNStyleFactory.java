@@ -3,19 +3,20 @@
 
 package org.maplibre.reactnative.components.styles;
 
-import org.maplibre.android.style.layers.BackgroundLayer;
-import org.maplibre.android.style.layers.CircleLayer;
-import org.maplibre.android.style.layers.FillExtrusionLayer;
-import org.maplibre.android.style.layers.FillLayer;
-import org.maplibre.android.style.layers.LineLayer;
-import org.maplibre.android.style.layers.PropertyFactory;
-import org.maplibre.android.style.layers.RasterLayer;
-import org.maplibre.android.style.layers.SymbolLayer;
-import org.maplibre.android.style.layers.HeatmapLayer;
-import org.maplibre.android.style.layers.HillshadeLayer;
-import org.maplibre.android.style.layers.TransitionOptions;
-import org.maplibre.android.style.light.Light;
-import org.maplibre.android.style.light.Position;
+import vn.vietmap.vietmapsdk.style.expressions.Expression;
+import vn.vietmap.vietmapsdk.style.layers.BackgroundLayer;
+import vn.vietmap.vietmapsdk.style.layers.CircleLayer;
+import vn.vietmap.vietmapsdk.style.layers.FillExtrusionLayer;
+import vn.vietmap.vietmapsdk.style.layers.FillLayer;
+import vn.vietmap.vietmapsdk.style.layers.LineLayer;
+import vn.vietmap.vietmapsdk.style.layers.PropertyFactory;
+import vn.vietmap.vietmapsdk.style.layers.RasterLayer;
+import vn.vietmap.vietmapsdk.style.layers.SymbolLayer;
+import vn.vietmap.vietmapsdk.style.layers.HeatmapLayer;
+import vn.vietmap.vietmapsdk.style.layers.HillshadeLayer;
+import vn.vietmap.vietmapsdk.style.layers.TransitionOptions;
+import vn.vietmap.vietmapsdk.style.light.Light;
+import vn.vietmap.vietmapsdk.style.light.Position;
 import org.maplibre.reactnative.utils.DownloadMapImageTask;
 
 import java.util.List;
@@ -1209,7 +1210,7 @@ public class MLRNStyleFactory {
       if (styleValue.isExpression()) {
         layer.setProperties(PropertyFactory.iconPadding(styleValue.getExpression()));
       } else {
-        layer.setProperties(PropertyFactory.iconPadding(styleValue.getFloatArray(VALUE_KEY)));
+        layer.setProperties(PropertyFactory.iconPadding(Expression.literal(styleValue.getFloatArray(VALUE_KEY))));
       }
     }
 

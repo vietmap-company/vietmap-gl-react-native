@@ -1,11 +1,11 @@
 package org.maplibre.reactnative.utils;
 
-import org.maplibre.android.maps.MapLibreMap;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
 
 import org.maplibre.reactnative.components.AbstractEventEmitter;
 import org.maplibre.reactnative.events.IEvent;
 
-public class SimpleEventCallback implements MapLibreMap.CancelableCallback {
+public class SimpleEventCallback implements VietMapGL.CancelableCallback {
     private AbstractEventEmitter mEventEmitter;
     private IEvent mEvent;
 

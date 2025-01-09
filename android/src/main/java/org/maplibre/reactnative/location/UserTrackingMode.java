@@ -1,11 +1,11 @@
 package org.maplibre.reactnative.location;
 
 /*
-import org.maplibre.android.plugins.locationlayer.modes.RenderMode;
+import vn.vietmap.vietmapsdk.plugins.locationlayer.modes.RenderMode;
 */
 
-import org.maplibre.android.location.modes.CameraMode;
-import org.maplibre.android.location.modes.RenderMode;
+import vn.vietmap.vietmapsdk.location.modes.CameraMode;
+import vn.vietmap.vietmapsdk.location.modes.RenderMode;
 
 public class UserTrackingMode {
     public static final int NONE = 0;

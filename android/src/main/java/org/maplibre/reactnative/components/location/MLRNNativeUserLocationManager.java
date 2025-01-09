@@ -3,7 +3,7 @@ package org.maplibre.reactnative.components.location;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import org.maplibre.android.location.modes.RenderMode;
+import vn.vietmap.vietmapsdk.location.modes.RenderMode;
 
 import javax.annotation.Nonnull;
 

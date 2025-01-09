@@ -4,16 +4,16 @@ import android.content.Context;
 import android.location.Location;
 import android.util.Log;
 
-import org.maplibre.android.camera.CameraPosition;
-import org.maplibre.android.camera.CameraUpdate;
-import org.maplibre.android.camera.CameraUpdateFactory;
-import org.maplibre.android.geometry.LatLng;
-import org.maplibre.android.geometry.LatLngBounds;
-import org.maplibre.android.geometry.VisibleRegion;
-import org.maplibre.android.location.OnCameraTrackingChangedListener;
-import org.maplibre.android.location.modes.CameraMode;
-import org.maplibre.android.maps.MapLibreMap;
-import org.maplibre.android.maps.Style;
+import vn.vietmap.vietmapsdk.camera.CameraPosition;
+import vn.vietmap.vietmapsdk.camera.CameraUpdate;
+import vn.vietmap.vietmapsdk.camera.CameraUpdateFactory;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.geometry.LatLngBounds;
+import vn.vietmap.vietmapsdk.geometry.VisibleRegion;
+import vn.vietmap.vietmapsdk.location.OnCameraTrackingChangedListener;
+import vn.vietmap.vietmapsdk.location.modes.CameraMode;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.Style;
 
 import org.maplibre.reactnative.components.AbstractMapFeature;
 import org.maplibre.reactnative.components.location.LocationComponentManager;
@@ -33,9 +33,9 @@ import org.maplibre.reactnative.events.constants.EventTypes;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
 
-import org.maplibre.geojson.Point;
+import com.mapbox.geojson.Point;
 
-import org.maplibre.android.location.permissions.PermissionsManager;
+import vn.vietmap.vietmapsdk.location.permissions.PermissionsManager;
 
 import androidx.annotation.NonNull;
 
@@ -91,7 +91,7 @@ public class MLRNCamera extends AbstractMapFeature {
         }
     };
 
-    private MapLibreMap.CancelableCallback mCameraCallback = new MapLibreMap.CancelableCallback() {
+    private VietMapGL.CancelableCallback mCameraCallback = new VietMapGL.CancelableCallback() {
         @Override
         public void onCancel() {
             if (!hasSentFirstRegion) {
@@ -165,14 +165,14 @@ public class MLRNCamera extends AbstractMapFeature {
     }
 
     private void updateMaxBounds() {
-        MapLibreMap map = getMapboxMap();
+        VietMapGL map = getMapboxMap();
         if (map != null && mMaxBounds != null) {
             map.setLatLngBoundsForCameraTarget(mMaxBounds);
         }
     }
 
     private void updateMaxMinZoomLevel() {
-        MapLibreMap map = getMapboxMap();
+        VietMapGL map = getMapboxMap();
         if (map != null) {
             if (mMinZoomLevel >= 0.0) {
                 map.setMinZoomPreference(mMinZoomLevel);
@@ -279,7 +279,7 @@ public class MLRNCamera extends AbstractMapFeature {
             }
         }
         CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(getUserLocationUpdateCameraPosition(zoom));
-        MapLibreMap.CancelableCallback cameraCallback = new MapLibreMap.CancelableCallback() {
+        VietMapGL.CancelableCallback cameraCallback = new VietMapGL.CancelableCallback() {
             @Override
             public void onCancel() {
                 mUserTrackingState = UserTrackingState.CHANGED;
@@ -304,7 +304,7 @@ public class MLRNCamera extends AbstractMapFeature {
         CameraPosition cameraPosition = mMapView.getCameraPosition();
         CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(getUserLocationUpdateCameraPosition(cameraPosition.zoom));
 
-        MapLibreMap.CancelableCallback callback = new MapLibreMap.CancelableCallback() {
+        VietMapGL.CancelableCallback callback = new VietMapGL.CancelableCallback() {
             @Override
             public void onCancel() {
                 mUserTrackingState = UserTrackingState.CHANGED;
@@ -485,7 +485,7 @@ public class MLRNCamera extends AbstractMapFeature {
         }
     }
 
-    MapLibreMap getMapboxMap() {
+    VietMapGL getMapboxMap() {
         if (mMapView == null) {
             return null;
         }

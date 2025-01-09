@@ -8,7 +8,7 @@ import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
 import com.facebook.react.views.imagehelper.ImageSource;
-import org.maplibre.android.geometry.LatLngQuad;
+import vn.vietmap.vietmapsdk.geometry.LatLngQuad;
 import org.maplibre.reactnative.utils.ConvertUtils;
 import org.maplibre.reactnative.utils.GeoJSONUtils;
 

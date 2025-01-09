@@ -2,10 +2,10 @@ package org.maplibre.reactnative.components.styles.sources;
 
 import android.content.Context;
 
-import org.maplibre.geojson.Feature;
-import org.maplibre.android.style.sources.RasterSource;
+import com.mapbox.geojson.Feature;
+import vn.vietmap.vietmapsdk.style.sources.RasterSource;
 
-import static org.maplibre.android.style.sources.RasterSource.DEFAULT_TILE_SIZE;
+import static vn.vietmap.vietmapsdk.style.sources.RasterSource.DEFAULT_TILE_SIZE;
 
 public class MLRNRasterSource extends MLRNTileSource<RasterSource> {
     private Integer mTileSize;

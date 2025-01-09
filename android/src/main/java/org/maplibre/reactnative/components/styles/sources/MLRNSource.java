@@ -8,12 +8,12 @@ import android.view.View;
 
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.common.MapBuilder;
-import org.maplibre.geojson.Feature;
-import org.maplibre.android.geometry.LatLng;
-import org.maplibre.android.log.Logger;
-import org.maplibre.android.maps.MapLibreMap;
-import org.maplibre.android.maps.Style;
-import org.maplibre.android.style.sources.Source;
+import com.mapbox.geojson.Feature;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.log.Logger;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.Style;
+import vn.vietmap.vietmapsdk.style.sources.Source;
 import org.maplibre.reactnative.components.AbstractMapFeature;
 import org.maplibre.reactnative.components.mapview.MLRNMapView;
 import org.maplibre.reactnative.components.styles.layers.MLRNLayer;
@@ -31,7 +31,7 @@ public abstract class MLRNSource<T extends Source> extends AbstractMapFeature {
     public static final double DEFAULT_HITBOX_HEIGHT = 44.0;
 
     protected MLRNMapView mMapView;
-    protected MapLibreMap mMap;
+    protected VietMapGL mMap;
 
     protected String mID;
     protected T mSource;

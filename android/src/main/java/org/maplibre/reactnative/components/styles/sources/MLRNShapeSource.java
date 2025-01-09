@@ -10,14 +10,14 @@ import androidx.core.content.res.ResourcesCompat;
 
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
-import org.maplibre.geojson.Feature;
-import org.maplibre.geojson.FeatureCollection;
-import org.maplibre.android.maps.MapLibreMap;
-import org.maplibre.android.maps.Style;
-import org.maplibre.android.style.expressions.Expression;
-import org.maplibre.android.style.sources.GeoJsonOptions;
-import org.maplibre.android.style.sources.GeoJsonSource;
-import org.maplibre.android.utils.BitmapUtils;
+import com.mapbox.geojson.Feature;
+import com.mapbox.geojson.FeatureCollection;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.Style;
+import vn.vietmap.vietmapsdk.style.expressions.Expression;
+import vn.vietmap.vietmapsdk.style.sources.GeoJsonOptions;
+import vn.vietmap.vietmapsdk.style.sources.GeoJsonSource;
+import vn.vietmap.vietmapsdk.utils.BitmapUtils;
 import org.maplibre.reactnative.R;
 import org.maplibre.reactnative.components.mapview.MLRNMapView;
 import org.maplibre.reactnative.events.AndroidCallbackEvent;
@@ -63,7 +63,7 @@ public class MLRNShapeSource extends MLRNSource<GeoJsonSource> {
         mapView.getMapboxMap().getStyle(new Style.OnStyleLoaded() {
             @Override
             public void onStyleLoaded(@NonNull Style style) {
-                MapLibreMap map = mapView.getMapboxMap();
+                VietMapGL map = mapView.getMapboxMap();
                 MLRNShapeSource.super.addToMap(mapView);
             }
         });

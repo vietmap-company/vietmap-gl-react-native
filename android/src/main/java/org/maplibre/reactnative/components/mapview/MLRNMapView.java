@@ -16,7 +16,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import org.maplibre.android.log.Logger;
+import vn.vietmap.vietmapsdk.log.Logger;
 
 import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.ReactContext;
@@ -26,28 +26,28 @@ import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeArray;
 import com.facebook.react.bridge.WritableNativeMap;
-import org.maplibre.android.gestures.MoveGestureDetector;
-import org.maplibre.geojson.Feature;
-import org.maplibre.geojson.FeatureCollection;
-import org.maplibre.android.camera.CameraPosition;
-import org.maplibre.android.camera.CameraUpdate;
-import org.maplibre.android.geometry.LatLng;
-import org.maplibre.android.geometry.VisibleRegion;
-import org.maplibre.android.maps.AttributionDialogManager;
-import org.maplibre.android.maps.MapView;
-import org.maplibre.android.maps.MapLibreMap;
-import org.maplibre.android.maps.MapLibreMapOptions;
-import org.maplibre.android.maps.OnMapReadyCallback;
-import org.maplibre.android.maps.Style;
-import org.maplibre.android.maps.UiSettings;
-import org.maplibre.android.plugins.localization.LocalizationPlugin;
-import org.maplibre.android.plugins.annotation.OnSymbolClickListener;
-import org.maplibre.android.plugins.annotation.OnSymbolDragListener;
-import org.maplibre.android.plugins.annotation.Symbol;
-import org.maplibre.android.plugins.annotation.SymbolManager;
-import org.maplibre.android.style.expressions.Expression;
-import org.maplibre.android.style.layers.Layer;
-import org.maplibre.android.style.layers.Property;
+import vn.vietmap.android.gestures.MoveGestureDetector;
+import com.mapbox.geojson.Feature;
+import com.mapbox.geojson.FeatureCollection;
+import vn.vietmap.vietmapsdk.camera.CameraPosition;
+import vn.vietmap.vietmapsdk.camera.CameraUpdate;
+import vn.vietmap.vietmapsdk.geometry.LatLng;
+import vn.vietmap.vietmapsdk.geometry.VisibleRegion;
+import vn.vietmap.vietmapsdk.maps.AttributionDialogManager;
+import vn.vietmap.vietmapsdk.maps.MapView;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.VietMapGLOptions;
+import vn.vietmap.vietmapsdk.maps.OnMapReadyCallback;
+import vn.vietmap.vietmapsdk.maps.Style;
+import vn.vietmap.vietmapsdk.maps.UiSettings;
+import vn.vietmap.vietmapsdk.plugins.localization.LocalizationPlugin;
+import vn.vietmap.vietmapsdk.plugins.annotation.OnSymbolClickListener;
+import vn.vietmap.vietmapsdk.plugins.annotation.OnSymbolDragListener;
+import vn.vietmap.vietmapsdk.plugins.annotation.Symbol;
+import vn.vietmap.vietmapsdk.plugins.annotation.SymbolManager;
+import vn.vietmap.vietmapsdk.style.expressions.Expression;
+import vn.vietmap.vietmapsdk.style.layers.Layer;
+import vn.vietmap.vietmapsdk.style.layers.Property;
 import org.maplibre.reactnative.R;
 import org.maplibre.reactnative.components.AbstractMapFeature;
 import org.maplibre.reactnative.components.annotation.MLRNPointAnnotation;
@@ -83,11 +83,11 @@ import org.json.*;
 
 import javax.annotation.Nullable;
 
-import static org.maplibre.android.style.layers.PropertyFactory.visibility;
+import static vn.vietmap.vietmapsdk.style.layers.PropertyFactory.visibility;
 
 @SuppressWarnings({ "MissingPermission" })
-public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibreMap.OnMapClickListener,
-        MapLibreMap.OnMapLongClickListener, MapView.OnCameraIsChangingListener, MapView.OnCameraDidChangeListener,
+public class MLRNMapView extends MapView implements OnMapReadyCallback, VietMapGL.OnMapClickListener,
+        VietMapGL.OnMapLongClickListener, MapView.OnCameraIsChangingListener, MapView.OnCameraDidChangeListener,
         MapView.OnDidFailLoadingMapListener, MapView.OnDidFinishLoadingMapListener,
         MapView.OnWillStartRenderingFrameListener, MapView.OnWillStartRenderingMapListener,
         MapView.OnDidFinishRenderingFrameListener, MapView.OnDidFinishRenderingMapListener,
@@ -111,7 +111,7 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibre
     private CameraChangeTracker mCameraChangeTracker = new CameraChangeTracker();
     private List<Pair<Integer, ReadableArray>> mPreRenderMethods = new ArrayList<>();
 
-    private MapLibreMap mMap;
+    private VietMapGL mMap;
 
     private LocalizationPlugin mLocalizationPlugin;
 
@@ -150,7 +150,7 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibre
 
     private @Nullable Integer mTintColor = null;
 
-    public MLRNMapView(Context context, MLRNMapViewManager manager, MapLibreMapOptions options) {
+    public MLRNMapView(Context context, MLRNMapViewManager manager, VietMapGLOptions options) {
         super(context, options);
 
         mContext = context;
@@ -332,11 +332,11 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibre
         return mMap.getCameraPosition();
     }
 
-    public void animateCamera(CameraUpdate cameraUpdate, MapLibreMap.CancelableCallback callback) {
+    public void animateCamera(CameraUpdate cameraUpdate, VietMapGL.CancelableCallback callback) {
         mMap.animateCamera(cameraUpdate, callback);
     }
 
-    public void moveCamera(CameraUpdate cameraUpdate, MapLibreMap.CancelableCallback callback) {
+    public void moveCamera(CameraUpdate cameraUpdate, VietMapGL.CancelableCallback callback) {
         mMap.moveCamera(cameraUpdate, callback);
     }
 
@@ -345,7 +345,7 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibre
     }
 
     public void easeCamera(CameraUpdate cameraUpdate, int duration, boolean easingInterpolator,
-            MapLibreMap.CancelableCallback callback) {
+            VietMapGL.CancelableCallback callback) {
         mMap.easeCamera(cameraUpdate, duration, easingInterpolator, callback);
     }
 
@@ -381,7 +381,7 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibre
         return null;
     }
 
-    public MapLibreMap getMapboxMap() {
+    public VietMapGL getMapboxMap() {
         return mMap;
     }
 
@@ -431,7 +431,7 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibre
     }
 
     @Override
-    public void onMapReady(final MapLibreMap mapboxMap) {
+    public void onMapReady(final VietMapGL mapboxMap) {
         mMap = mapboxMap;
 
         if (isJSONValid(mMapStyle)) {
@@ -456,14 +456,14 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibre
         updateInsets();
         updateUISettings();
 
-        mMap.addOnCameraIdleListener(new MapLibreMap.OnCameraIdleListener() {
+        mMap.addOnCameraIdleListener(new VietMapGL.OnCameraIdleListener() {
             @Override
             public void onCameraIdle() {
                 sendRegionDidChangeEvent();
             }
         });
 
-        mMap.addOnCameraMoveStartedListener(new MapLibreMap.OnCameraMoveStartedListener() {
+        mMap.addOnCameraMoveStartedListener(new VietMapGL.OnCameraMoveStartedListener() {
             @Override
             public void onCameraMoveStarted(int reason) {
                 mCameraChangeTracker.setReason(reason);
@@ -471,7 +471,7 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibre
             }
         });
 
-        mMap.addOnCameraMoveListener(new MapLibreMap.OnCameraMoveListener() {
+        mMap.addOnCameraMoveListener(new VietMapGL.OnCameraMoveListener() {
             @Override
             public void onCameraMove() {
                 if (markerViewManager != null) {
@@ -480,7 +480,7 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibre
             }
         });
 
-        mMap.addOnMoveListener(new MapLibreMap.OnMoveListener() {
+        mMap.addOnMoveListener(new VietMapGL.OnMoveListener() {
             @Override
             public void onMoveBegin(MoveGestureDetector detector) {
                 mCameraChangeTracker.setReason(CameraChangeTracker.USER_GESTURE);
@@ -725,13 +725,22 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibre
     }
 
     @Override
-    public void onDidFinishRenderingFrame(boolean fully, double frameEncodingTime, double frameRenderingTime) {
+    public void onDidFinishRenderingFrame(boolean fully) {
         if (fully) {
             handleMapChangedEvent(EventTypes.DID_FINISH_RENDERING_FRAME_FULLY);
         } else {
             handleMapChangedEvent(EventTypes.DID_FINISH_RENDERING_FRAME);
         }
     }
+
+//    @Override
+//    public void onDidFinishRenderingFrame(boolean fully, double frameEncodingTime, double frameRenderingTime) {
+//        if (fully) {
+//            handleMapChangedEvent(EventTypes.DID_FINISH_RENDERING_FRAME_FULLY);
+//        } else {
+//            handleMapChangedEvent(EventTypes.DID_FINISH_RENDERING_FRAME);
+//        }
+//    }
 
     @Override
     public void onWillStartRenderingMap() {
@@ -841,7 +850,7 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibre
         if (position == null) {
             // reset from explicit to default
             if (mLogoGravity != null) {
-                MapLibreMapOptions defaultOptions = MapLibreMapOptions.createFromAttributes(mContext);
+                VietMapGLOptions defaultOptions = VietMapGLOptions.createFromAttributes(mContext);
                 mLogoGravity = defaultOptions.getLogoGravity();
                 mLogoMargins = Arrays.copyOf(defaultOptions.getLogoMargins(), 4);
                 updateUISettings();
@@ -896,7 +905,7 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibre
         if (position == null) {
             // reset from explicit to default
             if (mAttributionGravity != null) {
-                MapLibreMapOptions defaultOptions = MapLibreMapOptions.createFromAttributes(mContext);
+                VietMapGLOptions defaultOptions = VietMapGLOptions.createFromAttributes(mContext);
                 mAttributionGravity = defaultOptions.getAttributionGravity();
                 mAttributionMargin = Arrays.copyOf(defaultOptions.getAttributionMargins(), 4);
                 updateUISettings();
@@ -1009,7 +1018,7 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibre
             throw new Error("takeSnap should only be called after the map has rendered");
         }
 
-        mMap.snapshot(new MapLibreMap.SnapshotReadyCallback() {
+        mMap.snapshot(new VietMapGL.SnapshotReadyCallback() {
             @Override
             public void onSnapshotReady(Bitmap snapshot) {
                 WritableMap payload = new WritableNativeMap();
@@ -1488,7 +1497,7 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, MapLibre
         return mOffscreenAnnotationViewContainer;
     }
 
-    public MarkerViewManager getMarkerViewManager(MapLibreMap map) {
+    public MarkerViewManager getMarkerViewManager(VietMapGL map) {
         if (markerViewManager == null) {
             if (map == null) {
                 throw new Error("makerViewManager should be called one the map has loaded");

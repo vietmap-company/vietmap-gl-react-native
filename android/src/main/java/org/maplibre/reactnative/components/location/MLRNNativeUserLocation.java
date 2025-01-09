@@ -4,17 +4,17 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import androidx.annotation.NonNull;
 
-import org.maplibre.android.location.permissions.PermissionsManager;
-import org.maplibre.android.location.modes.RenderMode;
-import org.maplibre.android.maps.MapLibreMap;
-import org.maplibre.android.maps.OnMapReadyCallback;
-import org.maplibre.android.maps.Style;
+import vn.vietmap.vietmapsdk.location.permissions.PermissionsManager;
+import vn.vietmap.vietmapsdk.location.modes.RenderMode;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.OnMapReadyCallback;
+import vn.vietmap.vietmapsdk.maps.Style;
 import org.maplibre.reactnative.components.AbstractMapFeature;
 import org.maplibre.reactnative.components.mapview.MLRNMapView;
 
 public class MLRNNativeUserLocation extends AbstractMapFeature implements OnMapReadyCallback, Style.OnStyleLoaded {
     private boolean mEnabled = true;
-    private MapLibreMap mMap;
+    private VietMapGL mMap;
     private MLRNMapView mMapView;
     private @RenderMode.Mode int mRenderMode = RenderMode.COMPASS;
     private int mPreferredFramesPerSecond;
@@ -40,7 +40,7 @@ public class MLRNNativeUserLocation extends AbstractMapFeature implements OnMapR
 
     @SuppressLint("MissingPermission")
     @Override
-    public void onMapReady(@NonNull MapLibreMap mapboxMap) {
+    public void onMapReady(@NonNull VietMapGL mapboxMap) {
         mMap = mapboxMap;
         mapboxMap.getStyle(this);
     }

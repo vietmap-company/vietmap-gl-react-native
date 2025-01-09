@@ -5,13 +5,13 @@ import android.content.Context;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.common.logging.FLog;
-import org.maplibre.android.location.LocationComponentConstants;
-import org.maplibre.android.maps.MapLibreMap;
-import org.maplibre.android.maps.Style;
-import org.maplibre.android.style.expressions.Expression;
-import org.maplibre.android.style.layers.Layer;
-import org.maplibre.android.style.layers.Property;
-import org.maplibre.android.style.layers.PropertyFactory;
+import vn.vietmap.vietmapsdk.location.LocationComponentConstants;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
+import vn.vietmap.vietmapsdk.maps.Style;
+import vn.vietmap.vietmapsdk.style.expressions.Expression;
+import vn.vietmap.vietmapsdk.style.layers.Layer;
+import vn.vietmap.vietmapsdk.style.layers.Property;
+import vn.vietmap.vietmapsdk.style.layers.PropertyFactory;
 import org.maplibre.reactnative.components.AbstractMapFeature;
 import org.maplibre.reactnative.components.mapview.MLRNMapView;
 import org.maplibre.reactnative.utils.ExpressionParser;
@@ -35,7 +35,7 @@ public abstract class MLRNLayer<T extends Layer> extends AbstractMapFeature {
     protected ReadableMap mReactStyle;
     protected Expression mFilter;
 
-    protected MapLibreMap mMap;
+    protected VietMapGL mMap;
     protected T mLayer;
 
     protected Context mContext;

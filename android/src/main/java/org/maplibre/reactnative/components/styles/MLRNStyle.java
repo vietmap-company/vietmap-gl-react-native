@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
-import org.maplibre.android.maps.MapLibreMap;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
 import org.maplibre.reactnative.utils.DownloadMapImageTask;
 import org.maplibre.reactnative.utils.ImageEntry;
 
@@ -17,9 +17,9 @@ import java.util.Map;
 public class MLRNStyle {
     private Context mContext;
     private ReadableMap mReactStyle;
-    private MapLibreMap mMap;
+    private VietMapGL mMap;
 
-    public MLRNStyle(@NonNull Context context, @NonNull ReadableMap reactStyle, @NonNull MapLibreMap map) {
+    public MLRNStyle(@NonNull Context context, @NonNull ReadableMap reactStyle, @NonNull VietMapGL map) {
         mContext = context;
         mReactStyle = reactStyle;
         mMap = map;

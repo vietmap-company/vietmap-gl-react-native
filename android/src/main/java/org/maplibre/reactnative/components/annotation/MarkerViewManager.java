@@ -2,8 +2,8 @@ package org.maplibre.reactnative.components.annotation;
 
 import androidx.annotation.NonNull;
 
-import org.maplibre.android.maps.MapView;
-import org.maplibre.android.maps.MapLibreMap;
+import vn.vietmap.vietmapsdk.maps.MapView;
+import vn.vietmap.vietmapsdk.maps.VietMapGL;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,12 +13,12 @@ import java.lang.reflect.InvocationTargetException;
 /**
  * Subclass of MarkerViewManager implementing removeViews and restoreViews
  */
-public class MarkerViewManager extends org.maplibre.android.plugins.markerview.MarkerViewManager {
+public class MarkerViewManager extends com.mapbox.mapboxsdk.plugins.markerview.MarkerViewManager {
     private final List<MarkerView> markers = new ArrayList<>();
     private MapView mapView;
     private java.lang.reflect.Method markerUpdate;
 
-    public MarkerViewManager(MapView mapView, MapLibreMap map) {
+    public MarkerViewManager(MapView mapView, VietMapGL map) {
         super(mapView, map);
         this.mapView = mapView;
         // this.map = map;

@@ -7,8 +7,8 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.module.annotations.ReactModule;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
-import org.maplibre.android.log.Logger;
-import org.maplibre.android.log.LoggerDefinition;
+import vn.vietmap.vietmapsdk.log.Logger;
+import vn.vietmap.vietmapsdk.log.LoggerDefinition;
 import android.util.Log;
 
 @ReactModule(name = MLRNLogging.REACT_CLASS)
