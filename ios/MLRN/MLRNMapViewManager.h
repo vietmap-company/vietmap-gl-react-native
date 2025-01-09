@@ -1,5 +1,5 @@
 #import "ViewManager.h"
-@import MapLibre;
+@import VietMap;
 
 @interface MLRNMapViewManager : ViewManager
 

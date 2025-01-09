@@ -24,55 +24,57 @@ def $MLRN._add_spm_to_target(project, target, url, requirement, product_name)
 end
 
 def $MLRN.post_install(installer)
-  spm_spec = {
-    url: "https://github.com/maplibre/maplibre-gl-native-distribution",
-    requirement: {
-      kind: "exactVersion",
-      version: "6.9.0"
-    },
-    product_name: "MapLibre"
-  }
+  # spm_spec = {
+  #   url: "https://github.com/maplibre/maplibre-gl-native-distribution",
+  #   requirement: {
+  #     kind: "exactVersion",
+  #     version: "6.9.0"
+  #   },
+  #   product_name: "MapLibre"
+  # }
 
-  if $MLRN_SPM_Spec.is_a?(Hash)
-    spm_spec = $MLRN_SPM_Spec
-  end
-  project = installer.pods_project
-  self._add_spm_to_target(
-    project,
-    project.targets.find { |t| t.name == "maplibre-react-native"},
-    spm_spec[:url],
-    spm_spec[:requirement],
-    spm_spec[:product_name]
-  )
+  # if $MLRN_SPM_Spec.is_a?(Hash)
+  #   spm_spec = $MLRN_SPM_Spec
+  # end
+  # project = installer.pods_project
+  # self._add_spm_to_target(
+  #   project,
+  #   project.targets.find { |t| t.name == "maplibre-react-native"},
+  #   spm_spec[:url],
+  #   spm_spec[:requirement],
+  #   spm_spec[:product_name]
+  # )
 
-  installer.aggregate_targets.group_by(&:user_project).each do |project, targets|
-    targets.each do |target|
-      target.user_targets.each do |user_target|
-        self._add_spm_to_target(
-          project,
-          user_target,
-          spm_spec[:url],
-          spm_spec[:requirement],
-          spm_spec[:product_name]
-        )
-      end
-    end
-  end
+  # installer.aggregate_targets.group_by(&:user_project).each do |project, targets|
+  #   targets.each do |target|
+  #     target.user_targets.each do |user_target|
+  #       self._add_spm_to_target(
+  #         project,
+  #         user_target,
+  #         spm_spec[:url],
+  #         spm_spec[:requirement],
+  #         spm_spec[:product_name]
+  #       )
+  #     end
+  #   end
+  # end
 end
 
 Pod::Spec.new do |s|
-  s.name		  = "maplibre-react-native"
-  s.summary		= "React Native library for creating maps with MapLibre Native"
+  s.name		= "maplibre-react-native"
+  s.summary		= "React Native Component for Vietmap GL Native"
   s.version		= package['version']
-  s.authors   = { "MapLibre" => "" }
-  s.homepage  = "https://github.com/maplibre/maplibre-react-native"
-  s.source    = { :git => "https://github.com/maplibre/maplibre-react-native.git" }
+  s.authors		= { "Vietmap" => "maps-api.support@vietmap.vn" }  # TODO: MapLibre email?
+  s.homepage    	= "https://maps.vietmap.vn"
+  s.source      	= { :git => "https://github.com/vietmap-company/vietmap-gl-react-native.git" }
   s.license   = "MIT"
   s.platform  = :ios, "8.0"
 
   s.dependency 'React-Core'
   s.dependency 'React'
 
+  s.dependency 'VietMap', '~> 2.0.0'
+  
   s.subspec 'DynamicLibrary' do |sp|
     sp.source_files	= "ios/MLRN/**/*.{h,m}"
   end

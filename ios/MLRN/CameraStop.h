@@ -1,4 +1,4 @@
-@import MapLibre;
+@import VietMap;
 #import "MLRNCamera.h"
 
 @interface CameraStop : NSObject

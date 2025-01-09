@@ -3,7 +3,7 @@
 #import <React/RCTView.h>
 #import "MLRNCallout.h"
 
-@import MapLibre;
+@import VietMap;
 
 @interface MLRNPointAnnotation : MLNAnnotationView<MLNAnnotation>
 

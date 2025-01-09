@@ -4,7 +4,7 @@
 //
 
 #import "MLRNUserLocation.h"
-#import <MapLibre/MLNUserLocationAnnotationView.h>
+#import <VietMap/MLNUserLocationAnnotationView.h>
 
 @interface HiddenUserLocationAnnotationView : MLNUserLocationAnnotationView
 

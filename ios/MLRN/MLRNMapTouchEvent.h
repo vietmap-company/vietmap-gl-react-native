@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "MLRNEvent.h"
 #import "MLRNPointAnnotation.h"
-@import MapLibre;
+@import VietMap;
 
 @interface MLRNMapTouchEvent : MLRNEvent
 

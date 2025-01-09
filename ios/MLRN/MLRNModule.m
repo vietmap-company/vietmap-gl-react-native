@@ -4,7 +4,7 @@
 #import "CameraMode.h"
 #import "MLRNSource.h"
 #import "MLRNCustomHeaders.h"
-@import MapLibre;
+@import VietMap;
 
 @implementation MLRNModule
 

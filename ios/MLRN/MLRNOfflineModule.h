@@ -1,7 +1,7 @@
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventEmitter.h>
 
-@import MapLibre;
+@import VietMap;
 
 @interface MLRNOfflineModule : RCTEventEmitter<RCTBridgeModule>
 

@@ -1,6 +1,6 @@
 #import <React/RCTView.h>
 
-@import MapLibre;
+@import VietMap;
 
 @interface MLRNCallout : RCTView<MLNCalloutView>
 

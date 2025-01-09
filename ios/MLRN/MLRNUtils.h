@@ -3,7 +3,7 @@
 #import <React/RCTConvert.h>
 #import <React/RCTImageLoader.h>
 
-@import MapLibre;
+@import VietMap;
 
 @interface MLRNUtils: NSObject
 

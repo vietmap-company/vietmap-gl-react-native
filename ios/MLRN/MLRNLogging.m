@@ -1,6 +1,6 @@
 #import "MLRNLogging.h"
 
-@import MapLibre;
+@import VietMap;
 
 @interface MLRNLogging()
 @property (nonatomic) BOOL hasListeners;

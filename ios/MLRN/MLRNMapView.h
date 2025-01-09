@@ -4,7 +4,7 @@
 #import "MLRNPointAnnotation.h"
 #import "MLRNLight.h"
 
-@import MapLibre;
+@import VietMap;
 
 @class CameraUpdateQueue;
 @class MLRNImages;

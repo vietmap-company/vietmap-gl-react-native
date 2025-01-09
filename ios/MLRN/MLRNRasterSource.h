@@ -1,5 +1,5 @@
 #import "MLRNTileSource.h"
-@import MapLibre;
+@import VietMap;
 
 @interface MLRNRasterSource : MLRNTileSource
 

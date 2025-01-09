@@ -1,7 +1,7 @@
 #import "MLRNSnapshotModule.h"
 #import "MLRNUtils.h"
 #import "MLRNImageUtils.h"
-@import MapLibre;
+@import VietMap;
 
 @implementation MLRNSnapshotModule
 

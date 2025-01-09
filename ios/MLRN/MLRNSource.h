@@ -1,7 +1,7 @@
 #import <React/RCTComponent.h>
 #import "MLRNLayer.h"
 #import <UIKit/UIKit.h>
-@import MapLibre;
+@import VietMap;
 
 @interface MLRNSource : UIView
 

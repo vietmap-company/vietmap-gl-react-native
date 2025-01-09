@@ -4,7 +4,7 @@
 
 @class MLRNMapView;
 
-@import MapLibre;
+@import VietMap;
 
 @interface MLRNLayer<T> : UIView
 

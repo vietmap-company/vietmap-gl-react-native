@@ -1,7 +1,7 @@
 #import "MLRNUtils.h"
 #import "MLRNImageQueue.h"
 
-@import MapLibre;
+@import VietMap;
 
 @implementation MLRNUtils
 

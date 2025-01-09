@@ -6,8 +6,8 @@
 #import <objc/runtime.h>
 
 #import "MLRNCustomHeaders.h"
-#import <MapLibre/MapLibre.h>
-#import <MapLibre/MLNNetworkConfiguration.h>
+#import <VietMap/VietMap.h>
+#import <VietMap/MLNNetworkConfiguration.h>
 
 @implementation NSMutableURLRequest (CustomHeaders)
 

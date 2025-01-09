@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-@import MapLibre;
+@import VietMap;
 
 @interface MLRNLight : UIView
 

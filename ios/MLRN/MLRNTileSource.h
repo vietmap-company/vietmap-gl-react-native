@@ -4,7 +4,7 @@
 //
 
 #import "MLRNSource.h"
-@import MapLibre;
+@import VietMap;
 
 @interface MLRNTileSource : MLRNSource
 

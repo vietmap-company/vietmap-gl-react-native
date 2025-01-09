@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-@import MapLibre;
+@import VietMap;
 
 @interface MLRNStyleValue : NSObject
 

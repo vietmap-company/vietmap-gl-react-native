@@ -1,5 +1,5 @@
 #import "MLRNImageSource.h"
-@import MapLibre;
+@import VietMap;
 
 @implementation MLRNImageSource
 
