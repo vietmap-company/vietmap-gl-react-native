@@ -1,4 +1,4 @@
-import { SnapshotManager, StyleURL } from "@maplibre/maplibre-react-native";
+import { SnapshotManager, StyleURL } from "@vietmap/vietmap-gl-react-native";
 import React, { Component } from "react";
 import {
   ActivityIndicator,

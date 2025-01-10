@@ -26,7 +26,7 @@ import { useNativeBridge } from "../hooks/useNativeBridge";
 import { useOnce } from "../hooks/useOnce";
 import { type Location } from "../modules/location/LocationManager";
 import { type BaseProps } from "../types/BaseProps";
-import { type FilterExpression } from "../types/MapLibreRNStyles";
+import { type FilterExpression } from "../types/VietmapStyles";
 import { isFunction, isAndroid } from "../utils";
 import { Logger } from "../utils/Logger";
 import { getFilter } from "../utils/filterUtils";
@@ -34,7 +34,7 @@ import { getFilter } from "../utils/filterUtils";
 const MLRNModule = NativeModules.MLRNModule;
 if (MLRNModule == null) {
   console.error(
-    "Native module of @maplibre/maplibre-react-native library was not registered properly, please consult the docs: https://github.com/maplibre/maplibre-react-native",
+    "Native module of @vietmap/vietmap-gl-react-native library was not registered properly, please consult the docs: https://github.com/vietmap-company/vietmap-gl-react-native",
   );
 }
 

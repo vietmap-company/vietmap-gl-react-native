@@ -1,4 +1,4 @@
-import { MapView, type MapViewRef } from "@maplibre/maplibre-react-native";
+import { MapView, type MapViewRef } from "@vietmap/vietmap-gl-react-native";
 import { useRef, useState } from "react";
 import { Text } from "react-native";
 

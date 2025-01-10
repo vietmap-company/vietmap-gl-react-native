@@ -122,7 +122,7 @@ async function generate() {
 
     return props.filter((prop) => {
       // TODO: Codegen adoptions for native style code
-      // https://github.com/maplibre/maplibre-react-native/issues/562
+      // https://github.com/vietmap-company/vietmap-gl-react-native/issues/562
       return !["textVariableAnchorOffset"].includes(prop.name);
     });
   }

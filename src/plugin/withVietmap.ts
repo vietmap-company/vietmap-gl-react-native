@@ -3,15 +3,15 @@ import { type ConfigPlugin, createRunOncePlugin } from "@expo/config-plugins";
 import { ios } from "./ios";
 
 let pkg: { name: string; version?: string } = {
-  name: "@maplibre/maplibre-react-native",
+  name: "@vietmap/vietmap-gl-react-native",
 };
 try {
-  pkg = require("@maplibre/maplibre-react-native/package.json");
+  pkg = require("@vietmap/vietmap-gl-react-native/package.json");
 } catch {
   // empty catch block
 }
 
-const withMapLibre: ConfigPlugin = (config) => {
+const withVietmap: ConfigPlugin = (config) => {
   // iOS
   config = ios.withExcludedSimulatorArchitectures(config);
   config = ios.withDwarfDsym(config);
@@ -21,4 +21,4 @@ const withMapLibre: ConfigPlugin = (config) => {
   return config;
 };
 
-export default createRunOncePlugin(withMapLibre, pkg.name, pkg.version);
+export default createRunOncePlugin(withVietmap, pkg.name, pkg.version);

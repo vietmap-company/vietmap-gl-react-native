@@ -1,4 +1,4 @@
-import { Camera, MapView } from "@maplibre/maplibre-react-native";
+import { Camera, MapView } from "@vietmap/vietmap-gl-react-native";
 import React from "react";
 
 import { sheet } from "../../styles/sheet";

@@ -3,7 +3,7 @@ import {
   FillLayer,
   MapView,
   ShapeSource,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import bboxPolygon from "@turf/bbox-polygon";
 
 import { EU_BOUNDS } from "../../constants/GEOMETRIES";

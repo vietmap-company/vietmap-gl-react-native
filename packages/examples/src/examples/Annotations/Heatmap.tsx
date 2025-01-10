@@ -2,7 +2,7 @@ import {
   HeatmapLayer,
   MapView,
   ShapeSource,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 
 import { sheet } from "../../styles/sheet";
 

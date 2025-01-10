@@ -1,4 +1,4 @@
-import { Animated, Camera, MapView } from "@maplibre/maplibre-react-native";
+import { Animated, Camera, MapView } from "@vietmap/vietmap-gl-react-native";
 import along from "@turf/along";
 import { lineString, point } from "@turf/helpers";
 import length from "@turf/length";

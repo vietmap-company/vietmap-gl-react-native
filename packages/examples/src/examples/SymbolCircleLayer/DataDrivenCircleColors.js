@@ -4,7 +4,7 @@ import {
   MapView,
   StyleURL,
   VectorSource,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import React, { memo } from "react";
 
 import { sheet } from "../../styles/sheet";

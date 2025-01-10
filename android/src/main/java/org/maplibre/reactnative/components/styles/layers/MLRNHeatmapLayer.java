@@ -38,7 +38,7 @@ public class MLRNHeatmapLayer extends MLRNLayer<HeatmapLayer> {
 
     @Override
     public void addStyles() {
-        MLRNStyleFactory.setHeatmapLayerStyle(mLayer, new MLRNStyle(getContext(), mReactStyle, mMap));
+//        MLRNStyleFactory.setBackgroundLayerStyle(mLayer, new MLRNStyle(getContext(), mReactStyle, mMap));
     }
 
     public void setSourceLayerID(String sourceLayerID) {

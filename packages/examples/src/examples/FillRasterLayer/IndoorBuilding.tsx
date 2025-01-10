@@ -5,7 +5,7 @@ import {
   Light,
   MapView,
   ShapeSource,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import { useState } from "react";
 
 import indoor3DFeatureCollection from "../../assets/geojson/indoor-3d.json";

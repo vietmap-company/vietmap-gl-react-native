@@ -1,4 +1,4 @@
-import { requestAndroidLocationPermissions } from "@maplibre/maplibre-react-native";
+import { requestAndroidLocationPermissions } from "@vietmap/vietmap-gl-react-native";
 import { useEffect, useState } from "react";
 import { LogBox, Platform, StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";

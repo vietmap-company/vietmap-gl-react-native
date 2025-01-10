@@ -1,27 +1,28 @@
 {
-  "name": "@maplibre/maplibre-react-native",
-  "description": "React Native library for creating maps with MapLibre Native for Android & iOS",
-  "version": "10.0.0-alpha.29",
+  "name": "@vietmap/vietmap-gl-react-native",
+  "description": "React Native library for creating maps with VietMap Native for Android & iOS",
+  "version": "2.0.1",
   "publishConfig": {
     "access": "public"
   },
-  "author": "MapLibre",
+  "author": "VietMap",
   "keywords": [
     "maps",
     "ios",
     "android",
-    "maplibre",
     "react-native",
-    "mapbox"
+    "vietmap",
+    "react-native map",
+    "vietmap apis"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/maplibre/maplibre-react-native#readme",
+  "homepage": "https://github.com/vietmap-company/vietmap-gl-react-native#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maplibre/maplibre-react-native.git"
+    "url": "git+https://github.com/vietmap-company/vietmap-gl-react-native.git"
   },
   "bugs": {
-    "url": "https://github.com/maplibre/maplibre-react-native/issues"
+    "url": "https://github.com/vietmap-company/vietmap-gl-react-native/issues"
   },
   "scripts": {
     "codegen": "tsx scripts/codegen.ts",
@@ -64,8 +65,8 @@
     },
     "./plugin": {
       "require": {
-        "types": "./plugin/build/witMapLibre.d.ts",
-        "default": "./plugin/build/withMapLibre.js"
+        "types": "./plugin/build/withVietmap.d.ts",
+        "default": "./plugin/build/withVietmap.js"
       }
     }
   },

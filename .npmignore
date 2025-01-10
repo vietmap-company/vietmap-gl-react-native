@@ -38,7 +38,6 @@ android/gradlew
 android/gradlew.bat
 android/local.properties
 
-# maplibre-react-native
 example
 __tests__
 coverage

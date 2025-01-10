@@ -13,7 +13,7 @@ import { CameraModes } from "../MLRNModule";
 import { useNativeRef } from "../hooks/useNativeRef";
 import { type BaseProps } from "../types/BaseProps";
 import { CameraMode } from "../types/CameraMode";
-import { type MapLibreRNEvent } from "../types/MapLibreRNEvent";
+import { type VietmapGLEvent } from "../types/VietmapGLEvent";
 import { makeNativeBounds } from "../utils/makeNativeBounds";
 
 export const NATIVE_MODULE_NAME = "MLRNCamera";
@@ -25,7 +25,7 @@ export enum UserTrackingMode {
 }
 
 export type UserTrackingModeChangeCallback = (
-  event: MapLibreRNEvent<
+  event: VietmapGLEvent<
     "usertrackingmodechange",
     {
       followUserLocation: boolean;

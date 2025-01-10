@@ -16,7 +16,7 @@ import {
   type Location,
   LocationManager,
 } from "../modules/location/LocationManager";
-import { type CircleLayerStyle } from "../types/MapLibreRNStyles";
+import { type CircleLayerStyle } from "../types/VietmapStyles";
 
 const mapboxBlue = "rgba(51, 181, 229, 100)";
 

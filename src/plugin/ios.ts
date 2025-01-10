@@ -12,7 +12,7 @@ import { mergeContents } from "@expo/config-plugins/build/utils/generateCode";
  */
 export function applyPodfilePostInstall(contents: string): string {
   const result = mergeContents({
-    tag: `@maplibre/maplibre-react-native-post_installer`,
+    tag: `@vietmap/vietmap-gl-react-native-post_installer`,
     src: contents,
     newSrc: `    $MLRN.post_install(installer)`,
     anchor: new RegExp(`post_install do \\|installer\\|`),

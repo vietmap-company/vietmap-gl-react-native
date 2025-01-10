@@ -4,7 +4,7 @@ import {
   MapView,
   ShapeSource,
   StyleURL,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import React, { Component } from "react";
 import { Text } from "react-native";
 

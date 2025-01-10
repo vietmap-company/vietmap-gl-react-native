@@ -1,49 +1,53 @@
-[![MapLibre Logo](https://maplibre.org/img/maplibre-logo-big.svg)](https://maplibre.org)
+ 
 
-# MapLibre React Native
+[<img src="https://bizweb.dktcdn.net/100/415/690/themes/804206/assets/logo.png?1689561872933" height="40"/> </p>](https://bit.ly/vietmap-api)
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
-[![Version](https://img.shields.io/npm/v/@maplibre/maplibre-react-native)](https://www.npmjs.com/package/@maplibre/maplibre-react-native)
-[![Actions](https://img.shields.io/github/actions/workflow/status/maplibre/maplibre-react-native/review.yml?label=Actions)](https://github.com/maplibre/maplibre-react-native/actions/workflows/review.yml)
 
-_React Native library for creating maps
-with [MapLibre Native for Android & iOS](https://github.com/maplibre/maplibre-gl-native)._
 
-This project originated as a fork of [rnmapbox](https://github.com/rnmapbox/maps), a community-maintained
-React Native library for building maps with the Mapbox iOS and Android mobile SDKs. The original product
-supported both Mapbox and MapLibre for some time, but as the MapLibre and Mapbox SDKs have
-diverged, it has become necessary to separate the projects into specific wrappers by underlying renderer.
+# Vietmap GL SDK for React Native
 
-<p align="center">
-    <img src="/docs/assets/device-android.png"
-         alt="Indoor Building Map Android"
-         height="320"
-          />
-    <img src="/docs/assets/device-ios.png"
-         alt="Indoor Building Map iOS"
-         height="320"
-          />
-</p>
+## Migration From v1.0.0 to v2.0.0
+- [Migration Guide](/docs/guides/migrations/v2.0.0.md)
 
+_A React Native library for building maps with   
+the [Vietmap GL Native SDK for iOS & Android](https://bit.ly/vietmap-api)_.
+
+Contact [vietmap.vn](https://bit.ly/vietmap-api) to register a valid key.
+# Get started
+
+Install package:
+
+Using `npm`:
+```bash
+    npm i @vietmap/vietmap-gl-react-native
+```
+Using `yarn`:
+```bash
+    yarn add @vietmap/vietmap-gl-react-native
+```
+
+<br>
+ 
 ## Documentation
+### Installation
+You must set your API key before using the library. This is required on Android and optional on iOS. You can set the API key in your app's entry file (e.g. `App.js`).
 
-- [Getting Started](/docs/guides/setup/Getting-Started.md)
-- Installation
-  - [Expo](/docs/guides/setup/Expo.md)
-  - [React Native](/docs/guides/setup/React-Native.md)
-- Migrations
-  - [Migrating to v10](/docs/guides/migrations/v10.md)
+[Getting Started (start here)](/docs/components/GettingStarted.md)
 
+We've created a demo project for `Vietmap React-Native GL library`, which contains sample code for the main functions of the library [here](https://github.com/vietmap-company/vietmap-react-native-demo).
+
+If you're using the `Expo project`, follow the guide from [this project](https://github.com/vietmap-company/react-native-expo-demo).
 ### Components
 
 - [MapView](/docs/components/MapView.md)
 - [Light](/docs/components/Light.md)
+- [StyleSheet](/docs/components/StyleSheet.md)
 - [PointAnnotation](/docs/components/PointAnnotation.md)
 - [MarkerView](/docs/components/MarkerView.md)
 - [Callout](/docs/components/Callout.md)
-- [Camera](/docs/components/Camera.md)
-- [UserLocation](/docs/components/UserLocation.md)
-- [Images](/docs/components/Images.md)
+- [Camera](docs/components/Camera.md)
+- [UserLocation](docs/components/UserLocation.md)
+- [Images](docs/components/Images.md)
 
 ### Sources
 
@@ -62,22 +66,26 @@ diverged, it has become necessary to separate the projects into specific wrapper
 - [SymbolLayer](/docs/components/SymbolLayer.md)
 - [HeatmapLayer](/docs/components/HeatmapLayer.md)
 
-### Modules
+### Offline
 
-- [OfflineManager](/docs/modules/OfflineManager.md)
-- [SnapshotManager](/docs/modules/SnapshotManager.md)
+- [OfflineManager](/docs/components/OfflineManager.md)
+- [SnapshotManager](/docs/components/snapshotManager.md)
 
 ### Misc
 
-- [MLRNModule](/docs/guides/MLRNModule.md)
-- [Custom HTTP Headers](/docs/guides/Custom-HTTP-Headers.md)
-- [Logger](/docs/guides/Logger.md)
+- [Vietmap](/docs/components/Vietmap.md)
+- [CustomHttpHeaders](/docs/components/CustomHttpHeaders.md)
+- [Logger](/docs/components/Logger.md)
+ 
+  
 
-## Contributing & Development
+[<img src="https://bizweb.dktcdn.net/100/415/690/themes/804206/assets/logo.png?1689561872933" height="40"/> </p>](https://vietmap.vn/maps-api)
+Email us: [maps-api.support@vietmap.vn](mailto:maps-api.support@vietmap.vn)
 
-Read the [CONTRIBUTING](/CONTRIBUTING.md) guide in order to get familiar with how we do things around here and
-set up your local development environment.
 
-## Community
+Contact for [support](https://vietmap.vn/lien-he)
 
-Join the `#maplibre-react-native` or `#maplibre` [on the Open Street Map Slack](https://slack.openstreetmap.us/).
+Vietmap API document [here](https://maps.vietmap.vn/docs/components/map-api/overview/)
+
+Have a bug to report? [Open an issue](https://github.com/vietmap-company//vietmap-gl-react-native/issues). If possible, include a full log and information that shows the issue.
+Have a feature request? [Open an issue](https://github.com/vietmap-company//vietmap-gl-react-native/issues). Tell us what the feature should do and why you want the feature.

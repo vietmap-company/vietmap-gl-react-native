@@ -2,7 +2,7 @@ import {
   FillLayer,
   MapView,
   VectorSource,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import { useRef, useState } from "react";
 import { Text } from "react-native";
 

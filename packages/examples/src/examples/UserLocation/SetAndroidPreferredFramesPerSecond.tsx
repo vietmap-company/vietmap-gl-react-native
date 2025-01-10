@@ -3,7 +3,7 @@ import {
   LocationManager,
   MapView,
   UserLocation,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import { useEffect, useState } from "react";
 
 import { TabBarView } from "../../components/TabBarView";

@@ -1,4 +1,4 @@
-import { Camera, MapView, UserLocation } from "@maplibre/maplibre-react-native";
+import { Camera, MapView, UserLocation } from "@vietmap/vietmap-gl-react-native";
 import { useState } from "react";
 
 import { TabBarView } from "../../components/TabBarView";

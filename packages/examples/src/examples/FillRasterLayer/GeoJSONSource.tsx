@@ -4,7 +4,7 @@ import {
   FillLayer,
   MapView,
   ShapeSource,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import { type FeatureCollection } from "geojson";
 
 import smileyFeatureCollection from "../../assets/geojson/smiley.json";

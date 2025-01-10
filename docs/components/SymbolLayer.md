@@ -15,59 +15,49 @@ SymbolLayer is a style layer that renders icon and text labels at points or alon
 * <a href="#name">`symbolPlacement`</a><br/>
 * <a href="#name-1">`symbolSpacing`</a><br/>
 * <a href="#name-2">`symbolAvoidEdges`</a><br/>
-* <a href="#name-3">`symbolSortKey`</a><br/>
-* <a href="#name-4">`symbolZOrder`</a><br/>
-* <a href="#name-5">`iconAllowOverlap`</a><br/>
-* <a href="#name-6">`iconIgnorePlacement`</a><br/>
-* <a href="#name-7">`iconOptional`</a><br/>
-* <a href="#name-8">`iconRotationAlignment`</a><br/>
-* <a href="#name-9">`iconSize`</a><br/>
-* <a href="#name-10">`iconTextFit`</a><br/>
-* <a href="#name-11">`iconTextFitPadding`</a><br/>
-* <a href="#name-12">`iconImage`</a><br/>
-* <a href="#name-13">`iconRotate`</a><br/>
-* <a href="#name-14">`iconPadding`</a><br/>
-* <a href="#name-15">`iconKeepUpright`</a><br/>
-* <a href="#name-16">`iconOffset`</a><br/>
-* <a href="#name-17">`iconAnchor`</a><br/>
-* <a href="#name-18">`iconPitchAlignment`</a><br/>
-* <a href="#name-19">`textPitchAlignment`</a><br/>
-* <a href="#name-20">`textRotationAlignment`</a><br/>
-* <a href="#name-21">`textField`</a><br/>
-* <a href="#name-22">`textFont`</a><br/>
-* <a href="#name-23">`textSize`</a><br/>
-* <a href="#name-24">`textMaxWidth`</a><br/>
-* <a href="#name-25">`textLineHeight`</a><br/>
-* <a href="#name-26">`textLetterSpacing`</a><br/>
-* <a href="#name-27">`textJustify`</a><br/>
-* <a href="#name-28">`textRadialOffset`</a><br/>
-* <a href="#name-29">`textVariableAnchor`</a><br/>
-* <a href="#name-30">`textAnchor`</a><br/>
-* <a href="#name-31">`textMaxAngle`</a><br/>
-* <a href="#name-32">`textWritingMode`</a><br/>
-* <a href="#name-33">`textRotate`</a><br/>
-* <a href="#name-34">`textPadding`</a><br/>
-* <a href="#name-35">`textKeepUpright`</a><br/>
-* <a href="#name-36">`textTransform`</a><br/>
-* <a href="#name-37">`textOffset`</a><br/>
-* <a href="#name-38">`textAllowOverlap`</a><br/>
-* <a href="#name-39">`textIgnorePlacement`</a><br/>
-* <a href="#name-40">`textOptional`</a><br/>
-* <a href="#name-41">`visibility`</a><br/>
-* <a href="#name-42">`iconOpacity`</a><br/>
-* <a href="#name-43">`iconColor`</a><br/>
-* <a href="#name-44">`iconHaloColor`</a><br/>
-* <a href="#name-45">`iconHaloWidth`</a><br/>
-* <a href="#name-46">`iconHaloBlur`</a><br/>
-* <a href="#name-47">`iconTranslate`</a><br/>
-* <a href="#name-48">`iconTranslateAnchor`</a><br/>
-* <a href="#name-49">`textOpacity`</a><br/>
-* <a href="#name-50">`textColor`</a><br/>
-* <a href="#name-51">`textHaloColor`</a><br/>
-* <a href="#name-52">`textHaloWidth`</a><br/>
-* <a href="#name-53">`textHaloBlur`</a><br/>
-* <a href="#name-54">`textTranslate`</a><br/>
-* <a href="#name-55">`textTranslateAnchor`</a><br/>
+* <a href="#name-3">`iconAllowOverlap`</a><br/>
+* <a href="#name-4">`iconIgnorePlacement`</a><br/>
+* <a href="#name-5">`iconOptional`</a><br/>
+* <a href="#name-6">`iconRotationAlignment`</a><br/>
+* <a href="#name-7">`iconSize`</a><br/>
+* <a href="#name-8">`iconImage`</a><br/>
+* <a href="#name-9">`iconRotate`</a><br/>
+* <a href="#name-10">`iconPadding`</a><br/>
+* <a href="#name-11">`iconKeepUpright`</a><br/>
+* <a href="#name-12">`iconOffset`</a><br/>
+* <a href="#name-13">`textRotationAlignment`</a><br/>
+* <a href="#name-14">`textField`</a><br/>
+* <a href="#name-15">`textFont`</a><br/>
+* <a href="#name-16">`textSize`</a><br/>
+* <a href="#name-17">`textMaxWidth`</a><br/>
+* <a href="#name-18">`textLineHeight`</a><br/>
+* <a href="#name-19">`textLetterSpacing`</a><br/>
+* <a href="#name-20">`textJustify`</a><br/>
+* <a href="#name-21">`textAnchor`</a><br/>
+* <a href="#name-22">`textMaxAngle`</a><br/>
+* <a href="#name-23">`textRotate`</a><br/>
+* <a href="#name-24">`textPadding`</a><br/>
+* <a href="#name-25">`textKeepUpright`</a><br/>
+* <a href="#name-26">`textTransform`</a><br/>
+* <a href="#name-27">`textOffset`</a><br/>
+* <a href="#name-28">`textAllowOverlap`</a><br/>
+* <a href="#name-29">`textIgnorePlacement`</a><br/>
+* <a href="#name-30">`textOptional`</a><br/>
+* <a href="#name-31">`visibility`</a><br/>
+* <a href="#name-32">`iconOpacity`</a><br/>
+* <a href="#name-33">`iconColor`</a><br/>
+* <a href="#name-34">`iconHaloColor`</a><br/>
+* <a href="#name-35">`iconHaloWidth`</a><br/>
+* <a href="#name-36">`iconHaloBlur`</a><br/>
+* <a href="#name-37">`iconTranslate`</a><br/>
+* <a href="#name-38">`iconTranslateAnchor`</a><br/>
+* <a href="#name-39">`textOpacity`</a><br/>
+* <a href="#name-40">`textColor`</a><br/>
+* <a href="#name-41">`textHaloColor`</a><br/>
+* <a href="#name-42">`textHaloWidth`</a><br/>
+* <a href="#name-43">`textHaloBlur`</a><br/>
+* <a href="#name-44">`textTranslate`</a><br/>
+* <a href="#name-45">`textTranslateAnchor`</a><br/>
 
 
 ### `symbolPlacement`
@@ -135,54 +125,6 @@ If true, the symbols will not cross tile edges to avoid mutual collisions. Recom
     </dd>
         <dt>Default Value</dt>
         <dd><code>false</code></dd>
-        </ul>
-    </dd>
-        <dt>Expression Parameters</dt>
-        <dd><code>zoom</code></dd>
-</dl>
-
-
-
-### `symbolSortKey`
-
-Sorts features in ascending order based on this value. Features with lower sort keys are drawn and placed first.  When `iconAllowOverlap` or `textAllowOverlap` is `false`, features with a lower sort key will have priority during placement. When `iconAllowOverlap` or `textAllowOverlap` is set to `true`, features with a higher sort key will overlap over features with a lower sort key.
-
-<dl>
-    <dt>Type</dt>
-    <dd>
-        <code>number</code>
-    </dd>
-        </ul>
-    </dd>
-        <dt>Expression Parameters</dt>
-        <dd><code>zoom, feature</code></dd>
-</dl>
-
-
-
-### `symbolZOrder`
-
-Determines whether overlapping symbols in the same layer are rendered in the order that they appear in the data source or by their yPosition relative to the viewport. To control the order and prioritization of symbols otherwise, use `symbolSortKey`.
-
-<dl>
-    <dt>Type</dt>
-    <dd>
-        <code>enum</code>
-    </dd>
-        <dt>Default Value</dt>
-        <dd><code>auto</code></dd>
-    <dt>Supported Values</dt>
-    <dd>
-        <ul>
-                <li>
-                    <code>auto</code>: Sorts symbols by `symbol-sort-key` if set. Otherwise, sorts symbols by their y-position relative to the viewport if `icon-allow-overlap` or `text-allow-overlap` is set to `true` or `icon-ignore-placement` or `text-ignore-placement` is `false`.
-                </li>
-                <li>
-                    <code>viewport-y</code>: Sorts symbols by their y-position relative to the viewport if `icon-allow-overlap` or `text-allow-overlap` is set to `true` or `icon-ignore-placement` or `text-ignore-placement` is `false`.
-                </li>
-                <li>
-                    <code>source</code>: Sorts symbols by `symbol-sort-key` if set. Otherwise, no sorting is applied; symbols are rendered in the same order as the source data.
-                </li>
         </ul>
     </dd>
         <dt>Expression Parameters</dt>
@@ -314,65 +256,6 @@ Scales the original size of the icon by the provided factor. The new pixel size 
 
 
 
-### `iconTextFit`
-
-Scales the icon to fit around the associated text.
-
-<dl>
-    <dt>Type</dt>
-    <dd>
-        <code>enum</code>
-    </dd>
-        <dt>Default Value</dt>
-        <dd><code>none</code></dd>
-    <dt>Supported Values</dt>
-    <dd>
-        <ul>
-                <li>
-                    <code>none</code>: The icon is displayed at its intrinsic aspect ratio.
-                </li>
-                <li>
-                    <code>width</code>: The icon is scaled in the x-dimension to fit the width of the text.
-                </li>
-                <li>
-                    <code>height</code>: The icon is scaled in the y-dimension to fit the height of the text.
-                </li>
-                <li>
-                    <code>both</code>: The icon is scaled in both x- and y-dimensions.
-                </li>
-        </ul>
-    </dd>
-        <dt>Requires</dt>
-        <dd><code>iconImage, textField</code></dd>
-        <dt>Expression Parameters</dt>
-        <dd><code>zoom</code></dd>
-</dl>
-
-
-
-### `iconTextFitPadding`
-
-Size of the additional area added to dimensions determined by `iconTextFit`, in clockwise order: top, right, bottom, left.
-
-<dl>
-    <dt>Type</dt>
-    <dd>
-        <code>array<number></code>
-    </dd>
-        <dt>Default Value</dt>
-        <dd><code>[0,0,0,0]</code></dd>
-        </ul>
-    </dd>
-        <dt>Units</dt>
-        <dd><code>pixels</code></dd>
-        <dt>Requires</dt>
-        <dd><code>iconImage, textField</code></dd>
-        <dt>Expression Parameters</dt>
-        <dd><code>zoom</code></dd>
-</dl>
-
-
-
 ### `iconImage`
 
 Name of image in sprite to use for drawing an image background.
@@ -474,123 +357,6 @@ Offset distance of icon from its anchor. Positive values indicate right and down
         <dd><code>iconImage</code></dd>
         <dt>Expression Parameters</dt>
         <dd><code>zoom, feature</code></dd>
-</dl>
-
-
-
-### `iconAnchor`
-
-Part of the icon placed closest to the anchor.
-
-<dl>
-    <dt>Type</dt>
-    <dd>
-        <code>enum</code>
-    </dd>
-        <dt>Default Value</dt>
-        <dd><code>center</code></dd>
-    <dt>Supported Values</dt>
-    <dd>
-        <ul>
-                <li>
-                    <code>center</code>: The center of the icon is placed closest to the anchor.
-                </li>
-                <li>
-                    <code>left</code>: The left side of the icon is placed closest to the anchor.
-                </li>
-                <li>
-                    <code>right</code>: The right side of the icon is placed closest to the anchor.
-                </li>
-                <li>
-                    <code>top</code>: The top of the icon is placed closest to the anchor.
-                </li>
-                <li>
-                    <code>bottom</code>: The bottom of the icon is placed closest to the anchor.
-                </li>
-                <li>
-                    <code>top-left</code>: The top left corner of the icon is placed closest to the anchor.
-                </li>
-                <li>
-                    <code>top-right</code>: The top right corner of the icon is placed closest to the anchor.
-                </li>
-                <li>
-                    <code>bottom-left</code>: The bottom left corner of the icon is placed closest to the anchor.
-                </li>
-                <li>
-                    <code>bottom-right</code>: The bottom right corner of the icon is placed closest to the anchor.
-                </li>
-        </ul>
-    </dd>
-        <dt>Requires</dt>
-        <dd><code>iconImage</code></dd>
-        <dt>Expression Parameters</dt>
-        <dd><code>zoom, feature</code></dd>
-</dl>
-
-
-
-### `iconPitchAlignment`
-
-Orientation of icon when map is pitched.
-
-<dl>
-    <dt>Type</dt>
-    <dd>
-        <code>enum</code>
-    </dd>
-        <dt>Default Value</dt>
-        <dd><code>auto</code></dd>
-    <dt>Supported Values</dt>
-    <dd>
-        <ul>
-                <li>
-                    <code>map</code>: The icon is aligned to the plane of the map.
-                </li>
-                <li>
-                    <code>viewport</code>: The icon is aligned to the plane of the viewport.
-                </li>
-                <li>
-                    <code>auto</code>: Automatically matches the value of `icon-rotation-alignment`.
-                </li>
-        </ul>
-    </dd>
-        <dt>Requires</dt>
-        <dd><code>iconImage</code></dd>
-        <dt>Expression Parameters</dt>
-        <dd><code>zoom</code></dd>
-</dl>
-
-
-
-### `textPitchAlignment`
-
-Orientation of text when map is pitched.
-
-<dl>
-    <dt>Type</dt>
-    <dd>
-        <code>enum</code>
-    </dd>
-        <dt>Default Value</dt>
-        <dd><code>auto</code></dd>
-    <dt>Supported Values</dt>
-    <dd>
-        <ul>
-                <li>
-                    <code>map</code>: The text is aligned to the plane of the map.
-                </li>
-                <li>
-                    <code>viewport</code>: The text is aligned to the plane of the viewport.
-                </li>
-                <li>
-                    <code>auto</code>: Automatically matches the value of `text-rotation-alignment`.
-                </li>
-        </ul>
-    </dd>
-        <dt>Requires</dt>
-        <dd><code>textField</code></dd>
-        <dt>Expression Parameters</dt>
-        <dd><code>zoom</code></dd>
 </dl>
 
 
@@ -811,48 +577,6 @@ Text justification options.
 
 
 
-### `textRadialOffset`
-
-Radial offset of text, in the direction of the symbol's anchor. Useful in combination with `textVariableAnchor`, which defaults to using the twoDimensional `textOffset` if present.
-
-<dl>
-    <dt>Type</dt>
-    <dd>
-        <code>number</code>
-    </dd>
-        <dt>Default Value</dt>
-        <dd><code>0</code></dd>
-        </ul>
-    </dd>
-        <dt>Units</dt>
-        <dd><code>ems</code></dd>
-        <dt>Requires</dt>
-        <dd><code>textField</code></dd>
-        <dt>Expression Parameters</dt>
-        <dd><code>zoom, feature</code></dd>
-</dl>
-
-
-
-### `textVariableAnchor`
-
-To increase the chance of placing highPriority labels on the map, you can provide an array of `textAnchor` locations: the renderer will attempt to place the label at each location, in order, before moving onto the next label. Use `textJustify: auto` to choose justification based on anchor position. To apply an offset, use the `textRadialOffset` or the twoDimensional `textOffset`.
-
-<dl>
-    <dt>Type</dt>
-    <dd>
-        <code>array<enum></code>
-    </dd>
-        </ul>
-    </dd>
-        <dt>Requires</dt>
-        <dd><code>textField</code></dd>
-        <dt>Expression Parameters</dt>
-        <dd><code>zoom</code></dd>
-</dl>
-
-
-
 ### `textAnchor`
 
 Part of the text placed closest to the anchor.
@@ -923,25 +647,6 @@ Maximum angle change between adjacent characters.
     </dd>
         <dt>Units</dt>
         <dd><code>degrees</code></dd>
-        <dt>Requires</dt>
-        <dd><code>textField</code></dd>
-        <dt>Expression Parameters</dt>
-        <dd><code>zoom</code></dd>
-</dl>
-
-
-
-### `textWritingMode`
-
-The property allows control over a symbol's orientation. Note that the property values act as a hint, so that a symbol whose language doesn’t support the provided orientation will be laid out in its natural orientation. Example: English point symbol will be rendered horizontally even if array value contains single 'vertical' enum value. The order of elements in an array define priority order for the placement of an orientation variant.
-
-<dl>
-    <dt>Type</dt>
-    <dd>
-        <code>array<enum></code>
-    </dd>
-        </ul>
-    </dd>
         <dt>Requires</dt>
         <dd><code>textField</code></dd>
         <dt>Expression Parameters</dt>

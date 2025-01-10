@@ -15,7 +15,6 @@ const StyleType = {
 };
 
 const STYLE_MAP = {
-  fillSortKey: StyleType.Constant,
   fillAntialias: StyleType.Constant,
   fillOpacity: StyleType.Constant,
   fillOpacityTransition: StyleType.Transition,
@@ -33,7 +32,6 @@ const STYLE_MAP = {
   lineJoin: StyleType.Enum,
   lineMiterLimit: StyleType.Constant,
   lineRoundLimit: StyleType.Constant,
-  lineSortKey: StyleType.Constant,
   lineOpacity: StyleType.Constant,
   lineOpacityTransition: StyleType.Transition,
   lineColor: StyleType.Color,
@@ -53,28 +51,20 @@ const STYLE_MAP = {
   lineDasharrayTransition: StyleType.Transition,
   linePattern: StyleType.Image,
   linePatternTransition: StyleType.Transition,
-  lineGradient: StyleType.Color,
 
   symbolPlacement: StyleType.Enum,
   symbolSpacing: StyleType.Constant,
   symbolAvoidEdges: StyleType.Constant,
-  symbolSortKey: StyleType.Constant,
-  symbolZOrder: StyleType.Enum,
   iconAllowOverlap: StyleType.Constant,
   iconIgnorePlacement: StyleType.Constant,
   iconOptional: StyleType.Constant,
   iconRotationAlignment: StyleType.Enum,
   iconSize: StyleType.Constant,
-  iconTextFit: StyleType.Enum,
-  iconTextFitPadding: StyleType.Constant,
   iconImage: StyleType.Image,
   iconRotate: StyleType.Constant,
   iconPadding: StyleType.Constant,
   iconKeepUpright: StyleType.Constant,
   iconOffset: StyleType.Constant,
-  iconAnchor: StyleType.Enum,
-  iconPitchAlignment: StyleType.Enum,
-  textPitchAlignment: StyleType.Enum,
   textRotationAlignment: StyleType.Enum,
   textField: StyleType.Constant,
   textFont: StyleType.Constant,
@@ -83,11 +73,8 @@ const STYLE_MAP = {
   textLineHeight: StyleType.Constant,
   textLetterSpacing: StyleType.Constant,
   textJustify: StyleType.Enum,
-  textRadialOffset: StyleType.Constant,
-  textVariableAnchor: StyleType.Constant,
   textAnchor: StyleType.Enum,
   textMaxAngle: StyleType.Constant,
-  textWritingMode: StyleType.Constant,
   textRotate: StyleType.Constant,
   textPadding: StyleType.Constant,
   textKeepUpright: StyleType.Constant,
@@ -123,7 +110,6 @@ const STYLE_MAP = {
   textTranslateTransition: StyleType.Transition,
   textTranslateAnchor: StyleType.Enum,
 
-  circleSortKey: StyleType.Constant,
   circleRadius: StyleType.Constant,
   circleRadiusTransition: StyleType.Transition,
   circleColor: StyleType.Color,
@@ -135,38 +121,6 @@ const STYLE_MAP = {
   circleTranslate: StyleType.Translation,
   circleTranslateTransition: StyleType.Transition,
   circleTranslateAnchor: StyleType.Enum,
-  circlePitchScale: StyleType.Enum,
-  circlePitchAlignment: StyleType.Enum,
-  circleStrokeWidth: StyleType.Constant,
-  circleStrokeWidthTransition: StyleType.Transition,
-  circleStrokeColor: StyleType.Color,
-  circleStrokeColorTransition: StyleType.Transition,
-  circleStrokeOpacity: StyleType.Constant,
-  circleStrokeOpacityTransition: StyleType.Transition,
-
-  heatmapRadius: StyleType.Constant,
-  heatmapRadiusTransition: StyleType.Transition,
-  heatmapWeight: StyleType.Constant,
-  heatmapIntensity: StyleType.Constant,
-  heatmapIntensityTransition: StyleType.Transition,
-  heatmapColor: StyleType.Color,
-  heatmapOpacity: StyleType.Constant,
-  heatmapOpacityTransition: StyleType.Transition,
-
-  fillExtrusionOpacity: StyleType.Constant,
-  fillExtrusionOpacityTransition: StyleType.Transition,
-  fillExtrusionColor: StyleType.Color,
-  fillExtrusionColorTransition: StyleType.Transition,
-  fillExtrusionTranslate: StyleType.Translation,
-  fillExtrusionTranslateTransition: StyleType.Transition,
-  fillExtrusionTranslateAnchor: StyleType.Enum,
-  fillExtrusionPattern: StyleType.Image,
-  fillExtrusionPatternTransition: StyleType.Transition,
-  fillExtrusionHeight: StyleType.Constant,
-  fillExtrusionHeightTransition: StyleType.Transition,
-  fillExtrusionBase: StyleType.Constant,
-  fillExtrusionBaseTransition: StyleType.Transition,
-  fillExtrusionVerticalGradient: StyleType.Constant,
 
   rasterOpacity: StyleType.Constant,
   rasterOpacityTransition: StyleType.Transition,
@@ -180,19 +134,7 @@ const STYLE_MAP = {
   rasterSaturationTransition: StyleType.Transition,
   rasterContrast: StyleType.Constant,
   rasterContrastTransition: StyleType.Transition,
-  rasterResampling: StyleType.Enum,
   rasterFadeDuration: StyleType.Constant,
-
-  hillshadeIlluminationDirection: StyleType.Constant,
-  hillshadeIlluminationAnchor: StyleType.Enum,
-  hillshadeExaggeration: StyleType.Constant,
-  hillshadeExaggerationTransition: StyleType.Transition,
-  hillshadeShadowColor: StyleType.Color,
-  hillshadeShadowColorTransition: StyleType.Transition,
-  hillshadeHighlightColor: StyleType.Color,
-  hillshadeHighlightColorTransition: StyleType.Transition,
-  hillshadeAccentColor: StyleType.Color,
-  hillshadeAccentColorTransition: StyleType.Transition,
 
   backgroundColor: StyleType.Color,
   backgroundColorTransition: StyleType.Transition,
@@ -200,14 +142,6 @@ const STYLE_MAP = {
   backgroundPatternTransition: StyleType.Transition,
   backgroundOpacity: StyleType.Constant,
   backgroundOpacityTransition: StyleType.Transition,
-
-  anchor: StyleType.Enum,
-  position: StyleType.Constant,
-  positionTransition: StyleType.Transition,
-  color: StyleType.Color,
-  colorTransition: StyleType.Transition,
-  intensity: StyleType.Constant,
-  intensityTransition: StyleType.Transition,
 
   visibility: StyleType.Constant,
 };
@@ -251,14 +185,18 @@ const STYLE_OVERRIDES = {
 };
 
 export function getStylePropertyType(
-  styleProperty: keyof typeof STYLE_OVERRIDES,
+  styleProperty: keyof typeof STYLE_OVERRIDES | keyof typeof STYLE_MAP,
 ): string {
-  if (!isAndroid() && STYLE_OVERRIDES[styleProperty]) {
-    return STYLE_OVERRIDES[styleProperty].iosType;
+  if (styleProperty in STYLE_OVERRIDES) {
+    if (!isAndroid() && styleProperty in STYLE_OVERRIDES) {
+      return STYLE_OVERRIDES[styleProperty as keyof typeof STYLE_OVERRIDES].iosType;
+    }
   }
 
-  if (STYLE_MAP[styleProperty]) {
-    return STYLE_MAP[styleProperty];
+  if (styleProperty in STYLE_MAP) {
+    if (STYLE_MAP[styleProperty as keyof typeof STYLE_MAP]) {
+      return STYLE_MAP[styleProperty  as keyof typeof STYLE_MAP];
+    }
   }
 
   throw new Error(`${styleProperty} is not a valid MapLibre layer style`);

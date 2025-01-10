@@ -1,4 +1,4 @@
-import { Camera, MapView, UserLocation } from "@maplibre/maplibre-react-native";
+import { Camera, MapView, UserLocation } from "@vietmap/vietmap-gl-react-native";
 import React, { Component } from "react";
 import { Alert } from "react-native";
 

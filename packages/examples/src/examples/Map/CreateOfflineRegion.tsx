@@ -7,7 +7,7 @@ import {
   OfflinePackDownloadState,
   type OfflinePackError,
   type OfflinePackStatus,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import { useEffect, useState } from "react";
 import {
   Alert,

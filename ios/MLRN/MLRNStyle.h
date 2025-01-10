@@ -5,7 +5,7 @@
 #import "MLRNStyleValue.h"
 #import <React/RCTBridge.h>
 
-@import VietMap;
+@import MapLibre;
 
 @interface MLRNStyle : NSObject
 
@@ -18,14 +18,10 @@
 - (void)lineLayer:(MLNLineStyleLayer *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid;
 - (void)symbolLayer:(MLNSymbolStyleLayer *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid;
 - (void)circleLayer:(MLNCircleStyleLayer *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid;
-- (void)heatmapLayer:(MLNHeatmapStyleLayer *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid;
-- (void)fillExtrusionLayer:(MLNFillExtrusionStyleLayer *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid;
 - (void)rasterLayer:(MLNRasterStyleLayer *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid;
-- (void)hillshadeLayer:(MLNHillshadeStyleLayer *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid;
 - (void)backgroundLayer:(MLNBackgroundStyleLayer *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid;
 - (void)lightLayer:(MLNLight *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid;
 
-- (void)setFillSortKey:(MLNFillStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setFillStyleLayerVisibility:(MLNFillStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setFillAntialias:(MLNFillStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setFillOpacity:(MLNFillStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
@@ -43,7 +39,6 @@
 - (void)setLineJoin:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setLineMiterLimit:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setLineRoundLimit:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setLineSortKey:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setLineStyleLayerVisibility:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setLineOpacity:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setLineOpacityTransition:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
@@ -64,27 +59,19 @@
 - (void)setLineDasharrayTransition:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setLinePattern:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setLinePatternTransition:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setLineGradient:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setSymbolPlacement:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setSymbolSpacing:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setSymbolAvoidEdges:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setSymbolSortKey:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setSymbolZOrder:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setIconAllowOverlap:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setIconIgnorePlacement:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setIconOptional:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setIconRotationAlignment:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setIconSize:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setIconTextFit:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setIconTextFitPadding:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setIconImage:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setIconRotate:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setIconPadding:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setIconKeepUpright:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setIconOffset:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setIconAnchor:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setIconPitchAlignment:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setTextPitchAlignment:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setTextRotationAlignment:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setTextField:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setTextFont:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
@@ -93,11 +80,8 @@
 - (void)setTextLineHeight:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setTextLetterSpacing:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setTextJustify:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setTextRadialOffset:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setTextVariableAnchor:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setTextAnchor:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setTextMaxAngle:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setTextWritingMode:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setTextRotate:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setTextPadding:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setTextKeepUpright:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
@@ -133,7 +117,6 @@
 - (void)setTextTranslate:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setTextTranslateTransition:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setTextTranslateAnchor:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setCircleSortKey:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setCircleStyleLayerVisibility:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setCircleRadius:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setCircleRadiusTransition:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
@@ -146,38 +129,6 @@
 - (void)setCircleTranslate:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setCircleTranslateTransition:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setCircleTranslateAnchor:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setCirclePitchScale:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setCirclePitchAlignment:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setCircleStrokeWidth:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setCircleStrokeWidthTransition:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setCircleStrokeColor:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setCircleStrokeColorTransition:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setCircleStrokeOpacity:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setCircleStrokeOpacityTransition:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHeatmapStyleLayerVisibility:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHeatmapRadius:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHeatmapRadiusTransition:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHeatmapWeight:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHeatmapIntensity:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHeatmapIntensityTransition:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHeatmapColor:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHeatmapOpacity:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHeatmapOpacityTransition:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionStyleLayerVisibility:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionOpacity:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionOpacityTransition:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionColor:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionColorTransition:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionTranslate:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionTranslateTransition:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionTranslateAnchor:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionPattern:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionPatternTransition:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionHeight:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionHeightTransition:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionBase:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionBaseTransition:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setFillExtrusionVerticalGradient:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setRasterStyleLayerVisibility:(MLNRasterStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setRasterOpacity:(MLNRasterStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setRasterOpacityTransition:(MLNRasterStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
@@ -191,19 +142,7 @@
 - (void)setRasterSaturationTransition:(MLNRasterStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setRasterContrast:(MLNRasterStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setRasterContrastTransition:(MLNRasterStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setRasterResampling:(MLNRasterStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setRasterFadeDuration:(MLNRasterStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHillshadeStyleLayerVisibility:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHillshadeIlluminationDirection:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHillshadeIlluminationAnchor:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHillshadeExaggeration:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHillshadeExaggerationTransition:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHillshadeShadowColor:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHillshadeShadowColorTransition:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHillshadeHighlightColor:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHillshadeHighlightColorTransition:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHillshadeAccentColor:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setHillshadeAccentColorTransition:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setBackgroundStyleLayerVisibility:(MLNBackgroundStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setBackgroundColor:(MLNBackgroundStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setBackgroundColorTransition:(MLNBackgroundStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
@@ -211,13 +150,6 @@
 - (void)setBackgroundPatternTransition:(MLNBackgroundStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setBackgroundOpacity:(MLNBackgroundStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setBackgroundOpacityTransition:(MLNBackgroundStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setAnchor:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setPosition:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setPositionTransition:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setColor:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setColorTransition:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setIntensity:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
-- (void)setIntensityTransition:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 
 
 @end

@@ -2,7 +2,7 @@ import {
   MapView,
   RasterLayer,
   RasterSource,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import { useState } from "react";
 
 import { TabBarView } from "../../components/TabBarView";

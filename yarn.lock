@@ -2826,7 +2826,6 @@ __metadata:
   resolution: "@maplibre-react-native/examples@workspace:packages/examples"
   dependencies:
     "@mapbox/geo-viewport": "npm:^0.5.0"
-    "@maplibre/maplibre-react-native": "workspace:*"
     "@react-native-masked-view/masked-view": "npm:^0.3.1"
     "@react-navigation/native": "npm:^6.1.18"
     "@react-navigation/stack": "npm:^6.4.1"
@@ -2837,6 +2836,7 @@ __metadata:
     "@turf/length": "npm:^7.1.0"
     "@types/mapbox__geo-viewport": "npm:^0.5.3"
     "@types/react": "npm:^18.3.12"
+    "@vietmap/vietmap-gl-react-native": "workspace:*"
     moment: "npm:^2.30.1"
     react: "npm:18.3.1"
     react-native: "npm:^0.76.3"
@@ -2871,61 +2871,6 @@ __metadata:
   checksum: 10/25ccfbe90022780f34cd57d2f0520a452e6bc04c52485098c54ebd46e219d727e76901746b18417139c5d5aef6c2f40ebecedc73ea7e2f2c59ae9edb7cbb7106
   languageName: node
   linkType: hard
-
-"@maplibre/maplibre-react-native@workspace:*, @maplibre/maplibre-react-native@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@maplibre/maplibre-react-native@workspace:."
-  dependencies:
-    "@babel/core": "npm:^7.20.5"
-    "@babel/eslint-parser": "npm:^7.22.9"
-    "@babel/plugin-proposal-class-properties": "npm:7.18.6"
-    "@babel/runtime": "npm:7.17.2"
-    "@expo/config-plugins": "npm:^9.0.9"
-    "@maplibre/maplibre-gl-style-spec": "npm:21.1.0"
-    "@react-native/babel-preset": "npm:^0.74.88"
-    "@react-native/metro-config": "npm:^0.74.88"
-    "@sinonjs/fake-timers": "npm:^11.2.2"
-    "@testing-library/react-native": "npm:^12.4.3"
-    "@turf/distance": "npm:^7.1.0"
-    "@turf/helpers": "npm:^7.1.0"
-    "@turf/length": "npm:^7.1.0"
-    "@turf/nearest-point-on-line": "npm:^7.1.0"
-    "@types/debounce": "npm:^1.2.1"
-    "@types/ejs": "npm:^3.1.5"
-    "@types/geojson": "npm:^7946.0.14"
-    "@types/jest": "npm:^29.5.12"
-    "@types/node": "npm:^18.11.18"
-    "@types/react": "npm:^18.2.79"
-    "@types/react-native": "npm:0.67.8"
-    "@typescript-eslint/eslint-plugin": "npm:^7.18.0"
-    "@typescript-eslint/parser": "npm:^7.18.0"
-    babel-jest: "npm:^29.6.0"
-    debounce: "npm:^2.0.0"
-    documentation: "npm:^14.0.0"
-    ejs: "npm:^3.1.10"
-    ejs-lint: "npm:^2.0.0"
-    eslint: "npm:^8.57.1"
-    eslint-config-universe: "npm:13.0.0"
-    expo-module-scripts: "npm:^4.0.2"
-    jest: "npm:^29.7.0"
-    jest-cli: "npm:^29.7.0"
-    prettier: "npm:3.3.3"
-    react: "npm:18.2.0"
-    react-docgen: "npm:^7.1.0"
-    react-native: "npm:^0.74.6"
-    react-native-builder-bob: "npm:^0.32.0"
-    react-test-renderer: "npm:18.2.0"
-    tsx: "npm:^4.19.2"
-    typescript: "npm:^5.3.3"
-  peerDependencies:
-    "@expo/config-plugins": ">=7"
-    react: ">=16.6.1"
-    react-native: ">=0.59.9"
-  peerDependenciesMeta:
-    "@expo/config-plugins":
-      optional: true
-  languageName: unknown
-  linkType: soft
 
 "@nicolo-ribaudo/chokidar-2@npm:2.1.8-no-fsevents.3":
   version: 2.1.8-no-fsevents.3
@@ -4922,6 +4867,61 @@ __metadata:
   checksum: 10/5bbc914a58a6de6ee7146d55fa8d6454cbf0fb5f6d7a3f7b1770d95dfbaa9e44fad041d4655f00f38ce87f12b52fdd694a1ccb8df487265185f5b425d5e12177
   languageName: node
   linkType: hard
+
+"@vietmap/vietmap-gl-react-native@workspace:*, @vietmap/vietmap-gl-react-native@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@vietmap/vietmap-gl-react-native@workspace:."
+  dependencies:
+    "@babel/core": "npm:^7.20.5"
+    "@babel/eslint-parser": "npm:^7.22.9"
+    "@babel/plugin-proposal-class-properties": "npm:7.18.6"
+    "@babel/runtime": "npm:7.17.2"
+    "@expo/config-plugins": "npm:^9.0.9"
+    "@maplibre/maplibre-gl-style-spec": "npm:21.1.0"
+    "@react-native/babel-preset": "npm:^0.74.88"
+    "@react-native/metro-config": "npm:^0.74.88"
+    "@sinonjs/fake-timers": "npm:^11.2.2"
+    "@testing-library/react-native": "npm:^12.4.3"
+    "@turf/distance": "npm:^7.1.0"
+    "@turf/helpers": "npm:^7.1.0"
+    "@turf/length": "npm:^7.1.0"
+    "@turf/nearest-point-on-line": "npm:^7.1.0"
+    "@types/debounce": "npm:^1.2.1"
+    "@types/ejs": "npm:^3.1.5"
+    "@types/geojson": "npm:^7946.0.14"
+    "@types/jest": "npm:^29.5.12"
+    "@types/node": "npm:^18.11.18"
+    "@types/react": "npm:^18.2.79"
+    "@types/react-native": "npm:0.67.8"
+    "@typescript-eslint/eslint-plugin": "npm:^7.18.0"
+    "@typescript-eslint/parser": "npm:^7.18.0"
+    babel-jest: "npm:^29.6.0"
+    debounce: "npm:^2.0.0"
+    documentation: "npm:^14.0.0"
+    ejs: "npm:^3.1.10"
+    ejs-lint: "npm:^2.0.0"
+    eslint: "npm:^8.57.1"
+    eslint-config-universe: "npm:13.0.0"
+    expo-module-scripts: "npm:^4.0.2"
+    jest: "npm:^29.7.0"
+    jest-cli: "npm:^29.7.0"
+    prettier: "npm:3.3.3"
+    react: "npm:18.2.0"
+    react-docgen: "npm:^7.1.0"
+    react-native: "npm:^0.74.6"
+    react-native-builder-bob: "npm:^0.32.0"
+    react-test-renderer: "npm:18.2.0"
+    tsx: "npm:^4.19.2"
+    typescript: "npm:^5.3.3"
+  peerDependencies:
+    "@expo/config-plugins": ">=7"
+    react: ">=16.6.1"
+    react-native: ">=0.59.9"
+  peerDependenciesMeta:
+    "@expo/config-plugins":
+      optional: true
+  languageName: unknown
+  linkType: soft
 
 "@vue/compiler-core@npm:3.5.13":
   version: 3.5.13
@@ -8144,8 +8144,8 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.25.8"
     "@maplibre-react-native/examples": "workspace:*"
-    "@maplibre/maplibre-react-native": "workspace:*"
     "@react-native-masked-view/masked-view": "npm:0.3.2"
+    "@vietmap/vietmap-gl-react-native": "workspace:*"
     expo: "npm:~52.0.11"
     expo-dev-client: "npm:~5.0.4"
     expo-status-bar: "npm:~2.0.0"

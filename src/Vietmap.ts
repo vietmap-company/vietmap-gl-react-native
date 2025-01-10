@@ -67,7 +67,7 @@ export {
 } from "./modules/snapshot/SnapshotManager";
 export type { SnapshotInputOptions } from "./modules/snapshot/SnapshotOptions";
 
-export type { MapLibreRNEvent } from "./types/MapLibreRNEvent";
+export type { VietmapGLEvent as VietmapGLEvent } from "./types/VietmapGLEvent";
 
 export { Animated } from "./utils/animated/Animated";
 export { Logger, type LogLevel } from "./utils/Logger";
@@ -82,4 +82,4 @@ export type {
   HillshadeLayerStyle,
   BackgroundLayerStyle,
   LightLayerStyle,
-} from "./types/MapLibreRNStyles";
+} from "./types/VietmapStyles";

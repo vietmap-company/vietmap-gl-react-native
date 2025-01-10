@@ -4,11 +4,11 @@
 > This package cannot be used with the "Expo Go" app
 > because [it is not part of the Expo SDK](https://docs.expo.io/workflow/customizing/).
 
-First install the `@maplibre/maplibre-react-native` with [`expo`](https://docs.expo.io/workflow/expo-cli/#expo-install)
+First install the `@vietmap/vietmap-gl-react-native` with [`expo`](https://docs.expo.io/workflow/expo-cli/#expo-install)
 or the package manager of your choice:
 
 ```shell
-npx expo install @maplibre/maplibre-react-native
+npx expo install @vietmap/vietmap-gl-react-native
 ```
 
 After installing the package, add the [config plugin](https://docs.expo.io/guides/config-plugins/) to the [
@@ -17,7 +17,7 @@ After installing the package, add the [config plugin](https://docs.expo.io/guide
 ```json
 {
   "expo": {
-    "plugins": ["@maplibre/maplibre-react-native"]
+    "plugins": ["@vietmap/vietmap-gl-react-native"]
   }
 }
 ```

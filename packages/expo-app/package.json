@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@maplibre-react-native/examples": "workspace:*",
-    "@maplibre/maplibre-react-native": "workspace:*",
     "@react-native-masked-view/masked-view": "0.3.2",
+    "@vietmap/vietmap-gl-react-native": "workspace:*",
     "expo": "~52.0.11",
     "expo-dev-client": "~5.0.4",
     "expo-status-bar": "~2.0.0",

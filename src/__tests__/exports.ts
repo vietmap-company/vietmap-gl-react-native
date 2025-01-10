@@ -1,8 +1,8 @@
-import MapLibreRN from "..";
+import VietmapGL from "..";
 
 describe("Package Exports", () => {
   it("should contain all expected components and utils", () => {
-    const actualKeys = Object.keys(MapLibreRN);
+    const actualKeys = Object.keys(VietmapGL);
 
     const expectedKeys = [
       // Components

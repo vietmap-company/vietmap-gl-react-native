@@ -26,9 +26,7 @@
   for (NSString *prop in styleProps) {
     MLRNStyleValue *styleValue = [MLRNStyleValue make:reactStyle[prop]];
 
-    if ([prop isEqualToString:@"fillSortKey"]) {
-      [self setFillSortKey:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"visibility"]) {
+    if ([prop isEqualToString:@"visibility"]) {
       [self setFillStyleLayerVisibility:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"fillAntialias"]) {
       [self setFillAntialias:layer withReactStyleValue:styleValue];
@@ -94,8 +92,6 @@
       [self setLineMiterLimit:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"lineRoundLimit"]) {
       [self setLineRoundLimit:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"lineSortKey"]) {
-      [self setLineSortKey:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"visibility"]) {
       [self setLineStyleLayerVisibility:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"lineOpacity"]) {
@@ -151,8 +147,6 @@
       }
     } else if ([prop isEqualToString:@"linePatternTransition"]) {
       [self setLinePatternTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"lineGradient"]) {
-      [self setLineGradient:layer withReactStyleValue:styleValue];
     } else {
       // TODO throw exception
     }
@@ -176,10 +170,6 @@
       [self setSymbolSpacing:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"symbolAvoidEdges"]) {
       [self setSymbolAvoidEdges:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"symbolSortKey"]) {
-      [self setSymbolSortKey:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"symbolZOrder"]) {
-      [self setSymbolZOrder:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"iconAllowOverlap"]) {
       [self setIconAllowOverlap:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"iconIgnorePlacement"]) {
@@ -190,10 +180,6 @@
       [self setIconRotationAlignment:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"iconSize"]) {
       [self setIconSize:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"iconTextFit"]) {
-      [self setIconTextFit:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"iconTextFitPadding"]) {
-      [self setIconTextFitPadding:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"iconImage"]) {
       if (![styleValue shouldAddImage]) {
         [self setIconImage:layer withReactStyleValue:styleValue];
@@ -219,12 +205,6 @@
       [self setIconKeepUpright:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"iconOffset"]) {
       [self setIconOffset:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"iconAnchor"]) {
-      [self setIconAnchor:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"iconPitchAlignment"]) {
-      [self setIconPitchAlignment:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"textPitchAlignment"]) {
-      [self setTextPitchAlignment:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"textRotationAlignment"]) {
       [self setTextRotationAlignment:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"textField"]) {
@@ -241,16 +221,10 @@
       [self setTextLetterSpacing:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"textJustify"]) {
       [self setTextJustify:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"textRadialOffset"]) {
-      [self setTextRadialOffset:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"textVariableAnchor"]) {
-      [self setTextVariableAnchor:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"textAnchor"]) {
       [self setTextAnchor:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"textMaxAngle"]) {
       [self setTextMaxAngle:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"textWritingMode"]) {
-      [self setTextWritingMode:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"textRotate"]) {
       [self setTextRotate:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"textPadding"]) {
@@ -338,9 +312,7 @@
   for (NSString *prop in styleProps) {
     MLRNStyleValue *styleValue = [MLRNStyleValue make:reactStyle[prop]];
 
-    if ([prop isEqualToString:@"circleSortKey"]) {
-      [self setCircleSortKey:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"visibility"]) {
+    if ([prop isEqualToString:@"visibility"]) {
       [self setCircleStyleLayerVisibility:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"circleRadius"]) {
       [self setCircleRadius:layer withReactStyleValue:styleValue];
@@ -364,119 +336,6 @@
       [self setCircleTranslateTransition:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"circleTranslateAnchor"]) {
       [self setCircleTranslateAnchor:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"circlePitchScale"]) {
-      [self setCirclePitchScale:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"circlePitchAlignment"]) {
-      [self setCirclePitchAlignment:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"circleStrokeWidth"]) {
-      [self setCircleStrokeWidth:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"circleStrokeWidthTransition"]) {
-      [self setCircleStrokeWidthTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"circleStrokeColor"]) {
-      [self setCircleStrokeColor:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"circleStrokeColorTransition"]) {
-      [self setCircleStrokeColorTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"circleStrokeOpacity"]) {
-      [self setCircleStrokeOpacity:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"circleStrokeOpacityTransition"]) {
-      [self setCircleStrokeOpacityTransition:layer withReactStyleValue:styleValue];
-    } else {
-      // TODO throw exception
-    }
-  }
-}
-
-- (void)heatmapLayer:(MLNHeatmapStyleLayer *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid
-{
-  if (![self _hasReactStyle:reactStyle]) {
-    // TODO throw exception
-    return;
-  }
-
-  NSArray<NSString*> *styleProps = [reactStyle allKeys];
-  for (NSString *prop in styleProps) {
-    MLRNStyleValue *styleValue = [MLRNStyleValue make:reactStyle[prop]];
-
-    if ([prop isEqualToString:@"visibility"]) {
-      [self setHeatmapStyleLayerVisibility:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"heatmapRadius"]) {
-      [self setHeatmapRadius:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"heatmapRadiusTransition"]) {
-      [self setHeatmapRadiusTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"heatmapWeight"]) {
-      [self setHeatmapWeight:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"heatmapIntensity"]) {
-      [self setHeatmapIntensity:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"heatmapIntensityTransition"]) {
-      [self setHeatmapIntensityTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"heatmapColor"]) {
-      [self setHeatmapColor:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"heatmapOpacity"]) {
-      [self setHeatmapOpacity:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"heatmapOpacityTransition"]) {
-      [self setHeatmapOpacityTransition:layer withReactStyleValue:styleValue];
-    } else {
-      // TODO throw exception
-    }
-  }
-}
-
-- (void)fillExtrusionLayer:(MLNFillExtrusionStyleLayer *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid
-{
-  if (![self _hasReactStyle:reactStyle]) {
-    // TODO throw exception
-    return;
-  }
-
-  NSArray<NSString*> *styleProps = [reactStyle allKeys];
-  for (NSString *prop in styleProps) {
-    MLRNStyleValue *styleValue = [MLRNStyleValue make:reactStyle[prop]];
-
-    if ([prop isEqualToString:@"visibility"]) {
-      [self setFillExtrusionStyleLayerVisibility:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"fillExtrusionOpacity"]) {
-      [self setFillExtrusionOpacity:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"fillExtrusionOpacityTransition"]) {
-      [self setFillExtrusionOpacityTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"fillExtrusionColor"]) {
-      [self setFillExtrusionColor:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"fillExtrusionColorTransition"]) {
-      [self setFillExtrusionColorTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"fillExtrusionTranslate"]) {
-      [self setFillExtrusionTranslate:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"fillExtrusionTranslateTransition"]) {
-      [self setFillExtrusionTranslateTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"fillExtrusionTranslateAnchor"]) {
-      [self setFillExtrusionTranslateAnchor:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"fillExtrusionPattern"]) {
-      if (![styleValue shouldAddImage]) {
-        [self setFillExtrusionPattern:layer withReactStyleValue:styleValue];
-      } else {
-        NSString *imageURI = [styleValue getImageURI];
-
-        [MLRNUtils fetchImage:_bridge url:imageURI scale:[styleValue getImageScale] callback:^(NSError *error, UIImage *image) {
-          if (image != nil) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-              if (isValid()) {
-                [self->_style setImage:image forName:imageURI];
-                [self setFillExtrusionPattern:layer withReactStyleValue:styleValue];
-              }
-            });
-          }
-        }];
-      }
-    } else if ([prop isEqualToString:@"fillExtrusionPatternTransition"]) {
-      [self setFillExtrusionPatternTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"fillExtrusionHeight"]) {
-      [self setFillExtrusionHeight:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"fillExtrusionHeightTransition"]) {
-      [self setFillExtrusionHeightTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"fillExtrusionBase"]) {
-      [self setFillExtrusionBase:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"fillExtrusionBaseTransition"]) {
-      [self setFillExtrusionBaseTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"fillExtrusionVerticalGradient"]) {
-      [self setFillExtrusionVerticalGradient:layer withReactStyleValue:styleValue];
     } else {
       // TODO throw exception
     }
@@ -520,49 +379,8 @@
       [self setRasterContrast:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"rasterContrastTransition"]) {
       [self setRasterContrastTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"rasterResampling"]) {
-      [self setRasterResampling:layer withReactStyleValue:styleValue];
     } else if ([prop isEqualToString:@"rasterFadeDuration"]) {
       [self setRasterFadeDuration:layer withReactStyleValue:styleValue];
-    } else {
-      // TODO throw exception
-    }
-  }
-}
-
-- (void)hillshadeLayer:(MLNHillshadeStyleLayer *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid
-{
-  if (![self _hasReactStyle:reactStyle]) {
-    // TODO throw exception
-    return;
-  }
-
-  NSArray<NSString*> *styleProps = [reactStyle allKeys];
-  for (NSString *prop in styleProps) {
-    MLRNStyleValue *styleValue = [MLRNStyleValue make:reactStyle[prop]];
-
-    if ([prop isEqualToString:@"visibility"]) {
-      [self setHillshadeStyleLayerVisibility:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"hillshadeIlluminationDirection"]) {
-      [self setHillshadeIlluminationDirection:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"hillshadeIlluminationAnchor"]) {
-      [self setHillshadeIlluminationAnchor:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"hillshadeExaggeration"]) {
-      [self setHillshadeExaggeration:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"hillshadeExaggerationTransition"]) {
-      [self setHillshadeExaggerationTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"hillshadeShadowColor"]) {
-      [self setHillshadeShadowColor:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"hillshadeShadowColorTransition"]) {
-      [self setHillshadeShadowColorTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"hillshadeHighlightColor"]) {
-      [self setHillshadeHighlightColor:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"hillshadeHighlightColorTransition"]) {
-      [self setHillshadeHighlightColorTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"hillshadeAccentColor"]) {
-      [self setHillshadeAccentColor:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"hillshadeAccentColorTransition"]) {
-      [self setHillshadeAccentColorTransition:layer withReactStyleValue:styleValue];
     } else {
       // TODO throw exception
     }
@@ -626,20 +444,6 @@
   for (NSString *prop in styleProps) {
     MLRNStyleValue *styleValue = [MLRNStyleValue make:reactStyle[prop]];
 
-    if ([prop isEqualToString:@"anchor"]) {
-      [self setAnchor:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"position"]) {
-      [self setPosition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"positionTransition"]) {
-      [self setPositionTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"color"]) {
-      [self setColor:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"colorTransition"]) {
-      [self setColorTransition:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"intensity"]) {
-      [self setIntensity:layer withReactStyleValue:styleValue];
-    } else if ([prop isEqualToString:@"intensityTransition"]) {
-      [self setIntensityTransition:layer withReactStyleValue:styleValue];
     } else {
       // TODO throw exception
     }
@@ -648,11 +452,6 @@
 
 
 
-
-- (void)setFillSortKey:(MLNFillStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillSortKey = styleValue.mlnStyleValue;
-}
 
 - (void)setFillStyleLayerVisibility:(MLNFillStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
 {
@@ -739,11 +538,6 @@
 - (void)setLineRoundLimit:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
 {
     layer.lineRoundLimit = styleValue.mlnStyleValue;
-}
-
-- (void)setLineSortKey:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.lineSortKey = styleValue.mlnStyleValue;
 }
 
 - (void)setLineStyleLayerVisibility:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
@@ -846,11 +640,6 @@
     layer.linePatternTransition = [styleValue getTransition];
 }
 
-- (void)setLineGradient:(MLNLineStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.lineGradient = styleValue.mlnStyleValue;
-}
-
 
 
 - (void)setSymbolPlacement:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
@@ -866,16 +655,6 @@
 - (void)setSymbolAvoidEdges:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
 {
     layer.symbolAvoidsEdges = styleValue.mlnStyleValue;
-}
-
-- (void)setSymbolSortKey:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.symbolSortKey = styleValue.mlnStyleValue;
-}
-
-- (void)setSymbolZOrder:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.symbolZOrder = styleValue.mlnStyleValue;
 }
 
 - (void)setIconAllowOverlap:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
@@ -903,16 +682,6 @@
     layer.iconScale = styleValue.mlnStyleValue;
 }
 
-- (void)setIconTextFit:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.iconTextFit = styleValue.mlnStyleValue;
-}
-
-- (void)setIconTextFitPadding:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.iconTextFitPadding = styleValue.mlnStyleValue;
-}
-
 - (void)setIconImage:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
 {
     layer.iconImageName = styleValue.mlnStyleValue;
@@ -936,21 +705,6 @@
 - (void)setIconOffset:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
 {
     layer.iconOffset = styleValue.mlnStyleValue;
-}
-
-- (void)setIconAnchor:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.iconAnchor = styleValue.mlnStyleValue;
-}
-
-- (void)setIconPitchAlignment:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.iconPitchAlignment = styleValue.mlnStyleValue;
-}
-
-- (void)setTextPitchAlignment:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.textPitchAlignment = styleValue.mlnStyleValue;
 }
 
 - (void)setTextRotationAlignment:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
@@ -993,16 +747,6 @@
     layer.textJustification = styleValue.mlnStyleValue;
 }
 
-- (void)setTextRadialOffset:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.textRadialOffset = styleValue.mlnStyleValue;
-}
-
-- (void)setTextVariableAnchor:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.textVariableAnchor = styleValue.mlnStyleValue;
-}
-
 - (void)setTextAnchor:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
 {
     layer.textAnchor = styleValue.mlnStyleValue;
@@ -1011,11 +755,6 @@
 - (void)setTextMaxAngle:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
 {
     layer.maximumTextAngle = styleValue.mlnStyleValue;
-}
-
-- (void)setTextWritingMode:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.textWritingModes = styleValue.mlnStyleValue;
 }
 
 - (void)setTextRotate:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
@@ -1195,11 +934,6 @@
 
 
 
-- (void)setCircleSortKey:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.circleSortKey = styleValue.mlnStyleValue;
-}
-
 - (void)setCircleStyleLayerVisibility:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
 {
     layer.visible = [styleValue isVisible];
@@ -1258,170 +992,6 @@
 - (void)setCircleTranslateAnchor:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
 {
     layer.circleTranslationAnchor = styleValue.mlnStyleValue;
-}
-
-- (void)setCirclePitchScale:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.circleScaleAlignment = styleValue.mlnStyleValue;
-}
-
-- (void)setCirclePitchAlignment:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.circlePitchAlignment = styleValue.mlnStyleValue;
-}
-
-- (void)setCircleStrokeWidth:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.circleStrokeWidth = styleValue.mlnStyleValue;
-}
-
-- (void)setCircleStrokeWidthTransition:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.circleStrokeWidthTransition = [styleValue getTransition];
-}
-
-- (void)setCircleStrokeColor:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.circleStrokeColor = styleValue.mlnStyleValue;
-}
-
-- (void)setCircleStrokeColorTransition:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.circleStrokeColorTransition = [styleValue getTransition];
-}
-
-- (void)setCircleStrokeOpacity:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.circleStrokeOpacity = styleValue.mlnStyleValue;
-}
-
-- (void)setCircleStrokeOpacityTransition:(MLNCircleStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.circleStrokeOpacityTransition = [styleValue getTransition];
-}
-
-
-
-- (void)setHeatmapStyleLayerVisibility:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.visible = [styleValue isVisible];
-}
-
-- (void)setHeatmapRadius:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.heatmapRadius = styleValue.mlnStyleValue;
-}
-
-- (void)setHeatmapRadiusTransition:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.heatmapRadiusTransition = [styleValue getTransition];
-}
-
-- (void)setHeatmapWeight:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.heatmapWeight = styleValue.mlnStyleValue;
-}
-
-- (void)setHeatmapIntensity:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.heatmapIntensity = styleValue.mlnStyleValue;
-}
-
-- (void)setHeatmapIntensityTransition:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.heatmapIntensityTransition = [styleValue getTransition];
-}
-
-- (void)setHeatmapColor:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.heatmapColor = styleValue.mlnStyleValue;
-}
-
-- (void)setHeatmapOpacity:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.heatmapOpacity = styleValue.mlnStyleValue;
-}
-
-- (void)setHeatmapOpacityTransition:(MLNHeatmapStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.heatmapOpacityTransition = [styleValue getTransition];
-}
-
-
-
-- (void)setFillExtrusionStyleLayerVisibility:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.visible = [styleValue isVisible];
-}
-
-- (void)setFillExtrusionOpacity:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillExtrusionOpacity = styleValue.mlnStyleValue;
-}
-
-- (void)setFillExtrusionOpacityTransition:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillExtrusionOpacityTransition = [styleValue getTransition];
-}
-
-- (void)setFillExtrusionColor:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillExtrusionColor = styleValue.mlnStyleValue;
-}
-
-- (void)setFillExtrusionColorTransition:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillExtrusionColorTransition = [styleValue getTransition];
-}
-
-- (void)setFillExtrusionTranslate:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillExtrusionTranslation = styleValue.mlnStyleValue;
-}
-
-- (void)setFillExtrusionTranslateTransition:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillExtrusionTranslationTransition = [styleValue getTransition];
-}
-
-- (void)setFillExtrusionTranslateAnchor:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillExtrusionTranslationAnchor = styleValue.mlnStyleValue;
-}
-
-- (void)setFillExtrusionPattern:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillExtrusionPattern = styleValue.mlnStyleValue;
-}
-
-- (void)setFillExtrusionPatternTransition:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillExtrusionPatternTransition = [styleValue getTransition];
-}
-
-- (void)setFillExtrusionHeight:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillExtrusionHeight = styleValue.mlnStyleValue;
-}
-
-- (void)setFillExtrusionHeightTransition:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillExtrusionHeightTransition = [styleValue getTransition];
-}
-
-- (void)setFillExtrusionBase:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillExtrusionBase = styleValue.mlnStyleValue;
-}
-
-- (void)setFillExtrusionBaseTransition:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillExtrusionBaseTransition = [styleValue getTransition];
-}
-
-- (void)setFillExtrusionVerticalGradient:(MLNFillExtrusionStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.fillExtrusionHasVerticalGradient = styleValue.mlnStyleValue;
 }
 
 
@@ -1491,71 +1061,9 @@
     layer.rasterContrastTransition = [styleValue getTransition];
 }
 
-- (void)setRasterResampling:(MLNRasterStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.rasterResamplingMode = styleValue.mlnStyleValue;
-}
-
 - (void)setRasterFadeDuration:(MLNRasterStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
 {
     layer.rasterFadeDuration = styleValue.mlnStyleValue;
-}
-
-
-
-- (void)setHillshadeStyleLayerVisibility:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.visible = [styleValue isVisible];
-}
-
-- (void)setHillshadeIlluminationDirection:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.hillshadeIlluminationDirection = styleValue.mlnStyleValue;
-}
-
-- (void)setHillshadeIlluminationAnchor:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.hillshadeIlluminationAnchor = styleValue.mlnStyleValue;
-}
-
-- (void)setHillshadeExaggeration:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.hillshadeExaggeration = styleValue.mlnStyleValue;
-}
-
-- (void)setHillshadeExaggerationTransition:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.hillshadeExaggerationTransition = [styleValue getTransition];
-}
-
-- (void)setHillshadeShadowColor:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.hillshadeShadowColor = styleValue.mlnStyleValue;
-}
-
-- (void)setHillshadeShadowColorTransition:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.hillshadeShadowColorTransition = [styleValue getTransition];
-}
-
-- (void)setHillshadeHighlightColor:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.hillshadeHighlightColor = styleValue.mlnStyleValue;
-}
-
-- (void)setHillshadeHighlightColorTransition:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.hillshadeHighlightColorTransition = [styleValue getTransition];
-}
-
-- (void)setHillshadeAccentColor:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.hillshadeAccentColor = styleValue.mlnStyleValue;
-}
-
-- (void)setHillshadeAccentColorTransition:(MLNHillshadeStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.hillshadeAccentColorTransition = [styleValue getTransition];
 }
 
 
@@ -1596,41 +1104,6 @@
 }
 
 
-
-- (void)setAnchor:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.anchor = styleValue.mlnStyleValue;
-}
-
-- (void)setPosition:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.position = [styleValue getSphericalPosition];
-}
-
-- (void)setPositionTransition:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.positionTransition = [styleValue getTransition];
-}
-
-- (void)setColor:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.color = styleValue.mlnStyleValue;
-}
-
-- (void)setColorTransition:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.colorTransition = [styleValue getTransition];
-}
-
-- (void)setIntensity:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.intensity = styleValue.mlnStyleValue;
-}
-
-- (void)setIntensityTransition:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
-{
-    layer.intensityTransition = [styleValue getTransition];
-}
 
 
 

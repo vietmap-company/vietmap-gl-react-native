@@ -1,7 +1,7 @@
 blank_issues_enabled: true
 contact_links:
   - name: "❓ Q&A - GitHub Discussions"
-    url: https://github.com/maplibre/maplibre-react-native/discussions/categories/q-a
+    url: https://github.com/vietmap-company/vietmap-gl-react-native/discussions/categories/q-a
     about: If you have a question about using MapLibre React Native
   - name: "💬 Chat with us on Slack"
     url: https://slack.openstreetmap.us/

@@ -1,4 +1,4 @@
-import { Camera, FillLayer, MapView } from "@maplibre/maplibre-react-native";
+import { Camera, FillLayer, MapView } from "@vietmap/vietmap-gl-react-native";
 import React, { Component } from "react";
 import { Text } from "react-native";
 

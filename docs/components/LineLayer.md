@@ -16,19 +16,17 @@ LineLayer is a style layer that renders one or more stroked polylines on the map
 * <a href="#name-1">`lineJoin`</a><br/>
 * <a href="#name-2">`lineMiterLimit`</a><br/>
 * <a href="#name-3">`lineRoundLimit`</a><br/>
-* <a href="#name-4">`lineSortKey`</a><br/>
-* <a href="#name-5">`visibility`</a><br/>
-* <a href="#name-6">`lineOpacity`</a><br/>
-* <a href="#name-7">`lineColor`</a><br/>
-* <a href="#name-8">`lineTranslate`</a><br/>
-* <a href="#name-9">`lineTranslateAnchor`</a><br/>
-* <a href="#name-10">`lineWidth`</a><br/>
-* <a href="#name-11">`lineGapWidth`</a><br/>
-* <a href="#name-12">`lineOffset`</a><br/>
-* <a href="#name-13">`lineBlur`</a><br/>
-* <a href="#name-14">`lineDasharray`</a><br/>
-* <a href="#name-15">`linePattern`</a><br/>
-* <a href="#name-16">`lineGradient`</a><br/>
+* <a href="#name-4">`visibility`</a><br/>
+* <a href="#name-5">`lineOpacity`</a><br/>
+* <a href="#name-6">`lineColor`</a><br/>
+* <a href="#name-7">`lineTranslate`</a><br/>
+* <a href="#name-8">`lineTranslateAnchor`</a><br/>
+* <a href="#name-9">`lineWidth`</a><br/>
+* <a href="#name-10">`lineGapWidth`</a><br/>
+* <a href="#name-11">`lineOffset`</a><br/>
+* <a href="#name-12">`lineBlur`</a><br/>
+* <a href="#name-13">`lineDasharray`</a><br/>
+* <a href="#name-14">`linePattern`</a><br/>
 
 
 ### `lineCap`
@@ -129,23 +127,6 @@ Used to automatically convert round joins to miter joins for shallow angles.
     </dd>
         <dt>Expression Parameters</dt>
         <dd><code>zoom</code></dd>
-</dl>
-
-
-
-### `lineSortKey`
-
-Sorts features in ascending order based on this value. Features with a higher sort key will appear above features with a lower sort key.
-
-<dl>
-    <dt>Type</dt>
-    <dd>
-        <code>number</code>
-    </dd>
-        </ul>
-    </dd>
-        <dt>Expression Parameters</dt>
-        <dd><code>zoom, feature</code></dd>
 </dl>
 
 
@@ -581,23 +562,4 @@ The transition affecting any changes to this layer’s linePattern property.
     <code>{duration: 300, delay: 0}</code>
   </dd>
 </dl>
-
-
-### `lineGradient`
-
-Defines a gradient with which to color a line feature. Can only be used with GeoJSON sources that specify `"lineMetrics": true`.
-
-<dl>
-    <dt>Type</dt>
-    <dd>
-        <code>color</code>
-    </dd>
-        </ul>
-    </dd>
-        <dt>Disabled By</dt>
-        <dd><code>lineDasharray, linePattern</code></dd>
-        <dt>Expression Parameters</dt>
-        <dd><code>line-progress</code></dd>
-</dl>
-
 

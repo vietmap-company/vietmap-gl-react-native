@@ -35,7 +35,7 @@ This package wraps MapLibre Native for Android and iOS, these are the currently 
 
 ## Installation
 
-Installing the `@maplibre/maplibre-react-native` package differs for Expo and bare React Native projects. Please follow
+Installing the `@vietmap/vietmap-gl-react-native` package differs for Expo and bare React Native projects. Please follow
 the guide corresponding to your app setup:
 
 - [Expo](/docs/guides/setup/Expo.md)
@@ -47,7 +47,7 @@ After completing the installation and rebuilding the app, you can start using th
 
 ```tsx
 import React from "react";
-import { MapView } from "@maplibre/maplibre-react-native";
+import { MapView } from "@vietmap/vietmap-gl-react-native";
 
 function App() {
   return <MapView style={{ flex: 1 }} />;

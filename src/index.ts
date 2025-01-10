@@ -1,7 +1,7 @@
-import * as MapLibreRN from "./MapLibreRN";
-export * from "./MapLibreRN";
+import * as VietmapGL from "./Vietmap";
+export * from "./Vietmap";
 
 /**
  * @deprecated Use named imports or `import * as MapLibreRN` instead
  */
-export default MapLibreRN;
+export default VietmapGL;

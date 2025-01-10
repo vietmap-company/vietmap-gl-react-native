@@ -1,4 +1,4 @@
-import { Camera, MapView, StyleURL } from "@maplibre/maplibre-react-native";
+import { Camera, MapView, StyleURL } from "@vietmap/vietmap-gl-react-native";
 import { isEqual } from "lodash";
 import React, { Component } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";

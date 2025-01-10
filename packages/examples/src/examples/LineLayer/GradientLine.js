@@ -3,7 +3,7 @@ import {
   LineLayer,
   MapView,
   ShapeSource,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import React, { Component } from "react";
 
 import { sheet } from "../../styles/sheet";

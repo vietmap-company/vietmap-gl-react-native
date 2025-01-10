@@ -18,7 +18,7 @@ import { type BaseProps } from "../types/BaseProps";
 import {
   type ExpressionField,
   type FilterExpression,
-} from "../types/MapLibreRNStyles";
+} from "../types/VietmapStyles";
 import { type OnPressEvent } from "../types/OnPressEvent";
 import {
   cloneReactChildrenWithProps,

@@ -6,7 +6,7 @@ import {
   useAbstractLayer,
 } from "../hooks/useAbstractLayer";
 import { type BaseProps } from "../types/BaseProps";
-import { type HeatmapLayerStyle } from "../types/MapLibreRNStyles";
+import { type HeatmapLayerStyle } from "../types/VietmapStyles";
 
 const MLRNModule = NativeModules.MLRNModule;
 

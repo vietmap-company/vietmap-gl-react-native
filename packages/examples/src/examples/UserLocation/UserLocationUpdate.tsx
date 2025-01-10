@@ -3,7 +3,7 @@ import {
   type Location,
   MapView,
   UserLocation,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import { useState } from "react";
 import { Text } from "react-native";
 

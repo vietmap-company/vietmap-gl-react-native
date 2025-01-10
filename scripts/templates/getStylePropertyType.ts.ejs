@@ -74,13 +74,17 @@ const STYLE_OVERRIDES = {
 };
 
 export function getStylePropertyType(styleProperty: keyof typeof STYLE_OVERRIDES): string {
-  if (!isAndroid() && STYLE_OVERRIDES[styleProperty]) {
-    return STYLE_OVERRIDES[styleProperty].iosType;
+
+  if (styleProperty in STYLE_OVERRIDES) {
+    if (!isAndroid() && styleProperty in STYLE_OVERRIDES) {
+      return STYLE_OVERRIDES[styleProperty as keyof typeof STYLE_OVERRIDES].iosType;
+    }
   }
 
-  if (STYLE_MAP[styleProperty]) {
-    return STYLE_MAP[styleProperty];
+  if (styleProperty in STYLE_MAP) {
+    if (STYLE_MAP[styleProperty as keyof typeof STYLE_MAP]) {
+      return STYLE_MAP[styleProperty  as keyof typeof STYLE_MAP];
+    }
   }
-
   throw new Error(`${styleProperty} is not a valid MapLibre layer style`);
 }

@@ -1,4 +1,4 @@
-import { MapView } from "@maplibre/maplibre-react-native";
+import { MapView } from "@vietmap/vietmap-gl-react-native";
 import { useState } from "react";
 import { Text } from "react-native";
 

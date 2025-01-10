@@ -9,7 +9,7 @@ import {
 import { useAbstractSource } from "../hooks/useAbstractSource";
 import { useNativeBridge } from "../hooks/useNativeBridge";
 import { type BaseProps } from "../types/BaseProps";
-import { type FilterExpression } from "../types/MapLibreRNStyles";
+import { type FilterExpression } from "../types/VietmapStyles";
 import { type OnPressEvent } from "../types/OnPressEvent";
 import { cloneReactChildrenWithProps, isFunction, isAndroid } from "../utils";
 import { getFilter } from "../utils/filterUtils";

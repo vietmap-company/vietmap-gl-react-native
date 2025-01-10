@@ -54,7 +54,7 @@ class ExampleGroup {
 }
 
 const Examples = new ExampleGroup(
-  "MapLibre React Native",
+  "VietMap GL React Native",
   [
     new ExampleItem("Bug Report", MapLibreExamples.BugReport),
     new ExampleGroup("Map", [

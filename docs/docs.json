@@ -541,10 +541,10 @@
         "required": false,
         "type": {
           "name": "func",
-          "funcSignature": "(event:MapLibreRNEvent) => void"
+          "funcSignature": "(event:VietmapGLEvent) => void"
         },
         "default": "none",
-        "description": "Triggered when `followUserLocation` or `followUserMode` changes\n*signature:*`(event:MapLibreRNEvent) => void`"
+        "description": "Triggered when `followUserLocation` or `followUserMode` changes\n*signature:*`(event:VietmapGLEvent) => void`"
       }
     ],
     "composes": [
@@ -582,22 +582,6 @@
     "filePath": "src/components/CircleLayer.tsx",
     "name": "CircleLayer",
     "styles": [
-      {
-        "name": "circleSortKey",
-        "type": "number",
-        "values": [],
-        "description": "Sorts features in ascending order based on this value. Features with a higher sort key will appear above features with a lower sort key.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom",
-            "feature"
-          ]
-        }
-      },
       {
         "name": "visibility",
         "type": "enum",
@@ -744,117 +728,6 @@
             "zoom"
           ]
         }
-      },
-      {
-        "name": "circlePitchScale",
-        "type": "enum",
-        "values": [
-          {
-            "value": "map",
-            "doc": "Circles are scaled according to their apparent distance to the camera."
-          },
-          {
-            "value": "viewport",
-            "doc": "Circles are not scaled."
-          }
-        ],
-        "default": "map",
-        "description": "Controls the scaling behavior of the circle when the map is pitched.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom"
-          ]
-        }
-      },
-      {
-        "name": "circlePitchAlignment",
-        "type": "enum",
-        "values": [
-          {
-            "value": "map",
-            "doc": "The circle is aligned to the plane of the map."
-          },
-          {
-            "value": "viewport",
-            "doc": "The circle is aligned to the plane of the viewport."
-          }
-        ],
-        "default": "viewport",
-        "description": "Orientation of circle when map is pitched.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom"
-          ]
-        }
-      },
-      {
-        "name": "circleStrokeWidth",
-        "type": "number",
-        "values": [],
-        "minimum": 0,
-        "units": "pixels",
-        "default": 0,
-        "description": "The width of the circle's stroke. Strokes are placed outside of the `circleRadius`.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom",
-            "feature",
-            "feature-state"
-          ]
-        },
-        "transition": true
-      },
-      {
-        "name": "circleStrokeColor",
-        "type": "color",
-        "values": [],
-        "default": "#000000",
-        "description": "The stroke color of the circle.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom",
-            "feature",
-            "feature-state"
-          ]
-        },
-        "transition": true
-      },
-      {
-        "name": "circleStrokeOpacity",
-        "type": "number",
-        "values": [],
-        "minimum": 0,
-        "maximum": 1,
-        "default": 1,
-        "description": "The opacity of the circle's stroke.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom",
-            "feature",
-            "feature-state"
-          ]
-        },
-        "transition": true
       }
     ]
   },
@@ -884,194 +757,7 @@
     ],
     "type": "component",
     "filePath": "src/components/FillExtrusionLayer.tsx",
-    "name": "FillExtrusionLayer",
-    "styles": [
-      {
-        "name": "visibility",
-        "type": "enum",
-        "values": [
-          {
-            "value": "visible",
-            "doc": "The layer is shown."
-          },
-          {
-            "value": "none",
-            "doc": "The layer is not shown."
-          }
-        ],
-        "default": "visible",
-        "description": "Whether this layer is displayed.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": []
-      },
-      {
-        "name": "fillExtrusionOpacity",
-        "type": "number",
-        "values": [],
-        "minimum": 0,
-        "maximum": 1,
-        "default": 1,
-        "description": "The opacity of the entire fill extrusion layer. This is rendered on a perLayer, not perFeature, basis, and dataDriven styling is not available.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom"
-          ]
-        },
-        "transition": true
-      },
-      {
-        "name": "fillExtrusionColor",
-        "type": "color",
-        "values": [],
-        "default": "#000000",
-        "description": "The base color of the extruded fill. The extrusion's surfaces will be shaded differently based on this color in combination with the root `light` settings. If this color is specified as `rgba` with an alpha component, the alpha component will be ignored; use `fillExtrusionOpacity` to set layer opacity.",
-        "requires": [],
-        "disabledBy": [
-          "fillExtrusionPattern"
-        ],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom",
-            "feature",
-            "feature-state"
-          ]
-        },
-        "transition": true
-      },
-      {
-        "name": "fillExtrusionTranslate",
-        "type": "array<number>",
-        "values": [],
-        "units": "pixels",
-        "default": [
-          0,
-          0
-        ],
-        "description": "The geometry's offset. Values are [x, y] where negatives indicate left and up (on the flat plane), respectively.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom"
-          ]
-        },
-        "transition": true
-      },
-      {
-        "name": "fillExtrusionTranslateAnchor",
-        "type": "enum",
-        "values": [
-          {
-            "value": "map",
-            "doc": "The fill extrusion is translated relative to the map."
-          },
-          {
-            "value": "viewport",
-            "doc": "The fill extrusion is translated relative to the viewport."
-          }
-        ],
-        "default": "map",
-        "description": "Controls the frame of reference for `fillExtrusionTranslate`.",
-        "requires": [
-          "fillExtrusionTranslate"
-        ],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom"
-          ]
-        }
-      },
-      {
-        "name": "fillExtrusionPattern",
-        "type": "resolvedImage",
-        "values": [],
-        "description": "Name of image in sprite to use for drawing images on extruded fills. For seamless patterns, image width and height must be a factor of two (2, 4, 8, ..., 512). Note that zoomDependent expressions will be evaluated only at integer zoom levels.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom",
-            "feature"
-          ]
-        },
-        "transition": true
-      },
-      {
-        "name": "fillExtrusionHeight",
-        "type": "number",
-        "values": [],
-        "minimum": 0,
-        "units": "meters",
-        "default": 0,
-        "description": "The height with which to extrude this layer.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom",
-            "feature",
-            "feature-state"
-          ]
-        },
-        "transition": true
-      },
-      {
-        "name": "fillExtrusionBase",
-        "type": "number",
-        "values": [],
-        "minimum": 0,
-        "units": "meters",
-        "default": 0,
-        "description": "The height with which to extrude the base of this layer. Must be less than or equal to `fillExtrusionHeight`.",
-        "requires": [
-          "fillExtrusionHeight"
-        ],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom",
-            "feature",
-            "feature-state"
-          ]
-        },
-        "transition": true
-      },
-      {
-        "name": "fillExtrusionVerticalGradient",
-        "type": "boolean",
-        "values": [],
-        "default": true,
-        "description": "Whether to apply a vertical gradient to the sides of a fillExtrusion layer. If true, sides will be shaded slightly darker farther down.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom"
-          ]
-        },
-        "transition": false
-      }
-    ]
+    "name": "FillExtrusionLayer"
   },
   "FillLayer": {
     "description": "FillLayer is a style layer that renders one or more filled (and optionally stroked) polygons on the map.",
@@ -1101,22 +787,6 @@
     "filePath": "src/components/FillLayer.tsx",
     "name": "FillLayer",
     "styles": [
-      {
-        "name": "fillSortKey",
-        "type": "number",
-        "values": [],
-        "description": "Sorts features in ascending order based on this value. Features with a higher sort key will appear above features with a lower sort key.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom",
-            "feature"
-          ]
-        }
-      },
       {
         "name": "visibility",
         "type": "enum",
@@ -1327,143 +997,7 @@
     ],
     "type": "component",
     "filePath": "src/components/HeatmapLayer.tsx",
-    "name": "HeatmapLayer",
-    "styles": [
-      {
-        "name": "visibility",
-        "type": "enum",
-        "values": [
-          {
-            "value": "visible",
-            "doc": "The layer is shown."
-          },
-          {
-            "value": "none",
-            "doc": "The layer is not shown."
-          }
-        ],
-        "default": "visible",
-        "description": "Whether this layer is displayed.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": []
-      },
-      {
-        "name": "heatmapRadius",
-        "type": "number",
-        "values": [],
-        "minimum": 1,
-        "units": "pixels",
-        "default": 30,
-        "description": "Radius of influence of one heatmap point in pixels. Increasing the value makes the heatmap smoother, but less detailed.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom",
-            "feature",
-            "feature-state"
-          ]
-        },
-        "transition": true
-      },
-      {
-        "name": "heatmapWeight",
-        "type": "number",
-        "values": [],
-        "minimum": 0,
-        "default": 1,
-        "description": "A measure of how much an individual point contributes to the heatmap. A value of 10 would be equivalent to having 10 points of weight 1 in the same spot. Especially useful when combined with clustering.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom",
-            "feature",
-            "feature-state"
-          ]
-        },
-        "transition": false
-      },
-      {
-        "name": "heatmapIntensity",
-        "type": "number",
-        "values": [],
-        "minimum": 0,
-        "default": 1,
-        "description": "Similar to `heatmapWeight` but controls the intensity of the heatmap globally. Primarily used for adjusting the heatmap based on zoom level.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom"
-          ]
-        },
-        "transition": true
-      },
-      {
-        "name": "heatmapColor",
-        "type": "color",
-        "values": [],
-        "default": [
-          "interpolate",
-          [
-            "linear"
-          ],
-          [
-            "heatmap-density"
-          ],
-          0,
-          "rgba(0, 0, 255, 0)",
-          0.1,
-          "royalblue",
-          0.3,
-          "cyan",
-          0.5,
-          "lime",
-          0.7,
-          "yellow",
-          1,
-          "red"
-        ],
-        "description": "Defines the color of each pixel based on its density value in a heatmap.  Should be an expression that uses `[\"heatmapDensity\"]` as input.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "heatmap-density"
-          ]
-        },
-        "transition": false
-      },
-      {
-        "name": "heatmapOpacity",
-        "type": "number",
-        "values": [],
-        "minimum": 0,
-        "maximum": 1,
-        "default": 1,
-        "description": "The global opacity at which the heatmap layer will be drawn.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom"
-          ]
-        },
-        "transition": true
-      }
-    ]
+    "name": "HeatmapLayer"
   },
   "ImageSource": {
     "description": "ImageSource is a content source that is used for a georeferenced raster image to be shown on the map.\nThe georeferenced image scales and rotates as the user zooms and rotates the map",
@@ -1580,91 +1114,7 @@
     "type": "component",
     "filePath": "src/components/Light.tsx",
     "name": "Light",
-    "styles": [
-      {
-        "name": "anchor",
-        "type": "enum",
-        "values": [
-          {
-            "value": "map",
-            "doc": "The position of the light source is aligned to the rotation of the map."
-          },
-          {
-            "value": "viewport",
-            "doc": "The position of the light source is aligned to the rotation of the viewport."
-          }
-        ],
-        "default": "viewport",
-        "description": "Whether extruded geometries are lit relative to the map or viewport.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom"
-          ]
-        },
-        "transition": false
-      },
-      {
-        "name": "position",
-        "type": "array<number>",
-        "values": [],
-        "default": [
-          1.15,
-          210,
-          30
-        ],
-        "description": "Position of the light source relative to lit (extruded) geometries, in [r radial coordinate, a azimuthal angle, p polar angle] where r indicates the distance from the center of the base of an object to its light, a indicates the position of the light relative to 0° (0° when `light.anchor` is set to `viewport` corresponds to the top of the viewport, or 0° when `light.anchor` is set to `map` corresponds to due north, and degrees proceed clockwise), and p indicates the height of the light (from 0°, directly above, to 180°, directly below).",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom"
-          ]
-        },
-        "transition": true
-      },
-      {
-        "name": "color",
-        "type": "color",
-        "values": [],
-        "default": "#ffffff",
-        "description": "Color tint for lighting extruded geometries.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom"
-          ]
-        },
-        "transition": true
-      },
-      {
-        "name": "intensity",
-        "type": "number",
-        "values": [],
-        "minimum": 0,
-        "maximum": 1,
-        "default": 0.5,
-        "description": "Intensity of lighting (on a scale from 0 to 1). Higher numbers will present as more extreme contrast.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom"
-          ]
-        },
-        "transition": true
-      }
-    ]
+    "styles": []
   },
   "LineLayer": {
     "description": "LineLayer is a style layer that renders one or more stroked polylines on the map.",
@@ -1784,22 +1234,6 @@
           "interpolated": true,
           "parameters": [
             "zoom"
-          ]
-        }
-      },
-      {
-        "name": "lineSortKey",
-        "type": "number",
-        "values": [],
-        "description": "Sorts features in ascending order based on this value. Features with a higher sort key will appear above features with a lower sort key.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom",
-            "feature"
           ]
         }
       },
@@ -2033,25 +1467,6 @@
           ]
         },
         "transition": true
-      },
-      {
-        "name": "lineGradient",
-        "type": "color",
-        "values": [],
-        "description": "Defines a gradient with which to color a line feature. Can only be used with GeoJSON sources that specify `\"lineMetrics\": true`.",
-        "requires": [],
-        "disabledBy": [
-          "lineDasharray",
-          "linePattern"
-        ],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "line-progress"
-          ]
-        },
-        "transition": false
       }
     ]
   },
@@ -2457,7 +1872,7 @@
         "name": "attributionEnabled",
         "required": false,
         "type": "boolean",
-        "default": "true",
+        "default": "false",
         "description": "Enable/Disable attribution on map.\n\nThis must be enabled for Mapbox-hosted tiles and styles. Please refer to the Mapbox Terms of Service.\nOther providers do not require this."
       },
       {
@@ -2478,7 +1893,7 @@
         "name": "logoEnabled",
         "required": false,
         "type": "boolean",
-        "default": "false",
+        "default": "true",
         "description": "Enable/Disable the logo on the map."
       },
       {
@@ -3246,31 +2661,6 @@
         "transition": true
       },
       {
-        "name": "rasterResampling",
-        "type": "enum",
-        "values": [
-          {
-            "value": "linear",
-            "doc": "(Bi)linear filtering interpolates pixel values using the weighted average of the four closest original source pixels creating a smooth but blurry look when overscaled"
-          },
-          {
-            "value": "nearest",
-            "doc": "Nearest neighbor filtering interpolates pixel values using the nearest original source pixel creating a sharp but pixelated look when overscaled"
-          }
-        ],
-        "default": "linear",
-        "description": "The resampling/interpolation method to use for overscaling, also known as texture magnification filter",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom"
-          ]
-        }
-      },
-      {
         "name": "rasterFadeDuration",
         "type": "number",
         "values": [],
@@ -3801,51 +3191,6 @@
         }
       },
       {
-        "name": "symbolSortKey",
-        "type": "number",
-        "values": [],
-        "description": "Sorts features in ascending order based on this value. Features with lower sort keys are drawn and placed first.  When `iconAllowOverlap` or `textAllowOverlap` is `false`, features with a lower sort key will have priority during placement. When `iconAllowOverlap` or `textAllowOverlap` is set to `true`, features with a higher sort key will overlap over features with a lower sort key.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom",
-            "feature"
-          ]
-        }
-      },
-      {
-        "name": "symbolZOrder",
-        "type": "enum",
-        "values": [
-          {
-            "value": "auto",
-            "doc": "Sorts symbols by `symbol-sort-key` if set. Otherwise, sorts symbols by their y-position relative to the viewport if `icon-allow-overlap` or `text-allow-overlap` is set to `true` or `icon-ignore-placement` or `text-ignore-placement` is `false`."
-          },
-          {
-            "value": "viewport-y",
-            "doc": "Sorts symbols by their y-position relative to the viewport if `icon-allow-overlap` or `text-allow-overlap` is set to `true` or `icon-ignore-placement` or `text-ignore-placement` is `false`."
-          },
-          {
-            "value": "source",
-            "doc": "Sorts symbols by `symbol-sort-key` if set. Otherwise, no sorting is applied; symbols are rendered in the same order as the source data."
-          }
-        ],
-        "default": "auto",
-        "description": "Determines whether overlapping symbols in the same layer are rendered in the order that they appear in the data source or by their yPosition relative to the viewport. To control the order and prioritization of symbols otherwise, use `symbolSortKey`.",
-        "requires": [],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom"
-          ]
-        }
-      },
-      {
         "name": "iconAllowOverlap",
         "type": "boolean",
         "values": [],
@@ -3955,67 +3300,6 @@
         }
       },
       {
-        "name": "iconTextFit",
-        "type": "enum",
-        "values": [
-          {
-            "value": "none",
-            "doc": "The icon is displayed at its intrinsic aspect ratio."
-          },
-          {
-            "value": "width",
-            "doc": "The icon is scaled in the x-dimension to fit the width of the text."
-          },
-          {
-            "value": "height",
-            "doc": "The icon is scaled in the y-dimension to fit the height of the text."
-          },
-          {
-            "value": "both",
-            "doc": "The icon is scaled in both x- and y-dimensions."
-          }
-        ],
-        "default": "none",
-        "description": "Scales the icon to fit around the associated text.",
-        "requires": [
-          "iconImage",
-          "textField"
-        ],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom"
-          ]
-        }
-      },
-      {
-        "name": "iconTextFitPadding",
-        "type": "array<number>",
-        "values": [],
-        "units": "pixels",
-        "default": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "description": "Size of the additional area added to dimensions determined by `iconTextFit`, in clockwise order: top, right, bottom, left.",
-        "requires": [
-          "iconImage",
-          "textField"
-        ],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom"
-          ]
-        }
-      },
-      {
         "name": "iconImage",
         "type": "resolvedImage",
         "values": [],
@@ -4110,124 +3394,6 @@
           "parameters": [
             "zoom",
             "feature"
-          ]
-        }
-      },
-      {
-        "name": "iconAnchor",
-        "type": "enum",
-        "values": [
-          {
-            "value": "center",
-            "doc": "The center of the icon is placed closest to the anchor."
-          },
-          {
-            "value": "left",
-            "doc": "The left side of the icon is placed closest to the anchor."
-          },
-          {
-            "value": "right",
-            "doc": "The right side of the icon is placed closest to the anchor."
-          },
-          {
-            "value": "top",
-            "doc": "The top of the icon is placed closest to the anchor."
-          },
-          {
-            "value": "bottom",
-            "doc": "The bottom of the icon is placed closest to the anchor."
-          },
-          {
-            "value": "top-left",
-            "doc": "The top left corner of the icon is placed closest to the anchor."
-          },
-          {
-            "value": "top-right",
-            "doc": "The top right corner of the icon is placed closest to the anchor."
-          },
-          {
-            "value": "bottom-left",
-            "doc": "The bottom left corner of the icon is placed closest to the anchor."
-          },
-          {
-            "value": "bottom-right",
-            "doc": "The bottom right corner of the icon is placed closest to the anchor."
-          }
-        ],
-        "default": "center",
-        "description": "Part of the icon placed closest to the anchor.",
-        "requires": [
-          "iconImage"
-        ],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom",
-            "feature"
-          ]
-        }
-      },
-      {
-        "name": "iconPitchAlignment",
-        "type": "enum",
-        "values": [
-          {
-            "value": "map",
-            "doc": "The icon is aligned to the plane of the map."
-          },
-          {
-            "value": "viewport",
-            "doc": "The icon is aligned to the plane of the viewport."
-          },
-          {
-            "value": "auto",
-            "doc": "Automatically matches the value of `icon-rotation-alignment`."
-          }
-        ],
-        "default": "auto",
-        "description": "Orientation of icon when map is pitched.",
-        "requires": [
-          "iconImage"
-        ],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom"
-          ]
-        }
-      },
-      {
-        "name": "textPitchAlignment",
-        "type": "enum",
-        "values": [
-          {
-            "value": "map",
-            "doc": "The text is aligned to the plane of the map."
-          },
-          {
-            "value": "viewport",
-            "doc": "The text is aligned to the plane of the viewport."
-          },
-          {
-            "value": "auto",
-            "doc": "Automatically matches the value of `text-rotation-alignment`."
-          }
-        ],
-        "default": "auto",
-        "description": "Orientation of text when map is pitched.",
-        "requires": [
-          "textField"
-        ],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom"
           ]
         }
       },
@@ -4431,43 +3597,6 @@
         }
       },
       {
-        "name": "textRadialOffset",
-        "type": "number",
-        "values": [],
-        "units": "ems",
-        "default": 0,
-        "description": "Radial offset of text, in the direction of the symbol's anchor. Useful in combination with `textVariableAnchor`, which defaults to using the twoDimensional `textOffset` if present.",
-        "requires": [
-          "textField"
-        ],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": true,
-          "parameters": [
-            "zoom",
-            "feature"
-          ]
-        }
-      },
-      {
-        "name": "textVariableAnchor",
-        "type": "array<enum>",
-        "values": [],
-        "description": "To increase the chance of placing highPriority labels on the map, you can provide an array of `textAnchor` locations: the renderer will attempt to place the label at each location, in order, before moving onto the next label. Use `textJustify: auto` to choose justification based on anchor position. To apply an offset, use the `textRadialOffset` or the twoDimensional `textOffset`.",
-        "requires": [
-          "textField"
-        ],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
-          "parameters": [
-            "zoom"
-          ]
-        }
-      },
-      {
         "name": "textAnchor",
         "type": "enum",
         "values": [
@@ -4541,23 +3670,6 @@
         "allowedFunctionTypes": [],
         "expression": {
           "interpolated": true,
-          "parameters": [
-            "zoom"
-          ]
-        }
-      },
-      {
-        "name": "textWritingMode",
-        "type": "array<enum>",
-        "values": [],
-        "description": "The property allows control over a symbol's orientation. Note that the property values act as a hint, so that a symbol whose language doesn’t support the provided orientation will be laid out in its natural orientation. Example: English point symbol will be rendered horizontally even if array value contains single 'vertical' enum value. The order of elements in an array define priority order for the placement of an orientation variant.",
-        "requires": [
-          "textField"
-        ],
-        "disabledBy": [],
-        "allowedFunctionTypes": [],
-        "expression": {
-          "interpolated": false,
           "parameters": [
             "zoom"
           ]

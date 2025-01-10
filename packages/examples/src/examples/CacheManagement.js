@@ -1,4 +1,4 @@
-import { MapView, OfflineManager } from "@maplibre/maplibre-react-native";
+import { MapView, OfflineManager } from "@vietmap/vietmap-gl-react-native";
 import React, { Component } from "react";
 import {
   Alert,

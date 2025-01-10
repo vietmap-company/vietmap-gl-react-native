@@ -1,7 +1,7 @@
 import {
   Animated as MLRNAnimated,
   type CircleLayerStyle,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import { useEffect, useRef } from "react";
 import { Animated } from "react-native";
 

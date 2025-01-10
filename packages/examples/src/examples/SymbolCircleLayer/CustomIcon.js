@@ -2,7 +2,7 @@ import {
   MapView,
   ShapeSource,
   SymbolLayer,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import { feature, featureCollection } from "@turf/helpers";
 import React, { Component } from "react";
 import { Text } from "react-native";

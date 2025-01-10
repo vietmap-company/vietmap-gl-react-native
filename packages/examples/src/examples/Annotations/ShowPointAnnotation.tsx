@@ -6,7 +6,7 @@ import {
   PointAnnotation,
   type PointAnnotationRef,
   ShapeSource,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import { type ReactNode, useRef, useState } from "react";
 import {
   Image,

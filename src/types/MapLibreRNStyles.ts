@@ -137,10 +137,6 @@ export type Value<T, AllowedParameters extends ExpressionParameters[] = []> =
 
 export interface FillLayerStyle {
   /**
-   * Sorts features in ascending order based on this value. Features with a higher sort key will appear above features with a lower sort key.
-   */
-  fillSortKey?: Value<number, ["zoom", "feature"]>;
-  /**
    * Whether this layer is displayed.
    */
   visibility?: "visible" | "none";
@@ -221,10 +217,6 @@ export interface LineLayerStyle {
    * Used to automatically convert round joins to miter joins for shallow angles.
    */
   lineRoundLimit?: Value<number, ["zoom"]>;
-  /**
-   * Sorts features in ascending order based on this value. Features with a higher sort key will appear above features with a lower sort key.
-   */
-  lineSortKey?: Value<number, ["zoom", "feature"]>;
   /**
    * Whether this layer is displayed.
    */
@@ -320,12 +312,6 @@ export interface LineLayerStyle {
    * The transition affecting any changes to this layer’s linePattern property.
    */
   linePatternTransition?: Transition;
-  /**
-   * Defines a gradient with which to color a line feature. Can only be used with GeoJSON sources that specify `"lineMetrics": true`.
-   *
-   * @disabledBy lineDasharray, linePattern
-   */
-  lineGradient?: Value<string, ["line-progress"]>;
 }
 export interface SymbolLayerStyle {
   /**
@@ -340,14 +326,6 @@ export interface SymbolLayerStyle {
    * If true, the symbols will not cross tile edges to avoid mutual collisions. Recommended in layers that don't have enough padding in the vector tile to prevent collisions, or if it is a point symbol layer placed after a line symbol layer. When using a client that supports global collision detection, like MapLibre GL JS version 0.42.0 or greater, enabling this property is not needed to prevent clipped labels at tile boundaries.
    */
   symbolAvoidEdges?: Value<boolean, ["zoom"]>;
-  /**
-   * Sorts features in ascending order based on this value. Features with lower sort keys are drawn and placed first.  When `iconAllowOverlap` or `textAllowOverlap` is `false`, features with a lower sort key will have priority during placement. When `iconAllowOverlap` or `textAllowOverlap` is set to `true`, features with a higher sort key will overlap over features with a lower sort key.
-   */
-  symbolSortKey?: Value<number, ["zoom", "feature"]>;
-  /**
-   * Determines whether overlapping symbols in the same layer are rendered in the order that they appear in the data source or by their yPosition relative to the viewport. To control the order and prioritization of symbols otherwise, use `symbolSortKey`.
-   */
-  symbolZOrder?: Value<"auto" | "viewport-y" | "source", ["zoom"]>;
   /**
    * If true, the icon will be visible even if it collides with other previously drawn symbols.
    *
@@ -381,18 +359,6 @@ export interface SymbolLayerStyle {
    */
   iconSize?: Value<number, ["zoom", "feature"]>;
   /**
-   * Scales the icon to fit around the associated text.
-   *
-   * @requires iconImage, textField
-   */
-  iconTextFit?: Value<"none" | "width" | "height" | "both", ["zoom"]>;
-  /**
-   * Size of the additional area added to dimensions determined by `iconTextFit`, in clockwise order: top, right, bottom, left.
-   *
-   * @requires iconImage, textField
-   */
-  iconTextFitPadding?: Value<number[], ["zoom"]>;
-  /**
    * Name of image in sprite to use for drawing an image background.
    */
   iconImage?: Value<ResolvedImageType, ["zoom", "feature"]>;
@@ -420,35 +386,6 @@ export interface SymbolLayerStyle {
    * @requires iconImage
    */
   iconOffset?: Value<number[], ["zoom", "feature"]>;
-  /**
-   * Part of the icon placed closest to the anchor.
-   *
-   * @requires iconImage
-   */
-  iconAnchor?: Value<
-    | "center"
-    | "left"
-    | "right"
-    | "top"
-    | "bottom"
-    | "top-left"
-    | "top-right"
-    | "bottom-left"
-    | "bottom-right",
-    ["zoom", "feature"]
-  >;
-  /**
-   * Orientation of icon when map is pitched.
-   *
-   * @requires iconImage
-   */
-  iconPitchAlignment?: Value<"map" | "viewport" | "auto", ["zoom"]>;
-  /**
-   * Orientation of text when map is pitched.
-   *
-   * @requires textField
-   */
-  textPitchAlignment?: Value<"map" | "viewport" | "auto", ["zoom"]>;
   /**
    * In combination with `symbolPlacement`, determines the rotation behavior of the individual glyphs forming the text.
    *
@@ -502,31 +439,6 @@ export interface SymbolLayerStyle {
     ["zoom", "feature"]
   >;
   /**
-   * Radial offset of text, in the direction of the symbol's anchor. Useful in combination with `textVariableAnchor`, which defaults to using the twoDimensional `textOffset` if present.
-   *
-   * @requires textField
-   */
-  textRadialOffset?: Value<number, ["zoom", "feature"]>;
-  /**
-   * To increase the chance of placing highPriority labels on the map, you can provide an array of `textAnchor` locations: the renderer will attempt to place the label at each location, in order, before moving onto the next label. Use `textJustify: auto` to choose justification based on anchor position. To apply an offset, use the `textRadialOffset` or the twoDimensional `textOffset`.
-   *
-   * @requires textField
-   */
-  textVariableAnchor?: Value<
-    (
-      | "center"
-      | "left"
-      | "right"
-      | "top"
-      | "bottom"
-      | "top-left"
-      | "top-right"
-      | "bottom-left"
-      | "bottom-right"
-    )[],
-    ["zoom"]
-  >;
-  /**
    * Part of the text placed closest to the anchor.
    *
    * @requires textField
@@ -551,12 +463,6 @@ export interface SymbolLayerStyle {
    * @requires textField
    */
   textMaxAngle?: Value<number, ["zoom"]>;
-  /**
-   * The property allows control over a symbol's orientation. Note that the property values act as a hint, so that a symbol whose language doesn’t support the provided orientation will be laid out in its natural orientation. Example: English point symbol will be rendered horizontally even if array value contains single 'vertical' enum value. The order of elements in an array define priority order for the placement of an orientation variant.
-   *
-   * @requires textField
-   */
-  textWritingMode?: Value<("horizontal" | "vertical")[], ["zoom"]>;
   /**
    * Rotates the text clockwise.
    *
@@ -765,10 +671,6 @@ The unit is in pixels only for SDF sprites that were created with a blur radius 
 }
 export interface CircleLayerStyle {
   /**
-   * Sorts features in ascending order based on this value. Features with a higher sort key will appear above features with a lower sort key.
-   */
-  circleSortKey?: Value<number, ["zoom", "feature"]>;
-  /**
    * Whether this layer is displayed.
    */
   visibility?: "visible" | "none";
@@ -823,156 +725,6 @@ export interface CircleLayerStyle {
    * @requires circleTranslate
    */
   circleTranslateAnchor?: Value<"map" | "viewport", ["zoom"]>;
-  /**
-   * Controls the scaling behavior of the circle when the map is pitched.
-   */
-  circlePitchScale?: Value<"map" | "viewport", ["zoom"]>;
-  /**
-   * Orientation of circle when map is pitched.
-   */
-  circlePitchAlignment?: Value<"map" | "viewport", ["zoom"]>;
-  /**
-   * The width of the circle's stroke. Strokes are placed outside of the `circleRadius`.
-   */
-  circleStrokeWidth?: Value<number, ["zoom", "feature", "feature-state"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s circleStrokeWidth property.
-   */
-  circleStrokeWidthTransition?: Transition;
-  /**
-   * The stroke color of the circle.
-   */
-  circleStrokeColor?: Value<string, ["zoom", "feature", "feature-state"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s circleStrokeColor property.
-   */
-  circleStrokeColorTransition?: Transition;
-  /**
-   * The opacity of the circle's stroke.
-   */
-  circleStrokeOpacity?: Value<number, ["zoom", "feature", "feature-state"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s circleStrokeOpacity property.
-   */
-  circleStrokeOpacityTransition?: Transition;
-}
-export interface HeatmapLayerStyle {
-  /**
-   * Whether this layer is displayed.
-   */
-  visibility?: "visible" | "none";
-  /**
-   * Radius of influence of one heatmap point in pixels. Increasing the value makes the heatmap smoother, but less detailed.
-   */
-  heatmapRadius?: Value<number, ["zoom", "feature", "feature-state"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s heatmapRadius property.
-   */
-  heatmapRadiusTransition?: Transition;
-  /**
-   * A measure of how much an individual point contributes to the heatmap. A value of 10 would be equivalent to having 10 points of weight 1 in the same spot. Especially useful when combined with clustering.
-   */
-  heatmapWeight?: Value<number, ["zoom", "feature", "feature-state"]>;
-  /**
-   * Similar to `heatmapWeight` but controls the intensity of the heatmap globally. Primarily used for adjusting the heatmap based on zoom level.
-   */
-  heatmapIntensity?: Value<number, ["zoom"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s heatmapIntensity property.
-   */
-  heatmapIntensityTransition?: Transition;
-  /**
-   * Defines the color of each pixel based on its density value in a heatmap.  Should be an expression that uses `["heatmapDensity"]` as input.
-   */
-  heatmapColor?: Value<string, ["heatmap-density"]>;
-  /**
-   * The global opacity at which the heatmap layer will be drawn.
-   */
-  heatmapOpacity?: Value<number, ["zoom"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s heatmapOpacity property.
-   */
-  heatmapOpacityTransition?: Transition;
-}
-export interface FillExtrusionLayerStyle {
-  /**
-   * Whether this layer is displayed.
-   */
-  visibility?: "visible" | "none";
-  /**
-   * The opacity of the entire fill extrusion layer. This is rendered on a perLayer, not perFeature, basis, and dataDriven styling is not available.
-   */
-  fillExtrusionOpacity?: Value<number, ["zoom"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s fillExtrusionOpacity property.
-   */
-  fillExtrusionOpacityTransition?: Transition;
-  /**
-   * The base color of the extruded fill. The extrusion's surfaces will be shaded differently based on this color in combination with the root `light` settings. If this color is specified as `rgba` with an alpha component, the alpha component will be ignored; use `fillExtrusionOpacity` to set layer opacity.
-   *
-   * @disabledBy fillExtrusionPattern
-   */
-  fillExtrusionColor?: Value<string, ["zoom", "feature", "feature-state"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s fillExtrusionColor property.
-   */
-  fillExtrusionColorTransition?: Transition;
-  /**
-   * The geometry's offset. Values are [x, y] where negatives indicate left and up (on the flat plane), respectively.
-   */
-  fillExtrusionTranslate?: Value<Translation, ["zoom"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s fillExtrusionTranslate property.
-   */
-  fillExtrusionTranslateTransition?: Transition;
-  /**
-   * Controls the frame of reference for `fillExtrusionTranslate`.
-   *
-   * @requires fillExtrusionTranslate
-   */
-  fillExtrusionTranslateAnchor?: Value<"map" | "viewport", ["zoom"]>;
-  /**
-   * Name of image in sprite to use for drawing images on extruded fills. For seamless patterns, image width and height must be a factor of two (2, 4, 8, ..., 512). Note that zoomDependent expressions will be evaluated only at integer zoom levels.
-   */
-  fillExtrusionPattern?: Value<ResolvedImageType, ["zoom", "feature"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s fillExtrusionPattern property.
-   */
-  fillExtrusionPatternTransition?: Transition;
-  /**
-   * The height with which to extrude this layer.
-   */
-  fillExtrusionHeight?: Value<number, ["zoom", "feature", "feature-state"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s fillExtrusionHeight property.
-   */
-  fillExtrusionHeightTransition?: Transition;
-  /**
-   * The height with which to extrude the base of this layer. Must be less than or equal to `fillExtrusionHeight`.
-   *
-   * @requires fillExtrusionHeight
-   */
-  fillExtrusionBase?: Value<number, ["zoom", "feature", "feature-state"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s fillExtrusionBase property.
-   */
-  fillExtrusionBaseTransition?: Transition;
-  /**
-   * Whether to apply a vertical gradient to the sides of a fillExtrusion layer. If true, sides will be shaded slightly darker farther down.
-   */
-  fillExtrusionVerticalGradient?: Value<boolean, ["zoom"]>;
 }
 export interface RasterLayerStyle {
   /**
@@ -1034,63 +786,9 @@ export interface RasterLayerStyle {
    */
   rasterContrastTransition?: Transition;
   /**
-   * The resampling/interpolation method to use for overscaling, also known as texture magnification filter
-   */
-  rasterResampling?: Value<"linear" | "nearest", ["zoom"]>;
-  /**
    * Fade duration when a new tile is added, or when a video is started or its coordinates are updated.
    */
   rasterFadeDuration?: Value<number, ["zoom"]>;
-}
-export interface HillshadeLayerStyle {
-  /**
-   * Whether this layer is displayed.
-   */
-  visibility?: "visible" | "none";
-  /**
-   * The direction of the light source used to generate the hillshading with 0 as the top of the viewport if `hillshadeIlluminationAnchor` is set to `viewport` and due north if `hillshadeIlluminationAnchor` is set to `map`.
-   */
-  hillshadeIlluminationDirection?: Value<number, ["zoom"]>;
-  /**
-   * Direction of light source when map is rotated.
-   */
-  hillshadeIlluminationAnchor?: Value<"map" | "viewport", ["zoom"]>;
-  /**
-   * Intensity of the hillshade
-   */
-  hillshadeExaggeration?: Value<number, ["zoom"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s hillshadeExaggeration property.
-   */
-  hillshadeExaggerationTransition?: Transition;
-  /**
-   * The shading color of areas that face away from the light source.
-   */
-  hillshadeShadowColor?: Value<string, ["zoom"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s hillshadeShadowColor property.
-   */
-  hillshadeShadowColorTransition?: Transition;
-  /**
-   * The shading color of areas that faces towards the light source.
-   */
-  hillshadeHighlightColor?: Value<string, ["zoom"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s hillshadeHighlightColor property.
-   */
-  hillshadeHighlightColorTransition?: Transition;
-  /**
-   * The shading color used to accentuate rugged terrain like sharp cliffs and gorges.
-   */
-  hillshadeAccentColor?: Value<string, ["zoom"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s hillshadeAccentColor property.
-   */
-  hillshadeAccentColorTransition?: Transition;
 }
 export interface BackgroundLayerStyle {
   /**
@@ -1127,48 +825,13 @@ export interface BackgroundLayerStyle {
    */
   backgroundOpacityTransition?: Transition;
 }
-export interface LightLayerStyle {
-  /**
-   * Whether extruded geometries are lit relative to the map or viewport.
-   */
-  anchor?: Value<"map" | "viewport", ["zoom"]>;
-  /**
-   * Position of the light source relative to lit (extruded) geometries, in [r radial coordinate, a azimuthal angle, p polar angle] where r indicates the distance from the center of the base of an object to its light, a indicates the position of the light relative to 0° (0° when `light.anchor` is set to `viewport` corresponds to the top of the viewport, or 0° when `light.anchor` is set to `map` corresponds to due north, and degrees proceed clockwise), and p indicates the height of the light (from 0°, directly above, to 180°, directly below).
-   */
-  position?: Value<number[], ["zoom"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s position property.
-   */
-  positionTransition?: Transition;
-  /**
-   * Color tint for lighting extruded geometries.
-   */
-  color?: Value<string, ["zoom"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s color property.
-   */
-  colorTransition?: Transition;
-  /**
-   * Intensity of lighting (on a scale from 0 to 1). Higher numbers will present as more extreme contrast.
-   */
-  intensity?: Value<number, ["zoom"]>;
-
-  /**
-   * The transition affecting any changes to this layer’s intensity property.
-   */
-  intensityTransition?: Transition;
-}
+export interface LightLayerStyle {}
 
 export type AllLayerStyle =
   | FillLayerStyle
   | LineLayerStyle
   | SymbolLayerStyle
   | CircleLayerStyle
-  | HeatmapLayerStyle
-  | FillExtrusionLayerStyle
   | RasterLayerStyle
-  | HillshadeLayerStyle
   | BackgroundLayerStyle
   | LightLayerStyle;

@@ -2,6 +2,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 
 async function getNativeVersion(pathSegments: string[], regex: RegExp) {
+  return "3.3.0";
   const resolvedFilePath = path.join(__dirname, "..", "..", ...pathSegments);
   const lines = (await fs.readFile(resolvedFilePath, "utf8")).split("\n");
   const line = lines.filter((i) => regex.exec(i))[0];
@@ -21,7 +22,7 @@ export const getAndroidVersion = async () => {
   if (!cachedAndroidVersion) {
     cachedAndroidVersion = await getNativeVersion(
       ["android", "build.gradle"],
-      /^\s+implementation\s+"org.maplibre.gl:android-sdk:(\d+\.\d+\.\d+)"$/,
+      /^\s+implementation\s+"com.github.vietmap-company:maps-sdk-android:(\d+\.\d+\.\d+)"$/,
     );
   }
 
@@ -31,7 +32,7 @@ export const getAndroidVersion = async () => {
 export const getIosVersion = async () => {
   if (!cachedIosVersion) {
     cachedIosVersion = await getNativeVersion(
-      ["maplibre-react-native.podspec"],
+      ["vietmap-react-native.podspec"],
       /^\s+version:\s*"(\d+\.\d+\.\d+)"$/,
     );
   }

@@ -6,7 +6,7 @@ import {
   type ShapeSourceRef,
   SymbolLayer,
   type SymbolLayerStyle,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import moment from "moment";
 import { useRef, useState } from "react";
 import {

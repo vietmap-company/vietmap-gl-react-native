@@ -2,7 +2,7 @@ import {
   Camera,
   MapView,
   PointAnnotation,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 

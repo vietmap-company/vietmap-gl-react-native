@@ -1,9 +1,9 @@
 # React Native Setup
 
-First install `@maplibre/maplibre-react-native` with the package manager of your choice, e.g. with `yarn`:
+First install `@vietmap/vietmap-gl-react-native` with the package manager of your choice, e.g. with `yarn`:
 
 ```shell
-yarn add @maplibre/maplibre-react-native
+yarn add @vietmap/vietmap-gl-react-native
 ```
 
 ## Android

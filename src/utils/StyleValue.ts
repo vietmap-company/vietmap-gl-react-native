@@ -6,7 +6,7 @@ import {
   type StyleValueJSON,
 } from "./BridgeValue";
 import { getStylePropertyType } from "./getStylePropertyType";
-import { type AllLayerStyle } from "../types/MapLibreRNStyles";
+import { type AllLayerStyle } from "../types/VietmapStyles";
 
 export type StyleValue = {
   styletype: string;
@@ -30,7 +30,7 @@ export function transformStyle(
       const color = processColor(rawStyle);
       if (color === null || color === undefined || typeof color === "symbol") {
         console.error(
-          `@maplibre/maplibre-react-native: Invalid color value ${rawStyle}, using #ff0000 (red) instead`,
+          `@vietmap/vietmap-gl-react-native: Invalid color value ${rawStyle}, using #ff0000 (red) instead`,
         );
         rawStyle = "ff0000";
       } else {

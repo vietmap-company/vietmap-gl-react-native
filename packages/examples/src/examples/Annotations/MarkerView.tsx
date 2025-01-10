@@ -3,7 +3,7 @@ import {
   MapView,
   MarkerView,
   PointAnnotation,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { sheet } from "../../styles/sheet";

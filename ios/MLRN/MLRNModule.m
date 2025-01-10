@@ -92,7 +92,7 @@ RCT_EXPORT_MODULE();
 
 /**
 * @deprecated This will be removed in the next major version.
-* @see https://github.com/maplibre/maplibre-react-native/issues/25#issuecomment-1382382044
+* @see https://github.com/vietmap-company/vietmap-gl-react-native/issues/25#issuecomment-1382382044
 */
 RCT_EXPORT_METHOD(setAccessToken:(NSString *)accessToken)
 {
@@ -113,7 +113,7 @@ RCT_EXPORT_METHOD(removeCustomHeader:(NSString *)headerName)
 
 /**
 * @deprecated This will be removed in the next major version.
-* @see https://github.com/maplibre/maplibre-react-native/issues/25#issuecomment-1382382044
+* @see https://github.com/vietmap-company/vietmap-gl-react-native/issues/25#issuecomment-1382382044
 */
 RCT_EXPORT_METHOD(getAccessToken:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {

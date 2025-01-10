@@ -38,7 +38,7 @@ public class MLRNFillExtrusionLayer extends MLRNLayer<FillExtrusionLayer> {
 
     @Override
     public void addStyles() {
-        MLRNStyleFactory.setFillExtrusionLayerStyle(mLayer, new MLRNStyle(getContext(), mReactStyle, mMap));
+//        MLRNStyleFactory.setFillIn(mLayer, new MLRNStyle(getContext(), mReactStyle, mMap));
     }
 
     public void setSourceLayerID(String sourceLayerID) {

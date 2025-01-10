@@ -19,8 +19,7 @@
 * <a href="#name-4">`rasterBrightnessMax`</a><br/>
 * <a href="#name-5">`rasterSaturation`</a><br/>
 * <a href="#name-6">`rasterContrast`</a><br/>
-* <a href="#name-7">`rasterResampling`</a><br/>
-* <a href="#name-8">`rasterFadeDuration`</a><br/>
+* <a href="#name-7">`rasterFadeDuration`</a><br/>
 
 
 ### `visibility`
@@ -303,34 +302,6 @@ The transition affecting any changes to this layer’s rasterContrast property.
     <code>{duration: 300, delay: 0}</code>
   </dd>
 </dl>
-
-
-### `rasterResampling`
-
-The resampling/interpolation method to use for overscaling, also known as texture magnification filter
-
-<dl>
-    <dt>Type</dt>
-    <dd>
-        <code>enum</code>
-    </dd>
-        <dt>Default Value</dt>
-        <dd><code>linear</code></dd>
-    <dt>Supported Values</dt>
-    <dd>
-        <ul>
-                <li>
-                    <code>linear</code>: (Bi)linear filtering interpolates pixel values using the weighted average of the four closest original source pixels creating a smooth but blurry look when overscaled
-                </li>
-                <li>
-                    <code>nearest</code>: Nearest neighbor filtering interpolates pixel values using the nearest original source pixel creating a sharp but pixelated look when overscaled
-                </li>
-        </ul>
-    </dd>
-        <dt>Expression Parameters</dt>
-        <dd><code>zoom</code></dd>
-</dl>
-
 
 
 ### `rasterFadeDuration`

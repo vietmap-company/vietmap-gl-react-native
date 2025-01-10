@@ -61,10 +61,10 @@ def $MLRN.post_install(installer)
 end
 
 Pod::Spec.new do |s|
-  s.name		= "maplibre-react-native"
+  s.name		= "vietmap-react-native"
   s.summary		= "React Native Component for Vietmap GL Native"
   s.version		= package['version']
-  s.authors		= { "Vietmap" => "maps-api.support@vietmap.vn" }  # TODO: MapLibre email?
+  s.authors		= { "Vietmap" => "maps-api.support@vietmap.vn" }   
   s.homepage    	= "https://maps.vietmap.vn"
   s.source      	= { :git => "https://github.com/vietmap-company/vietmap-gl-react-native.git" }
   s.license   = "MIT"

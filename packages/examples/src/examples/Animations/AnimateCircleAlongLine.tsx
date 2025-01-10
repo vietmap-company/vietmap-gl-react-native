@@ -5,7 +5,7 @@ import {
   type LineLayerStyle,
   MapView,
   ShapeSource,
-} from "@maplibre/maplibre-react-native";
+} from "@vietmap/vietmap-gl-react-native";
 import { useEffect, useState } from "react";
 
 import { PulseCircleLayer } from "../../components/PulseCircleLayer";
