@@ -444,11 +444,9 @@
   for (NSString *prop in styleProps) {
     MLRNStyleValue *styleValue = [MLRNStyleValue make:reactStyle[prop]];
 
-    } else {
-      // TODO throw exception
-    }
+    } 
   }
-}
+
 
 
 

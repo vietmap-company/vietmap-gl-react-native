@@ -7,7 +7,7 @@
 # Vietmap GL SDK for React Native
 
 ## Migration From v1.0.0 to v2.0.0
-- [Migration Guide](/docs/guides/migrations/v2.0.0.md)
+- [Migration Guide](https://github.com/vietmap-company/vietmap-gl-react-native/blob/feat/0.76.5/docs/guides/migrations/v2.0.0.md)
 
 _A React Native library for building maps with   
 the [Vietmap GL Native SDK for iOS & Android](https://bit.ly/vietmap-api)_.

@@ -16,9 +16,9 @@
 {
     MLRNStyle *style = [[MLRNStyle alloc] initWithMLNStyle:self.style];
     style.bridge = self.bridge;
-    [style heatmapLayer:(MLNHeatmapStyleLayer *)self.styleLayer withReactStyle:self.reactStyle isValid:^{
-        return [self isAddedToMap];
-    }];
+    // [style heatmapLayer:(MLNHeatmapStyleLayer *)self.styleLayer withReactStyle:self.reactStyle isValid:^{
+    //     return [self isAddedToMap];
+    // }];
 }
 
 @end

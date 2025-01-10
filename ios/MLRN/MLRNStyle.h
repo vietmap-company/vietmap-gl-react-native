@@ -5,7 +5,7 @@
 #import "MLRNStyleValue.h"
 #import <React/RCTBridge.h>
 
-@import MapLibre;
+@import VietMap;
 
 @interface MLRNStyle : NSObject
 

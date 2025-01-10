@@ -17,8 +17,8 @@
 {
     MLRNStyle *style = [[MLRNStyle alloc] initWithMLNStyle:self.style];
     style.bridge = self.bridge;
-    [style fillExtrusionLayer:(MLNFillExtrusionStyleLayer*)self.styleLayer withReactStyle:self.reactStyle isValid:^{ return [self isAddedToMap];
-    }];
+    // [style fillExtrusionLayer:(MLNFillExtrusionStyleLayer*)self.styleLayer withReactStyle:self.reactStyle isValid:^{ return [self isAddedToMap];
+    // }];
 }
 
 @end
