@@ -199,5 +199,5 @@ export function getStylePropertyType(
     }
   }
 
-  throw new Error(`${styleProperty} is not a valid MapLibre layer style`);
+  throw new Error(`${styleProperty} is not a valid Vietmap layer style`);
 }

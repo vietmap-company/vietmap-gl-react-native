@@ -32,7 +32,7 @@ import javax.annotation.Nullable;
 public class MLRNModule extends ReactContextBaseJavaModule {
     public static final String REACT_CLASS = "MLRNModule";
 
-    public static final String DEFAULT_STYLE_URL = "https://demotiles.maplibre.org/style.json";
+    public static final String DEFAULT_STYLE_URL = "https://maps.vietmap.vn/mt/tm/style.json?apikey={your-apikey}";
 
     private static boolean customHeaderInterceptorAdded = false;
 

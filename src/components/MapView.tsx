@@ -276,7 +276,7 @@ export interface MapViewRef {
 }
 
 /**
- * MapView backed by MapLibre Native
+ * MapView backed by VietmapGL Native
  */
 export const MapView = memo(
   forwardRef<MapViewRef, MapViewProps>(

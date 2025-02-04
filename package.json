@@ -1,7 +1,7 @@
 {
   "name": "@vietmap/vietmap-gl-react-native",
   "description": "React Native library for creating maps with VietMap Native for Android & iOS",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "publishConfig": {
     "access": "public"
   },

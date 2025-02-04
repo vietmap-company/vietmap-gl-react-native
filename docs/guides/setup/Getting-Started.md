@@ -1,10 +1,10 @@
 # Getting Started
 
-This guide gets you started with MapLibre in your Expo or React Native project.
+This guide gets you started with Vietmap in your Expo or React Native project.
 
 ## Native Versions
 
-This package wraps MapLibre Native for Android and iOS, these are the currently used versions:
+This package wraps VietmapGL Native for Android and iOS, these are the currently used versions:
 
 <dl>
     <dt>Android</dt>
@@ -27,8 +27,7 @@ This package wraps MapLibre Native for Android and iOS, these are the currently 
   <dt>Map Style/Tiles</dt>
   <dd>
     <ul>
-      <li>This library defaults to the <a href="https://github.com/maplibre/demotiles">MapLibre Demo Tiles</a></li>
-      <li>For production use, please use your own style/tiles or use a provider like Stadia Maps or MapTiler</li>
+      <li>This library defaults to the <a href="https://github.com/maplibre/demotiles">VietMap Demo Tiles</a></li>
     </ul>
   </dd>
 </dl>

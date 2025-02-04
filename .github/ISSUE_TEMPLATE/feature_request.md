@@ -48,6 +48,6 @@ Where do the concepts set new precedents?
 
 <!--
 How you would implement the design?
-What parts of the MapLibre GL ecosystem (ex: underlying renderers) will need to change to accommodate this design?
+What parts of the VietMap GL ecosystem (ex: underlying renderers) will need to change to accommodate this design?
 Are there any important edge cases?
 -->

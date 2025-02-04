@@ -3,7 +3,7 @@
   "version": 8,
   "sources": {
     "maplibre": {
-      "url": "https://demotiles.maplibre.org/tiles/tiles.json",
+      "url": "https://maps.vietmap.vn/mt/tm/style.json?apikey={your-apikey}",
       "type": "vector"
     }
   },

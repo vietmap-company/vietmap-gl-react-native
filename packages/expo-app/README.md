@@ -1,4 +1,4 @@
-# MapLibre Expo Example App
+# VietMpa Expo Example App
 
 This is an app to demonstrate the possibilities of `@vietmap/vietmap-gl-react-native` within Expo. Follow the [CONTRIBUTING](/CONTRIBUTING.md#expo-app) guide, on how to use it during development.
 

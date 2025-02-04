@@ -1,7 +1,7 @@
 <!-- DO NOT MODIFY -->
 <!-- This file is auto-generated from src/components/MapView.tsx -->
 # `<MapView />`
-MapView backed by MapLibre Native
+MapView backed by VietmapGL Native
 
 ## Props
 | Prop | Type | Default | Required | Description |

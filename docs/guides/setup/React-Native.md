@@ -31,17 +31,3 @@ pod install
 
 Now rebuild your app.
 
-### Installing a specific version
-
-If you want to modify the MapLibre Native iOS version, you can override as follows in your `Podfile`:
-
-```rb
-$MLRN_SPM_Spec = {
-  url: "https://github.com/maplibre/maplibre-gl-native-distribution",
-  requirement: {
-    kind: "upToNextMajorVersion",
-    minimumVersion: "<Set your version here>"
-  },
-  product_name: "MapLibre"
-}
-```

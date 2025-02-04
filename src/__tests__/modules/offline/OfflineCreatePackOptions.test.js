@@ -5,7 +5,7 @@ import { OfflineCreatePackOptions } from "../../../modules/offline/OfflineCreate
 describe("OfflineCreatePackOptions", () => {
   const options = {
     name: "test",
-    styleURL: "https://demotiles.maplibre.org/tiles/tiles.json",
+    styleURL: "https://maps.vietmap.vn/mt/tm/style.json?apikey={your-apikey}",
     bounds: [
       [0, 1],
       [2, 3],

@@ -70,7 +70,7 @@ class OfflineManager {
    *
    * await OfflineManager.createPack({
    *   name: 'offlinePack',
-   *   styleURL: 'https://demotiles.maplibre.org/tiles/tiles.json',
+   *   styleURL: 'https://maps.vietmap.vn/mt/tm/style.json?apikey={your-apikey}',
    *   minZoom: 14,
    *   maxZoom: 20,
    *   bounds: [[neLng, neLat], [swLng, swLat]]

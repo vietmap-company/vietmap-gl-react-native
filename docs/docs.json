@@ -1471,7 +1471,7 @@
     ]
   },
   "MapView": {
-    "description": "MapView backed by MapLibre Native",
+    "description": "MapView backed by VietmapGL Native",
     "displayName": "MapView",
     "methods": [
       {
@@ -2105,7 +2105,7 @@
           }
         ],
         "examples": [
-          "const progressListener = (offlineRegion, status) => console.log(offlineRegion, status);\nconst errorListener = (offlineRegion, err) => console.log(offlineRegion, err);\n\nawait OfflineManager.createPack({\n  name: 'offlinePack',\n  styleURL: 'https://demotiles.maplibre.org/tiles/tiles.json',\n  minZoom: 14,\n  maxZoom: 20,\n  bounds: [[neLng, neLat], [swLng, swLat]]\n}, progressListener, errorListener)"
+          "const progressListener = (offlineRegion, status) => console.log(offlineRegion, status);\nconst errorListener = (offlineRegion, err) => console.log(offlineRegion, err);\n\nawait OfflineManager.createPack({\n  name: 'offlinePack',\n  styleURL: 'https://maps.vietmap.vn/mt/tm/style.json?apikey={your-apikey}',\n  minZoom: 14,\n  maxZoom: 20,\n  bounds: [[neLng, neLat], [swLng, swLat]]\n}, progressListener, errorListener)"
         ],
         "returns": {
           "description": "",
@@ -3179,7 +3179,7 @@
         "type": "boolean",
         "values": [],
         "default": false,
-        "description": "If true, the symbols will not cross tile edges to avoid mutual collisions. Recommended in layers that don't have enough padding in the vector tile to prevent collisions, or if it is a point symbol layer placed after a line symbol layer. When using a client that supports global collision detection, like MapLibre GL JS version 0.42.0 or greater, enabling this property is not needed to prevent clipped labels at tile boundaries.",
+        "description": "If true, the symbols will not cross tile edges to avoid mutual collisions. Recommended in layers that don't have enough padding in the vector tile to prevent collisions, or if it is a point symbol layer placed after a line symbol layer. When using a client that supports global collision detection, like Vietmap GL JS version 0.42.0 or greater, enabling this property is not needed to prevent clipped labels at tile boundaries.",
         "requires": [],
         "disabledBy": [],
         "allowedFunctionTypes": [],

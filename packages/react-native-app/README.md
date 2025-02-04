@@ -1,4 +1,4 @@
-# MapLibre React Native Example App
+# VietMapGL React Native Example App
 
 This is an app to demonstrate the possibilities of `@vietmap/vietmap-gl-react-native` within React Native. Follow the [CONTRIBUTING](/CONTRIBUTING.md#react-native-app) guide, on how to use it during development.
 

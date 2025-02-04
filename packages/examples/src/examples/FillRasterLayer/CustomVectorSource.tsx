@@ -18,7 +18,7 @@ export function CustomVectorSource() {
       <MapView style={sheet.matchParent}>
         <VectorSource
           id="maplibre-tiles"
-          url="https://demotiles.maplibre.org/tiles/tiles.json"
+          url="https://maps.vietmap.vn/mt/tm/style.json?apikey={your-apikey}"
           ref={vectorSourceRef}
           onPress={(event) => {
             console.log(

@@ -27,7 +27,11 @@ Using `yarn`:
 ```
 
 <br>
- 
+
+## Setup
+Follow the instructions in the below link to setup the library in your project:
+- [Vietmap GL React Native Setup](/docs/guides/setup/React-Native.md)
+
 ## Documentation
 ### Installation
 You must set your API key before using the library. This is required on Android and optional on iOS. You can set the API key in your app's entry file (e.g. `App.js`).
@@ -66,17 +70,7 @@ If you're using the `Expo project`, follow the guide from [this project](https:/
 - [SymbolLayer](/docs/components/SymbolLayer.md)
 - [HeatmapLayer](/docs/components/HeatmapLayer.md)
 
-### Offline
 
-- [OfflineManager](/docs/components/OfflineManager.md)
-- [SnapshotManager](/docs/components/snapshotManager.md)
-
-### Misc
-
-- [Vietmap](/docs/components/Vietmap.md)
-- [CustomHttpHeaders](/docs/components/CustomHttpHeaders.md)
-- [Logger](/docs/components/Logger.md)
- 
   
 
 [<img src="https://bizweb.dktcdn.net/100/415/690/themes/804206/assets/logo.png?1689561872933" height="40"/> </p>](https://vietmap.vn/maps-api)
