@@ -10,9 +10,9 @@ import { type ReactNode, useState } from "react";
 import { Button, Platform, Text, View } from "react-native";
 
 import { ButtonGroup } from "../../components/ButtonGroup";
-import { MapSafeAreaView } from "../../components/MapSafeAreaView";
-import { OSM_RASTER_STYLE } from "../../constants/OSM_RASTER_STYLE";
+import { MapSafeAreaView } from "../../components/MapSafeAreaView"; 
 import { sheet } from "../../styles/sheet";
+import { vietmapStyle } from "../../../vietmap_config";
 
 const SettingsGroup = ({
   children,
@@ -100,7 +100,7 @@ export function FollowUserLocationRenderMode() {
         </SettingsGroup>
       )}
 
-      <MapView style={sheet.matchParent} mapStyle={OSM_RASTER_STYLE}>
+      <MapView style={sheet.matchParent} mapStyle={vietmapStyle}>
         <Camera
           followUserLocation={followUserLocation}
           followUserMode={followUserMode}

@@ -325,7 +325,7 @@ export interface LineLayerStyle {
    *
    * @disabledBy lineDasharray, linePattern
    */
-  lineGradient?: Value<string, ["line-progress"]>;
+  // lineGradient?: Value<string, ["line-progress"]>;
 }
 export interface SymbolLayerStyle {
   /**
@@ -425,30 +425,30 @@ export interface SymbolLayerStyle {
    *
    * @requires iconImage
    */
-  iconAnchor?: Value<
-    | "center"
-    | "left"
-    | "right"
-    | "top"
-    | "bottom"
-    | "top-left"
-    | "top-right"
-    | "bottom-left"
-    | "bottom-right",
-    ["zoom", "feature"]
-  >;
+  // iconAnchor?: Value<
+  //   | "center"
+  //   | "left"
+  //   | "right"
+  //   | "top"
+  //   | "bottom"
+  //   | "top-left"
+  //   | "top-right"
+  //   | "bottom-left"
+  //   | "bottom-right",
+  //   ["zoom", "feature"]
+  // >;
   /**
    * Orientation of icon when map is pitched.
    *
    * @requires iconImage
    */
-  iconPitchAlignment?: Value<"map" | "viewport" | "auto", ["zoom"]>;
+  // iconPitchAlignment?: Value<"map" | "viewport" | "auto", ["zoom"]>;
   /**
    * Orientation of text when map is pitched.
    *
    * @requires textField
    */
-  textPitchAlignment?: Value<"map" | "viewport" | "auto", ["zoom"]>;
+  // textPitchAlignment?: Value<"map" | "viewport" | "auto", ["zoom"]>;
   /**
    * In combination with `symbolPlacement`, determines the rotation behavior of the individual glyphs forming the text.
    *
@@ -830,11 +830,11 @@ export interface CircleLayerStyle {
   /**
    * Orientation of circle when map is pitched.
    */
-  circlePitchAlignment?: Value<"map" | "viewport", ["zoom"]>;
+  // circlePitchAlignment?: Value<"map" | "viewport", ["zoom"]>;
   /**
    * The width of the circle's stroke. Strokes are placed outside of the `circleRadius`.
    */
-  circleStrokeWidth?: Value<number, ["zoom", "feature", "feature-state"]>;
+  // circleStrokeWidth?: Value<number, ["zoom", "feature", "feature-state"]>;
 
   /**
    * The transition affecting any changes to this layer’s circleStrokeWidth property.
@@ -843,7 +843,7 @@ export interface CircleLayerStyle {
   /**
    * The stroke color of the circle.
    */
-  circleStrokeColor?: Value<string, ["zoom", "feature", "feature-state"]>;
+  // circleStrokeColor?: Value<string, ["zoom", "feature", "feature-state"]>;
 
   /**
    * The transition affecting any changes to this layer’s circleStrokeColor property.
@@ -889,7 +889,7 @@ export interface HeatmapLayerStyle {
   /**
    * Defines the color of each pixel based on its density value in a heatmap.  Should be an expression that uses `["heatmapDensity"]` as input.
    */
-  heatmapColor?: Value<string, ["heatmap-density"]>;
+  // heatmapColor?: Value<string, ["heatmap-density"]>;
   /**
    * The global opacity at which the heatmap layer will be drawn.
    */
@@ -908,23 +908,23 @@ export interface FillExtrusionLayerStyle {
   /**
    * The opacity of the entire fill extrusion layer. This is rendered on a perLayer, not perFeature, basis, and dataDriven styling is not available.
    */
-  fillExtrusionOpacity?: Value<number, ["zoom"]>;
+  // fillExtrusionOpacity?: Value<number, ["zoom"]>;
 
   /**
    * The transition affecting any changes to this layer’s fillExtrusionOpacity property.
    */
-  fillExtrusionOpacityTransition?: Transition;
+  // fillExtrusionOpacityTransition?: Transition;
   /**
    * The base color of the extruded fill. The extrusion's surfaces will be shaded differently based on this color in combination with the root `light` settings. If this color is specified as `rgba` with an alpha component, the alpha component will be ignored; use `fillExtrusionOpacity` to set layer opacity.
    *
    * @disabledBy fillExtrusionPattern
    */
-  fillExtrusionColor?: Value<string, ["zoom", "feature", "feature-state"]>;
+  // fillExtrusionColor?: Value<string, ["zoom", "feature", "feature-state"]>;
 
   /**
    * The transition affecting any changes to this layer’s fillExtrusionColor property.
    */
-  fillExtrusionColorTransition?: Transition;
+  // fillExtrusionColorTransition?: Transition;
   /**
    * The geometry's offset. Values are [x, y] where negatives indicate left and up (on the flat plane), respectively.
    */
@@ -952,18 +952,18 @@ export interface FillExtrusionLayerStyle {
   /**
    * The height with which to extrude this layer.
    */
-  fillExtrusionHeight?: Value<number, ["zoom", "feature", "feature-state"]>;
+  // fillExtrusionHeight?: Value<number, ["zoom", "feature", "feature-state"]>;
 
   /**
    * The transition affecting any changes to this layer’s fillExtrusionHeight property.
    */
-  fillExtrusionHeightTransition?: Transition;
+  // fillExtrusionHeightTransition?: Transition;
   /**
    * The height with which to extrude the base of this layer. Must be less than or equal to `fillExtrusionHeight`.
    *
    * @requires fillExtrusionHeight
    */
-  fillExtrusionBase?: Value<number, ["zoom", "feature", "feature-state"]>;
+  // fillExtrusionBase?: Value<number, ["zoom", "feature", "feature-state"]>;
 
   /**
    * The transition affecting any changes to this layer’s fillExtrusionBase property.
@@ -1135,7 +1135,7 @@ export interface LightLayerStyle {
   /**
    * Position of the light source relative to lit (extruded) geometries, in [r radial coordinate, a azimuthal angle, p polar angle] where r indicates the distance from the center of the base of an object to its light, a indicates the position of the light relative to 0° (0° when `light.anchor` is set to `viewport` corresponds to the top of the viewport, or 0° when `light.anchor` is set to `map` corresponds to due north, and degrees proceed clockwise), and p indicates the height of the light (from 0°, directly above, to 180°, directly below).
    */
-  position?: Value<number[], ["zoom"]>;
+  // position?: Value<number[], ["zoom"]>;
 
   /**
    * The transition affecting any changes to this layer’s position property.

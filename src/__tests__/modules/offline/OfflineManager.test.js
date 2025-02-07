@@ -6,7 +6,7 @@ import { OfflineModuleEventEmitter } from "../../../modules/offline/OfflineManag
 describe("OfflineManager", () => {
   const packOptions = {
     name: "test",
-    styleURL: "https://demotiles.maplibre.org/style.json",
+    styleURL: "",
     bounds: [
       [0, 1],
       [2, 3],

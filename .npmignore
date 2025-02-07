@@ -41,3 +41,4 @@ android/local.properties
 example
 __tests__
 coverage
+/packages/examples/vietmap_config.tsx

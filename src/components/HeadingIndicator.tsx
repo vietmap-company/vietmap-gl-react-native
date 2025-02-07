@@ -5,7 +5,7 @@ import { type BaseProps } from "../types/BaseProps";
 const style = {
   iconImage: headingIcon,
   iconAllowOverlap: true,
-  iconPitchAlignment: "map",
+  // iconPitchAlignment: "map",
   iconRotationAlignment: "map",
 } as const;
 

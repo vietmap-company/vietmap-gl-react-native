@@ -31,14 +31,14 @@ const layerStyles: {
   singleCircle: {
     circleColor: "green",
     circleOpacity: 0.84,
-    circleStrokeWidth: 2,
-    circleStrokeColor: "white",
+    // circleStrokeWidth: 2,
+    // circleStrokeColor: "white",
     circleRadius: 5,
-    circlePitchAlignment: "map",
+    // circlePitchAlignment: "map",
   },
 
   clusteredCircle: {
-    circlePitchAlignment: "map",
+    // circlePitchAlignment: "map",
     circleColor: [
       "step",
       ["get", "point_count"],
@@ -50,8 +50,8 @@ const layerStyles: {
     ],
     circleRadius: ["step", ["get", "point_count"], 20, 100, 30, 750, 40],
     circleOpacity: 0.84,
-    circleStrokeWidth: 2,
-    circleStrokeColor: "white",
+    // circleStrokeWidth: 2,
+    // circleStrokeColor: "white",
   },
 
   clusterCount: {
@@ -73,7 +73,7 @@ const layerStyles: {
       { "font-scale": 0.8 },
     ],
     textSize: 12,
-    textPitchAlignment: "map",
+    // textPitchAlignment: "map",
   },
 };
 

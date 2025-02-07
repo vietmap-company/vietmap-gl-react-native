@@ -16,11 +16,11 @@ const OPTIONS = [-180, -90, 0, 90, 180];
 
 const layerStyles: { building: FillExtrusionLayerStyle } = {
   building: {
-    fillExtrusionOpacity: 0.5,
-    fillExtrusionHeight: ["get", "height"],
-    fillExtrusionBase: ["get", "base_height"],
-    fillExtrusionColor: ["get", "color"],
-    fillExtrusionColorTransition: { duration: 2000, delay: 0 },
+    // fillExtrusionOpacity: 0.5,
+    // fillExtrusionHeight: ["get", "height"],
+    // fillExtrusionBase: ["get", "base_height"],
+    // fillExtrusionColor: ["get", "color"],
+    // fillExtrusionColorTransition: { duration: 2000, delay: 0 },
   },
 };
 
@@ -44,7 +44,7 @@ export function IndoorBuilding() {
           centerCoordinate={[-87.61694, 41.86625]}
         />
 
-        <Light id="light" style={{ position: [5, 90, value] }} />
+        <Light id="light" style={{  }} />
 
         <ShapeSource
           id="indoorBuildingSource"

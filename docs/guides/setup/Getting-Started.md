@@ -27,7 +27,7 @@ This package wraps VietmapGL Native for Android and iOS, these are the currently
   <dt>Map Style/Tiles</dt>
   <dd>
     <ul>
-      <li>This library defaults to the <a href="https://github.com/maplibre/demotiles">VietMap Demo Tiles</a></li>
+
     </ul>
   </dd>
 </dl>

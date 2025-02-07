@@ -4,6 +4,7 @@ import { Text } from "react-native";
 
 import { Bubble } from "../../components/Bubble";
 import { sheet } from "../../styles/sheet";
+import { vietmapStyle } from "../../../vietmap_config";
 
 export function SourceLayerVisibility() {
   const mapViewRef = useRef<MapViewRef>(null);
@@ -11,7 +12,9 @@ export function SourceLayerVisibility() {
 
   return (
     <>
-      <MapView ref={mapViewRef} style={sheet.matchParent} />
+      <MapView ref={mapViewRef} style={sheet.matchParent} 
+      mapStyle={vietmapStyle}
+      />
       <Bubble
         onPress={() => {
           mapViewRef.current?.setSourceVisibility(

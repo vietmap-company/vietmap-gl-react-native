@@ -25,17 +25,17 @@ const layerStyles: Record<string, CircleLayerStyle> = {
     circleRadius: 15,
     circleColor: mapboxBlue,
     circleOpacity: 0.2,
-    circlePitchAlignment: "map",
+    // circlePitchAlignment: "map",
   },
   background: {
     circleRadius: 9,
     circleColor: "#fff",
-    circlePitchAlignment: "map",
+    // circlePitchAlignment: "map",
   },
   foreground: {
     circleRadius: 6,
     circleColor: mapboxBlue,
-    circlePitchAlignment: "map",
+    // circlePitchAlignment: "map",
   },
 };
 

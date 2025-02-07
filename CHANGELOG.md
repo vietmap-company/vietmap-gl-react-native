@@ -1,3 +1,4 @@
+# 2.1.1 Fix crash while VietMap SDK not contains style layers
 # [10.0.0-beta.18](https://github.com/vietmap-company/vietmap-gl-react-native/compare/v10.0.0-beta.17...v10.0.0-beta.18) (2025-01-06)
 
 

@@ -32,7 +32,7 @@ export function CustomCallout() {
           id="symbol-layer"
           style={{
             iconAllowOverlap: true,
-            iconAnchor: "center",
+            // iconAnchor: "center",
             iconImage: maplibreIcon,
             iconSize: 1,
           }}

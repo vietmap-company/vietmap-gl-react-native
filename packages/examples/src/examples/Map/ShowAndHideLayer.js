@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Text } from "react-native";
 
 import { Bubble } from "../../components/Bubble";
+import { vietmapStyle } from "../../../vietmap_config";
 
 const defaultCamera = {
   centerCoordinate: [-77.036532, 38.897318],
@@ -32,6 +33,7 @@ export class ShowAndHideLayer extends Component {
           ref={(c) => (this._map = c)}
           onPress={this.onPress}
           style={styles.mapView}
+          mapStyle={vietmapStyle}
         >
           <Camera defaultSettings={defaultCamera} />
           <FillLayer id="countries-label" style={{ visibility }} />

@@ -1,8 +1,8 @@
 {
-  "name": "MapLibre",
+  "name": "VietMap",
   "version": 8,
   "sources": {
-    "maplibre": {
+    "vietmap": {
       "url": "https://maps.vietmap.vn/mt/tm/style.json?apikey={your-apikey}",
       "type": "vector"
     }
@@ -18,7 +18,7 @@
     {
       "id": "countries-fill",
       "type": "fill",
-      "source": "maplibre",
+      "source": "vietmap",
       "source-layer": "countries",
       "paint": {
         "fill-color": "#285daa"

@@ -12,13 +12,13 @@ const styles: {
 } = {
   innerCircle: {
     circleColor: "white",
-    circleStrokeWidth: 1,
-    circleStrokeColor: "#c6d2e1",
+    // circleStrokeWidth: 1,
+    // circleStrokeColor: "#c6d2e1",
   },
   innerCirclePulse: {
     circleColor: "#4264fb",
-    circleStrokeColor: "#c6d2e1",
-    circleStrokeWidth: 1,
+    // circleStrokeColor: "#c6d2e1",
+    // circleStrokeWidth: 1,
   },
   outerCircle: {
     circleOpacity: 0.4,

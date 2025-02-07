@@ -67,7 +67,7 @@ interface MapViewProps extends BaseProps {
    */
   style?: ViewProps["style"];
   /**
-   * Style for map - either a URL or a Style JSON (https://maplibre.org/maplibre-style-spec/). Default: `StyleURL.Default`
+   * Style for map - either a URL or a Style JSON (). Default: `StyleURL.Default`
    */
   mapStyle?: string | object;
   /**

@@ -91,3 +91,4 @@ lib/
 
 # Maestro
 report.xml
+/packages/examples/vietmap_config.tsx

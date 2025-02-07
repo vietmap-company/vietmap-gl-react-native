@@ -9,9 +9,9 @@ import {
 import { useState } from "react";
 import { Button } from "react-native";
 
-import maplibreIcon from "../../assets/images/maplibre.png";
-import { OSM_RASTER_STYLE } from "../../constants/OSM_RASTER_STYLE";
+import maplibreIcon from "../../assets/images/maplibre.png"; 
 import { sheet } from "../../styles/sheet";
+import { vietmapRasterStyle } from "../../../vietmap_config";
 
 export function UserLocationForNavigation() {
   const [navigationActive, setNavigationActive] = useState(false);
@@ -25,7 +25,7 @@ export function UserLocationForNavigation() {
 
       <MapView
         style={sheet.matchParent}
-        mapStyle={OSM_RASTER_STYLE}
+        mapStyle={vietmapRasterStyle}
         contentInset={navigationActive ? [200, 0, 0, 0] : undefined}
         pitchEnabled={navigationActive}
       >
@@ -42,7 +42,6 @@ export function UserLocationForNavigation() {
               id="navigation-icon"
               style={{
                 iconImage: maplibreIcon,
-                iconPitchAlignment: "map",
                 iconAllowOverlap: true,
               }}
             />
