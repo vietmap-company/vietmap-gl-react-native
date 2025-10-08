@@ -24,6 +24,7 @@
 | followPitch | `number` | `none` | `false` | The pitch on map while followUserLocation is set to `true` |
 | followHeading | `number` | `none` | `false` | The heading on map while followUserLocation is set to `true` |
 | onUserTrackingModeChange | `func` | `none` | `false` | Triggered when `followUserLocation` or `followUserMode` changes<br/>*signature:*`(event:VietmapGLEvent) => void` |
+| debugCameraTransitions | `boolean` | `none` | `false` | (Dev only) Enable verbose console logging (render count, imperative calls, prop-driven native stop diffs) to distinguish re-render vs imperative camera moves. |
 
 ## Methods
 ### `fitBounds(ne, sw, [padding], [animationDuration])`

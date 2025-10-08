@@ -90,6 +90,10 @@ const Examples = new ExampleGroup(
         "Fit (Bounds, Center/Zoom, Padding)",
         MapLibreExamples.Fit,
       ),
+      new ExampleItem(
+        "Imperative vs Re-render",
+        MapLibreExamples.ImperativeVsRerender,
+      ),
       new ExampleItem("Set Pitch", MapLibreExamples.SetPitch),
       new ExampleItem("Set Heading", MapLibreExamples.SetHeading),
       new ExampleItem("Fly To", MapLibreExamples.FlyTo),

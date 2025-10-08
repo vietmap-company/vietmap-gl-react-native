@@ -12,6 +12,7 @@ export { PointAnnotationAnchors } from "./Annotations/PointAnnotationAnchors";
 export { CompassView } from "./Camera/CompassView";
 export { Fit } from "./Camera/Fit";
 export { FlyTo } from "./Camera/FlyTo";
+export { ImperativeVsRerender } from "./Camera/ImperativeVsRerender";
 export { GetCenter } from "./Camera/GetCenter";
 export { GetZoom } from "./Camera/GetZoom";
 export { RestrictMapBounds } from "./Camera/RestrictMapBounds";

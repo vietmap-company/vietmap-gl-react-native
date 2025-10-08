@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   s.dependency 'React-Core'
   s.dependency 'React'
 
-  s.dependency 'VietMap', '~> 2.0.0'
+  s.dependency 'VietMap', '~> 2.9.4'
   
   s.subspec 'DynamicLibrary' do |sp|
     sp.source_files	= "ios/MLRN/**/*.{h,m}"

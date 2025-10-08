@@ -117,7 +117,7 @@ dependencies {
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
   // VietMap SDK
-  implementation "com.github.vietmap-company:maps-sdk-android:3.3.0"
+  implementation "com.github.vietmap-company:maps-sdk-android:4.1.0"
 
   implementation 'com.github.vietmap-company:vietmap-services-turf-android:1.0.2'
 

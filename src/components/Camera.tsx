@@ -6,6 +6,7 @@ import {
   useImperativeHandle,
   useMemo,
   useState,
+  useRef,
 } from "react";
 import { Platform, requireNativeComponent, type ViewProps } from "react-native";
 
@@ -226,7 +227,7 @@ export interface CameraProps extends BaseProps, CameraStop {
   followUserLocation?: boolean;
 
   /**
-   * The mode used to track the user location on the map. One of; "normal", "compass", "course". Each mode string is also available as a member on the `UserTrackingMode` object. `Follow` (normal), `FollowWithHeading` (compass), `FollowWithCourse` (course). NOTE: `followUserLocation` must be set to `true` for any of the modes to take effect. [Example](/packages/examples/src/examples/Camera/SetUserTrackingMode.js)
+   * The mode used to track the user location on the map. One of; "normal", "compass", "course". Each mode string is also available as a member on the `UserTrackingMode` object. `Follow` (normal), `FollowWithHeading` (compass), `FollowWithCourse` (course). NOTE: `followUserLocation` must be set to `true` for any of the modes to take effect.
    */
   followUserMode?: UserTrackingMode;
 
@@ -249,6 +250,19 @@ export interface CameraProps extends BaseProps, CameraStop {
    * Triggered when `followUserLocation` or `followUserMode` changes
    */
   onUserTrackingModeChange?: UserTrackingModeChangeCallback;
+
+  /**
+   * (Dev only) Enable verbose console logging to help distinguish between:
+   * - React re-render causing new native camera stop (prop/state driven)
+   * - Imperative camera method calls (flyTo/moveTo/fitBounds/zoomTo/setCamera)
+   * This does not affect production behavior; wrap usage in a dev flag if needed.
+   */
+  debugCameraTransitions?: boolean;
+  /**
+   * When `debugCameraTransitions` is true, also log every React render. Default: false.
+   * Use this only if you are diagnosing unnecessary renders; otherwise it can be noisy.
+   */
+  debugCameraRenderLogs?: boolean;
 }
 
 export interface NativeCameraProps
@@ -281,12 +295,40 @@ export const Camera = memo(
         padding,
         pitch,
         zoomLevel,
+        debugCameraTransitions,
+        debugCameraRenderLogs,
       }: CameraProps,
       ref,
     ) => {
-      const nativeCameraRef = useNativeRef<NativeCameraProps>();
+      // Track render count for debugging re-renders vs imperative calls
+      const renderCountRef = useRef(0);
+      // Increment ref on each render (no state update => no extra render)
+      renderCountRef.current += 1;
+
+  const nativeCameraRef = useNativeRef<NativeCameraProps>();
+  const lastStopRef = useRef<NativeCameraStop | undefined>(undefined);
+
+      const debugLog = (...args: any[]): void => {
+        if (debugCameraTransitions) {
+          // Namespace logs to make them searchable
+          // eslint-disable-next-line no-console
+          console.log('[CameraDebug]', ...args);
+        }
+      };
+
+      if (debugCameraTransitions && debugCameraRenderLogs) {
+        debugLog('Render #' + renderCountRef.current, {
+          followUserLocation,
+          centerCoordinate,
+          zoomLevel,
+          heading,
+          pitch,
+          bounds: bounds ? { ne: bounds?.ne, sw: bounds?.sw } : undefined,
+        });
+      }
 
       const setCamera = (config: CameraStop | CameraStops = {}): void => {
+        debugLog('setCamera called', config);
         if ("stops" in config) {
           nativeCameraRef.current?.setNativeProps({
             stop: {
@@ -310,6 +352,7 @@ export const Camera = memo(
         padding?: number | number[],
         animationDuration?: number,
       ): void => {
+        debugLog('fitBounds', { ne, sw, padding, animationDuration });
         const _padding: CameraPadding = {};
 
         if (Array.isArray(padding)) {
@@ -343,6 +386,7 @@ export const Camera = memo(
         coordinates: GeoJSON.Position,
         animationDuration = 2000,
       ): void => {
+        debugLog('flyTo', { coordinates, animationDuration });
         setCamera({
           centerCoordinate: coordinates,
           animationDuration,
@@ -354,6 +398,7 @@ export const Camera = memo(
         coordinates: GeoJSON.Position,
         animationDuration = 0,
       ): void => {
+        debugLog('moveTo', { coordinates, animationDuration });
         setCamera({
           centerCoordinate: coordinates,
           animationDuration,
@@ -362,6 +407,7 @@ export const Camera = memo(
       };
 
       const zoomTo = (zoomLevel: number, animationDuration = 2000): void => {
+        debugLog('zoomTo', { zoomLevel, animationDuration });
         setCamera({
           zoomLevel,
           animationDuration,
@@ -381,9 +427,9 @@ export const Camera = memo(
            * cameraRef.current?.fitBounds([lng, lat], [lng, lat], [verticalPadding, horizontalPadding], 1000)
            * cameraRef.current?.fitBounds([lng, lat], [lng, lat], [top, right, bottom, left], 1000)
            *
-           * @param {Array<number>} ne - North east coordinate of bound
-           * @param {Array<number>} sw - South west coordinate of bound
-           * @param {number|Array<number>|undefined} padding - Padding for the bounds
+           * @param {number[]} ne - North east coordinate of bound
+           * @param {number[]} sw - South west coordinate of bound
+           * @param {number|number[]|undefined} padding - Padding for the bounds
            * @param {number=} animationDuration - Duration of camera animation
            * @return {void}
            */
@@ -395,7 +441,7 @@ export const Camera = memo(
            * cameraRef.current?.flyTo([lng, lat])
            * cameraRef.current?.flyTo([lng, lat], 12000)
            *
-           *  @param {Array<number>} coordinates - Coordinates that map camera will jump to
+           *  @param {number[]} coordinates - Coordinates that map camera will jump to
            *  @param {number=} animationDuration - Duration of camera animation
            *  @return {void}
            */
@@ -407,7 +453,7 @@ export const Camera = memo(
            * cameraRef.current?.moveTo([lng, lat], 200) // eases camera to new location based on duration
            * cameraRef.current?.moveTo([lng, lat]) // snaps camera to new location without any easing
            *
-           *  @param {Array<number>} coordinates - Coordinates that map camera will move too
+           *  @param {number[]} coordinates - Coordinates that map camera will move too
            *  @param {number=} animationDuration - Duration of camera animation
            *  @return {void}
            */
@@ -519,7 +565,7 @@ export const Camera = memo(
       }, [followUserLocation, maxZoomLevel]);
 
       const nativeStop = useMemo(() => {
-        return makeNativeCameraStop({
+        const newStop = makeNativeCameraStop({
           animationDuration,
           animationMode,
           bounds,
@@ -529,6 +575,7 @@ export const Camera = memo(
           pitch,
           zoomLevel,
         });
+        return newStop;
       }, [
         animationDuration,
         animationMode,
@@ -542,11 +589,35 @@ export const Camera = memo(
 
       useEffect(() => {
         if (!followUserLocation) {
+          // Simple diff to show what changed in native stop
+          if (debugCameraTransitions) {
+            const changes: Record<string, { from: any; to: any }> = {};
+            const keys = [
+              'duration','mode','pitch','heading','zoom','centerCoordinate','bounds','paddingTop','paddingRight','paddingBottom','paddingLeft'
+            ];
+            keys.forEach((k) => {
+              const prevVal = (lastStopRef.current as any)?.[k];
+              const nextVal = (nativeStop as any)?.[k];
+              if (prevVal !== nextVal) {
+                changes[k] = { from: prevVal, to: nextVal };
+              }
+            });
+            if (Object.keys(changes).length > 0) {
+              debugLog('Prop-driven native stop update', changes);
+            } else {
+              debugLog('Prop-driven native stop update: no field changes');
+            }
+          }
           nativeCameraRef.current?.setNativeProps({
             stop: nativeStop,
           });
+          if (nativeStop) {
+            lastStopRef.current = { ...nativeStop };
+          } else {
+            lastStopRef.current = undefined;
+          }
         }
-      }, [followUserLocation, nativeStop]);
+      }, [followUserLocation, nativeStop, debugCameraTransitions]);
 
       const [nativeDefaultStop] = useState(
         makeNativeCameraStop(defaultSettings),

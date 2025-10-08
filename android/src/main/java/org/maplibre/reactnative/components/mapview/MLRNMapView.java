@@ -293,7 +293,12 @@ public class MLRNMapView extends MapView implements OnMapReadyCallback, VietMapG
     }
 
     public AbstractMapFeature getFeatureAt(int i) {
-        return features().get(i);
+        if(i < 0 || features() == null ||i >= features().size()) {
+            return null;
+        }
+        else {
+            return features().get(i);
+        }
     }
 
     public synchronized void dispose() {

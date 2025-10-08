@@ -1,17 +1,56 @@
-import { Camera, MapView, StyleURL } from "@vietmap/vietmap-gl-react-native";
-import { isEqual } from "lodash";
-import React, { Component } from "react";
+import { Camera, MapView } from "@vietmap/vietmap-gl-react-native";
+import type { CameraRef, CameraPadding } from "@vietmap/vietmap-gl-react-native";
+import { Component } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-
+import type { ViewStyle } from "react-native";
+import { vietmapStyle } from "../../../vietmap_config";
 import {
   EU_BOUNDS,
   EU_CENTER_COORDINATES,
   US_BOUNDS,
   US_CENTER_COORDINATES,
 } from "../../constants/GEOMETRIES";
-import { sheet } from "../../styles/sheet";
 
-const buildPadding = ([top, right, bottom, left] = [0, 0, 0, 0]) => {
+// Simple deep equality check for objects
+const isEqual = (a: any, b: any): boolean => {
+  if (a === b) return true;
+  if (a == null || b == null) return false;
+  if (typeof a !== typeof b) return false;
+  
+  if (typeof a === 'object') {
+    const keysA = Object.keys(a);
+    const keysB = Object.keys(b);
+    if (keysA.length !== keysB.length) return false;
+    
+    for (const key of keysA) {
+      if (!keysB.includes(key)) return false;
+      if (!isEqual(a[key], b[key])) return false;
+    }
+    return true;
+  }
+  
+  return false;
+};
+
+type LocationType = "usCenter" | "usBounds" | "euCenter" | "euBounds" | undefined;
+type CachedFlyTo = "us" | "eu" | undefined;
+
+interface ButtonConfig {
+  title: string;
+  selected: boolean;
+  onPress: () => void;
+}
+
+interface FitState {
+  locationType: LocationType;
+  zoomLevel: number | undefined;
+  followUserLocation: boolean;
+  padding: CameraPadding;
+  cachedFlyTo: CachedFlyTo;
+  cachedZoomLevel: number | undefined;
+}
+
+const buildPadding = ([top, right, bottom, left]: [number, number, number, number] = [0, 0, 0, 0]): CameraPadding => {
   return {
     paddingLeft: left,
     paddingRight: right,
@@ -24,26 +63,24 @@ const paddingZero = buildPadding();
 const paddingTop = buildPadding([200, 40, 40, 40]);
 const paddingBottom = buildPadding([40, 40, 200, 40]);
 
-export class Fit extends Component {
-  constructor(props) {
+export class Fit extends Component<{}, FitState> {
+  private camera: CameraRef | null = null;
+
+  constructor(props: {}) {
     super(props);
 
     this.state = {
-      locationType: "usCenter", // usCenter | usBounds | euCenter | euBounds
-      zoomLevel: 4, // number
+      locationType: "usCenter",
+      zoomLevel: 4,
       followUserLocation: false,
       padding: paddingZero,
-
-      // For updating the UI in this example.
-      cachedFlyTo: undefined, // us | eu
-      cachedZoomLevel: undefined, // number
+      cachedFlyTo: undefined,
+      cachedZoomLevel: undefined,
     };
-
-    this.camera = null;
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    const changed = (stateKey) => {
+  componentDidUpdate(_prevProps: {}, prevState: FitState): void {
+    const changed = (stateKey: keyof FitState): boolean => {
       // Checking if final state is `undefined` prevents another round of zeroing out in
       // second `componentDidUpdate` call.
       return (
@@ -76,7 +113,7 @@ export class Fit extends Component {
     }
   }
 
-  renderSection = (title, buttons, fade = false) => {
+  private renderSection = (title: string, buttons: ButtonConfig[], fade: boolean = false): JSX.Element => {
     return (
       <View style={{ paddingBottom: 5, opacity: fade ? 0.5 : 1 }}>
         <Text>{title}</Text>
@@ -109,10 +146,18 @@ export class Fit extends Component {
     );
   };
 
-  cameraProps = () => {
+  private cameraProps = () => {
     const { locationType, zoomLevel, followUserLocation, padding } = this.state;
 
-    const p = {
+    const p: {
+      bounds?: { ne: number[]; sw: number[] };
+      centerCoordinate?: number[];
+      zoomLevel?: number;
+      followUserLocation: boolean;
+      padding: CameraPadding;
+      animationDuration: number;
+      animationMode: "easeTo";
+    } = {
       bounds: undefined,
       centerCoordinate: undefined,
       zoomLevel: undefined,
@@ -123,13 +168,13 @@ export class Fit extends Component {
     };
 
     if (locationType === "usCenter") {
-      p.centerCoordinate = US_CENTER_COORDINATES;
+      p.centerCoordinate = [...US_CENTER_COORDINATES];
     } else if (locationType === "usBounds") {
-      p.bounds = US_BOUNDS;
+      p.bounds = { ne: [...US_BOUNDS.ne], sw: [...US_BOUNDS.sw] };
     } else if (locationType === "euCenter") {
-      p.centerCoordinate = EU_CENTER_COORDINATES;
+      p.centerCoordinate = [...EU_CENTER_COORDINATES];
     } else if (locationType === "euBounds") {
-      p.bounds = EU_BOUNDS;
+      p.bounds = { ne: [...EU_BOUNDS.ne], sw: [...EU_BOUNDS.sw] };
     }
 
     if (zoomLevel !== undefined) {
@@ -139,7 +184,7 @@ export class Fit extends Component {
     return p;
   };
 
-  render() {
+  render(): JSX.Element {
     const {
       locationType,
       zoomLevel,
@@ -151,7 +196,7 @@ export class Fit extends Component {
 
     const centerIsSet = locationType?.toLowerCase().includes("center");
 
-    const locationTypeButtons = [
+    const locationTypeButtons: ButtonConfig[] = [
       ["US (center)", "usCenter"],
       ["US (bounds)", "usBounds"],
       ["EU (center)", "euCenter"],
@@ -161,11 +206,11 @@ export class Fit extends Component {
       return {
         title: `${o[0]}`,
         selected: locationType === o[1],
-        onPress: () => this.setState({ locationType: o[1] }),
+        onPress: () => this.setState({ locationType: o[1] as LocationType }),
       };
     });
 
-    const zoomConfigButtons = [2, 4, 8, 12, 16, 20, undefined].map((n) => {
+    const zoomConfigButtons: ButtonConfig[] = [2, 4, 8, 12, 16, 20, undefined].map((n) => {
       return {
         title: n ? `${n}` : "undef",
         selected: zoomLevel === n,
@@ -173,12 +218,12 @@ export class Fit extends Component {
       };
     });
 
-    const zoomToButtons = [14, 15, 16, 17, 18, 19, 20].map((n) => {
+    const zoomToButtons: ButtonConfig[] = [14, 15, 16, 17, 18, 19, 20].map((n) => {
       return {
         title: `${n}`,
         selected: cachedZoomLevel === n,
         onPress: () => {
-          this.camera.zoomTo(n, 1000);
+          this.camera?.zoomTo(n, 1000);
           this.setState({ cachedZoomLevel: n });
         },
       };
@@ -186,7 +231,7 @@ export class Fit extends Component {
 
     return (
       <>
-        <MapView styleURL={StyleURL.Default} style={sheet.matchParent}>
+        <MapView mapStyle={vietmapStyle} style={{ flex: 1 }}>
           <Camera ref={(ref) => (this.camera = ref)} {...this.cameraProps()} />
           <View style={{ flex: 1, ...padding }}>
             <View style={{ flex: 1, borderColor: "white", borderWidth: 4 }} />
@@ -199,7 +244,7 @@ export class Fit extends Component {
             width: "100%",
             maxHeight: 350,
             backgroundColor: "white",
-          }}
+          } as ViewStyle}
           contentContainerStyle={{
             padding: 10,
             paddingBottom: 20,
@@ -228,7 +273,7 @@ export class Fit extends Component {
               title: "US",
               selected: cachedFlyTo === "us",
               onPress: () => {
-                this.camera.flyTo(US_CENTER_COORDINATES);
+                this.camera?.flyTo(US_CENTER_COORDINATES);
                 this.setState({ cachedFlyTo: "us" });
               },
             },
@@ -236,7 +281,7 @@ export class Fit extends Component {
               title: "EU",
               selected: cachedFlyTo === "eu",
               onPress: () => {
-                this.camera.flyTo(EU_CENTER_COORDINATES);
+                this.camera?.flyTo(EU_CENTER_COORDINATES);
                 this.setState({ cachedFlyTo: "eu" });
               },
             },
